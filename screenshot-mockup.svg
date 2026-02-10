@@ -1,0 +1,271 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="purple-teal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#2dd4bf"/>
+    </linearGradient>
+    <linearGradient id="card-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16162a"/>
+    </linearGradient>
+    <clipPath id="rounded-img">
+      <rect x="0" y="0" width="160" height="140" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- Main background -->
+  <rect width="1200" height="675" fill="#0e0e18"/>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="240" height="675" fill="#12121e"/>
+  <line x1="240" y1="0" x2="240" y2="675" stroke="#2a2a3a" stroke-width="1"/>
+  
+  <!-- Sidebar logo area -->
+  <rect x="20" y="18" width="28" height="28" rx="6" fill="#8b5cf6"/>
+  <!-- Grid dots in logo -->
+  <rect x="24" y="22" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="32" y="22" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="40" y="22" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="24" y="30" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="32" y="30" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="40" y="30" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="24" y="38" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="32" y="38" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  <rect x="40" y="38" width="6" height="6" rx="1" fill="rgba(255,255,255,0.9)"/>
+  
+  <text x="58" y="39" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#e8e8ed">GenCatalog</text>
+  
+  <!-- Search bar -->
+  <rect x="16" y="60" width="208" height="34" rx="8" fill="#1a1a2e" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="36" y="82" font-family="system-ui, sans-serif" font-size="12" fill="#55556a">Search prompts, tags...</text>
+  <text x="26" y="82" font-family="system-ui, sans-serif" font-size="12" fill="#55556a">🔍</text>
+  
+  <!-- Sidebar sections -->
+  <!-- SOURCES -->
+  <text x="16" y="122" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#55556a" letter-spacing="1.5">SOURCES</text>
+  
+  <rect x="16" y="132" width="208" height="30" rx="6" fill="#8b5cf620"/>
+  <text x="36" y="152" font-family="system-ui, sans-serif" font-size="13" fill="#e8e8ed">All Sources</text>
+  <text x="192" y="152" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="end">15,077</text>
+  
+  <!-- Grok -->
+  <rect x="22" y="170" width="8" height="8" rx="4" fill="#1da1f2"/>
+  <text x="36" y="180" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">Grok</text>
+  <text x="192" y="180" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">8,234</text>
+  
+  <!-- Digen -->
+  <rect x="22" y="194" width="8" height="8" rx="4" fill="#22c55e"/>
+  <text x="36" y="204" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">Digen</text>
+  <text x="192" y="204" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">4,512</text>
+  
+  <!-- Higgsfield -->
+  <rect x="22" y="218" width="8" height="8" rx="4" fill="#a855f7"/>
+  <text x="36" y="228" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">Higgsfield</text>
+  <text x="192" y="228" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">2,331</text>
+  
+  <!-- MEDIA TYPE -->
+  <text x="16" y="264" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#55556a" letter-spacing="1.5">MEDIA TYPE</text>
+  <text x="36" y="286" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">📷 Images</text>
+  <text x="192" y="286" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">13,842</text>
+  <text x="36" y="310" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">🎬 Videos</text>
+  <text x="192" y="310" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">1,235</text>
+  
+  <!-- TAGS -->
+  <text x="16" y="348" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#55556a" letter-spacing="1.5">TAGS</text>
+  
+  <rect x="16" y="358" width="72" height="26" rx="13" fill="#8b5cf630"/>
+  <text x="52" y="376" font-family="system-ui, sans-serif" font-size="11" font-weight="500" fill="#a78bfa" text-anchor="middle">Portraits</text>
+  
+  <rect x="94" y="358" width="80" height="26" rx="13" fill="#16162a" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="134" y="376" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="middle">Landscapes</text>
+  
+  <rect x="16" y="390" width="66" height="26" rx="13" fill="#16162a" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="49" y="408" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="middle">Fantasy</text>
+  
+  <rect x="88" y="390" width="55" height="26" rx="13" fill="#16162a" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="115" y="408" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="middle">Sci-Fi</text>
+  
+  <rect x="149" y="390" width="68" height="26" rx="13" fill="#16162a" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="183" y="408" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="middle">Abstract</text>
+  
+  <!-- COLLECTIONS -->
+  <text x="16" y="450" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#55556a" letter-spacing="1.5">COLLECTIONS</text>
+  <text x="36" y="474" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">📁 Best of 2025</text>
+  <text x="192" y="474" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">142</text>
+  <text x="36" y="498" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">📁 Client Work</text>
+  <text x="192" y="498" font-family="system-ui, sans-serif" font-size="11" fill="#55556a" text-anchor="end">87</text>
+  
+  <!-- TRASH -->
+  <text x="16" y="540" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#55556a" letter-spacing="1.5">TRASH</text>
+  <text x="36" y="562" font-family="system-ui, sans-serif" font-size="13" fill="#55556a">🗑️ 23 items in trash</text>
+  
+  <!-- ============ MAIN CONTENT ============ -->
+  
+  <!-- Top bar -->
+  <rect x="240" y="0" width="960" height="52" fill="#0e0e18"/>
+  <line x1="240" y1="52" x2="1200" y2="52" stroke="#1e1e2e" stroke-width="1"/>
+  
+  <text x="264" y="32" font-family="system-ui, sans-serif" font-size="13" fill="#8888a0">Showing 1-50 of 15,077 items</text>
+  
+  <!-- View controls -->
+  <rect x="980" y="14" width="70" height="28" rx="6" fill="#1a1a2e" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="1015" y="33" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="middle">Medium</text>
+  
+  <rect x="1058" y="14" width="56" height="28" rx="6" fill="#1a1a2e" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="1086" y="33" font-family="system-ui, sans-serif" font-size="11" fill="#8888a0" text-anchor="middle">50/pg</text>
+  
+  <rect x="1122" y="14" width="56" height="28" rx="6" fill="#8b5cf620" stroke="#8b5cf650" stroke-width="1"/>
+  <text x="1150" y="33" font-family="system-ui, sans-serif" font-size="11" fill="#a78bfa" text-anchor="middle">★ Favs</text>
+  
+  <!-- ============ IMAGE GRID ============ -->
+  <!-- Row 1 -->
+  <!-- Card 1 - landscape scene -->
+  <rect x="260" y="68" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="264" y="72" width="168" height="130" rx="6" fill="#2a1845"/>
+  <!-- Gradient art placeholder -->
+  <rect x="264" y="72" width="168" height="130" rx="6" fill="url(#card-bg)"/>
+  <circle cx="310" cy="110" r="20" fill="#3b2070" opacity="0.8"/>
+  <circle cx="370" cy="130" r="35" fill="#1a3050" opacity="0.6"/>
+  <rect x="264" y="160" width="168" height="42" rx="0" fill="#0e0e1860"/>
+  <!-- Badge -->
+  <rect x="272" y="80" width="42" height="18" rx="4" fill="#1da1f2"/>
+  <text x="293" y="93" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">GROK</text>
+  <!-- Prompt text -->
+  <text x="272" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">cyberpunk cityscape at...</text>
+  <text x="272" y="232" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 15, 2026</text>
+  <!-- Fav star -->
+  <text x="420" y="232" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" text-anchor="end">★</text>
+  
+  <!-- Card 2 -->
+  <rect x="448" y="68" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="452" y="72" width="168" height="130" rx="6" fill="#1a2840"/>
+  <circle cx="536" cy="120" r="40" fill="#253550" opacity="0.7"/>
+  <circle cx="560" cy="100" r="15" fill="#304060" opacity="0.5"/>
+  <rect x="460" y="80" width="48" height="18" rx="4" fill="#22c55e"/>
+  <text x="484" y="93" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">DIGEN</text>
+  <text x="460" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">ethereal forest with gl...</text>
+  <text x="460" y="232" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 14, 2026</text>
+  
+  <!-- Card 3 -->
+  <rect x="636" y="68" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="640" y="72" width="168" height="130" rx="6" fill="#2d1a1a"/>
+  <circle cx="724" cy="130" r="30" fill="#3d2020" opacity="0.8"/>
+  <rect x="680" y="90" width="60" height="40" rx="4" fill="#402020" opacity="0.5"/>
+  <rect x="648" y="80" width="42" height="18" rx="4" fill="#1da1f2"/>
+  <text x="669" y="93" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">GROK</text>
+  <text x="648" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">dramatic portrait, rem...</text>
+  <text x="648" y="232" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 13, 2026</text>
+  <text x="796" y="232" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" text-anchor="end">★</text>
+  
+  <!-- Card 4 -->
+  <rect x="824" y="68" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="828" y="72" width="168" height="130" rx="6" fill="#1a2030"/>
+  <rect x="860" y="100" width="100" height="70" rx="6" fill="#253045" opacity="0.6"/>
+  <circle cx="880" cy="110" r="12" fill="#304560" opacity="0.7"/>
+  <rect x="836" y="80" width="72" height="18" rx="4" fill="#a855f7"/>
+  <text x="872" y="93" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">HIGGSFIELD</text>
+  <!-- Video play icon -->
+  <circle cx="912" cy="130" r="16" fill="rgba(0,0,0,0.6)"/>
+  <polygon points="907,122 907,138 921,130" fill="white"/>
+  <text x="836" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">cinematic dolly shot th...</text>
+  <text x="836" y="232" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 12, 2026</text>
+  
+  <!-- Card 5 -->
+  <rect x="1012" y="68" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="1016" y="72" width="168" height="130" rx="6" fill="#1a2a20"/>
+  <circle cx="1100" cy="115" r="35" fill="#204030" opacity="0.7"/>
+  <circle cx="1060" cy="140" r="20" fill="#1a3525" opacity="0.6"/>
+  <rect x="1024" y="80" width="48" height="18" rx="4" fill="#22c55e"/>
+  <text x="1048" y="93" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">DIGEN</text>
+  <text x="1024" y="216" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">underwater temple ruin...</text>
+  <text x="1024" y="232" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 11, 2026</text>
+  <text x="1172" y="232" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" text-anchor="end">★</text>
+  
+  <!-- Row 2 -->
+  <rect x="260" y="260" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="264" y="264" width="168" height="130" rx="6" fill="#201a30"/>
+  <circle cx="348" cy="320" r="30" fill="#302040" opacity="0.7"/>
+  <rect x="290" y="290" width="80" height="50" rx="4" fill="#2a1a40" opacity="0.5"/>
+  <rect x="272" y="272" width="48" height="18" rx="4" fill="#22c55e"/>
+  <text x="296" y="285" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">DIGEN</text>
+  <text x="272" y="408" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">ancient dragon perche...</text>
+  <text x="272" y="424" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 10, 2026</text>
+  
+  <rect x="448" y="260" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="452" y="264" width="168" height="130" rx="6" fill="#2a2015"/>
+  <circle cx="536" cy="310" r="25" fill="#3a3020" opacity="0.8"/>
+  <circle cx="570" cy="340" r="18" fill="#302a1a" opacity="0.6"/>
+  <rect x="460" y="272" width="42" height="18" rx="4" fill="#1da1f2"/>
+  <text x="481" y="285" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">GROK</text>
+  <text x="460" y="408" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">steampunk airship flyi...</text>
+  <text x="460" y="424" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 9, 2026</text>
+  <text x="608" y="424" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" text-anchor="end">★</text>
+  
+  <rect x="636" y="260" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="640" y="264" width="168" height="130" rx="6" fill="#15202a"/>
+  <rect x="670" y="290" width="110" height="70" rx="6" fill="#1a3050" opacity="0.6"/>
+  <circle cx="720" cy="310" r="20" fill="#204060" opacity="0.7"/>
+  <rect x="648" y="272" width="72" height="18" rx="4" fill="#a855f7"/>
+  <text x="684" y="285" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">HIGGSFIELD</text>
+  <circle cx="724" cy="320" r="16" fill="rgba(0,0,0,0.6)"/>
+  <polygon points="719,312 719,328 733,320" fill="white"/>
+  <text x="648" y="408" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">smooth camera pan ac...</text>
+  <text x="648" y="424" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 8, 2026</text>
+  
+  <rect x="824" y="260" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="828" y="264" width="168" height="130" rx="6" fill="#201525"/>
+  <circle cx="912" cy="310" r="35" fill="#2a1a35" opacity="0.7"/>
+  <circle cx="880" cy="340" r="15" fill="#351a40" opacity="0.5"/>
+  <rect x="836" y="272" width="42" height="18" rx="4" fill="#1da1f2"/>
+  <text x="857" y="285" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">GROK</text>
+  <text x="836" y="408" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">neon samurai warrior s...</text>
+  <text x="836" y="424" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 7, 2026</text>
+  
+  <rect x="1012" y="260" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1"/>
+  <rect x="1016" y="264" width="168" height="130" rx="6" fill="#1a1520"/>
+  <rect x="1040" y="290" width="120" height="70" rx="6" fill="#25152a" opacity="0.6"/>
+  <circle cx="1100" cy="320" r="22" fill="#2a1a35" opacity="0.7"/>
+  <rect x="1024" y="272" width="48" height="18" rx="4" fill="#22c55e"/>
+  <text x="1048" y="285" font-family="system-ui, sans-serif" font-size="9" font-weight="600" fill="white" text-anchor="middle">DIGEN</text>
+  <text x="1024" y="408" font-family="system-ui, sans-serif" font-size="10" fill="#8888a0">mystical library with fl...</text>
+  <text x="1024" y="424" font-family="system-ui, sans-serif" font-size="9" fill="#55556a">Jan 6, 2026</text>
+  <text x="1172" y="424" font-family="system-ui, sans-serif" font-size="12" fill="#eab308" text-anchor="end">★</text>
+
+  <!-- Row 3 (partial, fading out) -->
+  <rect x="260" y="452" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1" opacity="0.7"/>
+  <rect x="264" y="456" width="168" height="130" rx="6" fill="#1a2520" opacity="0.7"/>
+  <rect x="272" y="464" width="42" height="18" rx="4" fill="#1da1f2" opacity="0.7"/>
+  
+  <rect x="448" y="452" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1" opacity="0.7"/>
+  <rect x="452" y="456" width="168" height="130" rx="6" fill="#201a15" opacity="0.7"/>
+  <rect x="460" y="464" width="48" height="18" rx="4" fill="#22c55e" opacity="0.7"/>
+  
+  <rect x="636" y="452" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1" opacity="0.5"/>
+  <rect x="640" y="456" width="168" height="130" rx="6" fill="#1a1a2a" opacity="0.5"/>
+  
+  <rect x="824" y="452" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1" opacity="0.3"/>
+  <rect x="828" y="456" width="168" height="130" rx="6" fill="#201520" opacity="0.3"/>
+  
+  <rect x="1012" y="452" width="176" height="176" rx="10" fill="#1c1c28" stroke="#2a2a3a" stroke-width="1" opacity="0.2"/>
+  <rect x="1016" y="456" width="168" height="130" rx="6" fill="#151a20" opacity="0.2"/>
+  
+  <!-- Fade overlay at bottom -->
+  <defs>
+    <linearGradient id="fade-bottom" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#0e0e18;stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:#0e0e18;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect x="240" y="550" width="960" height="125" fill="url(#fade-bottom)"/>
+
+  <!-- Pagination -->
+  <rect x="660" y="640" width="32" height="28" rx="6" fill="#8b5cf6"/>
+  <text x="676" y="659" font-family="system-ui, sans-serif" font-size="12" font-weight="600" fill="white" text-anchor="middle">1</text>
+  <rect x="698" y="640" width="32" height="28" rx="6" fill="#1a1a2e" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="714" y="659" font-family="system-ui, sans-serif" font-size="12" fill="#8888a0" text-anchor="middle">2</text>
+  <rect x="736" y="640" width="32" height="28" rx="6" fill="#1a1a2e" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="752" y="659" font-family="system-ui, sans-serif" font-size="12" fill="#8888a0" text-anchor="middle">3</text>
+  <text x="784" y="659" font-family="system-ui, sans-serif" font-size="12" fill="#55556a">...</text>
+  <rect x="800" y="640" width="44" height="28" rx="6" fill="#1a1a2e" stroke="#2a2a3a" stroke-width="1"/>
+  <text x="822" y="659" font-family="system-ui, sans-serif" font-size="12" fill="#8888a0" text-anchor="middle">302</text>
+</svg>
