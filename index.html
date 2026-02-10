@@ -390,6 +390,25 @@
             margin-bottom: 4rem;
         }
 
+        .how-it-works .section-label,
+        .how-it-works .section-title,
+        .how-it-works .section-desc,
+        .showcase .section-label,
+        .showcase .section-title,
+        .showcase .section-desc,
+        .features .section-label,
+        .features .section-title,
+        .features .section-desc {
+            text-align: center;
+        }
+
+        .how-it-works .section-desc,
+        .showcase .section-desc,
+        .features .section-desc {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .feature-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -485,6 +504,61 @@
             right: -1rem;
             color: var(--text-muted);
             font-size: 1.5rem;
+        }
+
+        /* ============ SHOWCASE ============ */
+        .showcase {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .showcase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 18px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .showcase-card:hover {
+            border-color: var(--border);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .showcase-frame {
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 0.75rem;
+            background: rgba(15, 23, 42, 0.35);
+        }
+
+        .showcase-frame img {
+            width: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .showcase-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .showcase-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         /* ============ STATS ============ */
@@ -654,6 +728,7 @@
         /* ============ RESPONSIVE ============ */
         @media (max-width: 900px) {
             .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .steps { grid-template-columns: 1fr; }
             .step-connector { display: none; }
             .stats-grid { grid-template-columns: repeat(2, 1fr); }
@@ -662,6 +737,7 @@
         @media (max-width: 600px) {
             .nav-links { display: none; }
             .feature-grid { grid-template-columns: 1fr; }
+            .showcase-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
             .hero { padding: 8rem 1.5rem 4rem; }
             .footer-inner { flex-direction: column; gap: 1rem; }
@@ -845,6 +921,37 @@
                 <div class="step-number">03</div>
                 <h3>Browse, organize, enjoy</h3>
                 <p>Open GenCatalog to see everything in one place. Tag, search, collect, and manage your entire creative output.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section class="showcase fade-in">
+        <div class="section-label">In Action</div>
+        <h2 class="section-title">See the workflow end-to-end</h2>
+        <p class="section-desc">A quick look at the moments that make GenCatalog feel effortless.</p>
+
+        <div class="showcase-grid">
+            <div class="showcase-card">
+                <div class="showcase-frame">
+                    <img src="GenCatalogChromeExtension.png" alt="GenCatalog Chrome extension capturing a generation">
+                </div>
+                <h3>Capture from the browser</h3>
+                <p>The extension recognizes new generations and saves them without interrupting your flow.</p>
+            </div>
+            <div class="showcase-card">
+                <div class="showcase-frame">
+                    <img src="SavetoGenCatalog.png" alt="Save to GenCatalog action in the browser">
+                </div>
+                <h3>Save with one tap</h3>
+                <p>Manually save any standout result with a single click when you want extra control.</p>
+            </div>
+            <div class="showcase-card">
+                <div class="showcase-frame">
+                    <img src="GenDetail.png" alt="GenCatalog detail view for a single generation">
+                </div>
+                <h3>Inspect every detail</h3>
+                <p>Open a generation to view metadata, prompt info, and related assets in one place.</p>
             </div>
         </div>
     </section>
