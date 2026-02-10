@@ -457,6 +457,28 @@
             line-height: 1.6;
         }
 
+        .feature-list {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.75rem 2rem;
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .feature-list strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
         /* ============ HOW IT WORKS ============ */
         .how-it-works {
             padding: 6rem 2rem;
@@ -728,6 +750,7 @@
         /* ============ RESPONSIVE ============ */
         @media (max-width: 900px) {
             .feature-grid { grid-template-columns: repeat(2, 1fr); }
+            .feature-list { grid-template-columns: 1fr; }
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .steps { grid-template-columns: 1fr; }
             .step-connector { display: none; }
@@ -851,51 +874,66 @@
 
         <div class="feature-grid">
             <div class="feature-card">
-                <div class="feature-icon purple">🔄</div>
-                <h3>Auto-Capture</h3>
-                <p>The Chrome extension silently intercepts and saves your generations as you create. No manual downloading required.</p>
+                <div class="feature-icon purple">🎨</div>
+                <h3>Multi-Platform Support</h3>
+                <p>Works with Grok (X.ai), Digen, and Higgsfield — one catalog for every generation.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon teal">⚡</div>
-                <h3>Blazing Fast Grid</h3>
-                <p>Browse 15,000+ items instantly with auto-generated thumbnails. No lag, no loading spinners — just your content.</p>
+                <div class="feature-icon teal">💾</div>
+                <h3>One-Click Save</h3>
+                <p>Capture any generation with prompts and metadata preserved, instantly.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon blue">🏷️</div>
-                <h3>Tags & Collections</h3>
-                <p>Organize with custom tags, collections, and favorites. Bulk-tag hundreds of items at once.</p>
+                <div class="feature-icon blue">📥</div>
+                <h3>Bulk Operations</h3>
+                <p>Save multiple items at once with clear progress tracking.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon purple">🔍</div>
-                <h3>Search & Filter</h3>
-                <p>Find any generation by prompt, tag, date, platform, or media type. Filter by favorites, collections, or date range.</p>
+                <div class="feature-icon purple">📝</div>
+                <h3>Full Prompt Capture</h3>
+                <p>Every generation saved with the complete prompt, settings, and parameters.</p>
             </div>
             <div class="feature-card">
-                <div class="feature-icon teal">🗑️</div>
-                <h3>Smart Deletion Sync</h3>
-                <p>Delete from GenCatalog and it won't come back. The exclusion system prevents re-importing items you've trashed.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon blue">📱</div>
-                <h3>Mobile Access</h3>
-                <p>Browse your entire catalog from your phone. The built-in server makes your library accessible on any device on your network.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon purple">🔐</div>
-                <h3>Local & Private</h3>
-                <p>Everything stays on your machine. No cloud uploads, no accounts, no subscriptions to AI services. Your data is yours.</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon teal">📊</div>
-                <h3>Duplicate Detection</h3>
-                <p>Automatically finds and removes duplicate generations across platforms, keeping your catalog clean.</p>
+                <div class="feature-icon teal">🎯</div>
+                <h3>Prompt Templates</h3>
+                <p>Save and reuse your best prompts. Build a library of proven patterns.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon blue">🎬</div>
                 <h3>Video Support</h3>
-                <p>Full support for AI-generated videos from Higgsfield. Auto-generated video thumbnails with inline playback.</p>
+                <p>Full support for AI-generated videos with auto thumbnails.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon purple">🔍</div>
+                <h3>Advanced Search</h3>
+                <p>Find anything by prompt text, keywords, tags, date, platform, or media type.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon teal">📊</div>
+                <h3>Catalog Stats</h3>
+                <p>Track totals, platform breakdowns, media types, and storage usage.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon blue">⚡</div>
+                <h3>Fast Performance</h3>
+                <p>Sub-second load times even with 10,000+ items.</p>
             </div>
         </div>
+
+        <ul class="feature-list">
+            <li><strong>Desktop Catalog</strong> — Beautiful app to browse your entire collection.</li>
+            <li><strong>Rich Sorting</strong> — Sort by date, favorites, source, rating, media type, or file size.</li>
+            <li><strong>Random Discovery</strong> — Rediscover forgotten favorites with the random shuffle feature.</li>
+            <li><strong>Compare Mode</strong> — View multiple generations side-by-side to evaluate variations.</li>
+            <li><strong>Tags & Collections</strong> — Organize with custom tags and collections.</li>
+            <li><strong>Notes & Ratings</strong> — Add personal notes and star ratings to any item.</li>
+            <li><strong>Favorites</strong> — Mark your best creations for quick access.</li>
+            <li><strong>Export & Backup</strong> — Export metadata to CSV or JSON. Full catalog backup and restore for peace of mind.</li>
+            <li><strong>Smart Deletion Sync</strong> — Delete from GenCatalog and it won't come back.</li>
+            <li><strong>Duplicate Detection</strong> — Automatically finds and removes duplicate generations.</li>
+            <li><strong>Mobile Access</strong> — Browse your catalog from any device on your network.</li>
+            <li><strong>Local & Private</strong> — Everything stays on your machine. No cloud uploads.</li>
+        </ul>
     </section>
 
     <!-- HOW IT WORKS -->
