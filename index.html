@@ -479,6 +479,45 @@
             font-weight: 600;
         }
 
+        /* ============ TRIAL TERMS ============ */
+        .trial-terms {
+            padding: 5rem 2rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .trial-terms .section-label,
+        .trial-terms .section-title,
+        .trial-terms .section-desc {
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trial-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .trial-list li {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: 14px;
+            padding: 1rem 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.55;
+            font-size: 0.92rem;
+        }
+
+        .trial-list strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
         /* ============ HOW IT WORKS ============ */
         .how-it-works {
             padding: 6rem 2rem;
@@ -681,6 +720,14 @@
             font-weight: 700;
         }
 
+        .trial-inline {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0 auto 1rem;
+            text-align: left;
+            max-width: 520px;
+        }
+
         /* ============ CTA ============ */
         .cta {
             padding: 6rem 2rem;
@@ -751,6 +798,7 @@
         @media (max-width: 900px) {
             .feature-grid { grid-template-columns: repeat(2, 1fr); }
             .feature-list { grid-template-columns: 1fr; }
+            .trial-list { grid-template-columns: 1fr; }
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .steps { grid-template-columns: 1fr; }
             .step-connector { display: none; }
@@ -828,6 +876,7 @@
         </div>
 
         <p class="hero-note">macOS 10.15+ &middot; Apple Silicon & Intel &middot; Requires Chrome extension</p>
+        <p class="hero-note" style="margin-top: -0.35rem;">Includes a free 7-day trial (up to 100 items). No credit card required.</p>
 
         <!-- App Screenshot -->
         <div class="hero-screenshot">
@@ -1016,10 +1065,24 @@
         </div>
     </section>
 
+    <!-- TRIAL TERMS -->
+    <section class="trial-terms fade-in" id="trial">
+        <div class="section-label">Free Trial</div>
+        <h2 class="section-title">Try everything before you buy</h2>
+        <p class="section-desc">Simple limits, clear behavior, and your data stays accessible.</p>
+
+        <ul class="trial-list">
+            <li><strong>Duration</strong>: 7 days from first launch.</li>
+            <li><strong>Item limit</strong>: Save up to 100 items during trial.</li>
+            <li><strong>After expiry</strong>: Saving new items is paused until activation.</li>
+            <li><strong>Data safety</strong>: Your existing library remains viewable.</li>
+        </ul>
+    </section>
+
     <!-- PRICING -->
     <section class="pricing fade-in" id="pricing">
         <div class="section-label">Pricing</div>
-        <h2 class="section-title">Simple, one-time purchase</h2>
+        <h2 class="section-title">Try it free, then buy once</h2>
         <p class="section-desc" style="margin: 0 auto 3rem;">No subscriptions. No recurring fees. One-time purchase. All GenCatalog v1 updates included.</p>
 
         <div class="price-card">
@@ -1036,10 +1099,7 @@
                 <li><span class="check">✓</span> All GenCatalog v1 updates included</li>
             </ul>
 
-            <p class="hero-note" style="margin: 0 auto 1.25rem; max-width: 520px; text-align: left;">
-                <strong style="color: var(--text-primary); font-weight: 600;">Platform note:</strong>
-                GenCatalog depends on third-party platforms. When they change, an update may be required to keep capture working.
-            </p>
+            <p class="trial-inline">Free trial: 7 days or 100 saved items, whichever comes first.</p>
 
             <!-- Replace href with your Lemon Squeezy checkout link -->
             <a href="https://gtechagronomy.lemonsqueezy.com/checkout/buy/7125328c-604e-4e96-8c47-565ba660b5c4" class="btn-primary" style="width: 100%; justify-content: center;">
