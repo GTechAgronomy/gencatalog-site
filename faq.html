@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — GenCatalog</title>
+    <style>
+        :root {
+            --bg-deep: #09090b;
+            --bg-surface: #18181b;
+            --bg-elevated: #27272a;
+            --text-primary: #fafafa;
+            --text-secondary: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --text-dim: #71717a;
+            --primary: #a78bfa;
+            --accent: #06b6d4;
+            --border: rgba(255,255,255,0.07);
+            --gradient: linear-gradient(135deg, #a78bfa, #06b6d4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* NAV */
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            background: rgba(9,9,11,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+        .nav-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .nav-links { display: flex; gap: 8px; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
+        .nav-links a.active { color: var(--primary); }
+
+        /* LAYOUT */
+        .page {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+        }
+
+        /* HEADER */
+        .page-header { margin-bottom: 56px; }
+        .page-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .page-header p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 560px;
+        }
+
+        /* CATEGORY NAV */
+        .cat-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+        .cat-pill {
+            padding: 6px 16px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--bg-surface);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .cat-pill:hover { border-color: var(--primary); color: var(--primary); }
+
+        /* SECTIONS */
+        .faq-section { margin-bottom: 60px; }
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        /* FAQ ITEMS */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            background: var(--bg-surface);
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .faq-item:hover { border-color: rgba(167,139,250,0.25); }
+        .faq-item.open { border-color: rgba(167,139,250,0.4); }
+        .faq-q {
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-weight: 500;
+        }
+        .faq-q:hover { color: var(--primary); }
+        .faq-icon {
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1.5px solid var(--text-dim);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--text-dim);
+            transition: all 0.2s;
+        }
+        .faq-item.open .faq-icon {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            transform: rotate(45deg);
+        }
+        .faq-a {
+            display: none;
+            padding: 0 20px 18px;
+            color: var(--text-muted);
+            font-size: 14.5px;
+            line-height: 1.75;
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+        .faq-item.open .faq-a { display: block; }
+        .faq-a p { margin-bottom: 12px; }
+        .faq-a p:last-child { margin-bottom: 0; }
+        .faq-a strong { color: var(--text-secondary); font-weight: 600; }
+        .faq-a code {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px;
+            color: var(--accent);
+        }
+        .faq-a ol, .faq-a ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+        .faq-a li { margin-bottom: 6px; }
+        .faq-a a { color: var(--primary); text-decoration: none; }
+        .faq-a a:hover { text-decoration: underline; }
+
+        /* PLATFORM BADGES */
+        .platform-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        .tag-grok { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+        .tag-higgsfield { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
+        .tag-digen { background: rgba(6,182,212,0.15); color: #06b6d4; border: 1px solid rgba(6,182,212,0.3); }
+        .tag-all { background: rgba(244,63,94,0.12); color: #f43f5e; border: 1px solid rgba(244,63,94,0.25); }
+
+        /* TIP BOX */
+        .tip {
+            margin: 12px 0;
+            padding: 12px 16px;
+            background: rgba(167,139,250,0.08);
+            border-left: 3px solid var(--primary);
+            border-radius: 0 6px 6px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .tip strong { color: var(--primary); }
+
+        /* CONTACT BANNER */
+        .contact-banner {
+            margin-top: 60px;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(167,139,250,0.1), rgba(6,182,212,0.08));
+            border: 1px solid rgba(167,139,250,0.2);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .contact-banner h3 { color: var(--text-primary); font-size: 20px; margin-bottom: 8px; }
+        .contact-banner p { color: var(--text-muted); margin-bottom: 20px; }
+        .contact-banner a {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 24px;
+            text-align: center;
+        }
+        footer a { color: var(--text-dim); text-decoration: none; font-size: 13px; margin: 0 12px; }
+        footer a:hover { color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="https://gencatalog.app" class="logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="9.5" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="16" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="3" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="9.5" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="16" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="3" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="9.5" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="16" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <path d="M12 8v5M10 11l2 2 2-2" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            GenCatalog
+        </a>
+        <div class="nav-links">
+            <a href="https://gencatalog.app">Home</a>
+            <a href="support.html">Support</a>
+            <a href="faq.html" class="active">FAQ</a>
+        </div>
+    </div>
+</nav>
+
+<div class="page">
+    <div class="page-header">
+        <div class="page-label">Help Center</div>
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about GenCatalog. Can't find your answer? <a href="mailto:support@gencatalog.app" style="color: var(--primary);">Email us.</a></p>
+    </div>
+
+    <div class="cat-nav">
+        <a class="cat-pill" href="#general">General</a>
+        <a class="cat-pill" href="#getting-started">Getting Started</a>
+        <a class="cat-pill" href="#grok">Grok Imagine</a>
+        <a class="cat-pill" href="#higgsfield">Higgsfield</a>
+        <a class="cat-pill" href="#digen">Digen</a>
+        <a class="cat-pill" href="#catalog">Catalog & Organization</a>
+        <a class="cat-pill" href="#trial">Trial & Licensing</a>
+        <a class="cat-pill" href="#privacy">Privacy & Data</a>
+    </div>
+
+    <!-- GENERAL -->
+    <div class="faq-section" id="general">
+        <div class="section-title">General</div>
+
+        <div class="faq-item">
+            <button class="faq-q">What is GenCatalog?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Higgsfield, and Digen — all in one fast, searchable local library on your computer.</p>
+                <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, and metadata</strong> — not just the file. So six months from now you can find exactly what you made and recreate it.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What platforms does GenCatalog support?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog currently supports three platforms:</p>
+                <ul>
+                    <li><span class="platform-tag tag-grok">Grok Imagine</span> — Full support including bulk favorites download, individual saves, prompt extraction, and multi-account support</li>
+                    <li><span class="platform-tag tag-higgsfield">Higgsfield</span> — Full support including individual saves, bulk saves, model/preset capture, and metadata extraction</li>
+                    <li><span class="platform-tag tag-digen">Digen</span> — Individual saves with bulk download support</li>
+                </ul>
+                <p>More platforms are planned for future updates.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Does GenCatalog upload my content anywhere?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p><strong>No.</strong> Everything stays on your computer. GenCatalog runs entirely locally — there is no cloud sync, no remote storage, and no account required. Your files and prompts never leave your machine.</p>
+                <p>The only external communication is periodic license key validation with our payment processor (Lemon Squeezy), which sends only your license key — never your media or prompts.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What operating systems are supported?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p><strong>macOS</strong> is fully supported (both Apple Silicon M-series and Intel). macOS 10.15 (Catalina) or later is required.</p>
+                <p><strong>Windows</strong> support is actively in development and coming soon.</p>
+                <p>The Chrome extension works on any platform with Chrome or Brave.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Is GenCatalog affiliated with Grok, Higgsfield, or Digen?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>No. GenCatalog is an independent product by GTech Agronomy. We are not affiliated with, endorsed by, or partnered with xAI (Grok), Higgsfield, or Digen. GenCatalog works with the publicly available interfaces of these platforms.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GETTING STARTED -->
+    <div class="faq-section" id="getting-started">
+        <div class="section-title">Getting Started</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I set up GenCatalog?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <ol>
+                    <li>Download the GenCatalog app from <a href="https://gencatalog.app">gencatalog.app</a> and install it on your Mac</li>
+                    <li>Launch GenCatalog — on first run, it will ask you to choose a folder where your media will be stored</li>
+                    <li>Install the Chrome extension from the Chrome Web Store</li>
+                    <li>Make sure GenCatalog is running (you'll see it in your menu bar)</li>
+                    <li>Browse to Grok Imagine, Higgsfield, or Digen — save buttons will appear automatically</li>
+                </ol>
+                <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content. If the extension shows "Not Running," make sure the app is open.</div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">The extension says "Not Running" — what do I do?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>This means the GenCatalog desktop app isn't running. The extension needs the app to be open to save content.</p>
+                <ol>
+                    <li>Open the GenCatalog app on your Mac</li>
+                    <li>Wait a few seconds for the server to start</li>
+                    <li>Click the extension icon again — it should now show "Running"</li>
+                </ol>
+                <p>If the app is open but still shows "Not Running," try quitting and relaunching GenCatalog.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Where does GenCatalog store my files?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>You choose the folder on first launch. GenCatalog creates this structure inside it:</p>
+                <ul>
+                    <li><code>images/</code> — all saved images</li>
+                    <li><code>videos/</code> — all saved videos</li>
+                    <li><code>thumbnails/</code> — auto-generated video thumbnails</li>
+                    <li><code>catalog.json</code> — your metadata database (prompts, tags, etc.)</li>
+                    <li><code>trash/</code> — deleted items (recoverable)</li>
+                </ul>
+                <p>You can move this folder to an external drive or NAS at any time — just relaunch GenCatalog and point it to the new location.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Do I need to keep GenCatalog open all the time?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes — GenCatalog needs to be running for the Chrome extension to save content. However, it lives quietly in your menu bar and uses minimal resources when idle.</p>
+                <p>You can set GenCatalog to launch at login in your Mac's System Settings → General → Login Items, so it's always ready without thinking about it.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GROK -->
+    <div class="faq-section" id="grok">
+        <div class="section-title">Grok Imagine</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I save individual generations from Grok Imagine?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>When you're on <strong>grok.com</strong> or <strong>x.com/i/grok</strong> and viewing a generation, a purple GenCatalog save button (the grid icon) will appear on the image or video. Click it to save instantly.</p>
+                <p>The button changes to a spinner while saving, then a green checkmark when done. If the item was already saved, it shows orange.</p>
+                <div class="tip"><strong>Tip:</strong> The save button works on both the grid view and individual generation detail pages.</div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I bulk download all my Grok Imagine favorites?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <ol>
+                    <li>Go to grok.com and make sure you're logged in</li>
+                    <li>Click the GenCatalog extension icon in your browser toolbar</li>
+                    <li>Click the <strong>Grok</strong> tab in the popup</li>
+                    <li>Click <strong>Scan Favorites</strong> — this counts your favorites and compares against your existing catalog</li>
+                    <li>Review the stats (Grok Favorites / Already Saved / New to Download)</li>
+                    <li>Click <strong>Download All New</strong> to start</li>
+                    <li>Use <strong>Pause</strong> and <strong>Resume</strong> to control the process</li>
+                </ol>
+                <div class="tip"><strong>Smart Sync:</strong> GenCatalog only downloads items not already in your catalog. Re-scanning after a partial download will pick up exactly where it left off.</div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Does GenCatalog support multiple Grok accounts?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. You can save content from multiple Grok accounts into a single catalog. GenCatalog automatically detects and tags each saved item with the account it came from, so you can filter your catalog by account.</p>
+                <p>To switch accounts: log out of Grok, log into your other account, and use the extension as normal. Each item is tagged with its source account automatically.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Does GenCatalog capture prompts from Grok Imagine?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes — this is one of GenCatalog's core features. When you save from Grok Imagine, the prompt is automatically extracted and stored with the file. You can search your entire catalog by prompt text at any time.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">I saved items but some don't have prompts — why?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Prompt extraction works best on individual generation detail pages. If you bulk-downloaded from favorites, some items may have been captured without full metadata if the page hadn't fully loaded when the extension scanned.</p>
+                <p>To fix: open the generation on Grok Imagine and save it again. GenCatalog will merge the new metadata with the existing entry — it won't create a duplicate.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Items I deleted keep coming back when I scan — how do I stop this?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog maintains an <strong>exclusion list</strong> — when you delete something from your catalog, it's added to this list so it's never re-downloaded during future scans.</p>
+                <p>If an item keeps reappearing, it likely wasn't deleted through GenCatalog (e.g., you deleted the file manually from Finder). To fix this, find the item in your catalog, delete it using the GenCatalog interface (not Finder), and it will be permanently excluded from future scans.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HIGGSFIELD -->
+    <div class="faq-section" id="higgsfield">
+        <div class="section-title">Higgsfield</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I save content from Higgsfield?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog adds save buttons throughout Higgsfield automatically:</p>
+                <ul>
+                    <li><strong>Detail pages</strong> — a grid icon button appears next to the native Download/heart/share buttons</li>
+                    <li><strong>Grid/browse pages</strong> — a badge appears on each thumbnail in your library, explore feed, and profile</li>
+                    <li><strong>Modals</strong> — when you open a generation in a lightbox, the save button appears automatically</li>
+                </ul>
+                <p>Click the purple grid icon on any of these to save. A spinner appears while saving, then a checkmark when complete.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I bulk save from Higgsfield?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <ol>
+                    <li>Go to your Higgsfield personal library (or any grid page)</li>
+                    <li>Browse the grid — GenCatalog caches the items as they appear</li>
+                    <li>Click the GenCatalog extension icon</li>
+                    <li>Click the <strong>Higgsfield</strong> tab</li>
+                    <li>Click <strong>Refresh Count</strong> to see how many items are cached</li>
+                    <li>Click <strong>Save All Cached</strong> to save everything at once</li>
+                </ol>
+                <div class="tip"><strong>Important:</strong> Scroll through your entire library first before clicking Save All — GenCatalog can only save items that have been loaded on screen.</div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What metadata does GenCatalog capture from Higgsfield?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog captures the following from Higgsfield generations:</p>
+                <ul>
+                    <li>Prompt text</li>
+                    <li>Model name (e.g., Mochi, Wan)</li>
+                    <li>Preset information</li>
+                    <li>Character name (if used)</li>
+                    <li>Asset UUID (for reliable deduplication)</li>
+                    <li>Full-resolution media URL</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Higgsfield saves are downloading low-resolution files — what's wrong?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>This can happen if the page API data hasn't been intercepted yet when you save. Higgsfield loads high-resolution URLs through an API call that happens shortly after the page loads.</p>
+                <p>To get full resolution: wait a few seconds after the page loads before clicking save, or navigate to the generation's detail page and save from there. Detail page saves always capture the full-resolution file.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- DIGEN -->
+    <div class="faq-section" id="digen">
+        <div class="section-title">Digen</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I save content from Digen?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>When you're on <strong>digen.ai</strong>, a purple GenCatalog save button appears on each of your generations. Click it to save the image or video with its metadata.</p>
+                <p>For bulk saving: a floating panel appears on Digen pages — click <strong>Scan</strong> from the extension popup's Digen tab to count available items, then <strong>Download All</strong> to save them in bulk.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What metadata does GenCatalog capture from Digen?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog saves the media file along with available metadata including the prompt and generation source. Digen metadata capture is actively being improved in ongoing updates.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATALOG -->
+    <div class="faq-section" id="catalog">
+        <div class="section-title">Catalog & Organization</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I search my catalog?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Open GenCatalog (or go to <code>http://localhost:8080</code> in your browser) and use the search bar at the top. You can search by:</p>
+                <ul>
+                    <li>Prompt text — find any generation by what you typed</li>
+                    <li>Tags — search by tags you've added</li>
+                    <li>Platform — filter to Grok Imagine, Higgsfield, or Digen only</li>
+                    <li>Media type — filter to images or videos only</li>
+                    <li>Favorites — show only starred items</li>
+                    <li>Source image — find all generations created from the same source image</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do tags work?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>You can add custom tags to any item in your catalog. Open any item, click the tag field, and type your tag. Tags are searchable and filterable — click any tag to see all items with that tag.</p>
+                <p>Good uses for tags: style names ("cinematic", "portrait"), project names, character names, or any category that matters to your workflow.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I delete items from my catalog?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Click any item to open it, then click the delete button. Items go to <strong>Trash</strong> first — they're not immediately deleted.</p>
+                <p>To permanently delete: open Trash in the sidebar → Empty Trash. To recover a deleted item: open Trash → Restore.</p>
+                <div class="tip"><strong>Important:</strong> Always delete through GenCatalog, not by deleting files in Finder. Deleting in Finder breaks the catalog database and won't add the item to the exclusion list.</div>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How does duplicate detection work?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog checks for duplicates using two methods:</p>
+                <ul>
+                    <li><strong>Exact URL matching</strong> — if the source URL is identical</li>
+                    <li><strong>UUID matching</strong> — using the platform's internal asset ID, which stays consistent even if the URL format changes</li>
+                </ul>
+                <p>To run a duplicate scan: click <strong>Remove Duplicates</strong> in the sidebar. GenCatalog will show how many duplicates were found and remove them, keeping the oldest version of each.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I access my catalog on my phone?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes — from any device on your home Wi-Fi network. GenCatalog displays a QR code in the sidebar. Scan it with your phone's camera to open your catalog instantly.</p>
+                <p>For access anywhere (not just home Wi-Fi), install <a href="https://tailscale.com" target="_blank">Tailscale</a> on both your Mac and phone. This creates a secure tunnel so you can reach your catalog from anywhere, as long as your Mac is on.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I use Multi-Select to manage items in bulk?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. Click the checkbox icon (☑️) in the toolbar to enter multi-select mode. Then:</p>
+                <ul>
+                    <li>Click items to select them (purple border appears)</li>
+                    <li>Use <strong>Select All</strong> or <strong>Deselect All</strong> for quick selection</li>
+                    <li>Available bulk actions: Favorite Selected, Delete Selected, Compare (2 items)</li>
+                </ul>
+                <p>Press Escape or click the checkbox icon again to exit multi-select mode.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRIAL & LICENSING -->
+    <div class="faq-section" id="trial">
+        <div class="section-title">Trial & Licensing</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How does the free trial work?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog includes a free trial that starts on your first launch:</p>
+                <ul>
+                    <li><strong>Duration:</strong> 7 days from first launch</li>
+                    <li><strong>Item limit:</strong> up to 100 saved items</li>
+                    <li>The trial ends when either limit is reached, whichever comes first</li>
+                </ul>
+                <p>After the trial ends, you can still browse your existing library — but saving new items is paused until you activate a license. Your files and data are never deleted.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I activate my license during the trial?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes, at any time. Go to <strong>GenCatalog → License</strong> in the menu bar and enter your license key. Activation takes effect immediately.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Will I lose my data when the trial ends?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>No. Your existing library — all files, prompts, tags, and notes — stays completely intact. The only thing that changes is that saving new items is paused until you activate a license.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Is this a subscription?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>No. GenCatalog is a one-time purchase at $39. No monthly fees, no subscription. Your license includes all updates to the current major version.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What is your refund policy?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>We offer a 14-day money-back guarantee if GenCatalog doesn't work as described. Email <a href="mailto:support@gencatalog.app">support@gencatalog.app</a> with your order number. See our full <a href="refund.html">Refund Policy</a> for details.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIVACY -->
+    <div class="faq-section" id="privacy">
+        <div class="section-title">Privacy & Data</div>
+
+        <div class="faq-item">
+            <button class="faq-q">What data does GenCatalog collect?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p><strong>Almost none.</strong> GenCatalog runs entirely on your local machine. Your media files, prompts, tags, and catalog data never leave your computer.</p>
+                <p>The only external communication is license key validation with Lemon Squeezy (our payment processor), which sends only your license key identifier — never your media, prompts, or personal data.</p>
+                <p>The Chrome Web Store version of the extension may report anonymous usage statistics (installs, active users) to Google, as is standard for all Chrome extensions that opt into Google Analytics.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Does GenCatalog work without an internet connection?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes — browsing your catalog, searching, tagging, and organizing all work completely offline. The only things that require internet are: saving new content from Grok Imagine/Higgsfield/Digen (since those platforms require internet), and periodic license revalidation (approximately every 7 days, with a 30-day offline grace period).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-banner">
+        <h3>Still have questions?</h3>
+        <p>We're happy to help. Send us an email and we'll get back to you within 1–2 business days.</p>
+        <a href="mailto:support@gencatalog.app">Contact Support</a>
+    </div>
+</div>
+
+<footer>
+    <a href="https://gencatalog.app">Home</a>
+    <a href="support.html">Support Guide</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms</a>
+    <a href="refund.html">Refunds</a>
+    <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
+</footer>
+
+<script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const isOpen = item.classList.contains('open');
+            // Close all
+            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+            // Open this one if it was closed
+            if (!isOpen) item.classList.add('open');
+        });
+    });
+
+    document.querySelectorAll('.cat-pill').forEach(pill => {
+        pill.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(pill.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>

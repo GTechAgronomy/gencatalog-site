@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Guide — GenCatalog</title>
+    <style>
+        :root {
+            --bg-deep: #09090b;
+            --bg-surface: #18181b;
+            --bg-elevated: #27272a;
+            --text-primary: #fafafa;
+            --text-secondary: #e4e4e7;
+            --text-muted: #a1a1aa;
+            --text-dim: #71717a;
+            --primary: #a78bfa;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --border: rgba(255,255,255,0.07);
+            --gradient: linear-gradient(135deg, #a78bfa, #06b6d4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        nav {
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            position: sticky;
+            top: 0;
+            background: rgba(9,9,11,0.95);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 17px;
+            font-weight: 600;
+        }
+        .nav-links { display: flex; gap: 8px; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
+        .nav-links a.active { color: var(--primary); }
+        .layout {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            min-height: calc(100vh - 60px);
+        }
+        .sidebar {
+            border-right: 1px solid var(--border);
+            padding: 32px 20px;
+            position: sticky;
+            top: 60px;
+            height: calc(100vh - 60px);
+            overflow-y: auto;
+        }
+        .sidebar-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: 8px;
+            margin-top: 24px;
+        }
+        .sidebar-label:first-child { margin-top: 0; }
+        .sidebar a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13.5px;
+            transition: all 0.15s;
+            margin-bottom: 2px;
+        }
+        .sidebar a:hover { color: var(--text-primary); background: var(--bg-elevated); }
+        .sidebar a.active { color: var(--primary); background: rgba(167,139,250,0.1); }
+        .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .dot-grok { background: #10b981; }
+        .dot-higgsfield { background: #a78bfa; }
+        .dot-digen { background: #06b6d4; }
+        .content {
+            padding: 48px 48px 100px;
+            max-width: 780px;
+        }
+        .page-label {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .intro {
+            font-size: 17px;
+            color: var(--text-muted);
+            margin-bottom: 48px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+        .section { margin-bottom: 64px; scroll-margin-top: 80px; }
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .section-desc { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
+        h3 { font-size: 16px; font-weight: 600; color: var(--text-secondary); margin: 28px 0 10px; }
+        p { color: var(--text-muted); margin-bottom: 14px; font-size: 15px; }
+        p:last-child { margin-bottom: 0; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul, ol { padding-left: 20px; margin-bottom: 14px; }
+        li { color: var(--text-muted); font-size: 15px; margin-bottom: 6px; }
+        li strong { color: var(--text-secondary); }
+        code {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px;
+            color: var(--accent);
+        }
+        .steps { display: flex; flex-direction: column; gap: 0; margin: 16px 0; }
+        .step { display: flex; gap: 16px; padding-bottom: 20px; position: relative; }
+        .step:not(:last-child)::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 32px;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(167,139,250,0.15);
+            border: 1.5px solid rgba(167,139,250,0.4);
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .step-body { padding-top: 5px; }
+        .step-body strong { color: var(--text-primary); font-weight: 600; display: block; margin-bottom: 4px; }
+        .step-body p { margin-bottom: 0; font-size: 14px; }
+        .tip, .warning, .note {
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin: 16px 0;
+            line-height: 1.6;
+        }
+        .tip { background: rgba(167,139,250,0.08); border-left: 3px solid var(--primary); }
+        .tip strong { color: var(--primary); }
+        .warning { background: rgba(245,158,11,0.08); border-left: 3px solid var(--warning); }
+        .warning strong { color: var(--warning); }
+        .note { background: rgba(6,182,212,0.08); border-left: 3px solid var(--accent); }
+        .note strong { color: var(--accent); }
+        .platform-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 3px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .badge-grok { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
+        .badge-higgsfield { background: rgba(167,139,250,0.12); color: #a78bfa; border: 1px solid rgba(167,139,250,0.25); }
+        .badge-digen { background: rgba(6,182,212,0.12); color: #06b6d4; border: 1px solid rgba(6,182,212,0.25); }
+        .contact-box {
+            background: linear-gradient(135deg, rgba(167,139,250,0.08), rgba(6,182,212,0.06));
+            border: 1px solid rgba(167,139,250,0.2);
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 48px;
+        }
+        .contact-box h3 { color: var(--text-primary); margin-bottom: 8px; font-size: 20px; }
+        .contact-box p { margin-bottom: 16px; }
+        .contact-box a.btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+            .content { padding: 32px 20px 80px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="https://gencatalog.app" class="logo">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="9.5" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="16" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="3" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="9.5" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="16" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="3" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="9.5" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <rect x="16" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                <path d="M12 8v5M10 11l2 2 2-2" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            GenCatalog
+        </a>
+        <div class="nav-links">
+            <a href="https://gencatalog.app">Home</a>
+            <a href="support.html" class="active">Support</a>
+            <a href="faq.html">FAQ</a>
+        </div>
+    </div>
+</nav>
+
+<div class="layout">
+    <aside class="sidebar">
+        <div class="sidebar-label">Getting Started</div>
+        <a href="#setup">Installation & Setup</a>
+        <a href="#extension">Chrome Extension</a>
+        <div class="sidebar-label">Platforms</div>
+        <a href="#grok"><span class="dot dot-grok"></span>Grok Imagine</a>
+        <a href="#higgsfield"><span class="dot dot-higgsfield"></span>Higgsfield</a>
+        <a href="#digen"><span class="dot dot-digen"></span>Digen</a>
+        <div class="sidebar-label">Your Catalog</div>
+        <a href="#browsing">Browsing & Search</a>
+        <a href="#organizing">Tags & Favorites</a>
+        <a href="#bulk">Bulk Operations</a>
+        <a href="#trash">Trash & Deletion</a>
+        <a href="#duplicates">Duplicate Detection</a>
+        <a href="#mobile">Mobile Access</a>
+        <div class="sidebar-label">Account</div>
+        <a href="#license">License & Activation</a>
+        <a href="#trial">Free Trial</a>
+    </aside>
+
+    <main class="content">
+        <div class="page-label">Support Guide</div>
+        <h1>How to Use GenCatalog</h1>
+        <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across Grok Imagine, Higgsfield, and Digen.</p>
+
+        <div class="section" id="setup">
+            <h2>Installation & Setup</h2>
+            <p class="section-desc">Get GenCatalog running on your Mac in a few minutes.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Download & Install the App</strong>
+                        <p>Download GenCatalog from <a href="https://gencatalog.app">gencatalog.app</a> and open the DMG. Drag GenCatalog to your Applications folder and launch it.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Choose Your Storage Folder</strong>
+                        <p>On first launch, GenCatalog asks you to select a folder where all media and metadata will be stored. Choose anywhere — an external drive works great for large collections.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Install the Chrome Extension</strong>
+                        <p>Install the GenCatalog extension from the Chrome Web Store. Works in Chrome and Brave.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <strong>Start Saving</strong>
+                        <p>GenCatalog lives in your menu bar. As long as it's running, the extension is active and ready across all supported platforms.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip"><strong>Tip:</strong> Add GenCatalog to Login Items (System Settings → General → Login Items) so it launches automatically and is always ready.</div>
+            <h3>System Requirements</h3>
+            <ul>
+                <li>macOS 10.15 (Catalina) or later</li>
+                <li>Apple Silicon (M1/M2/M3/M4) or Intel Mac</li>
+                <li>Chrome or Brave browser</li>
+                <li>Windows support coming soon</li>
+            </ul>
+        </div>
+
+        <div class="section" id="extension">
+            <h2>The Chrome Extension</h2>
+            <p class="section-desc">The bridge between AI platforms and your local catalog.</p>
+            <p>Click the GenCatalog icon in your browser toolbar to open the popup. It shows:</p>
+            <ul>
+                <li><strong>Status indicator</strong> — green "Running" = ready; red "Not Running" = open the desktop app</li>
+                <li><strong>Catalog stats</strong> — total items and video count</li>
+                <li><strong>Platform tabs</strong> — Grok, Higgsfield, Digen with controls for each</li>
+                <li><strong>Open Catalog</strong> — opens your full catalog in the browser</li>
+            </ul>
+            <div class="warning"><strong>If showing "Not Running":</strong> Open the GenCatalog app on your Mac, wait a few seconds, then try again.</div>
+        </div>
+
+        <div class="section" id="grok">
+            <h2>Grok Imagine</h2>
+            <p class="section-desc">Full support for saving images and videos — individually or in bulk from your favorites.</p>
+            <div class="platform-badge badge-grok">✓ grok.com &nbsp;·&nbsp; x.com/i/grok</div>
+
+            <h3>Saving Individual Generations</h3>
+            <p>When viewing any Grok Imagine generation, a purple GenCatalog save button (⊞ grid icon) appears on the media. Click it to save instantly. The button shows a spinner while saving, a green checkmark on success, or orange if it's already in your catalog.</p>
+            <div class="tip"><strong>Tip:</strong> Saving from a detail page captures the most complete metadata including the full prompt. Grid view saves also work but may capture less metadata.</div>
+
+            <h3>Bulk Downloading Your Favorites</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Open the extension popup on grok.com</strong>
+                        <p>Make sure you're logged into your Grok account.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Click the Grok tab → "Scan Favorites"</strong>
+                        <p>GenCatalog scans all your favorites and compares against your existing catalog. You'll see: total favorites / already saved / new to download / previously deleted (skipped automatically).</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Click "Download All New"</strong>
+                        <p>Downloads only items not already in your catalog. Progress bar shows real-time status.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <strong>Pause & Resume anytime</strong>
+                        <p>Pause a bulk download and resume it later. Progress is preserved — already-saved items won't be re-downloaded.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Multiple Grok Accounts</h3>
+            <p>GenCatalog supports saving from multiple Grok accounts into a single catalog. Each item is automatically tagged with the account it came from, so you can filter your catalog by account. To save from another account: log out of Grok, log in to your second account, and use the extension as normal.</p>
+
+            <h3>Smart Sync & Exclusion</h3>
+            <p>When you delete an item through GenCatalog, it's added to a permanent exclusion list and will never be re-downloaded during future bulk scans — even if it's still in your Grok favorites.</p>
+            <div class="warning"><strong>Always delete through GenCatalog</strong> — not by removing files in Finder. Only GenCatalog-deleted items are added to the exclusion list.</div>
+        </div>
+
+        <div class="section" id="higgsfield">
+            <h2>Higgsfield</h2>
+            <p class="section-desc">Save images and videos from your Higgsfield library — individually or all at once.</p>
+            <div class="platform-badge badge-higgsfield">✓ higgsfield.ai</div>
+
+            <h3>Where Save Buttons Appear</h3>
+            <ul>
+                <li><strong>Detail pages</strong> — grid icon ⊞ appears next to the native Download/heart/share buttons</li>
+                <li><strong>Grid / browse pages</strong> — a save badge appears on each thumbnail in your library, explore feed, and profile</li>
+                <li><strong>Modals / lightboxes</strong> — save button appears automatically when you open any generation in a lightbox</li>
+            </ul>
+
+            <h3>Bulk Saving Your Library</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Scroll through your Higgsfield library</strong>
+                        <p>Browse your personal library or any grid page. GenCatalog caches items as they appear on screen.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Open extension → Higgsfield tab → "Refresh Count"</strong>
+                        <p>See how many items have been cached from the current page.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Click "Save All Cached"</strong>
+                        <p>Saves all cached items to your catalog at once.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="tip"><strong>Important:</strong> Scroll through your entire library before clicking Save All — GenCatalog can only save items that have loaded on screen.</div>
+
+            <h3>Captured Metadata</h3>
+            <ul>
+                <li>Prompt text</li>
+                <li>Model name (e.g., Mochi, Wan)</li>
+                <li>Preset information</li>
+                <li>Character name (if used)</li>
+                <li>Asset UUID for reliable deduplication</li>
+                <li>Full-resolution media file</li>
+            </ul>
+        </div>
+
+        <div class="section" id="digen">
+            <h2>Digen</h2>
+            <p class="section-desc">Save your Digen AI generations individually or in bulk.</p>
+            <div class="platform-badge badge-digen">✓ digen.ai</div>
+
+            <h3>Saving Individual Items</h3>
+            <p>A purple GenCatalog save button appears on each generation on digen.ai. Click it to save the image or video with its metadata.</p>
+
+            <h3>Bulk Saving</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Open extension → Digen tab</strong>
+                        <p>Click the GenCatalog icon while on digen.ai and switch to the Digen tab.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Click "Scan"</strong>
+                        <p>Counts available items on the current page.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Click "Download All"</strong>
+                        <p>Saves all scanned items to your catalog.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="browsing">
+            <h2>Browsing & Search</h2>
+            <p class="section-desc">Find anything in your catalog instantly.</p>
+            <p>Open your catalog via <strong>Open Catalog</strong> in the extension popup, or go to <code>http://localhost:8080</code> in your browser.</p>
+            <h3>Search</h3>
+            <p>Type in the search bar to filter your entire catalog by prompt text. Search is instant across all platforms.</p>
+            <h3>Filters</h3>
+            <ul>
+                <li><strong>Platform</strong> — show only Grok Imagine, Higgsfield, or Digen content</li>
+                <li><strong>Media type</strong> — images or videos only</li>
+                <li><strong>Favorites</strong> — show only starred items</li>
+                <li><strong>Tags</strong> — click any tag to filter by it</li>
+                <li><strong>Source image</strong> — find all generations made from the same img2vid source</li>
+                <li><strong>Account</strong> — filter by Grok account</li>
+            </ul>
+            <h3>Other Tools</h3>
+            <ul>
+                <li><strong>Random 🎲</strong> — opens a random item from your catalog</li>
+                <li><strong>Slideshow</strong> — auto-plays through your collection</li>
+                <li><strong>Compare</strong> — select 2 items in multi-select mode to compare side by side</li>
+            </ul>
+        </div>
+
+        <div class="section" id="organizing">
+            <h2>Tags & Favorites</h2>
+            <h3>Favorites</h3>
+            <p>Click the ⭐ on any item to favorite it. Filter to favorites-only using the sidebar. Bulk-favorite items using multi-select mode.</p>
+            <h3>Tags</h3>
+            <p>Open any item and click the tag field to add custom tags. Tags are fully searchable. Good uses: style names, project names, character names, or any workflow category you need.</p>
+            <h3>Notes</h3>
+            <p>Add personal notes to any item — useful for recording what worked, variations to try, or any context you want to preserve alongside the prompt.</p>
+        </div>
+
+        <div class="section" id="bulk">
+            <h2>Bulk Operations</h2>
+            <h3>Multi-Select Mode</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Click the checkbox icon ☑️ in the toolbar</strong>
+                        <p>Enters multi-select mode.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Click items to select them</strong>
+                        <p>Selected items show a purple border. Use Select All / Deselect All for quick selection.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Apply a bulk action</strong>
+                        <p>Available: Favorite Selected, Delete Selected, Compare (exactly 2 items).</p>
+                    </div>
+                </div>
+            </div>
+            <p>Press <strong>Escape</strong> or click the checkbox icon again to exit multi-select mode.</p>
+        </div>
+
+        <div class="section" id="trash">
+            <h2>Trash & Deletion</h2>
+            <p>Deleting an item moves it to Trash first — nothing is immediately gone.</p>
+            <h3>Managing Trash</h3>
+            <ul>
+                <li>Click <strong>View Trash</strong> in the sidebar to see deleted items with deletion dates</li>
+                <li><strong>Restore</strong> any individual item, or <strong>Restore All</strong></li>
+                <li><strong>Empty Trash</strong> to permanently delete all trashed items</li>
+            </ul>
+            <div class="warning"><strong>Always delete through GenCatalog</strong> — not via Finder. Finder deletions break the catalog database and don't add items to the exclusion list, meaning they may reappear in future scans.</div>
+            <h3>Exclusion List</h3>
+            <p>Every item deleted through GenCatalog is permanently added to an exclusion list. It will never be re-downloaded during future bulk scans — even if it still exists in your Grok favorites.</p>
+        </div>
+
+        <div class="section" id="duplicates">
+            <h2>Duplicate Detection</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Click "Remove Duplicates" in the sidebar</strong>
+                        <p>GenCatalog scans your entire catalog.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Review the count</strong>
+                        <p>See how many duplicates were found before confirming.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Confirm removal</strong>
+                        <p>GenCatalog removes duplicates, keeping the oldest version of each item.</p>
+                    </div>
+                </div>
+            </div>
+            <p>Detection uses two methods: exact URL matching, and platform UUID matching (works even if the URL format changes between captures).</p>
+        </div>
+
+        <div class="section" id="mobile">
+            <h2>Mobile Access</h2>
+            <h3>On Your Home Network</h3>
+            <p>Your catalog is accessible from any device on your Wi-Fi. GenCatalog shows a QR code in the catalog sidebar — scan it with your phone to open your catalog instantly. Or type your Mac's local IP (shown in the sidebar) into your phone's browser followed by <code>:8080</code>.</p>
+            <h3>From Anywhere</h3>
+            <p>Install <a href="https://tailscale.com" target="_blank">Tailscale</a> (free) on both your Mac and phone. Once set up, you can access your full catalog from anywhere in the world — coffee shop, travel, anywhere — as long as your Mac is on and running GenCatalog.</p>
+            <div class="note"><strong>Note:</strong> Your Mac needs to stay awake for remote access. Consider disabling sleep in System Settings → Battery.</div>
+        </div>
+
+        <div class="section" id="license">
+            <h2>License & Activation</h2>
+            <p>After purchasing, you'll receive a license key by email. To activate: open GenCatalog → click the menu bar icon → select <strong>License</strong> → enter your key and click Activate. Requires internet for initial activation.</p>
+            <p>License revalidation happens approximately every 7 days, with a 30-day offline grace period. Your files and catalog data are never affected by license status.</p>
+        </div>
+
+        <div class="section" id="trial">
+            <h2>Free Trial</h2>
+            <ul>
+                <li><strong>Duration:</strong> 7 days from first launch</li>
+                <li><strong>Item limit:</strong> up to 100 saved items</li>
+                <li>Trial ends when either limit is reached</li>
+                <li>After expiry: saving new items is paused until license activation</li>
+                <li>Your existing library, files, prompts, and tags are always accessible — nothing is ever deleted</li>
+            </ul>
+            <p>You can activate your license at any time during or after the trial. Purchase at <a href="https://gencatalog.app">gencatalog.app</a>.</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Need more help?</h3>
+            <p>If something isn't working or you have a question not covered here, we're happy to help. We respond within 1–2 business days.</p>
+            <a href="mailto:support@gencatalog.app" class="btn">Email support@gencatalog.app</a>
+        </div>
+    </main>
+</div>
+
+<script>
+    const sections = document.querySelectorAll('.section');
+    const sidebarLinks = document.querySelectorAll('.sidebar a');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                sidebarLinks.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector(`.sidebar a[href="#${entry.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    sections.forEach(s => observer.observe(s));
+    sidebarLinks.forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+</script>
+</body>
+</html>

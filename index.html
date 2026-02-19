@@ -73,20 +73,18 @@
         }
 
         .logo-icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--accent), #a78bfa);
-            border-radius: 8px;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            padding: 5px;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
         }
 
-        .logo-icon span {
-            background: rgba(255,255,255,0.9);
-            border-radius: 2px;
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
         }
 
         .logo-text {
@@ -834,9 +832,7 @@
         <div class="nav-inner">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
-                    <span></span><span></span><span></span>
+                    <img src="GenCatalogLogo.png" alt="GenCatalog logo">
                 </div>
                 <span class="logo-text">GenCatalog</span>
             </a>
@@ -889,7 +885,10 @@
                     <div class="dot"></div>
                 </div>
                 <div class="screenshot-body">
-                    <img src="GenCatalogInterface.png" alt="GenCatalog app showing AI-generated image catalog">
+                    <picture>
+                        <source srcset="GenCatalogInterface.webp" type="image/webp">
+                        <img src="GenCatalogInterface.png" alt="GenCatalog app showing AI-generated image catalog">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -1025,21 +1024,30 @@
         <div class="showcase-grid">
             <div class="showcase-card">
                 <div class="showcase-frame">
-                    <img src="GenCatalogChromeExtension.png" alt="GenCatalog Chrome extension capturing a generation">
+                    <picture>
+                        <source srcset="GenCatalogChromeExtension.webp" type="image/webp">
+                        <img src="GenCatalogChromeExtension.png" alt="GenCatalog Chrome extension capturing a generation">
+                    </picture>
                 </div>
                 <h3>Capture from the browser</h3>
                 <p>The extension recognizes new generations and saves them without interrupting your flow.</p>
             </div>
             <div class="showcase-card">
                 <div class="showcase-frame">
-                    <img src="SavetoGenCatalog.png" alt="Save to GenCatalog action in the browser">
+                    <picture>
+                        <source srcset="SavetoGenCatalog.webp" type="image/webp">
+                        <img src="SavetoGenCatalog.png" alt="Save to GenCatalog action in the browser">
+                    </picture>
                 </div>
                 <h3>Save with one tap</h3>
                 <p>Manually save any standout result with a single click when you want extra control.</p>
             </div>
             <div class="showcase-card">
                 <div class="showcase-frame">
-                    <img src="GenDetail.png" alt="GenCatalog detail view for a single generation">
+                    <picture>
+                        <source srcset="GenDetail.webp" type="image/webp">
+                        <img src="GenDetail.png" alt="GenCatalog detail view for a single generation">
+                    </picture>
                 </div>
                 <h3>Inspect every detail</h3>
                 <p>Open a generation to view metadata, prompt info, and related assets in one place.</p>
@@ -1133,6 +1141,7 @@
             <div class="footer-links">
                 <a href="/support.html">Support</a>
                 <a href="/faq.html">FAQ</a>
+                <a href="/privacy.html">Privacy Policy</a>
                 <a href="/terms.html">Terms</a>
                 <a href="/refund.html">Refund Policy</a>
                 <a href="mailto:support@gencatalog.app">Contact</a>

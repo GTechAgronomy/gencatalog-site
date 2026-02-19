@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — GenCatalog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0a0a;
+            color: #d4d4d8;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        header {
+            border-bottom: 1px solid #27272a;
+            padding: 20px 0;
+        }
+
+        header .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header a.logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #f4f4f5;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        header a.back {
+            color: #a78bfa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        header a.back:hover { text-decoration: underline; }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #f4f4f5;
+            margin-bottom: 8px;
+        }
+
+        .last-updated {
+            color: #71717a;
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #e4e4e7;
+            margin-top: 36px;
+            margin-bottom: 12px;
+        }
+
+        p { margin-bottom: 16px; }
+
+        ul {
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li { margin-bottom: 8px; }
+
+        a { color: #a78bfa; }
+        a:hover { color: #c4b5fd; }
+
+        strong { color: #e4e4e7; }
+
+        .highlight-box {
+            margin: 32px 0;
+            padding: 24px;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+        }
+
+        .highlight-box h3 {
+            color: #a78bfa;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p:last-child { margin-bottom: 0; }
+
+        .contact {
+            margin-top: 40px;
+            padding: 24px;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 12px;
+        }
+
+        .contact p { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="inner">
+            <a href="https://gencatalog.app" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect x="3" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="9.5" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="16" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="3" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="9.5" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="16" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="3" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="9.5" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                    <rect x="16" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
+                </svg>
+                GenCatalog
+            </a>
+            <a href="https://gencatalog.app" class="back">← Back to home</a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated">Last updated: February 19, 2026</p>
+
+        <div class="highlight-box">
+            <h3>The Short Version</h3>
+            <p>GenCatalog does not collect, transmit, or store any of your personal data. Everything stays on your machine. We have no analytics, no tracking, and no cloud services.</p>
+        </div>
+
+        <h2>1. What GenCatalog Is</h2>
+        <p>GenCatalog is a desktop application and Chrome browser extension that helps you save and organize AI-generated images and videos from platforms like Grok Imagine, Higgsfield, and Digen. It is developed and operated by GTech Agronomy ("we", "us", "our").</p>
+
+        <h2>2. Data We Collect</h2>
+        <p>GenCatalog does not collect personal information, usage data, analytics, telemetry, or browsing history. We do not use cookies, tracking pixels, or any third-party analytics services. The only external request is periodic license-key validation via Lemon Squeezy, as described below.</p>
+
+        <h2>3. How Your Data Is Stored</h2>
+        <p>All data generated by GenCatalog, including saved media files, prompts, metadata, thumbnails, tags, notes, and catalog databases, is stored exclusively on your local machine or external storage device. No data is transmitted to our servers or any third-party service.</p>
+
+        <h2>4. Chrome Extension Permissions</h2>
+        <p>The GenCatalog Chrome extension requests the following permissions, each used solely for its stated purpose:</p>
+        <ul>
+            <li><strong>activeTab</strong>: To detect AI-generated content on the current page and add save buttons to grid items and detail pages on supported platforms.</li>
+            <li><strong>storage</strong>: To store extension settings and local extension state needed for save workflows and server communication. This data stays in your browser and is never transmitted externally.</li>
+            <li><strong>Host permissions (grok.com, higgsfield.ai, digen.ai)</strong>: To access the supported AI generation platforms where the extension adds save functionality. The extension reads page content to extract media URLs, prompts, and metadata for saving to your local catalog.</li>
+            <li><strong>Host permission (localhost)</strong>: To communicate with the companion GenCatalog desktop application running on your local machine. All saved media and metadata is sent only to this local server, never to any external endpoint.</li>
+        </ul>
+
+        <h2>5. Network Communication</h2>
+        <p>The GenCatalog extension communicates only with:</p>
+        <ul>
+            <li><strong>Your local machine (localhost)</strong>: To send saved media and metadata to the companion desktop app.</li>
+            <li><strong>Supported AI platforms (grok.com, higgsfield.ai, digen.ai)</strong>: To read page content and download media files you choose to save.</li>
+            <li><strong>Lemon Squeezy API (api.lemonsqueezy.com)</strong>: Solely for license key validation, approximately once every 7 days. Only your license key is transmitted; no personal data or usage information is included.</li>
+        </ul>
+        <p>GenCatalog does not communicate with any other external servers, APIs, or services.</p>
+
+        <h2>6. Third-Party Services</h2>
+        <p>Lemon Squeezy processes payments and license validation. Their handling of your payment information is governed by their own privacy policy. We do not have access to your payment details.</p>
+        <p>GenCatalog does not integrate with any advertising networks, analytics platforms, social media trackers, or data brokers.</p>
+
+        <h2>7. Children's Privacy</h2>
+        <p>GenCatalog is not directed at children under 13. We do not knowingly collect any information from children.</p>
+
+        <h2>8. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Continued use of GenCatalog after changes constitutes acceptance of the updated policy.</p>
+
+        <div class="contact">
+            <p><strong>Questions?</strong> Contact us at <a href="mailto:support@gencatalog.app">support@gencatalog.app</a></p>
+        </div>
+    </main>
+</body>
+</html>
