@@ -306,6 +306,17 @@
             text-align: left;
         }
 
+        .mobile-dl-note {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 300px;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+
         /* ============ HERO SCREENSHOT ============ */
         .hero-screenshot {
             max-width: 1100px;
@@ -1319,22 +1330,32 @@
     <script>
         // Smart download button — detect OS, point to the right binary
         (function () {
-            var isWin = /Win/i.test(navigator.platform) || /Windows/i.test(navigator.userAgent);
+            var ua = navigator.userAgent;
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
+            var isWin = !isMobile && (/Win/i.test(navigator.platform) || /Windows/i.test(ua));
             var macUrl = 'https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg';
             var winUrl = 'https://downloads.gencatalog.app/GenCatalog-4.0.0-Setup.exe';
 
-            document.querySelectorAll('.smart-dl-btn').forEach(function (btn) {
-                var label = btn.querySelector('.dl-label');
-                if (isWin) {
-                    btn.href = winUrl;
-                    if (label) label.textContent = 'Download for Windows';
-                }
-                // Default (Mac / unknown) already set in HTML
-            });
-
-            document.querySelectorAll('.windows-warning').forEach(function (el) {
-                el.style.display = isWin ? 'block' : 'none';
-            });
+            if (isMobile) {
+                // Replace each download button with a plain text nudge
+                document.querySelectorAll('.smart-dl-btn').forEach(function (btn) {
+                    var msg = document.createElement('p');
+                    msg.className = 'mobile-dl-note';
+                    msg.innerHTML = '💻 Desktop app &mdash; open this page on your Mac or Windows PC to download.';
+                    btn.parentNode.replaceChild(msg, btn);
+                });
+            } else {
+                document.querySelectorAll('.smart-dl-btn').forEach(function (btn) {
+                    var label = btn.querySelector('.dl-label');
+                    if (isWin) {
+                        btn.href = winUrl;
+                        if (label) label.textContent = 'Download for Windows';
+                    }
+                });
+                document.querySelectorAll('.windows-warning').forEach(function (el) {
+                    el.style.display = isWin ? 'block' : 'none';
+                });
+            }
         })();
     </script>
 
