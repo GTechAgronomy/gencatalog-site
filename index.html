@@ -244,10 +244,17 @@
 
         .hero-cta {
             display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-cta-buttons {
+            display: flex;
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
         }
 
         .btn-primary {
@@ -300,10 +307,11 @@
 
         .windows-warning {
             color: var(--text-muted);
-            font-size: 0.72rem;
-            line-height: 1.4;
-            max-width: 280px;
-            text-align: left;
+            font-size: 0.78rem;
+            line-height: 1.45;
+            max-width: 560px;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .mobile-dl-note {
@@ -576,48 +584,6 @@
         .trial-list strong {
             color: var(--text-primary);
             font-weight: 600;
-        }
-
-        /* ============ SUPPORT FAQ ============ */
-        .support-faq {
-            padding: 4rem 2rem 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .support-faq .section-label,
-        .support-faq .section-title,
-        .support-faq .section-desc {
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .support-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .support-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-subtle);
-            border-radius: 14px;
-            padding: 1.25rem;
-        }
-
-        .support-item h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.65rem;
-            letter-spacing: -0.01em;
-        }
-
-        .support-item p {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            line-height: 1.6;
         }
 
         /* ============ HOW IT WORKS ============ */
@@ -917,7 +883,6 @@
             .feature-grid { grid-template-columns: repeat(2, 1fr); }
             .feature-list { grid-template-columns: 1fr; }
             .trial-list { grid-template-columns: 1fr; }
-            .support-grid { grid-template-columns: 1fr; }
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .steps { grid-template-columns: 1fr; }
             .step-connector { display: none; }
@@ -930,6 +895,20 @@
             .showcase-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
             .hero { padding: 8rem 1.5rem 4rem; }
+            .hero-cta-buttons {
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+            }
+            .hero-cta-buttons .btn-primary,
+            .hero-cta-buttons .btn-secondary {
+                width: min(100%, 340px);
+                justify-content: center;
+            }
+            .windows-warning {
+                font-size: 0.75rem;
+                max-width: 340px;
+            }
             .footer-inner { flex-direction: column; gap: 1rem; }
         }
 
@@ -987,17 +966,19 @@
         </p>
 
         <div class="hero-cta">
-            <a href="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
-               class="btn-primary smart-dl-btn"
-               data-mac="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
-               data-win="https://downloads.gencatalog.app/GenCatalog-4.0.0-Setup.exe">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="dl-label">Download for Mac</span>
-            </a>
+            <div class="hero-cta-buttons">
+                <a href="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
+                   class="btn-primary smart-dl-btn"
+                   data-mac="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
+                   data-win="https://downloads.gencatalog.app/GenCatalog-4.0.0-Setup.exe">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span class="dl-label">Download for Mac</span>
+                </a>
+                <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb?utm_source=item-share-cb" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                    Install Chrome Extension
+                </a>
+            </div>
             <p class="windows-warning" style="display:none">Windows may show a security warning &mdash; click &lsquo;More info&rsquo; then &lsquo;Run anyway&rsquo;.</p>
-            <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb?utm_source=item-share-cb" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-                Install Chrome Extension
-            </a>
         </div>
 
         <p class="hero-note">macOS 10.15+ &middot; Windows 10+ &middot; Apple Silicon, Intel & x64 &middot; Requires Chrome extension</p>
@@ -1218,24 +1199,6 @@
         </ul>
     </section>
 
-    <!-- SUPPORT FAQ -->
-    <section class="support-faq fade-in" id="support-faq">
-        <div class="section-label">Support &amp; FAQ</div>
-        <h2 class="section-title">Video thumbnail setup</h2>
-        <p class="section-desc">Everything you need to know for Intel Mac and Windows on first launch.</p>
-
-        <div class="support-grid">
-            <article class="support-item">
-                <h3>Intel Mac &mdash; Video Thumbnails</h3>
-                <p>On first launch, GenCatalog may prompt you to install ffmpeg to enable video thumbnail previews. Click "Install via Homebrew" and the installation will run automatically in the background. This is a one-time setup and takes about 1-2 minutes. Image thumbnails work immediately without any additional setup.</p>
-            </article>
-            <article class="support-item">
-                <h3>Windows &mdash; Video Thumbnails</h3>
-                <p>GenCatalog requires ffmpeg to generate video thumbnail previews. On first launch you'll see a prompt with a download link. Download ffmpeg, extract the zip, and add the bin folder to your system PATH. Once installed, restart GenCatalog and video thumbnails will work automatically. Image thumbnails work immediately without any additional setup.</p>
-            </article>
-        </div>
-    </section>
-
     <!-- PRICING -->
     <section class="pricing fade-in" id="pricing">
         <div class="section-label">Pricing</div>
@@ -1269,17 +1232,19 @@
         <h2>Ready to organize your<br>AI creations?</h2>
         <p>Download GenCatalog and take control of your creative library.</p>
         <div class="hero-cta">
-            <a href="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
-               class="btn-primary smart-dl-btn"
-               data-mac="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
-               data-win="https://downloads.gencatalog.app/GenCatalog-4.0.0-Setup.exe">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                <span class="dl-label">Download for Mac</span>
-            </a>
+            <div class="hero-cta-buttons">
+                <a href="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
+                   class="btn-primary smart-dl-btn"
+                   data-mac="https://downloads.gencatalog.app/GenCatalog-4.0.0-universal.dmg"
+                   data-win="https://downloads.gencatalog.app/GenCatalog-4.0.0-Setup.exe">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span class="dl-label">Download for Mac</span>
+                </a>
+                <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb?utm_source=item-share-cb" class="btn-secondary" target="_blank" rel="noopener noreferrer">
+                    Install Chrome Extension
+                </a>
+            </div>
             <p class="windows-warning" style="display:none">Windows may show a security warning &mdash; click &lsquo;More info&rsquo; then &lsquo;Run anyway&rsquo;.</p>
-            <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb?utm_source=item-share-cb" class="btn-secondary" target="_blank" rel="noopener noreferrer">
-                Install Chrome Extension
-            </a>
         </div>
         <p class="hero-note">macOS 10.15+ &middot; Windows 10+ &middot; Apple Silicon, Intel & x64</p>
     </section>
