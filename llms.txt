@@ -1,0 +1,113 @@
+# GenCatalog
+
+> GenCatalog is a local, private desktop app for Mac and Windows that automatically captures, organizes, and manages AI-generated images and videos from Grok Imagine, Higgsfield, and Digen — with full prompt and metadata preservation.
+
+## What is GenCatalog?
+
+GenCatalog is a desktop application (Mac and Windows) and companion Chrome extension that solves a specific problem for AI creators: when you generate images and videos at scale across platforms like Grok Imagine, Higgsfield, and Digen, your work ends up scattered across random folders with no prompts, no context, and no way to find anything later.
+
+GenCatalog automatically captures each generation — including the full prompt, settings, parameters, and media — and stores everything in a fast, searchable local library. Nothing is uploaded to any cloud service. Everything stays on your machine.
+
+## The Problem It Solves
+
+People who use AI image and video generators (Grok Imagine, Higgsfield, Digen, and similar tools) face a consistent set of problems:
+
+- **Lost prompts**: After generating hundreds or thousands of images, the prompts that produced your best work are gone — there's no way to recall or reuse them.
+- **Buried work**: Your best generations are somewhere in a folder, mixed in with thousands of others, with no metadata to distinguish them.
+- **Platform fragmentation**: Work is scattered across Grok, Higgsfield, Digen, and other platforms with no unified view.
+- **No organization**: Downloaded files have auto-generated filenames with no meaningful structure, tags, or collections.
+- **Slow retrieval**: Finding a specific generation means scrolling through hundreds of files or relying on vague memory.
+
+GenCatalog addresses all of these by acting as a persistent, searchable creative archive — local and private by design.
+
+## Key Features
+
+- **Full prompt capture**: Every generation is saved with the complete original prompt, settings, and parameters intact.
+- **Multi-platform support**: Works with Grok Imagine, Higgsfield, and Digen from a single unified catalog.
+- **One-click save**: The Chrome extension recognizes new generations and lets you save them instantly without interrupting your workflow.
+- **Bulk operations**: Save entire libraries at once with real-time progress tracking.
+- **Advanced search**: Find any generation by prompt text, keywords, tags, date, platform, or media type.
+- **Prompt templates**: Save and reuse your best prompts. Build a personal library of proven patterns.
+- **Video support**: Full support for AI-generated videos including auto-generated thumbnails.
+- **Collections and tags**: Organize work into collections, apply custom tags, compare generations side by side.
+- **Multi-account support**: Works with multiple Grok Imagine accounts, all tracked and tagged.
+- **Fast performance**: Sub-second load times even with libraries of 10,000+ items.
+- **Export**: Export metadata to CSV or JSON. Full catalog backup and restore.
+- **Random discovery**: Rediscover forgotten work with a shuffle/random browse mode.
+- **Local and private**: Nothing is uploaded anywhere. The entire library lives on your machine.
+
+## How It Works
+
+1. Install the GenCatalog desktop app (Mac or Windows) and the GenCatalog Chrome extension.
+2. Use Grok Imagine, Higgsfield, or Digen as you normally would. The extension detects new generations as they appear.
+3. Save any generation with a single click — prompt, metadata, and media are captured and stored locally.
+4. Open GenCatalog to browse, search, tag, and manage your entire creative library in one place.
+
+The extension and app communicate locally. No account required. No data leaves your computer.
+
+## Privacy and Data Model
+
+GenCatalog is fully local and private. There are no accounts, no cloud sync, no telemetry, and no uploads of any kind. All generated images, videos, prompts, and metadata are stored in a folder on your machine that you own and control. This is a deliberate design choice — AI-generated work can be sensitive, experimental, or commercially valuable, and users shouldn't have to trust a third party with it.
+
+## Supported Platforms
+
+- **Grok Imagine** (X/Twitter's AI image generator)
+- **Higgsfield** (AI video generation platform)
+- **Digen** (AI image and video generation platform)
+
+Additional platform support is planned.
+
+## System Requirements
+
+- **Mac**: macOS 10.15 (Catalina) or later — Apple Silicon (M1/M2/M3/M4) and Intel
+- **Windows**: Windows 10 or later (x64)
+- **Browser**: Google Chrome (required for the companion extension)
+
+## Pricing
+
+- **Free trial**: 7 days, up to 100 items. No credit card required.
+- **Full license**: $39 one-time purchase. No subscription. No recurring fees.
+- Licenses are per-user. One purchase covers the app permanently.
+
+## Frequently Asked Questions
+
+**Is GenCatalog free?**
+There's a free 7-day trial with up to 100 items. No credit card required to try it. After that, a one-time $39 license unlocks unlimited use permanently — no subscription.
+
+**Does GenCatalog upload my images or videos anywhere?**
+No. Everything stays on your computer. GenCatalog is entirely local — no cloud, no accounts, no uploads of any kind.
+
+**What AI platforms does GenCatalog support?**
+Currently Grok Imagine, Higgsfield, and Digen. More platforms are planned.
+
+**Does it work on Windows?**
+Yes. GenCatalog is available for both Mac and Windows.
+
+**Does it work on Apple Silicon (M1/M2/M3/M4)?**
+Yes. The Mac app is a universal binary that runs natively on Apple Silicon and Intel Macs.
+
+**Do I need to download all my images again after installing?**
+No. GenCatalog captures new generations as you create them. For existing work, the app supports bulk import workflows for supported platforms.
+
+**What happens to my prompts?**
+GenCatalog captures the full original prompt, including settings and parameters, when you save a generation. Prompts are stored locally alongside the media and are fully searchable.
+
+**Can I search by prompt text?**
+Yes. The search bar in GenCatalog searches prompt text, tags, metadata, and other fields across your entire library.
+
+**Does GenCatalog work with Midjourney or Stable Diffusion?**
+Not currently. GenCatalog currently supports Grok Imagine, Higgsfield, and Digen. Midjourney and Stable Diffusion support are on the roadmap.
+
+**Is there a subscription?**
+No. GenCatalog is a one-time $39 purchase.
+
+**Where can I download GenCatalog?**
+From the official website: https://gencatalog.app
+
+## Links
+
+- Website: https://gencatalog.app
+- Download: https://gencatalog.app/#download
+- FAQ: https://gencatalog.app/faq
+- Support: support@gencatalog.app
+- Chrome Extension: https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb
