@@ -491,10 +491,14 @@
             margin-right: auto;
         }
 
-        .feature-grid {
+        #features .feature-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 360px);
+            gap: 24px;
+            max-width: 1128px;
+            width: 100%;
+            justify-content: center;
+            margin: 0 auto;
         }
 
         .feature-card {
@@ -539,13 +543,22 @@
             line-height: 1.6;
         }
 
-        .feature-list {
-            margin-top: 2.5rem;
+        #features .feature-list {
+            margin: 2.5rem auto 0;
+            max-width: 1128px;
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 0.75rem 2rem;
             list-style: none;
             padding: 0;
+        }
+
+        @media (max-width: 1190px) {
+            #features .feature-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 760px;
+            }
         }
 
         .feature-list li {
@@ -894,8 +907,14 @@
 
         /* ============ RESPONSIVE ============ */
         @media (max-width: 900px) {
-            .feature-grid { grid-template-columns: repeat(2, 1fr); }
-            .feature-list { grid-template-columns: 1fr; }
+            #features .feature-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: 760px;
+            }
+            #features .feature-list {
+                grid-template-columns: 1fr;
+                max-width: 760px;
+            }
             .trial-list { grid-template-columns: 1fr; }
             .showcase-grid { grid-template-columns: repeat(2, 1fr); }
             .steps { grid-template-columns: 1fr; }
@@ -905,7 +924,11 @@
 
         @media (max-width: 600px) {
             .nav-links { display: none; }
-            .feature-grid { grid-template-columns: 1fr; }
+            #features .feature-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            #features .feature-list { max-width: 100%; }
             .showcase-grid { grid-template-columns: 1fr; }
             .stats-grid { grid-template-columns: 1fr; }
             .hero { padding: 7rem 1.5rem 3rem; }
