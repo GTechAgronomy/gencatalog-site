@@ -14,23 +14,23 @@
     <title>FAQ — GenCatalog</title>
     <style>
         :root {
-            --bg-deep: #09090b;
-            --bg-surface: #18181b;
-            --bg-elevated: #27272a;
-            --text-primary: #fafafa;
-            --text-secondary: #e4e4e7;
-            --text-muted: #a1a1aa;
-            --text-dim: #71717a;
-            --primary: #a78bfa;
-            --accent: #06b6d4;
-            --border: rgba(255,255,255,0.07);
-            --gradient: linear-gradient(135deg, #a78bfa, #06b6d4);
+            --bg: #0e0e11;
+            --surface: #141417;
+            --s2: #1a1a1e;
+            --t1: #eeeef2;
+            --t2: #84848f;
+            --t2: #84848f;
+            --t3: #404048;
+            --accent: #6270f0;
+            --cyan: #3dd68c;
+            --border: rgba(255,255,255,0.072);
+            --gradient: linear-gradient(135deg, #6270f0, #3dd68c);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-deep);
-            color: var(--text-secondary);
+            font-family: 'Geist',-apple-system,sans-serif;
+            background: var(--bg);
+            color: var(--t2);
             line-height: 1.7;
             min-height: 100vh;
         }
@@ -46,33 +46,33 @@
             z-index: 100;
         }
         .nav-inner {
-            max-width: 1100px;
+            max-width: 1360px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 60px;
+            height: 56px;
         }
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
             text-decoration: none;
-            color: var(--text-primary);
+            color: var(--t1);
             font-size: 17px;
             font-weight: 600;
         }
         .nav-links { display: flex; gap: 8px; }
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--t2);
             text-decoration: none;
             font-size: 14px;
             padding: 6px 14px;
             border-radius: 6px;
             transition: all 0.2s;
         }
-        .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
-        .nav-links a.active { color: var(--primary); }
+        .nav-links a:hover { color: var(--t1); background: var(--s2); }
+        .nav-links a.active { color: var(--accent); }
 
         /* LAYOUT */
         .page {
@@ -88,19 +88,19 @@
             font-weight: 600;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 12px;
         }
         h1 {
             font-size: 40px;
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--t1);
             line-height: 1.2;
             margin-bottom: 16px;
         }
         .page-header p {
             font-size: 18px;
-            color: var(--text-muted);
+            color: var(--t2);
             max-width: 560px;
         }
 
@@ -117,15 +117,15 @@
             padding: 6px 16px;
             border-radius: 999px;
             border: 1px solid var(--border);
-            background: var(--bg-surface);
-            color: var(--text-muted);
+            background: var(--surface);
+            color: var(--t2);
             text-decoration: none;
             font-size: 13px;
             font-weight: 500;
             transition: all 0.2s;
             cursor: pointer;
         }
-        .cat-pill:hover { border-color: var(--primary); color: var(--primary); }
+        .cat-pill:hover { border-color: var(--accent); color: var(--accent); }
 
         /* SECTIONS */
         .faq-section { margin-bottom: 60px; }
@@ -152,12 +152,12 @@
             border: 1px solid var(--border);
             border-radius: 10px;
             margin-bottom: 8px;
-            background: var(--bg-surface);
+            background: var(--surface);
             overflow: hidden;
             transition: border-color 0.2s;
         }
-        .faq-item:hover { border-color: rgba(167,139,250,0.25); }
-        .faq-item.open { border-color: rgba(167,139,250,0.4); }
+        .faq-item:hover { border-color: rgba(98,112,240,0.25); }
+        .faq-item.open { border-color: rgba(98,112,240,0.4); }
         .faq-q {
             width: 100%;
             text-align: left;
@@ -169,34 +169,34 @@
             align-items: center;
             justify-content: space-between;
             gap: 16px;
-            color: var(--text-primary);
+            color: var(--t1);
             font-size: 15px;
             font-weight: 500;
         }
-        .faq-q:hover { color: var(--primary); }
+        .faq-q:hover { color: var(--accent); }
         .faq-icon {
             flex-shrink: 0;
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            border: 1.5px solid var(--text-dim);
+            border: 1.5px solid var(--t3);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 13px;
-            color: var(--text-dim);
+            color: var(--t3);
             transition: all 0.2s;
         }
         .faq-item.open .faq-icon {
-            background: var(--primary);
-            border-color: var(--primary);
+            background: var(--accent);
+            border-color: var(--accent);
             color: white;
             transform: rotate(45deg);
         }
         .faq-a {
             display: none;
             padding: 0 20px 18px;
-            color: var(--text-muted);
+            color: var(--t2);
             font-size: 14.5px;
             line-height: 1.75;
             border-top: 1px solid var(--border);
@@ -205,9 +205,9 @@
         .faq-item.open .faq-a { display: block; }
         .faq-a p { margin-bottom: 12px; }
         .faq-a p:last-child { margin-bottom: 0; }
-        .faq-a strong { color: var(--text-secondary); font-weight: 600; }
+        .faq-a strong { color: var(--t2); font-weight: 600; }
         .faq-a code {
-            background: var(--bg-elevated);
+            background: var(--s2);
             border: 1px solid var(--border);
             padding: 2px 7px;
             border-radius: 4px;
@@ -220,7 +220,7 @@
             margin-bottom: 12px;
         }
         .faq-a li { margin-bottom: 6px; }
-        .faq-a a { color: var(--primary); text-decoration: none; }
+        .faq-a a { color: var(--accent); text-decoration: none; }
         .faq-a a:hover { text-decoration: underline; }
 
         /* PLATFORM BADGES */
@@ -236,33 +236,33 @@
             vertical-align: middle;
         }
         .tag-grok { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
-        .tag-higgsfield { background: rgba(167,139,250,0.15); color: #a78bfa; border: 1px solid rgba(167,139,250,0.3); }
-        .tag-digen { background: rgba(6,182,212,0.15); color: #06b6d4; border: 1px solid rgba(6,182,212,0.3); }
+        .tag-higgsfield { background: rgba(98,112,240,0.15); color: #6270f0; border: 1px solid rgba(98,112,240,0.3); }
+        .tag-digen { background: rgba(61,214,140,0.15); color: #3dd68c; border: 1px solid rgba(61,214,140,0.3); }
         .tag-all { background: rgba(244,63,94,0.12); color: #f43f5e; border: 1px solid rgba(244,63,94,0.25); }
 
         /* TIP BOX */
         .tip {
             margin: 12px 0;
             padding: 12px 16px;
-            background: rgba(167,139,250,0.08);
-            border-left: 3px solid var(--primary);
+            background: rgba(98,112,240,0.08);
+            border-left: 3px solid var(--accent);
             border-radius: 0 6px 6px 0;
             font-size: 14px;
-            color: var(--text-muted);
+            color: var(--t2);
         }
-        .tip strong { color: var(--primary); }
+        .tip strong { color: var(--accent); }
 
         /* CONTACT BANNER */
         .contact-banner {
             margin-top: 60px;
             padding: 32px;
-            background: linear-gradient(135deg, rgba(167,139,250,0.1), rgba(6,182,212,0.08));
-            border: 1px solid rgba(167,139,250,0.2);
+            background: linear-gradient(135deg, rgba(98,112,240,0.1), rgba(61,214,140,0.08));
+            border: 1px solid rgba(98,112,240,0.2);
             border-radius: 12px;
             text-align: center;
         }
-        .contact-banner h3 { color: var(--text-primary); font-size: 20px; margin-bottom: 8px; }
-        .contact-banner p { color: var(--text-muted); margin-bottom: 20px; }
+        .contact-banner h3 { color: var(--t1); font-size: 20px; margin-bottom: 8px; }
+        .contact-banner p { color: var(--t2); margin-bottom: 20px; }
         .contact-banner a {
             display: inline-block;
             padding: 10px 24px;
@@ -280,8 +280,8 @@
             padding: 24px;
             text-align: center;
         }
-        footer a { color: var(--text-dim); text-decoration: none; font-size: 13px; margin: 0 12px; }
-        footer a:hover { color: var(--text-muted); }
+        footer a { color: var(--t3); text-decoration: none; font-size: 13px; margin: 0 12px; }
+        footer a:hover { color: var(--t2); }
         .footer-badge {
             margin-top: 16px;
         }
@@ -296,6 +296,9 @@
             height: auto;
         }
     </style>
+  
+  
+  <!-- already added --><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -303,16 +306,16 @@
     <div class="nav-inner">
         <a href="https://gencatalog.app" class="logo">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="9.5" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="16" y="3" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="3" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="9.5" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="16" y="9.5" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="3" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="9.5" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <rect x="16" y="16" width="5" height="5" rx="1" fill="#a78bfa"/>
-                <path d="M12 8v5M10 11l2 2 2-2" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="3" y="3" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="9.5" y="3" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="16" y="3" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="3" y="9.5" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="9.5" y="9.5" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="16" y="9.5" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="3" y="16" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="9.5" y="16" width="5" height="5" rx="1" fill="#6270f0"/>
+                <rect x="16" y="16" width="5" height="5" rx="1" fill="#6270f0"/>
+                <path d="M12 8v5M10 11l2 2 2-2" stroke="#3dd68c" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             GenCatalog
         </a>
@@ -329,7 +332,7 @@
     <div class="page-header">
         <div class="page-label">Help Center</div>
         <h1>Frequently Asked Questions</h1>
-        <p>Everything you need to know about GenCatalog. Can't find your answer? <a href="mailto:support@gencatalog.app" style="color: var(--primary);">Email us.</a></p>
+        <p>Everything you need to know about GenCatalog. Can't find your answer? <a href="mailto:support@gencatalog.app" style="color: var(--accent);">Email us.</a></p>
     </div>
 
     <div class="cat-nav">
