@@ -240,13 +240,48 @@
     <h1>Release Notes</h1>
     <p class="intro">Track what is new in GenCatalog across desktop and extension updates.</p>
 
-    <article class="release">
+        <article class="release">
+        <div class="release-head">
+            <div>
+                <h2 class="release-version">GenCatalog 5.1.0</h2>
+                <p class="release-date">Published March 12, 2026</p>
+            </div>
+            <span class="pill">Latest</span>
+        </div>
+
+        <section class="change">
+            <h2>Security &amp; Data Safety</h2>
+            <p>A comprehensive under-the-hood hardening pass. The server now binds to localhost only by default, preventing local network exposure. CORS has been locked to known consumers only. All model files now use atomic writes — data is written to a temporary file first, then renamed atomically, eliminating any risk of file corruption from crashes or power loss. Catalog backups are written automatically after every save, and a corrupted catalog now recovers from the backup instead of silently clearing your library.</p>
+        </section>
+
+        <section class="change">
+            <h2>Hidden Items: Smarter PIN Protection</h2>
+            <p>The hidden items list and your PIN are now stored in separate files. Previously, resetting your PIN required clearing your hidden list — that is no longer the case. Rate limiting has been added to PIN verification: five incorrect attempts triggers a lockout with exponential backoff, preventing brute force access.</p>
+        </section>
+
+        <section class="change">
+            <h2>Sidebar Improvements</h2>
+            <p>Date Range, Advanced Filters, and Saved Searches are now collapsed by default, keeping the sidebar clean until you need them. All sidebar section icons have been updated to a consistent SVG style. The server status indicator now lives directly in the sidebar alongside your license status — the toolbar is cleaner as a result.</p>
+        </section>
+
+        <section class="change">
+            <h2>Reliability Improvements</h2>
+            <p>A reconnection banner now appears when the app loses contact with the local server, and destructive actions are automatically disabled until the connection is restored. Maintenance operations now show a live progress bar. Duplicate trash modals and silent favorite failures have been fixed.</p>
+        </section>
+
+        <section class="change">
+            <h2>Trial Nudge</h2>
+            <p>New users on day three or four of their trial now see a friendly check-in. Users who are loving the app get a direct link to purchase at launch pricing. Users who are still figuring things out are directed to the support guide. A separate urgency prompt appears on the final day of the trial.</p>
+        </section>
+
+    </article>
+
+<article class="release">
         <div class="release-head">
             <div>
                 <h2 class="release-version">GenCatalog 5.0.3</h2>
                 <p class="release-date">Published March 11, 2026</p>
             </div>
-            <span class="pill">Latest</span>
         </div>
 
         <section class="change">
