@@ -282,21 +282,22 @@
 <div class="layout">
     <aside class="sidebar">
         <div class="sidebar-label">Getting Started</div>
-        <a href="#setup">Installation & Setup</a>
+        <a href="#setup">Installation &amp; Setup</a>
         <a href="#extension">Chrome Extension</a>
         <div class="sidebar-label">Platforms</div>
         <a href="#grok"><span class="dot dot-grok"></span>Grok Imagine</a>
         <a href="#higgsfield"><span class="dot dot-higgsfield"></span>Higgsfield</a>
         <a href="#digen"><span class="dot dot-digen"></span>Digen</a>
         <div class="sidebar-label">Your Catalog</div>
-        <a href="#browsing">Browsing & Search</a>
-        <a href="#organizing">Tags & Favorites</a>
+        <a href="#browsing">Browsing &amp; Search</a>
+        <a href="#organizing">Tags &amp; Favorites</a>
         <a href="#bulk">Bulk Operations</a>
-        <a href="#trash">Trash & Deletion</a>
+        <a href="#hidden">Hidden Items</a>
+        <a href="#trash">Trash &amp; Deletion</a>
         <a href="#duplicates">Duplicate Detection</a>
         <a href="#mobile">Mobile Access</a>
         <div class="sidebar-label">Account</div>
-        <a href="#license">License & Activation</a>
+        <a href="#license">License &amp; Activation</a>
         <a href="#trial">Free Trial</a>
     </aside>
 
@@ -306,13 +307,13 @@
         <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across Grok Imagine, Higgsfield, and Digen.<br><a href="release-notes.html">See latest release notes and update details.</a></p>
 
         <div class="section" id="setup">
-            <h2>Installation & Setup</h2>
+            <h2>Installation &amp; Setup</h2>
             <p class="section-desc">Get GenCatalog running in a few minutes.</p>
             <div class="steps">
                 <div class="step">
                     <div class="step-num">1</div>
                     <div class="step-body">
-                        <strong>Download & Install the App</strong>
+                        <strong>Download &amp; Install the App</strong>
                         <p><strong>Mac:</strong> Download the DMG from <a href="https://gencatalog.app">gencatalog.app</a>, open it, and drag GenCatalog to your Applications folder.</p>
                         <p><strong>Windows:</strong> Download the installer (.exe) from <a href="https://gencatalog.app">gencatalog.app</a>, run it, and follow the setup steps.</p>
                     </div>
@@ -407,7 +408,7 @@
                 <div class="step">
                     <div class="step-num">4</div>
                     <div class="step-body">
-                        <strong>Pause & Resume anytime</strong>
+                        <strong>Pause &amp; Resume anytime</strong>
                         <p>Pause a bulk download and resume it later. Progress is preserved — already-saved items won't be re-downloaded.</p>
                     </div>
                 </div>
@@ -416,7 +417,7 @@
             <h3>Multiple Grok Accounts</h3>
             <p>GenCatalog supports saving from multiple Grok accounts into a single catalog. Each item is automatically tagged with the account it came from, so you can filter your catalog by account. To save from another account: log out of Grok, log in to your second account, and use the extension as normal.</p>
 
-            <h3>Smart Sync & Exclusion</h3>
+            <h3>Smart Sync &amp; Exclusion</h3>
             <p>When you delete an item through GenCatalog, it's added to a permanent exclusion list and will never be re-downloaded during future bulk scans — even if it's still in your Grok favorites.</p>
             <div class="warning"><strong>Always delete through GenCatalog</strong> — not by removing files in Finder. Only GenCatalog-deleted items are added to the exclusion list.</div>
         </div>
@@ -505,7 +506,7 @@
         </div>
 
         <div class="section" id="browsing">
-            <h2>Browsing & Search</h2>
+            <h2>Browsing &amp; Search</h2>
             <p class="section-desc">Find anything in your catalog instantly.</p>
             <p>Open your catalog via <strong>Open Catalog</strong> in the extension popup, or go to <code>http://localhost:8080</code> in your browser.</p>
             <h3>Search</h3>
@@ -521,14 +522,14 @@
             </ul>
             <h3>Other Tools</h3>
             <ul>
-                <li><strong>Random 🎲</strong> — opens a random item from your catalog</li>
-                <li><strong>Slideshow</strong> — auto-plays through your collection</li>
+                <li><strong>Rediscover ✨</strong> — opens a random item from your catalog</li>
+                <li><strong>Slideshow</strong> — auto-plays through your collection. Images advance on the timer you set; videos play to their full natural duration before advancing.</li>
                 <li><strong>Compare</strong> — select 2 items in multi-select mode to compare side by side</li>
             </ul>
         </div>
 
         <div class="section" id="organizing">
-            <h2>Tags & Favorites</h2>
+            <h2>Tags &amp; Favorites</h2>
             <h3>Favorites</h3>
             <p>Click the ⭐ on any item to favorite it. Filter to favorites-only using the sidebar. Bulk-favorite items using multi-select mode.</p>
             <h3>Tags</h3>
@@ -552,7 +553,7 @@
                     <div class="step-num">2</div>
                     <div class="step-body">
                         <strong>Click items to select them</strong>
-                        <p>Selected items show a purple border. Use Select All / Deselect All for quick selection.</p>
+                        <p>Selected items show a purple border. Use Select All / Deselect All for quick selection. Shift+click to select a range.</p>
                     </div>
                 </div>
                 <div class="step">
@@ -566,13 +567,35 @@
             <p>Press <strong>Escape</strong> or click the checkbox icon again to exit multi-select mode.</p>
         </div>
 
+        <div class="section" id="hidden">
+            <h2>Hidden Items</h2>
+            <p class="section-desc">Keep private generations out of sight with PIN protection — without deleting them.</p>
+            <p>Hidden Items is a PIN-protected vault inside your catalog. Hidden content is removed from the main grid and can only be accessed by entering your PIN. Nothing is deleted — your files, prompts, and metadata are fully preserved.</p>
+
+            <h3>Hiding Items</h3>
+            <p>Open any item in the detail view and click <strong>Hide</strong>. The item disappears from the main grid immediately and moves to your hidden collection.</p>
+
+            <h3>Accessing Hidden Items</h3>
+            <p>Click <strong>Hidden Items</strong> in the sidebar. You'll be prompted to enter your PIN. Once verified, hidden items appear in a separate grid view with the same browsing, search, and filter capabilities as the main catalog.</p>
+
+            <h3>Restoring Hidden Items</h3>
+            <p>While in the hidden view, hover over any item and click <strong>Unhide</strong>. The item returns to your main catalog.</p>
+
+            <h3>Setting or Changing Your PIN</h3>
+            <p>Go to the sidebar → Hidden Items → <strong>Change PIN</strong>. You can set a new PIN at any time without affecting your hidden collection. Your PIN and your hidden list are stored separately — changing one doesn't affect the other.</p>
+
+            <div class="warning"><strong>Security note:</strong> Five incorrect PIN attempts triggers a lockout with increasing wait times, preventing brute-force access to your hidden content.</div>
+        </div>
+
         <div class="section" id="trash">
-            <h2>Trash & Deletion</h2>
+            <h2>Trash &amp; Deletion</h2>
             <p>Deleting an item moves it to Trash first — nothing is immediately gone.</p>
             <h3>Managing Trash</h3>
             <ul>
                 <li>Click <strong>View Trash</strong> in the sidebar to see deleted items with deletion dates</li>
-                <li><strong>Restore</strong> any individual item, or <strong>Restore All</strong></li>
+                <li><strong>Restore</strong> any individual item using the button on each row</li>
+                <li><strong>Restore All</strong> — one-click button to recover everything in trash at once</li>
+                <li><strong>Multi-select</strong> — click items to select them, then use the floating action bar to <strong>Restore Selected</strong> or <strong>Delete Permanently</strong></li>
                 <li><strong>Empty Trash</strong> to permanently delete all trashed items</li>
             </ul>
             <div class="warning"><strong>Always delete through GenCatalog</strong> — not via Finder. Finder deletions break the catalog database and don't add items to the exclusion list, meaning they may reappear in future scans.</div>
@@ -618,7 +641,7 @@
         </div>
 
         <div class="section" id="license">
-            <h2>License & Activation</h2>
+            <h2>License &amp; Activation</h2>
             <p>After purchasing, you'll receive a license key by email. To activate: open GenCatalog → click the menu bar icon → select <strong>License</strong> → enter your key and click Activate. Requires internet for initial activation.</p>
             <p>License revalidation happens approximately every 7 days, with a 30-day offline grace period. Your files and catalog data are never affected by license status.</p>
         </div>
