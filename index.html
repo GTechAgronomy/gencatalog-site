@@ -880,6 +880,49 @@
     .trust-screenshot img { width: 100%; height: auto; }
 
     /* === PRICING === */
+    .testimonials {
+      padding: 96px 0;
+      background: var(--bg);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .testimonial-stars {
+      color: #f59e0b;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--t2);
+      flex: 1;
+      margin: 0;
+    }
+
+    .testimonial-author {
+      font-size: 12.5px;
+      color: var(--t3);
+      font-weight: 500;
+    }
+
     .pricing {
       padding: 96px 0;
     }
@@ -1425,6 +1468,32 @@
   </section>
 
   <!-- PRICING -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Reviews</span>
+        <h2>What people are saying</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I had 12,000+ files to manage and this tool was a godsend. The search, tags, and organization features are exactly what I needed. Worth every penny. Wish I could give it 6 stars."</p>
+          <div class="testimonial-author">Mike Grok &nbsp;·&nbsp; Mac App Store</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"Managing created videos was such a pain before I found this app — now I just click one button. Amazing!"</p>
+          <div class="testimonial-author">En 352 &nbsp;·&nbsp; Mac App Store</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"I left a note about a bug with video previews cutting off too early. The author fixed it and shipped the update within 24 hours. It's fast, easy to use, and has everything I need."</p>
+          <div class="testimonial-author">Alex Wessel &nbsp;·&nbsp; Mac App Store</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="pricing" id="pricing">
     <div class="container">
       <div class="section-header">
