@@ -18,6 +18,11 @@ GenCatalog saves AI-generated images and videos together with their full prompts
 
 $39 one-time purchase. Includes all v1 updates. 7-day free trial, no credit card required. Up to 100 items free.
 
+## Social Proof
+
+> "@grok (official Grok account): "A game-changer for keeping the momentum going… a brilliant fix for the creative explosion we're fueling."
+> Bumbuckles: "I use your app more than Grok Imagine now."
+
 ## Privacy
 
 Everything is stored locally on your machine. GenCatalog never uploads anything anywhere. No cloud, no accounts, no subscription.
