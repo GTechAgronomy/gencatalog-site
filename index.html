@@ -1107,6 +1107,45 @@
       border-radius: 4px;
     }
   </style>
+  <!-- Structured Data: SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "GenCatalog",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS, Windows",
+    "offers": {
+      "@type": "Offer",
+      "price": "39.00",
+      "priceCurrency": "USD"
+    },
+    "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, Higgsfield, and Digen — with full prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
+    "url": "https://gencatalog.app",
+    "screenshot": "https://gencatalog.app/og-image-v4.jpg",
+    "softwareVersion": "5.2.3",
+    "creator": {
+      "@type": "Organization",
+      "name": "Second Act Labs",
+      "url": "https://secondactlabs.com"
+    }
+  }
+  </script>
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Second Act Labs",
+    "url": "https://secondactlabs.com",
+    "sameAs": ["https://x.com/2ndActBuilder", "https://x.com/GenCatalog"],
+    "product": {
+      "@type": "SoftwareApplication",
+      "name": "GenCatalog",
+      "url": "https://gencatalog.app"
+    }
+  }
+  </script>
 </head>
 <body>
 
