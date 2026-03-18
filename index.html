@@ -50,6 +50,70 @@
     }
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is GenCatalog?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GenCatalog is a local AI image and video organizer for Grok Imagine, Higgsfield, Midjourney, and Digen. It automatically saves your AI generations with full prompts, model settings, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which AI platforms does GenCatalog support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GenCatalog currently supports Grok Imagine (X.ai), Higgsfield (video generation), Midjourney (image generation), and Digen. The Chrome extension adds a Save button directly on each platform so you can capture generations with one click."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does GenCatalog save my AI generations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my data stored in the cloud?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. GenCatalog stores everything locally on your computer. Your prompts, images, videos, and metadata never leave your device. No account required and no internet connection needed after installation."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does GenCatalog cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GenCatalog is $39 as a one-time purchase with a 7-day free trial, no credit card required. The price includes all v1 updates — no subscription, no renewals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does GenCatalog work on both Mac and Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What metadata does GenCatalog save from Midjourney?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GenCatalog saves the full prompt text, model version (--v), aspect ratio (--ar), chaos, seed, style mode, style references (--sref), character references (--cref), stylize weight, and all other parameters. All four image variants per generation are saved individually."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     /* === RESET === */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1153,7 +1217,7 @@
   <nav>
     <div class="nav-inner">
       <a href="/" class="nav-logo">
-        <img src="GenCatalogLogo.png" width="28" height="28" alt="" style="border-radius:6px;display:block;">
+        <img src="GenCatalogLogo.png" width="28" height="28" alt="GenCatalog" style="border-radius:6px;display:block;">
         GenCatalog
       </a>
       <a href="https://secondactlabs.com" target="_blank" rel="noopener" class="nav-sal-badge">By Second Act Labs ↗</a>
@@ -1179,7 +1243,7 @@
           GenCatalog 5.0
         </span>
       </div>
-      <h1>Your entire AI media library.<br>Finally organized.</h1>
+      <h1>The AI image organizer for Grok, Higgsfield &amp; Midjourney.</h1>
       <p class="hero-subhead">Browse, search, and filter everything you've ever generated — with prompts and metadata intact.</p>
       <div class="hero-ctas">
         <a href="https://downloads.gencatalog.app/GenCatalog-5.2.3-universal.dmg" class="btn btn-primary btn-lg smart-dl-btn" data-mac="https://downloads.gencatalog.app/GenCatalog-5.2.3-universal.dmg" data-win="https://downloads.gencatalog.app/GenCatalog-5.2.3-Setup.exe"><span class="dl-label">Download Free</span></a>
@@ -1187,7 +1251,7 @@
       </div>
       <p class="hero-meta">macOS and Windows &nbsp;·&nbsp; Requires Chrome extension &nbsp;·&nbsp; 7-day free trial</p>
       <div class="hero-screenshot">
-        <img src="GenCatalogInterface.png" alt="GenCatalog app showing sidebar, media grid, and detail panel" width="1040" height="650" loading="eager">
+        <img src="GenCatalogInterface.png" alt="GenCatalog AI image organizer showing sidebar, media grid, and detail panel with full prompt and metadata" width="1040" height="650" loading="eager" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -1321,7 +1385,7 @@
         <div class="showcase-image">
           <picture>
             <source srcset="ShowcaseSidebar.webp" type="image/webp">
-            <img src="ShowcaseSidebar.webp" class="crop-middle" alt="GenCatalog sidebar showing filter options including source, rating, tags, and advanced filters" loading="lazy">
+            <img src="ShowcaseSidebar.webp" class="crop-middle" alt="GenCatalog sidebar showing filter options including source, rating, tags, and advanced filters" width="2882" height="8394" loading="lazy">
           </picture>
         </div>
       </div>
@@ -1342,7 +1406,7 @@
         <div class="showcase-image">
           <picture>
             <source srcset="ShowDetailTechnical.webp" type="image/webp">
-            <img src="ShowDetailTechnical.webp" alt="GenCatalog detail panel showing full prompt, metadata, tags, and action buttons" loading="lazy">
+            <img src="ShowDetailTechnical.webp" alt="GenCatalog detail panel showing full prompt, metadata, tags, and action buttons" width="6948" height="3797" loading="lazy">
           </picture>
         </div>
       </div>
@@ -1363,7 +1427,7 @@
         <div class="showcase-image">
           <picture>
             <source srcset="ShowcaseGrid.webp" type="image/webp">
-            <img src="ShowcaseGrid.webp" alt="GenCatalog grid showing AI generations with source badges and model labels" loading="lazy">
+            <img src="ShowcaseGrid.webp" alt="GenCatalog grid showing AI generations with source badges and model labels" width="1471" height="1381" loading="lazy">
           </picture>
         </div>
       </div>
@@ -1451,7 +1515,7 @@
 
         <div class="step">
           <div class="step-image">
-            <img src="ShowcasePopup.webp" alt="GenCatalog Chrome extension popup showing dashboard and recent saves" loading="lazy">
+            <img src="ShowcasePopup.webp" alt="GenCatalog Chrome extension popup showing dashboard and recent saves" width="2184" height="3580" loading="lazy">
           </div>
           <div class="step-body">
             <span class="step-num">Step 01</span>
@@ -1462,7 +1526,7 @@
 
         <div class="step">
           <div class="step-image">
-            <img src="SavetoGenCatalog.png" alt="Save to GenCatalog button on Higgsfield" loading="lazy">
+            <img src="SavetoGenCatalog.png" alt="Save to GenCatalog button appearing on an AI generation" width="766" height="1086" loading="lazy">
           </div>
           <div class="step-body">
             <span class="step-num">Step 02</span>
@@ -1473,7 +1537,7 @@
 
         <div class="step">
           <div class="step-image">
-            <img src="ShowDetailTechnical.webp" class="ken-burns" alt="GenCatalog detail panel showing prompt and metadata" loading="lazy">
+            <img src="ShowDetailTechnical.webp" class="ken-burns" alt="GenCatalog detail panel showing prompt and metadata" width="6948" height="3797" loading="lazy">
           </div>
           <div class="step-body">
             <span class="step-num">Step 03</span>
@@ -1539,7 +1603,7 @@
           </div>
         </div>
         <div class="trust-screenshot">
-          <img src="GenCatalogInterface.png" alt="GenCatalog media library showing organized AI generations" loading="lazy">
+          <img src="GenCatalogInterface.png" alt="GenCatalog media library showing organized AI generations" width="2880" height="1620" loading="lazy">
         </div>
       </div>
     </div>
