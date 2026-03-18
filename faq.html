@@ -237,6 +237,7 @@
         }
         .tag-grok { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
         .tag-higgsfield { background: rgba(98,112,240,0.15); color: #6270f0; border: 1px solid rgba(98,112,240,0.3); }
+        .tag-midjourney { background: rgba(168,85,247,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); }
         .tag-digen { background: rgba(61,214,140,0.15); color: #3dd68c; border: 1px solid rgba(61,214,140,0.3); }
         .tag-all { background: rgba(244,63,94,0.12); color: #f43f5e; border: 1px solid rgba(244,63,94,0.25); }
 
@@ -309,7 +310,7 @@
         "name": "What is GenCatalog?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Higgsfield, and Digen — all in one fast, searchable local library on your computer. Every generation is saved with its prompt, platform, model, and metadata — not just the file."
+          "text": "GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Higgsfield, Midjourney, and Digen — all in one fast, searchable local library on your computer. Every generation is saved with its prompt, platform, model, and metadata — not just the file."
         }
       },
       {
@@ -317,7 +318,7 @@
         "name": "What platforms does GenCatalog support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog currently supports Grok Imagine (images and video), Higgsfield (video generation), and Digen (image generation). More platforms are coming."
+          "text": "GenCatalog currently supports Grok Imagine (images and video), Higgsfield (video generation), Midjourney (images and video), and Digen (image generation). More platforms are coming."
         }
       },
       {
@@ -398,6 +399,7 @@
         <a class="cat-pill" href="#getting-started">Getting Started</a>
         <a class="cat-pill" href="#grok">Grok Imagine</a>
         <a class="cat-pill" href="#higgsfield">Higgsfield</a>
+        <a class="cat-pill" href="#midjourney">Midjourney</a>
         <a class="cat-pill" href="#digen">Digen</a>
         <a class="cat-pill" href="#catalog">Catalog & Organization</a>
         <a class="cat-pill" href="#trial">Trial & Licensing</a>
@@ -411,7 +413,7 @@
         <div class="faq-item">
             <button class="faq-q">What is GenCatalog?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>GenCatalog is a desktop application and Chrome extension that seamlessly captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Higgsfield, and Digen — all in one fast, searchable local library on your computer.</p>
+                <p>GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Higgsfield, Midjourney, and Digen — all in one fast, searchable local library on your computer.</p>
                 <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, and metadata</strong> — not just the file. So six months from now you can find exactly what you made and recreate it.</p>
             </div>
         </div>
@@ -423,6 +425,7 @@
                 <ul>
                     <li><span class="platform-tag tag-grok">Grok Imagine</span> — Full support including bulk favorites download, individual saves, prompt extraction, and multi-account support</li>
                     <li><span class="platform-tag tag-higgsfield">Higgsfield</span> — Full support including individual saves, bulk saves, model/preset capture, and metadata extraction</li>
+                    <li><span class="platform-tag tag-midjourney">Midjourney</span> — Individual saves and full library scan; captures prompt, model version, and all parameters (--ar, --chaos, --sref, --cref, seed, etc.)</li>
                     <li><span class="platform-tag tag-digen">Digen</span> — Individual saves with bulk download support</li>
                 </ul>
                 <p>More platforms are planned for future updates.</p>
@@ -466,7 +469,7 @@
                     <li>Launch GenCatalog — on first run, it will ask you to choose a folder where your media will be stored</li>
                     <li>Install the Chrome extension from the Chrome Web Store</li>
                     <li>Make sure GenCatalog is running (you'll see it in your menu bar (Mac) or system tray (Windows))</li>
-                    <li>Browse to Grok Imagine, Higgsfield, or Digen — save buttons will appear automatically</li>
+                    <li>Browse to Grok Imagine, Higgsfield, Midjourney, or Digen — save buttons will appear automatically</li>
                 </ol>
                 <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content. If the extension shows "Not Running," make sure the app is open.</div>
             </div>
@@ -637,6 +640,62 @@
     </div>
 
     <!-- DIGEN -->
+    <!-- MIDJOURNEY -->
+    <div class="faq-section" id="midjourney">
+        <div class="section-title">Midjourney</div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I save individual Midjourney generations?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>When you're browsing <strong>midjourney.com</strong>, a Save button appears on each image. Click it to capture the image along with its full prompt, model version, and all parameters automatically.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I import my entire Midjourney history at once?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes — this is one of the most useful Midjourney features in GenCatalog. Here's how:</p>
+                <ol>
+                    <li>Navigate to <strong>midjourney.com</strong> and wait for the page to fully load</li>
+                    <li>Open the GenCatalog extension and go to the <strong>Midjourney tab</strong></li>
+                    <li>Click <strong>Scan Library</strong> — GenCatalog reads your generation history from the page (no separate network request)</li>
+                    <li>You'll see Total, Saved, and New counts</li>
+                    <li>Click <strong>Download New</strong> to import everything not yet in your catalog</li>
+                </ol>
+                <p>Re-scanning will only pick up new items, so you can run it anytime to stay up to date.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What metadata does GenCatalog capture from Midjourney?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog saves everything from your Midjourney generation:</p>
+                <ul>
+                    <li>Full prompt text (--sref and --cref image URLs are stripped for readability)</li>
+                    <li>Model version (<code>--v</code>)</li>
+                    <li>Aspect ratio (<code>--ar</code>), chaos, seed, style, stylize weight</li>
+                    <li>Style references (<code>--sref</code>) and character references (<code>--cref</code>)</li>
+                    <li>All four image variants per generation</li>
+                    <li>Image dimensions and generation date</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Does GenCatalog work with Midjourney V7 and V8?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. GenCatalog captures the model version from your generation history, so V7, V8, and future versions are all supported automatically. The model version is stored with each saved item and visible in your catalog.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Is GenCatalog affiliated with Midjourney?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>No. GenCatalog is an independent product by Second Act Labs. We are not affiliated with, endorsed by, or partnered with Midjourney. GenCatalog works with the publicly available Midjourney web interface.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="faq-section" id="digen">
         <div class="section-title">Digen</div>
 
@@ -667,7 +726,7 @@
                 <ul>
                     <li>Prompt text — find any generation by what you typed</li>
                     <li>Tags — search by tags you've added</li>
-                    <li>Platform — filter to Grok Imagine, Higgsfield, or Digen only</li>
+                    <li>Platform — filter to Grok Imagine, Higgsfield, Midjourney, or Digen only</li>
                     <li>Media type — filter to images or videos only</li>
                     <li>Favorites — show only starred items</li>
                     <li>Source image — find all generations created from the same source image</li>
@@ -797,7 +856,7 @@
         <div class="faq-item">
             <button class="faq-q">Does GenCatalog work without an internet connection?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>Yes — browsing your catalog, searching, tagging, and organizing all work completely offline. The only things that require internet are: saving new content from Grok Imagine/Higgsfield/Digen (since those platforms require internet), and periodic license revalidation (approximately every 7 days, with a 30-day offline grace period).</p>
+                <p>Yes — browsing your catalog, searching, tagging, and organizing all work completely offline. The only things that require internet are: saving new content from Grok Imagine/Higgsfield/Midjourney/Digen (since those platforms require internet), and periodic license revalidation (approximately every 7 days, with a 30-day offline grace period).</p>
             </div>
         </div>
     </div>
