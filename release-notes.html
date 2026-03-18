@@ -243,10 +243,35 @@
             <article class="release">
         <div class="release-head">
             <div>
-                <h2 class="release-version">GenCatalog 5.3.0</h2>
+                <h2 class="release-version">GenCatalog 5.3.1</h2>
                 <p class="release-date">Published March 18, 2026</p>
             </div>
             <span class="pill">Latest</span>
+        </div>
+
+        <section class="change">
+            <h2>Save from Midjourney Explore</h2>
+            <p>You can now save any image from the public Midjourney Explore feed — not just your own generations. Hover any item in the Explore grid and click Save. Full prompt, model version, and all parameters are captured automatically.</p>
+        </section>
+
+        <section class="change">
+            <h2>Fix: Grok saves broken by CSP change</h2>
+            <p>A recent change to Grok's Content Security Policy was blocking the extension's server health check, causing every Grok save to show "Start GenCatalog first" even when GenCatalog was running. Fixed — Grok saves work normally again.</p>
+        </section>
+
+        <section class="change">
+            <h2>Fix: "Fix Sources" maintenance corrupting Midjourney tags</h2>
+            <p>Running the Fix Sources maintenance operation was incorrectly re-tagging Midjourney items as Grok. Fixed — Fix Sources now correctly identifies Midjourney items by CDN URL and filename.</p>
+        </section>
+
+    </article>
+
+    <article class="release">
+        <div class="release-head">
+            <div>
+                <h2 class="release-version">GenCatalog 5.3.0</h2>
+                <p class="release-date">Published March 18, 2026</p>
+            </div>
         </div>
 
         <section class="change">
