@@ -115,6 +115,7 @@
         .dot-grok { background: #10b981; }
         .dot-higgsfield { background: #6270f0; }
         .dot-digen { background: #3dd68c; }
+        .dot-midjourney { background: #a855f7; }
         .content {
             padding: 48px 48px 100px;
             max-width: 780px;
@@ -221,6 +222,7 @@
         .badge-grok { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
         .badge-higgsfield { background: rgba(98,112,240,0.12); color: #6270f0; border: 1px solid rgba(98,112,240,0.25); }
         .badge-digen { background: rgba(61,214,140,0.12); color: #3dd68c; border: 1px solid rgba(61,214,140,0.25); }
+        .badge-midjourney { background: rgba(168,85,247,0.12); color: #a855f7; border: 1px solid rgba(168,85,247,0.25); }
         .contact-box {
             background: linear-gradient(135deg, rgba(98,112,240,0.08), rgba(61,214,140,0.06));
             border: 1px solid rgba(98,112,240,0.2);
@@ -273,6 +275,7 @@
         <div class="sidebar-label">Platforms</div>
         <a href="#grok"><span class="dot dot-grok"></span>Grok Imagine</a>
         <a href="#higgsfield"><span class="dot dot-higgsfield"></span>Higgsfield</a>
+        <a href="#midjourney"><span class="dot dot-midjourney"></span>Midjourney</a>
         <a href="#digen"><span class="dot dot-digen"></span>Digen</a>
         <div class="sidebar-label">Your Catalog</div>
         <a href="#browsing">Browsing &amp; Search</a>
@@ -290,7 +293,7 @@
     <main class="content">
         <div class="page-label">Support Guide</div>
         <h1>How to Use GenCatalog</h1>
-        <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across Grok Imagine, Higgsfield, and Digen.<br><a href="release-notes.html">See latest release notes and update details.</a></p>
+        <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across Grok Imagine, Higgsfield, Midjourney, and Digen.<br><a href="release-notes.html">See latest release notes and update details.</a></p>
 
         <div class="section" id="setup">
             <h2>Installation &amp; Setup</h2>
@@ -457,6 +460,50 @@
             </ul>
         </div>
 
+        <div class="section" id="midjourney">
+            <h2>Midjourney</h2>
+            <p class="section-desc">Save individual images or scan your entire Midjourney generation history at once.</p>
+            <div class="platform-badge badge-midjourney">✓ midjourney.com</div>
+
+            <h3>Saving Individual Items</h3>
+            <p>A Save button appears on each image as you browse Midjourney. Click it to save the image with its full prompt, model version, and parameters.</p>
+
+            <h3>Scanning Your Full Library</h3>
+            <p>GenCatalog can import your entire Midjourney generation history in one go — no need to save items one at a time.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Navigate to midjourney.com</strong>
+                        <p>Make sure you're logged in and on the main Midjourney web app. Wait a moment for the page to fully load.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Open the extension → Midjourney tab → click "Scan Library"</strong>
+                        <p>GenCatalog reads your generation history from the page — no separate network request. You'll see Total, Saved, and New counts.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Click "Download New"</strong>
+                        <p>Saves all new items to your catalog with full metadata. Re-scanning will only pick up items not yet saved.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>What Gets Saved</h3>
+            <p>For each Midjourney generation, GenCatalog preserves:</p>
+            <ul style="margin: 8px 0 0 20px; color: var(--t2); font-size: 14px; line-height: 2;">
+                <li>Full prompt text (with <code>--sref</code> and <code>--cref</code> URLs stripped for readability)</li>
+                <li>Model version (<code>--v</code>), aspect ratio (<code>--ar</code>), chaos, seed, style, and all other parameters</li>
+                <li>All four image variants per generation</li>
+                <li>Image dimensions and generation date</li>
+            </ul>
+        </div>
+
         <div class="section" id="digen">
             <h2>Digen</h2>
             <p class="section-desc">Save your Digen AI generations individually or in bulk.</p>
@@ -499,7 +546,7 @@
             <p>Type in the search bar to filter your entire catalog by prompt text. Search is instant across all platforms.</p>
             <h3>Filters</h3>
             <ul>
-                <li><strong>Platform</strong> — show only Grok Imagine, Higgsfield, or Digen content</li>
+                <li><strong>Platform</strong> — show only Grok Imagine, Higgsfield, Midjourney, or Digen content</li>
                 <li><strong>Media type</strong> — images or videos only</li>
                 <li><strong>Favorites</strong> — show only starred items</li>
                 <li><strong>Tags</strong> — click any tag to filter by it</li>
