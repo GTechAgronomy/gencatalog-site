@@ -250,18 +250,18 @@
         </div>
 
         <section class="change">
-            <h2>Save from Midjourney Explore</h2>
-            <p>You can now save any image from the public Midjourney Explore feed — not just your own generations. Hover any item in the Explore grid and click Save. Full prompt, model version, and all parameters are captured automatically.</p>
+            <h2>Fix: Filename restored in detail view</h2>
+            <p>The filename row was missing from the item detail panel. Restored — filename now shows in the metadata section below Dimensions.</p>
         </section>
 
         <section class="change">
-            <h2>Fix: Grok saves broken by CSP change</h2>
-            <p>A recent change to Grok's Content Security Policy was blocking the extension's server health check, causing every Grok save to show "Start GenCatalog first" even when GenCatalog was running. Fixed — Grok saves work normally again.</p>
+            <h2>Fix: Deleted Midjourney items no longer reappear</h2>
+            <p>When you deleted a Midjourney item from GenCatalog, it would come back on the next library scan. Fixed — deleted MJ items are now added to the exclusion list and will not reappear.</p>
         </section>
 
         <section class="change">
-            <h2>Fix: "Fix Sources" maintenance corrupting Midjourney tags</h2>
-            <p>Running the Fix Sources maintenance operation was incorrectly re-tagging Midjourney items as Grok. Fixed — Fix Sources now correctly identifies Midjourney items by CDN URL and filename.</p>
+            <h2>Favorite button in Rediscover</h2>
+            <p>You can now favorite items directly from the Rediscover modal. The button shows ⭐ Favorite or ★ Unfavorite and updates immediately on click.</p>
         </section>
 
     </article>
