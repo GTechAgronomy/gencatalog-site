@@ -243,10 +243,30 @@
             <article class="release">
         <div class="release-head">
             <div>
+                <h2 class="release-version">GenCatalog 5.7.0</h2>
+                <p class="release-date">Published March 26, 2026</p>
+            </div>
+            <span class="pill">Latest</span>
+        </div>
+
+        <section class="change">
+            <h2>Fix: License Activation</h2>
+            <p>Fixed an issue where entering a valid license key in the desktop app returned "Invalid license key." The app now correctly calls the Lemon Squeezy activation endpoint on first use, stores the instance ID, and uses it for subsequent validations. Existing license holders who experienced this issue can re-enter their key to activate successfully.</p>
+        </section>
+
+        <section class="change">
+            <h2>Extension 5.10.0: License Activation Fix</h2>
+            <p>The Chrome extension now correctly activates license keys on first use, matching the desktop app fix. Instance ID is cached and reused for all subsequent validation checks.</p>
+        </section>
+
+    </article>
+
+            <article class="release">
+        <div class="release-head">
+            <div>
                 <h2 class="release-version">GenCatalog 5.6.7</h2>
                 <p class="release-date">Published March 23, 2026</p>
             </div>
-            <span class="pill">Latest</span>
         </div>
 
         <section class="change">
