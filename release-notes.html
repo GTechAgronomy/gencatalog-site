@@ -237,10 +237,50 @@
             <article class="release">
         <div class="release-head">
             <div>
+                <h2 class="release-version">GenCatalog 5.8.0</h2>
+                <div class="release-date">Published March 29, 2026</div>
+            </div>
+            <span class="pill">Latest</span>
+        </div>
+
+        <div class="change">
+            <h2>Grok: Bad Model Labels Cleaned Up</h2>
+            <p>Some Grok videos were showing a model label like <code>overriden</code> in the catalog. That raw upstream value is now filtered out on save, hidden in the UI, and can be cleaned retroactively from existing catalog entries as well.</p>
+        </div>
+
+        <div class="change">
+            <h2>Grok: Prompt Capture Fixes</h2>
+            <p>Two Grok save issues have been fixed. Saving from the favorites grid no longer drops the prompt when a valid cached prompt already exists. And saving from Grok detail pages now pulls the real post prompt from page data instead of grabbing unrelated page text.</p>
+        </div>
+
+        <div class="change">
+            <h2>Grok Save Reliability</h2>
+            <p>The Grok save badge now goes straight through the real save flow instead of failing early with a misleading "Start Grok Catalog Server first!" message while the local server is already running. If the local server is actually unavailable, GenCatalog now reports that clearly.</p>
+        </div>
+
+        <div class="change">
+            <h2>Menu Bar Icon Polish</h2>
+            <p>The macOS menu bar icon has been rebuilt as a proper tray-specific template icon. It now matches the GenCatalog stack shape more closely and looks more native alongside other menu bar icons.</p>
+        </div>
+
+        <div class="change">
+            <h2>Icon Refresh Across App and Extension</h2>
+            <p>GenCatalog now uses the updated app icon across the desktop app, extension surfaces, and popup branding. Small surfaces have also been tuned so the icon reads more clearly at extension and toolbar sizes.</p>
+        </div>
+
+        <div class="change">
+            <h2>Extension Polish (5.12)</h2>
+            <p>The extension popup icon framing has been cleaned up so the icon no longer looks padded inside a second tile. Hover behavior on save badges has also been refined to feel smoother and more intentional.</p>
+        </div>
+
+    </article>
+
+            <article class="release">
+        <div class="release-head">
+            <div>
                 <h2 class="release-version">GenCatalog 5.7.0</h2>
                 <p class="release-date">Published March 26, 2026</p>
             </div>
-            <span class="pill">Latest</span>
         </div>
 
         <section class="change">
