@@ -33,12 +33,13 @@
             --t2: #84848f;
             --t2: #84848f;
             --t3: #404048;
-            --accent: #6270f0;
+            --accent: #4f6378;
+            --accent-fill: #172939;
             --cyan: #3dd68c;
             --green: #3dd68c;
             --yellow: #f5c518;
             --border: rgba(255,255,255,0.072);
-            --gradient: linear-gradient(135deg, #6270f0, #3dd68c);
+            --gradient: linear-gradient(135deg, #172939, #23394d);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -122,12 +123,12 @@
             margin-bottom: 2px;
         }
         .sidebar a:hover { color: var(--t1); background: var(--s2); }
-        .sidebar a.active { color: var(--accent); background: rgba(98,112,240,0.1); }
+        .sidebar a.active { color: var(--accent); background: rgba(23,41,57,0.78); }
         .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
         .dot-grok { background: #10b981; }
-        .dot-higgsfield { background: #6270f0; }
+        .dot-higgsfield { background: #f06b6b; }
         .dot-digen { background: #3dd68c; }
-        .dot-midjourney { background: #a855f7; }
+        .dot-midjourney { background: #4f6378; }
         .content {
             padding: 48px 48px 100px;
             max-width: 780px;
@@ -194,8 +195,8 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(98,112,240,0.15);
-            border: 1.5px solid rgba(98,112,240,0.4);
+            background: rgba(23,41,57,0.82);
+            border: 1.5px solid rgba(79,99,120,0.42);
             color: var(--accent);
             font-size: 13px;
             font-weight: 700;
@@ -215,7 +216,7 @@
             margin: 16px 0;
             line-height: 1.6;
         }
-        .tip { background: rgba(98,112,240,0.08); border-left: 3px solid var(--accent); }
+        .tip { background: rgba(23,41,57,0.72); border-left: 3px solid var(--accent); }
         .tip strong { color: var(--accent); }
         .warning { background: rgba(245,158,11,0.08); border-left: 3px solid var(--yellow); }
         .warning strong { color: var(--yellow); }
@@ -232,12 +233,12 @@
             margin-bottom: 16px;
         }
         .badge-grok { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
-        .badge-higgsfield { background: rgba(98,112,240,0.12); color: #6270f0; border: 1px solid rgba(98,112,240,0.25); }
+        .badge-higgsfield { background: rgba(240,107,107,0.12); color: #f06b6b; border: 1px solid rgba(240,107,107,0.25); }
         .badge-digen { background: rgba(61,214,140,0.12); color: #3dd68c; border: 1px solid rgba(61,214,140,0.25); }
-        .badge-midjourney { background: rgba(168,85,247,0.12); color: #a855f7; border: 1px solid rgba(168,85,247,0.25); }
+        .badge-midjourney { background: rgba(23,41,57,0.78); color: #4f6378; border: 1px solid rgba(79,99,120,0.35); }
         .contact-box {
-            background: linear-gradient(135deg, rgba(98,112,240,0.08), rgba(61,214,140,0.06));
-            border: 1px solid rgba(98,112,240,0.2);
+            background: linear-gradient(135deg, rgba(23,41,57,0.82), rgba(35,57,77,0.56));
+            border: 1px solid rgba(79,99,120,0.3);
             border-radius: 12px;
             padding: 28px;
             text-align: center;
@@ -380,7 +381,7 @@
             <div class="platform-badge badge-grok">✓ grok.com &nbsp;·&nbsp; x.com/i/grok</div>
 
             <h3>Saving Individual Generations</h3>
-            <p>When viewing any Grok Imagine generation, a purple GenCatalog save button (⊞ grid icon) appears on the media. Click it to save instantly. The button shows a spinner while saving, a green checkmark on success, or orange if it's already in your catalog.</p>
+            <p>When viewing any Grok Imagine generation, a blue GenCatalog save button (⊞ grid icon) appears on the media. Click it to save instantly. The button shows a spinner while saving, a green checkmark on success, or orange if it's already in your catalog.</p>
             <div class="tip"><strong>Tip:</strong> Saving from a detail page captures the most complete metadata including the full prompt. Grid view saves also work but may capture less metadata.</div>
 
             <h3>Bulk Downloading Your Favorites</h3>
@@ -522,7 +523,7 @@
             <div class="platform-badge badge-digen">✓ digen.ai</div>
 
             <h3>Saving Individual Items</h3>
-            <p>A purple GenCatalog save button appears on each generation on digen.ai. Click it to save the image or video with its metadata.</p>
+            <p>A blue GenCatalog save button appears on each generation on digen.ai. Click it to save the image or video with its metadata.</p>
 
             <h3>Bulk Saving</h3>
             <div class="steps">
@@ -598,7 +599,7 @@
                     <div class="step-num">2</div>
                     <div class="step-body">
                         <strong>Click items to select them</strong>
-                        <p>Selected items show a purple border. Use Select All / Deselect All for quick selection. Shift+click to select a range.</p>
+                        <p>Selected items show a blue border. Use Select All / Deselect All for quick selection. Shift+click to select a range.</p>
                     </div>
                 </div>
                 <div class="step">

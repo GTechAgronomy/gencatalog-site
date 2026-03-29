@@ -33,10 +33,11 @@
             --t2: #84848f;
             --t2: #84848f;
             --t3: #404048;
-            --accent: #6270f0;
+            --accent: #4f6378;
+            --accent-fill: #172939;
             --cyan: #3dd68c;
             --border: rgba(255,255,255,0.072);
-            --gradient: linear-gradient(135deg, #6270f0, #3dd68c);
+            --gradient: linear-gradient(135deg, #172939, #23394d);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -168,8 +169,8 @@
             overflow: hidden;
             transition: border-color 0.2s;
         }
-        .faq-item:hover { border-color: rgba(98,112,240,0.25); }
-        .faq-item.open { border-color: rgba(98,112,240,0.4); }
+        .faq-item:hover { border-color: rgba(79,99,120,0.32); }
+        .faq-item.open { border-color: rgba(79,99,120,0.48); }
         .faq-q {
             width: 100%;
             text-align: left;
@@ -200,8 +201,8 @@
             transition: all 0.2s;
         }
         .faq-item.open .faq-icon {
-            background: var(--accent);
-            border-color: var(--accent);
+            background: var(--accent-fill);
+            border-color: var(--accent-fill);
             color: white;
             transform: rotate(45deg);
         }
@@ -248,8 +249,8 @@
             vertical-align: middle;
         }
         .tag-grok { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
-        .tag-higgsfield { background: rgba(98,112,240,0.15); color: #6270f0; border: 1px solid rgba(98,112,240,0.3); }
-        .tag-midjourney { background: rgba(168,85,247,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.3); }
+        .tag-higgsfield { background: rgba(240,107,107,0.15); color: #f06b6b; border: 1px solid rgba(240,107,107,0.3); }
+        .tag-midjourney { background: rgba(23,41,57,0.78); color: #4f6378; border: 1px solid rgba(79,99,120,0.35); }
         .tag-digen { background: rgba(61,214,140,0.15); color: #3dd68c; border: 1px solid rgba(61,214,140,0.3); }
         .tag-all { background: rgba(244,63,94,0.12); color: #f43f5e; border: 1px solid rgba(244,63,94,0.25); }
 
@@ -257,7 +258,7 @@
         .tip {
             margin: 12px 0;
             padding: 12px 16px;
-            background: rgba(98,112,240,0.08);
+            background: rgba(23,41,57,0.72);
             border-left: 3px solid var(--accent);
             border-radius: 0 6px 6px 0;
             font-size: 14px;
@@ -269,8 +270,8 @@
         .contact-banner {
             margin-top: 60px;
             padding: 32px;
-            background: linear-gradient(135deg, rgba(98,112,240,0.1), rgba(61,214,140,0.08));
-            border: 1px solid rgba(98,112,240,0.2);
+            background: linear-gradient(135deg, rgba(23,41,57,0.82), rgba(35,57,77,0.56));
+            border: 1px solid rgba(79,99,120,0.3);
             border-radius: 12px;
             text-align: center;
         }
@@ -541,7 +542,7 @@
         <div class="faq-item">
             <button class="faq-q">How do I save individual generations from Grok Imagine?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>When you're on <strong>grok.com</strong> or <strong>x.com/i/grok</strong> and viewing a generation, a purple GenCatalog save button (the grid icon) will appear on the image or video. Click it to save instantly.</p>
+                <p>When you're on <strong>grok.com</strong> or <strong>x.com/i/grok</strong> and viewing a generation, a blue GenCatalog save button (the grid icon) will appear on the image or video. Click it to save instantly.</p>
                 <p>The button changes to a spinner while saving, then a green checkmark when done. If the item was already saved, it shows orange.</p>
                 <div class="tip"><strong>Tip:</strong> The save button works on both the grid view and individual generation detail pages.</div>
             </div>
@@ -608,7 +609,7 @@
                     <li><strong>Grid/browse pages</strong> — a badge appears on each thumbnail in your library, explore feed, and profile</li>
                     <li><strong>Modals</strong> — when you open a generation in a lightbox, the save button appears automatically</li>
                 </ul>
-                <p>Click the purple grid icon on any of these to save. A spinner appears while saving, then a checkmark when complete.</p>
+                <p>Click the blue grid icon on any of these to save. A spinner appears while saving, then a checkmark when complete.</p>
             </div>
         </div>
 
@@ -714,7 +715,7 @@
         <div class="faq-item">
             <button class="faq-q">How do I save content from Digen?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>When you're on <strong>digen.ai</strong>, a purple GenCatalog save button appears on each of your generations. Click it to save the image or video with its metadata.</p>
+                <p>When you're on <strong>digen.ai</strong>, a blue GenCatalog save button appears on each of your generations. Click it to save the image or video with its metadata.</p>
                 <p>For bulk saving: a floating panel appears on Digen pages — click <strong>Scan</strong> from the extension popup's Digen tab to count available items, then <strong>Download All</strong> to save them in bulk.</p>
             </div>
         </div>
@@ -797,7 +798,7 @@
             <div class="faq-a">
                 <p>Yes. Click the checkbox icon (☑️) in the toolbar to enter multi-select mode. Then:</p>
                 <ul>
-                    <li>Click items to select them (purple border appears)</li>
+                    <li>Click items to select them (blue border appears)</li>
                     <li>Use <strong>Select All</strong> or <strong>Deselect All</strong> for quick selection</li>
                     <li>Available bulk actions: Favorite Selected, Delete Selected, Compare (2 items)</li>
                 </ul>

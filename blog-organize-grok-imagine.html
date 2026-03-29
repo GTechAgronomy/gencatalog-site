@@ -146,9 +146,10 @@
       --text-primary: #e8e8ed;
       --text-secondary: #8888a0;
       --text-muted: #55556a;
-      --accent: #8b5cf6;
-      --accent-glow: rgba(139, 92, 246, 0.3);
-      --accent-subtle: rgba(139, 92, 246, 0.1);
+      --accent: #4f6378;
+      --accent-fill: #172939;
+      --accent-glow: rgba(23, 41, 57, 0.45);
+      --accent-subtle: rgba(23, 41, 57, 0.78);
       --teal: #2dd4bf;
       --green: #22c55e;
     }
@@ -189,7 +190,7 @@
     }
     .logo img { width: 30px; height: 30px; border-radius: 8px; }
     .nav-cta {
-      background: var(--accent);
+      background: var(--accent-fill);
       color: white;
       padding: 0.5rem 1.25rem;
       border-radius: 8px;
@@ -198,7 +199,7 @@
       font-size: 0.875rem;
       transition: background 0.2s;
     }
-    .nav-cta:hover { background: #7c3aed; }
+    .nav-cta:hover { background: #23394d; }
 
     /* ARTICLE */
     .article-wrap {
@@ -217,7 +218,7 @@
     .article-tag {
       background: var(--accent-subtle);
       color: var(--accent);
-      border: 1px solid rgba(139,92,246,0.3);
+      border: 1px solid rgba(79,99,120,0.35);
       border-radius: 100px;
       padding: 0.2rem 0.75rem;
       font-size: 0.75rem;
@@ -274,7 +275,7 @@
       line-height: 1.7;
     }
     strong { color: var(--text-primary); font-weight: 600; }
-    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(139,92,246,0.3); transition: border-color 0.2s; }
+    a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(79,99,120,0.35); transition: border-color 0.2s; }
     a:hover { border-color: var(--accent); }
 
     /* CALLOUT BOXES */
@@ -324,8 +325,8 @@
 
     /* CTA BLOCK */
     .cta-block {
-      background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(45,212,191,0.06));
-      border: 1px solid rgba(139,92,246,0.25);
+      background: linear-gradient(135deg, rgba(23,41,57,0.82), rgba(35,57,77,0.56));
+      border: 1px solid rgba(79,99,120,0.3);
       border-radius: 16px;
       padding: 2.5rem;
       text-align: center;
@@ -344,7 +345,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: var(--accent);
+      background: var(--accent-fill);
       color: white;
       padding: 0.85rem 2rem;
       border-radius: 10px;
@@ -354,7 +355,7 @@
       border: none;
       transition: all 0.2s;
     }
-    .btn-primary:hover { background: #7c3aed; transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); border-bottom: none; }
+    .btn-primary:hover { background: #23394d; transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); border-bottom: none; }
 
     /* FAQ SECTION */
     .faq-item {
