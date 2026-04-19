@@ -237,10 +237,59 @@
             <article class="release">
         <div class="release-head">
             <div>
+                <h2 class="release-version">GenCatalog 5.14.2</h2>
+                <div class="release-date">Published April 19, 2026</div>
+            </div>
+            <span class="pill">Latest</span>
+        </div>
+
+        <div class="change">
+            <h2>A New Sidebar</h2>
+            <p>The sidebar has been rebuilt from the top down. At the top, a hero block shows how many generations are in your catalog right now, how many you've added in the last 30 days, and a small sparkline of daily saves across that window. Below it, a source ratio bar breaks your library down by platform — Grok, Higgsfield, Midjourney, Digen — at a glance. Click any platform in the legend to toggle it on or off.</p>
+            <p>Filters are reorganized around how you actually use them. Type, source platform, sort, rating, and favorites sit up top. Everything else lives in a Refine further accordion that expands in place. Active filter counts show inline so you always know what's narrowing your grid.</p>
+            <p>Collections are now pinned at the bottom of the sidebar, always visible without scrolling.</p>
+        </div>
+
+        <div class="change">
+            <h2>Settings Screen</h2>
+            <p>GenCatalog has a proper Settings screen for the first time. Open it from the gear icon in the sidebar or with ⌘,. Six tabs: General, Capture & Import, Library, Maintenance, License, and About. The maintenance tools previously scattered in the sidebar now have a proper home with descriptions, last-run timestamps, and a Run all option.</p>
+        </div>
+
+        <div class="change">
+            <h2>A Real Trial Flow</h2>
+            <p>The old dark trial-expired modal is gone. In its place, a five-moment flow designed to respect you at every step: Day 0 Welcome, Day 3 Reflection, Day 6 Last day, Day 8 Expired (with read-only mode), and Licensed.</p>
+            <p>New trial policy: 7 days or 250 generations, whichever comes first. The old 100-generation cap has been raised. Pricing is named plainly everywhere: $39 · once · all v1 updates · no subscription. A trial chip in the sidebar footer updates daily and shifts from green to yellow to red as you approach the limit.</p>
+        </div>
+
+        <div class="change">
+            <h2>Source Images — A New Way to Slice Your Catalog</h2>
+            <p>Every generation that started from a reference image — image-to-image, character refs, style refs, edits — is now a first-class thing in your catalog. Open Source Images under Refine further to find a Has source image toggle, a strip of your top five most-used source images with counts, and Show all sources for the full searchable list sorted by how many generations came from each.</p>
+            <p>On a typical catalog, this surfaces around 1,000 distinct source images across roughly 11,000 generations — a side of your work you couldn't see before.</p>
+        </div>
+
+        <div class="change">
+            <h2>Top Prompts</h2>
+            <p>Find every variation you've made from the same prompt idea. Under Refine further, Top Prompts groups your generations by the opening of their prompt. Click a prompt to narrow the grid to every generation that used it. Sort by most used, most recent, or A→Z. Prompts are grouped by their first 80 characters, normalized — so all the variations you've made by tweaking the back half cluster together.</p>
+        </div>
+
+        <div class="change">
+            <h2>Better Source Image Thumbnails</h2>
+            <p>Some source image tiles were rendering as empty squares — especially for Grok video-extension chains, where the captured reference was a video frame rather than an uploaded image. The app now falls back to the child generation's own frame when a source lacks one. The empty-tile count dropped from 21 to 2 on a typical catalog, and video-extension sources now display their parent video's first frame automatically.</p>
+        </div>
+
+        <div class="change">
+            <h2>Polish</h2>
+            <p>A lot of small things got better. The old purple gradient accent has been replaced with a quieter slate throughout the app. Emoji icons have been swapped for a consistent inline icon set that reads clearly at every size. The macOS menu bar icon has been redrawn as a proper template icon that matches the app mark and sits naturally next to other tray icons. Extension popup has been retuned so icons and save badges don't look padded or double-tiled. Refine sidebar icons have been reworked to be more legible at small sizes. About screen copy has been rewritten in the app's current voice. Footer legibility has been improved — the compact meta chips in the sidebar footer now read cleanly at a glance.</p>
+        </div>
+
+    </article>
+
+            <article class="release">
+        <div class="release-head">
+            <div>
                 <h2 class="release-version">GenCatalog 5.9.0</h2>
                 <div class="release-date">Published March 30, 2026</div>
             </div>
-            <span class="pill">Latest</span>
         </div>
 
         <div class="change">
