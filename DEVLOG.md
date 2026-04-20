@@ -1,6 +1,29 @@
 # GenCatalog Site Development Log
 
 ---
+## Rules / Conventions
+
+### R2 release artifacts must live at the bucket root
+The public hostname `downloads.gencatalog.app` serves from the **root** of the `gencatalog-downloads` R2 bucket — **not** from `updates/`.
+
+When a release is uploaded to `gencatalog-downloads/updates/...`, the site's download buttons (which point at `downloads.gencatalog.app/GenCatalog-X.Y.Z-universal.dmg`) return `File not found` to end users.
+
+**On every release, copy these files from `updates/` to the bucket root:**
+- `GenCatalog-<version>-universal.dmg` + `.blockmap`
+- `GenCatalog-<version>-universal-mac.zip` + `.blockmap`
+- `GenCatalog-<version>-Setup.exe` + `.blockmap`
+- `GenCatalog-Extension-v<version>.zip` (if a new extension ships)
+- `latest.yml` (overwrites prior — flips electron-updater on Windows)
+- `latest-mac.yml` (overwrites prior — flips electron-updater on Mac)
+
+Fast way (rclone with the `r2` remote configured):
+```
+for f in <files>; do rclone copyto "r2:gencatalog-downloads/updates/$f" "r2:gencatalog-downloads/$f"; done
+```
+
+Verify each URL returns `200` via `curl -I https://downloads.gencatalog.app/<file>` before announcing the release. Leave the `updates/` copies in place as an archive.
+
+---
 ## Update: Windows download button + support FAQ content on homepage
 ### Date: 2026-02-25
 
