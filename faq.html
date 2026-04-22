@@ -484,20 +484,20 @@
                     <li>Make sure GenCatalog is running (you'll see it in your menu bar (Mac) or system tray (Windows))</li>
                     <li>Browse to Grok Imagine, Higgsfield, Midjourney, or Digen — save buttons will appear automatically</li>
                 </ol>
-                <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content. If the extension shows "Not Running," make sure the app is open.</div>
+                <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content, so if the popup cannot connect, make sure the desktop app is open.</div>
             </div>
         </div>
 
         <div class="faq-item">
-            <button class="faq-q">The extension says "Not Running" — what do I do?<span class="faq-icon">+</span></button>
+            <button class="faq-q">The extension cannot connect — what do I do?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>This means the GenCatalog desktop app isn't running. The extension needs the app to be open to save content.</p>
+                <p>This usually means the GenCatalog desktop app is not open yet. The extension needs the app running locally to save content.</p>
                 <ol>
                     <li>Open the GenCatalog app</li>
                     <li>Wait a few seconds for the server to start</li>
-                    <li>Click the extension icon again — it should now show "Running"</li>
+                    <li>Click the extension icon again — it should reconnect automatically</li>
                 </ol>
-                <p>If the app is open but still shows "Not Running," try quitting and relaunching GenCatalog.</p>
+                <p>If the app is open but the popup still cannot connect, try quitting and relaunching GenCatalog.</p>
             </div>
         </div>
 
@@ -557,7 +557,7 @@
                     <li>Click the <strong>Grok</strong> tab in the popup</li>
                     <li>Click <strong>Scan Favorites</strong> — this counts your favorites and compares against your existing catalog</li>
                     <li>Review the stats (Grok Favorites / Already Saved / New to Download)</li>
-                    <li>Click <strong>Download All New</strong> to start</li>
+                    <li>Click <strong>Download N new items</strong> to start</li>
                     <li>Use <strong>Pause</strong> and <strong>Resume</strong> to control the process</li>
                 </ol>
                 <div class="tip"><strong>Smart Sync:</strong> GenCatalog only downloads items not already in your catalog. Re-scanning after a partial download will pick up exactly where it left off.</div>
@@ -621,10 +621,11 @@
                     <li>Browse the grid — GenCatalog caches the items as they appear</li>
                     <li>Click the GenCatalog extension icon</li>
                     <li>Click the <strong>Higgsfield</strong> tab</li>
-                    <li>Click <strong>Refresh Count</strong> to see how many items are cached</li>
-                    <li>Click <strong>Save All Cached</strong> to save everything at once</li>
+                    <li>Click <strong>Scan Library</strong> the first time to read the current cache</li>
+                    <li>After scrolling farther, click <strong>Refresh Count</strong> to update the totals</li>
+                    <li>If the popup shows new items, click <strong>Sync New</strong> to save only what is not already in your catalog</li>
                 </ol>
-                <div class="tip"><strong>Important:</strong> Scroll through your entire library first before clicking Save All — GenCatalog can only save items that have been loaded on screen.</div>
+                <div class="tip"><strong>Important:</strong> Scroll through your library before refreshing — GenCatalog can only act on items that have been loaded on screen.</div>
             </div>
         </div>
 
@@ -673,7 +674,7 @@
                     <li>Open the GenCatalog extension and go to the <strong>Midjourney tab</strong></li>
                     <li>Click <strong>Scan Library</strong> — GenCatalog reads your generation history from the page (no separate network request)</li>
                     <li>You'll see Total, Saved, and New counts</li>
-                    <li>Click <strong>Download New</strong> to import everything not yet in your catalog</li>
+                    <li>Click <strong>Download N new items</strong> to import everything not yet in your catalog</li>
                 </ol>
                 <p>Re-scanning will only pick up new items, so you can run it anytime to stay up to date.</p>
             </div>
