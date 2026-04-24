@@ -238,10 +238,40 @@
             <article class="release">
         <div class="release-head">
             <div>
+                <h2 class="release-version">GenCatalog 5.15.1 + Extension 5.18</h2>
+                <div class="release-date">Published April 24, 2026</div>
+            </div>
+            <span class="pill">Latest</span>
+        </div>
+
+        <div class="change">
+            <h2>Midjourney Duplicate Protection</h2>
+            <p>Midjourney library scans now match saved and previously deleted items by the stable job ID plus image index, even when filenames or CDN URLs change. Duplicate cleanup also records removed Midjourney duplicates in the exclusion list so deleted items stay deleted.</p>
+        </div>
+
+        <div class="change">
+            <h2>Creator Badge Reliability</h2>
+            <p>Save badges are more resilient on Midjourney and Grok pages that recycle their UI. Grok individual post pages now detect still images as well as videos, and Midjourney badges can remount correctly after page refreshes or dynamic navigation.</p>
+        </div>
+
+        <div class="change">
+            <h2>Clearer Sync Progress</h2>
+            <p>The extension's active progress bar now appears directly under the scan and download actions while work is running. Midjourney downloads also finish with a clear saved, already-in-catalog, previously-deleted, or failed summary instead of hanging on metadata text.</p>
+        </div>
+
+        <div class="change">
+            <h2>Desktop App Icon Restored</h2>
+            <p>Desktop builds now use the current GenCatalog stack icon for macOS, Windows, and in-app branding. The stale purple grid icon has been removed from the release path.</p>
+        </div>
+
+    </article>
+
+            <article class="release">
+        <div class="release-head">
+            <div>
                 <h2 class="release-version">GenCatalog 5.15.0 + Extension 5.17</h2>
                 <div class="release-date">Published April 23, 2026</div>
             </div>
-            <span class="pill">Latest</span>
         </div>
 
         <div class="change">
