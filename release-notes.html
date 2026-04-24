@@ -245,23 +245,26 @@
         </div>
 
         <div class="change">
-            <h2>Midjourney Duplicate Protection</h2>
-            <p>Midjourney library scans now match saved and previously deleted items by the stable job ID plus image index, even when filenames or CDN URLs change. Duplicate cleanup also records removed Midjourney duplicates in the exclusion list so deleted items stay deleted.</p>
+            <h2>Midjourney Scans Are Much Smarter About Duplicates</h2>
+            <p>Midjourney can change filenames and CDN URLs behind the scenes, which made it too easy for the same image to look "new" again later. GenCatalog now keys Midjourney items to the stable job ID and image position instead, so scans are better at recognizing what you already saved — and what you intentionally deleted.</p>
+            <p>That means fewer repeat imports, cleaner scan results, and less time babysitting your library.</p>
         </div>
 
         <div class="change">
-            <h2>Creator Badge Reliability</h2>
-            <p>Save badges are more resilient on Midjourney and Grok pages that recycle their UI. Grok individual post pages now detect still images as well as videos, and Midjourney badges can remount correctly after page refreshes or dynamic navigation.</p>
+            <h2>Save Badges That Stick Around</h2>
+            <p>Grok and Midjourney both redraw parts of their pages as you browse, refresh, and jump between views. The extension is now better at keeping GenCatalog save badges attached through those changes instead of disappearing after the page quietly rebuilds itself.</p>
+            <p>Grok post pages also now handle still images more reliably, not just videos.</p>
         </div>
 
         <div class="change">
-            <h2>Clearer Sync Progress</h2>
-            <p>The extension's active progress bar now appears directly under the scan and download actions while work is running. Midjourney downloads also finish with a clear saved, already-in-catalog, previously-deleted, or failed summary instead of hanging on metadata text.</p>
+            <h2>Cleaner Progress While You Sync</h2>
+            <p>Scan and download progress now shows up right where you started the action, so it is easier to tell what GenCatalog is doing while a bulk job is running. Midjourney downloads also end with a clearer summary: saved, already in catalog, previously deleted, or failed.</p>
+            <p>No more staring at vague metadata text and wondering whether the job actually finished.</p>
         </div>
 
         <div class="change">
-            <h2>Desktop App Icon Restored</h2>
-            <p>Desktop builds now use the current GenCatalog stack icon for macOS, Windows, and in-app branding. The stale purple grid icon has been removed from the release path.</p>
+            <h2>The Real GenCatalog Icon Is Back</h2>
+            <p>Desktop builds now use the current GenCatalog stacked-card icon across macOS, Windows, and in-app branding.</p>
         </div>
 
     </article>
