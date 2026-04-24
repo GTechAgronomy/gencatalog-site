@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8EV2H78B6F');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex">
@@ -34,6 +41,7 @@
     }
     .btn.secondary { background: transparent; color: inherit; border: 1px solid currentColor; }
   </style>
+  <script defer src="/analytics.js"></script>
 </head>
 <body>
   <h1 id="headline">Starting your download…</h1>
@@ -80,8 +88,19 @@
       secondary.textContent = otherLabel;
       secondary.style.display = 'inline-block';
 
-      // Kick off the download.
-      location.replace(target);
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_redirect', {
+          event_category: 'conversion',
+          event_label: isWin ? 'Windows installer' : 'Mac installer',
+          link_url: target,
+          transport_type: 'beacon'
+        });
+      }
+
+      // Give analytics a brief moment to queue before the file redirect.
+      setTimeout(function () {
+        location.replace(target);
+      }, 120);
     }
   </script>
 </body>

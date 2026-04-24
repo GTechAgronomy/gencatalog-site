@@ -11,16 +11,63 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grok Imagine Favorites Disappeared? Here's What Happened and How to Protect Your Library</title>
-  <meta name="description" content="Grok Imagine favorites disappearing is a known issue. Here's why it happens, how to bulk download your Grok library with prompts intact, and how to bulk upscale through Grok — all locally.">
-  <link rel="canonical" href="https://gencatalog.app/blog-grok-favorites-disappeared.html" />
+  <title>Grok Imagine Favorites Disappeared? Recover, Download, and Protect Them | GenCatalog</title>
+  <meta name="description" content="Grok Imagine favorites missing or gone? Learn why it happens, how to bulk download Grok favorites, and how to save images, prompts, and metadata locally.">
+  <link rel="canonical" href="https://gencatalog.app/blog-grok-favorites-disappeared" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="theme-color" content="#111a28" />
-  <meta property="og:title" content="Grok Imagine Favorites Disappeared? Here's What Happened" />
-  <meta property="og:description" content="Grok Imagine favorites disappearing is a known issue. Here's why it happens and how to protect your library permanently." />
-  <meta property="og:url" content="https://gencatalog.app/blog-grok-favorites-disappeared.html" />
+  <meta property="og:title" content="Grok Imagine Favorites Disappeared? Recover, Download, and Protect Them" />
+  <meta property="og:description" content="Why Grok favorites disappear, how to bulk download them, and how to preserve prompts and metadata locally." />
+  <meta property="og:url" content="https://gencatalog.app/blog-grok-favorites-disappeared" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Grok Imagine Favorites Disappeared? Recover, Download, and Protect Them",
+    "description": "Why Grok Imagine favorites disappear, how to bulk download them, and how to preserve images, prompts, and metadata locally.",
+    "datePublished": "2026-03-04",
+    "dateModified": "2026-04-24",
+    "author": {
+      "@type": "Organization",
+      "name": "GenCatalog"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "GenCatalog",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://gencatalog.app/GenCatalogLogo.png"
+      }
+    },
+    "mainEntityOfPage": "https://gencatalog.app/blog-grok-favorites-disappeared"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why did my Grok Imagine favorites disappear?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Grok Imagine favorites are stored in a cloud service, so infrastructure changes, bugs, rollbacks, or account/library changes can make saved items disappear or stop showing correctly."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I bulk download Grok Imagine favorites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Grok supports multi-select downloads for files, but GenCatalog can also save the image or video with the prompt, generation parameters, source, and searchable local metadata."
+        }
+      }
+    ]
+  }
+  </script>
   <style>
     :root {
       --bg-deep: #09090b;
@@ -124,6 +171,25 @@
       color: var(--text-muted);
     }
     .callout strong { color: var(--text-secondary); }
+    .quick-answer {
+      background: rgba(79,99,120,0.14);
+      border: 1px solid rgba(79,99,120,0.42);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 26px 0 30px;
+    }
+    .quick-answer p { margin-bottom: 10px; color: var(--text-secondary); }
+    .quick-answer p:last-child { margin-bottom: 0; }
+    .related-links {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+      margin: 34px 0;
+      display: grid;
+      gap: 8px;
+      font-size: 15px;
+    }
+    .related-links a { color: var(--text-secondary); }
     .cta-block {
       background: var(--bg-surface);
       border: 1px solid var(--border);
@@ -168,20 +234,22 @@
     }
     footer a:hover { color: var(--text-muted); }
   </style>
+  <script defer src="/analytics.js"></script>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="https://gencatalog.app" class="logo">
+    <a href="/" class="logo">
       <img src="GenCatalogLogo.png?v=20260330" width="22" height="22" alt="" style="border-radius:5px;display:block;">
       GenCatalog
     </a>
     <div class="nav-links">
-      <a href="https://gencatalog.app">Home</a>
-      <a href="support.html">Support</a>
-      <a href="faq.html">FAQ</a>
-      <a href="release-notes.html">Release Notes</a>
+      <a href="/">Home</a>
+      <a href="/grok">Grok Saver</a>
+      <a href="/guides">Guides</a>
+      <a href="/support">Support</a>
+      <a href="/faq">FAQ</a>
     </div>
   </div>
 </nav>
@@ -189,11 +257,16 @@
 <main class="article">
   <div class="article-label">Grok Imagine</div>
   <h1>Grok Imagine Favorites Disappeared? Here's What Happened and How to Protect Your Library</h1>
-  <div class="meta">March 2026 · 4 min read</div>
+  <div class="meta">Updated April 2026 · 4 min read</div>
 
   <p>If you opened Grok Imagine recently and found your favorites gone — or significantly reduced — you're not alone. This has happened multiple times to Grok users, and it's not a bug you did anything to cause.</p>
 
   <p>Here's what's going on and, more importantly, what you can do so it never costs you anything again.</p>
+
+  <div class="quick-answer">
+    <p><strong>Quick answer:</strong> if Grok favorites are missing, first check whether the issue is a temporary platform-side sync problem. Then back up anything that reappears locally before relying on favorites again.</p>
+    <p>For long-term protection, use <a href="/grok">GenCatalog's Grok saver</a> to save files, prompts, and generation metadata to your Mac or Windows PC.</p>
+  </div>
 
   <h2>Why Grok Imagine favorites disappear</h2>
 
@@ -218,6 +291,8 @@
   <p>If you ever want to reproduce a generation, iterate on it, or understand why it worked, you need the prompt. A folder full of images without prompts is a dead archive.</p>
 
   <p><strong>GenCatalog</strong> goes further: one click saves the image or video, the full prompt, and all generation parameters to your local machine — organized, searchable, and intact. The difference between downloading files and preserving your creative work.</p>
+
+  <p>For the dedicated workflow, see the <a href="/grok">Grok Imagine bulk download and backup page</a>.</p>
 
   <h2>How to protect your library going forward</h2>
 
@@ -246,6 +321,13 @@
 
   <p>Nothing is uploaded anywhere. No account required. Your library lives on your machine, and it stays there regardless of what any platform decides to do.</p>
 
+  <div class="related-links">
+    <strong>Related GenCatalog guides</strong>
+    <a href="/grok">Bulk download Grok Imagine favorites with prompts</a>
+    <a href="/blog-organize-grok-imagine">Organize a large Grok Imagine library locally</a>
+    <a href="/faq">GenCatalog FAQ: supported platforms, bulk saves, and privacy</a>
+  </div>
+
   <h2>Bonus: bulk upscaling through Grok</h2>
 
   <p>One feature most people don't know about: GenCatalog supports bulk upscaling requests through Grok Imagine. Instead of upscaling images one at a time inside the Grok interface, you can queue multiple images for upscaling directly from your local catalog. It's one of the few tools that lets you do this — and it saves a significant amount of time if you're working with large libraries.</p>
@@ -257,16 +339,18 @@
   <div class="cta-block">
     <h3>Stop losing your Grok Imagine generations</h3>
     <p>GenCatalog saves every image, video, and prompt locally — one click, no cloud, no subscriptions.</p>
-    <a href="https://gencatalog.app" class="btn">Start Free 7-Day Trial →</a>
+    <a href="/get" class="btn">Start Free 7-Day Trial</a>
   </div>
 
 </main>
 
 <footer>
-  <a href="https://gencatalog.app">Home</a>
-  <a href="privacy.html">Privacy</a>
-  <a href="support.html">Support</a>
-  <a href="release-notes.html">Release Notes</a>
+  <a href="/">Home</a>
+  <a href="/grok">Grok Saver</a>
+  <a href="/guides">Guides</a>
+  <a href="/privacy">Privacy</a>
+  <a href="/support">Support</a>
+  <a href="/release-notes">Release Notes</a>
   <p style="margin-top:12px;">© 2026 GenCatalog. All rights reserved.</p>
 </footer>
 
