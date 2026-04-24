@@ -1,6 +1,18 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-04-24 — Published 5.15.1 download links and release notes
+
+### What Changed
+- Added release notes for desktop 5.15.1 and Chrome extension 5.18.
+- Updated `/get` so macOS and Windows downloads resolve to 5.15.1 artifacts.
+- Updated the homepage visible version badge and structured-data software version.
+- Uploaded the 5.15.1 desktop artifacts, update YAMLs, blockmaps, and 5.18 extension ZIP to R2 at both `updates/` and the public bucket root.
+
+### Verification
+- Confirmed public R2 URLs return 200 for the 5.15.1 DMG, macOS ZIP, Windows EXE, extension ZIP, `latest-mac.yml`, and `latest.yml`.
+
+---
 ## Rules / Conventions
 
 ### R2 release artifacts must live at the bucket root
