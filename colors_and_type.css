@@ -1,0 +1,201 @@
+/* ============================================================
+   GenCatalog — Design Tokens
+   ----------------------------------------------------------
+   Lifted from electron-app/src/ui/styles.css and the extension
+   tokens.css / tokens.extension.css. This file is the canonical
+   source for the design system.
+   ============================================================ */
+
+/* Geist sans — vendored locally as a variable font (weight axis 100–900). */
+@font-face {
+  font-family: "Geist";
+  src: url("./fonts/Geist-VariableFont_wght.ttf") format("truetype-variations"),
+       url("./fonts/Geist-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist Mono — vendored locally as a variable font (weight axis 100–900). */
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./fonts/GeistMono-VariableFont_wght.ttf") format("truetype-variations"),
+       url("./fonts/GeistMono-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ── Surfaces (dark stack) ─────────────────────────────── */
+  --bg:        #0e0e11;     /* canvas */
+  --surface:   #141417;     /* cards, header, footer */
+  --s2:        #1a1a1e;     /* inputs, soft fills */
+  --s3:        #202024;     /* hover, kbd chips */
+  --s4:        #26262b;     /* highest neutral fill */
+
+  /* ── Borders ───────────────────────────────────────────── */
+  --border:    rgba(255,255,255,0.072);
+  --border-hi: rgba(255,255,255,0.13);
+  --border-lo: rgba(255,255,255,0.04);
+
+  /* ── Text ──────────────────────────────────────────────── */
+  --t1: #eeeef2;            /* primary */
+  --t2: #84848f;            /* secondary */
+  --t3: #404048;            /* muted / tertiary */
+
+  /* ── Brand accent (indigo / periwinkle) ────────────────── */
+  --accent:    #6270f0;
+  --accent-lo: rgba(98,112,240,0.10);
+  --accent-b:  rgba(98,112,240,0.28);
+  --accent-hi: #9ba8f8;
+  --accent-fill: rgba(98,112,240,0.16);
+
+  /* ── Semantic ──────────────────────────────────────────── */
+  --green:  #3dd68c;
+  --red:    #f06b6b;
+  --yellow: #f5c518;
+
+  /* ── Platform brand dots ───────────────────────────────── */
+  --grok:        #6270f0;   /* indigo, same as accent */
+  --higgsfield:  #f06b6b;   /* red */
+  --digen:       #3dd68c;   /* green */
+  --mj:          #a855f7;   /* violet (popup uses #8b6ff5; UI uses #a855f7) */
+
+  /* ── Radii ─────────────────────────────────────────────── */
+  --r-sm:   6px;
+  --r-md:   8px;
+  --r-lg:  12px;
+  --r-pill: 999px;
+
+  /* ── Spacing scale (informal — derived from grid usage) ── */
+  --sp-1:  4px;
+  --sp-2:  6px;
+  --sp-3:  8px;
+  --sp-4: 10px;
+  --sp-5: 12px;
+  --sp-6: 14px;
+  --sp-7: 16px;
+  --sp-8: 20px;
+  --sp-9: 24px;
+  --sp-10: 32px;
+
+  /* ── Shadows / elevation ───────────────────────────────── */
+  --shadow-card:   0 8px 28px rgba(0,0,0,0.45), 0 2px 8px rgba(0,0,0,0.2);
+  --shadow-modal:  0 16px 48px rgba(0,0,0,0.5);
+  --shadow-toast:  0 8px 24px rgba(0,0,0,0.4);
+  --shadow-fab:    0 6px 18px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.04);
+  --shadow-accent: 0 0 14px rgba(98,112,240,0.2);
+
+  /* ── Gradients ─────────────────────────────────────────── */
+  --gradient-primary:  linear-gradient(135deg, #6270f0 0%, #8b6ff5 100%);
+  --gradient-text:     linear-gradient(135deg, #f0f0f8 0%, #7070a0 100%);
+  --gradient-text-mut: linear-gradient(135deg, #e8e8f0 20%, #7070a0 100%);
+  --gradient-popup-glow:
+      radial-gradient(circle at top right, rgba(98,112,240,0.14), transparent 42%),
+      linear-gradient(180deg, rgba(255,255,255,0.02), transparent 28%);
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "SF Mono", Menlo, monospace;
+
+  --fs-display: 34px;   /* hero stat number */
+  --fs-h1:      32px;   /* trial flow, modal heading */
+  --fs-h2:      18px;   /* stats modal heading */
+  --fs-h3:      15px;   /* confirm dialog */
+  --fs-body:    13px;   /* default UI text */
+  --fs-small:   12px;   /* caption / dense */
+  --fs-mini:    11px;   /* meta, chip body */
+  --fs-label:   10px;   /* drawer / overline labels */
+
+  /* tight, neutral letter-spacing on UI text */
+  --ls-display: -0.06em;
+  --ls-tight:   -0.04em;
+  --ls-ui:      -0.01em;
+  --ls-overline: 0.09em;
+  --ls-mono:    -0.03em;
+}
+
+/* ============================================================
+   Semantic type styles
+   ============================================================ */
+.gc-display {
+  font-family: var(--font-mono);
+  font-size: var(--fs-display);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--ls-display);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gc-h1 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h1);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+  color: var(--t1);
+}
+
+.gc-h2 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h2);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--t1);
+}
+
+.gc-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--t1);
+}
+
+.gc-body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  color: var(--t1);
+  letter-spacing: var(--ls-ui);
+}
+
+.gc-secondary {
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--t2);
+}
+
+.gc-muted {
+  font-family: var(--font-sans);
+  font-size: var(--fs-mini);
+  color: var(--t3);
+}
+
+.gc-overline {
+  font-family: var(--font-sans);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: var(--ls-overline);
+  text-transform: uppercase;
+  color: var(--t3);
+}
+
+.gc-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mini);
+  letter-spacing: var(--ls-mono);
+  color: var(--t2);
+}
+
+.gc-mono-chip {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}

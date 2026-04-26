@@ -14,11 +14,11 @@
   <title>GenCatalog — Save &amp; Organize Grok Favorites Locally | Midjourney, Higgsfield, Digen</title>
   <meta name="description" content="Bulk save your Grok Imagine favorites, Midjourney library, and Higgsfield videos locally — with every prompt and parameter intact. No cloud. One-click capture. Free 7-day trial.">
   <link rel="canonical" href="https://gencatalog.app/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="theme-color" content="#111a28" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0e0e11" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gencatalog.app/" />
   <meta property="og:site_name" content="GenCatalog" />
@@ -34,1129 +34,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- ============== Structured Data: FAQ ============== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is GenCatalog?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GenCatalog is a local AI image and video organizer for Grok Imagine, Higgsfield, Midjourney, and Digen. It automatically saves your AI generations with full prompts, model settings, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which AI platforms does GenCatalog support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GenCatalog currently supports Grok Imagine (X.ai), Higgsfield (video generation), Midjourney (image generation), and Digen. The Chrome extension adds a Save button directly on each platform so you can capture generations with one click."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How does GenCatalog save my AI generations?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is my data stored in the cloud?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. GenCatalog stores everything locally on your computer. Your prompts, images, videos, and metadata never leave your device. No account required and no internet connection needed after installation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does GenCatalog cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GenCatalog is $39 as a one-time purchase with a 7-day free trial, no credit card required. The price includes all v1 updates — no subscription, no renewals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does GenCatalog work on both Mac and Windows?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What metadata does GenCatalog save from Midjourney?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GenCatalog saves the full prompt text, model version (--v), aspect ratio (--ar), chaos, seed, style mode, style references (--sref), character references (--cref), stylize weight, and all other parameters. All four image variants per generation are saved individually."
-        }
-      }
+      {"@type":"Question","name":"What is GenCatalog?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is a local AI image and video organizer for Grok Imagine, Higgsfield, Midjourney, and Digen. It automatically saves your AI generations with full prompts, model settings, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."}},
+      {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), Higgsfield (video generation), Midjourney (image generation), and Digen. The Chrome extension adds a Save button directly on each platform so you can capture generations with one click."}},
+      {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."}},
+      {"@type":"Question","name":"Is my data stored in the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog stores everything locally on your computer. Your prompts, images, videos, and metadata never leave your device. No account required and no internet connection needed after installation."}},
+      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $39 as a one-time purchase with a 7-day free trial, no credit card required. The price includes all v1 updates — no subscription, no renewals."}},
+      {"@type":"Question","name":"Does GenCatalog work on both Mac and Windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."}},
+      {"@type":"Question","name":"What metadata does GenCatalog save from Midjourney?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog saves the full prompt text, model version (--v), aspect ratio (--ar), chaos, seed, style mode, style references (--sref), character references (--cref), stylize weight, and all other parameters. All four image variants per generation are saved individually."}}
     ]
   }
   </script>
-  <style>
-    /* === RESET === */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
 
-    /* === DESIGN TOKENS === */
-    :root {
-      --bg: #0e0e11;
-      --surface: #141417;
-      --s2: #1a1a1e;
-      --s3: #202024;
-      --s4: #26262b;
-      --border: rgba(255,255,255,0.072);
-      --border-hi: rgba(255,255,255,0.13);
-      --t1: #eeeef2;
-      --t2: #84848f;
-      --t3: #404048;
-      --accent: #4f6378;
-      --accent-fill: #172939;
-      --accent-lo: rgba(23,41,57,0.78);
-      --accent-b: rgba(79,99,120,0.42);
-      --green: #3dd68c;
-      --red: #f06b6b;
-      --yellow: #f5c518;
-      --grok: #4f6378;
-      --grok-bg: rgba(23,41,57,0.78);
-      --higgsfield: #f06b6b;
-      --higgsfield-bg: rgba(240,107,107,0.15);
-      --digen: #3dd68c;
-      --digen-bg: rgba(61,214,140,0.15);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-pill: 999px;
-      --transition: 180ms ease;
-      --max-width: 1360px;
-    }
-
-    /* === BASE === */
-    body {
-      background: var(--bg);
-      color: var(--t2);
-      font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-
-    .container {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 48px;
-    }
-
-    /* === NAV === */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(14,14,17,0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 56px;
-      display: flex;
-      align-items: center;
-      gap: 32px;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--t1);
-      font-weight: 600;
-      font-size: 15px;
-      flex-shrink: 0;
-    }
-
-    .nav-logo svg { flex-shrink: 0; }
-
-    .nav-sal-badge {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--t3, #555);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 4px;
-      transition: color 0.15s, border-color 0.15s;
-      white-space: nowrap;
-    }
-    .nav-sal-badge:hover { color: var(--t1); border-color: var(--t2); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      flex: 1;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--t2);
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover { color: var(--t1); }
-
-    .nav-cta {
-      margin-left: auto;
-    }
-
-    /* === BUTTONS === */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border-radius: var(--radius-sm);
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 600;
-      font-family: inherit;
-      cursor: pointer;
-      border: 1px solid transparent;
-      transition: background var(--transition), color var(--transition), border-color var(--transition);
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: var(--accent-fill);
-      color: #fff;
-    }
-    .btn-primary:hover { background: #23394d; }
-
-    .btn-ghost {
-      background: transparent;
-      border-color: var(--border-hi);
-      color: var(--t2);
-    }
-    .btn-ghost:hover { background: var(--s2); color: var(--t1); }
-
-    .btn-lg {
-      padding: 12px 24px;
-      font-size: 15px;
-    }
-
-    /* === SECTION LABEL === */
-    .section-label {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--t3);
-    }
-
-    /* === PILL/BADGE === */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--accent-lo);
-      color: var(--accent);
-      border: 1px solid var(--accent-b);
-      border-radius: var(--radius-pill);
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    /* === HERO === */
-    .hero {
-      padding: 96px 0 80px;
-      text-align: center;
-    }
-
-    .hero-badge { margin-bottom: 24px; }
-
-    .hero h1 {
-      font-size: clamp(40px, 5.5vw, 62px);
-      font-weight: 700;
-      color: var(--t1);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      max-width: 900px;
-      margin: 0 auto 20px;
-    }
-
-    .hero-subhead {
-      font-size: 18px;
-      color: var(--t2);
-      max-width: 560px;
-      margin: 0 auto 36px;
-      line-height: 1.6;
-    }
-
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 14px;
-    }
-
-    .hero-meta {
-      font-size: 13px;
-      color: var(--t3);
-    }
-
-    .hero-screenshot {
-      margin: 56px -40px 0;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .hero-screenshot img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    @media (max-width: 1280px) {
-      .hero-screenshot { margin-left: 0; margin-right: 0; }
-    }
-
-    /* === RECIPE BLOCK === */
-    .recipe-block {
-      padding: 64px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .recipe-block h3 {
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 700;
-      color: var(--t1);
-      letter-spacing: -0.01em;
-      margin-bottom: 14px;
-    }
-
-    .recipe-block p {
-      font-size: 16px;
-      color: var(--t2);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* === PLATFORM STRIP === */
-    .platform-strip {
-      padding: 56px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .platform-strip .section-label {
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    .platform-pills {
-      display: inline-flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .platform-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 18px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--t2);
-      transition: border-color var(--transition), background var(--transition), color var(--transition);
-      text-decoration: none;
-    }
-
-    .platform-pill:hover { border-color: var(--border-hi); background: var(--s2); color: var(--t1); }
-
-    .platform-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .platform-descriptor {
-      font-size: 13px;
-      color: var(--t3);
-    }
-
-    /* === PROBLEM SECTION === */
-    .problem {
-      padding: 96px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .problem-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .problem-left h2 {
-      font-size: clamp(28px, 3.5vw, 40px);
-      font-weight: 700;
-      color: var(--t1);
-      letter-spacing: -0.02em;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .problem-left > p {
-      font-size: 16px;
-      color: var(--t2);
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-
-    .problem-pains {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      margin-top: 8px;
-    }
-
-    .problem-pain {
-      border-left: 2px solid var(--border-hi);
-      padding-left: 20px;
-    }
-
-    .problem-pain h4 {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--t1);
-      margin-bottom: 4px;
-    }
-
-    .problem-pain p {
-      font-size: 14px;
-      color: var(--t2);
-      line-height: 1.6;
-    }
-
-    .problem-right {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .problem-right-label {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      color: var(--t3);
-    }
-
-    .problem-right h3 {
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--t1);
-      line-height: 1.3;
-      letter-spacing: -0.01em;
-    }
-
-    .problem-right > p {
-      font-size: 15px;
-      color: var(--t2);
-      line-height: 1.7;
-    }
-
-    .problem-recipe {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
-    }
-
-    .problem-recipe-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--t2);
-    }
-
-    .problem-recipe-item svg {
-      flex-shrink: 0;
-      color: var(--accent);
-    }
-
-    .problem-statement {
-      margin-top: 8px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--t1);
-      line-height: 1.4;
-      letter-spacing: -0.01em;
-    }
-
-    @media (max-width: 900px) {
-      .problem-inner { grid-template-columns: 1fr; gap: 40px; }
-    }
-
-    /* === SHOWCASE === */
-    .showcase {
-      padding: 96px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .showcase-item {
-      display: grid;
-      grid-template-columns: 2fr 3fr;
-      gap: 64px;
-      align-items: center;
-      margin-bottom: 96px;
-    }
-
-    .showcase-item.reverse {
-      grid-template-columns: 3fr 2fr;
-    }
-
-    .showcase-item:last-child { margin-bottom: 0; }
-
-    .showcase-item.reverse { direction: rtl; }
-    .showcase-item.reverse > * { direction: ltr; }
-
-    .showcase-text {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .showcase-text h3 {
-      font-size: clamp(24px, 3vw, 32px);
-      font-weight: 700;
-      color: var(--t1);
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-    }
-
-    .showcase-text p {
-      font-size: 16px;
-      color: var(--t2);
-      line-height: 1.7;
-    }
-
-    .showcase-text ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 4px;
-    }
-
-    .showcase-text ul li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--t2);
-    }
-
-    .showcase-text ul li::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-    }
-
-    .showcase-image {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .showcase-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-      max-height: 520px;
-      object-fit: cover;
-      object-position: top;
-    }
-
-    .showcase-image img.crop-middle {
-      object-position: 0% 58%;
-    }
-
-    @media (max-width: 900px) {
-      .showcase-item,
-      .showcase-item.reverse {
-        grid-template-columns: 1fr;
-        direction: ltr;
-        gap: 32px;
-      }
-    }
-
-    /* === FEATURES === */
-    .features {
-      padding: 96px 0;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 56px;
-    }
-
-    .section-header h2 {
-      font-size: clamp(28px, 4vw, 36px);
-      font-weight: 700;
-      color: var(--t1);
-      margin: 12px 0 12px;
-      letter-spacing: -0.01em;
-    }
-
-    .section-header p {
-      font-size: 16px;
-      color: var(--t2);
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-    }
-
-    .feature-card {
-      background: var(--bg);
-      padding: 28px;
-      transition: background var(--transition);
-    }
-
-    .feature-card:hover { background: var(--surface); }
-
-    .feature-icon {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 16px;
-      color: var(--t3);
-    }
-
-    .feature-card h3 {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--t1);
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      font-size: 14px;
-      color: var(--t2);
-      line-height: 1.6;
-    }
-
-    .features-extras {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      margin-top: 24px;
-      flex-wrap: wrap;
-    }
-
-    .features-extras span {
-      font-size: 13px;
-      color: var(--t3);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .features-extras span::before {
-      content: '';
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--t3);
-    }
-
-    /* === HOW IT WORKS === */
-    .how-it-works {
-      padding: 96px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 56px;
-    }
-
-    .step {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: border-color var(--transition);
-    }
-
-    .step:hover { border-color: var(--border-hi); }
-
-    .step-image {
-      width: 100%;
-      height: 280px;
-      overflow: hidden;
-      background: var(--s2);
-      flex-shrink: 0;
-    }
-
-    .step-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: left top;
-      display: block;
-    }
-
-    .step-image img.ken-burns {
-      object-fit: fill;
-      width: 100%;
-      height: 100%;
-      animation: kenBurns 6s ease-in-out infinite;
-      transform-origin: left top;
-    }
-
-    @keyframes kenBurns {
-      0%   { transform: scale(1.2) translate(0%, 0%); }
-      20%  { transform: scale(2.2) translate(0%, -8%); }
-      45%  { transform: scale(2.6) translate(2%, -22%); }
-      70%  { transform: scale(2.4) translate(1%, -38%); }
-      90%  { transform: scale(2.0) translate(0%, -18%); }
-      100% { transform: scale(1.2) translate(0%, 0%); }
-    }
-
-    .step-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .step-num {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--accent);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .step h3 {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--t1);
-      line-height: 1.3;
-    }
-
-    .step p {
-      font-size: 14px;
-      color: var(--t2);
-      line-height: 1.6;
-    }
-
-    /* === PRIVACY MOMENT === */
-    .privacy-moment {
-      padding: 96px 0;
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-
-    .privacy-moment h2 {
-      font-size: clamp(32px, 5vw, 56px);
-      font-weight: 700;
-      color: var(--t1);
-      letter-spacing: -0.02em;
-      line-height: 1.1;
-      margin: 16px 0 20px;
-      max-width: 760px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .privacy-moment .privacy-sub {
-      font-size: 18px;
-      color: var(--t2);
-      max-width: 520px;
-      margin: 0 auto 56px;
-      line-height: 1.6;
-    }
-
-    .privacy-pillars {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      max-width: 860px;
-      margin: 0 auto;
-    }
-
-    .privacy-pillar {
-      background: var(--surface);
-      padding: 36px 28px;
-    }
-
-    .privacy-pillar-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .privacy-pillar h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--t1);
-      margin-bottom: 10px;
-    }
-
-    .privacy-pillar p {
-      font-size: 14px;
-      color: var(--t2);
-      line-height: 1.6;
-    }
-
-    @media (max-width: 640px) {
-      .privacy-pillars { grid-template-columns: 1fr; }
-    }
-
-    /* === TRUST BLOCK === */
-    .trust {
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .trust-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .trust-content h2 {
-      font-size: clamp(24px, 3vw, 32px);
-      font-weight: 700;
-      color: var(--t1);
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-    }
-
-    .trust-content p {
-      font-size: 16px;
-      color: var(--t2);
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    .trust-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .trust-stat {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 20px;
-    }
-
-    .trust-stat-num {
-      font-family: 'Geist Mono', monospace;
-      font-size: 24px;
-      font-weight: 500;
-      color: var(--t1);
-      margin-bottom: 4px;
-    }
-
-    .trust-stat-label {
-      font-size: 13px;
-      color: var(--t3);
-    }
-
-    .trust-screenshot {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background: var(--surface);
-    }
-
-    .trust-screenshot img { width: 100%; height: auto; }
-
-    /* === PRICING === */
-    .testimonials {
-      padding: 96px 0 48px;
-      background: var(--bg);
-    }
-
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    .testimonial-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .testimonial-stars {
-      color: #f59e0b;
-      font-size: 16px;
-      letter-spacing: 2px;
-    }
-
-    .testimonial-text {
-      font-size: 15px;
-      line-height: 1.65;
-      color: var(--t2);
-      flex: 1;
-      margin: 0;
-    }
-
-    .testimonial-author {
-      font-size: 12.5px;
-      color: var(--t3);
-      font-weight: 500;
-    }
-
-    .pricing {
-      padding: 96px 0;
-    }
-
-    .pricing-card {
-      max-width: 440px;
-      margin: 56px auto 0;
-      background: var(--surface);
-      border: 1px solid var(--border-hi);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      text-align: center;
-    }
-
-    .pricing-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(245,197,24,0.10);
-      color: var(--yellow);
-      border: 1px solid rgba(245,197,24,0.25);
-      border-radius: var(--radius-pill);
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-
-    .pricing-price {
-      font-family: 'Geist Mono', monospace;
-      font-size: 56px;
-      font-weight: 500;
-      color: var(--t1);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .pricing-type {
-      font-size: 14px;
-      color: var(--t2);
-      margin-bottom: 4px;
-    }
-
-    .pricing-updates {
-      font-size: 13px;
-      color: var(--t3);
-      margin-bottom: 32px;
-    }
-
-    .pricing-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0 0 28px;
-    }
-
-    .pricing-bullets {
-      list-style: none;
-      text-align: left;
-      margin-bottom: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .pricing-bullets li {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--t2);
-    }
-
-    .pricing-bullets li svg {
-      flex-shrink: 0;
-      color: var(--green);
-    }
-
-    .pricing-cta { width: 100%; justify-content: center; }
-
-    .pricing-platforms {
-      font-size: 12px;
-      color: var(--t3);
-      margin-top: 14px;
-    }
-
-    /* === FINAL CTA === */
-    .final-cta {
-      padding: 96px 0;
-      text-align: center;
-      border-top: 1px solid var(--border);
-    }
-
-    .final-cta h2 {
-      font-size: clamp(22px, 3vw, 32px);
-      font-weight: 700;
-      color: var(--t1);
-      margin-bottom: 16px;
-      letter-spacing: -0.02em;
-    }
-
-    .final-cta p {
-      font-size: 16px;
-      color: var(--t2);
-      margin-bottom: 36px;
-    }
-
-    .final-ctas {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    /* === FOOTER === */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 24px;
-    }
-
-    .footer-copy {
-      font-size: 13px;
-      color: var(--t3);
-    }
-
-    .footer-links {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      font-size: 13px;
-      color: var(--t3);
-      transition: color var(--transition);
-    }
-
-    .footer-links a:hover { color: var(--t2); }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 900px) {
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: 1fr; gap: 40px; }
-      .trust-inner { grid-template-columns: 1fr; gap: 40px; }
-    }
-
-    @media (max-width: 640px) {
-      .features-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
-      .hero { padding: 64px 0 48px; }
-      .hero h1 { font-size: 36px; }
-    }
-
-    /* === FOCUS STYLES === */
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-      border-radius: 4px;
-    }
-  </style>
-  <!-- Structured Data: SoftwareApplication -->
+  <!-- ============== Structured Data: SoftwareApplication ============== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1164,599 +60,1092 @@
     "name": "GenCatalog",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "macOS, Windows",
-    "offers": {
-      "@type": "Offer",
-      "price": "39.00",
-      "priceCurrency": "USD"
-    },
+    "offers": {"@type":"Offer","price":"39.00","priceCurrency":"USD"},
     "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, Higgsfield, Midjourney, and Digen — with full prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
     "url": "https://gencatalog.app",
     "screenshot": "https://gencatalog.app/og-image-v5.jpg",
     "softwareVersion": "5.15.2",
-    "creator": {
-      "@type": "Organization",
-      "name": "Second Act Labs",
-      "url": "https://secondactlabs.com"
-    }
+    "creator": {"@type":"Organization","name":"Second Act Labs","url":"https://secondactlabs.com"}
   }
   </script>
-  <!-- Structured Data: Organization -->
+
+  <!-- ============== Structured Data: Organization ============== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Second Act Labs",
     "url": "https://secondactlabs.com",
-    "sameAs": ["https://x.com/2ndActBuilder", "https://x.com/GenCatalog"],
-    "product": {
-      "@type": "SoftwareApplication",
-      "name": "GenCatalog",
-      "url": "https://gencatalog.app"
-    }
+    "sameAs": ["https://x.com/2ndActBuilder","https://x.com/GenCatalog"],
+    "product": {"@type":"SoftwareApplication","name":"GenCatalog","url":"https://gencatalog.app"}
   }
   </script>
-  <script defer src="/analytics.js"></script>
+
+  <link rel="stylesheet" href="site.css">
+  <style>
+    /* ============================================================
+       Hero
+       ============================================================ */
+    .hero {
+      padding: 180px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1200px; height: 800px;
+      background:
+        radial-gradient(ellipse at center top, rgba(98,112,240,0.18), transparent 50%),
+        radial-gradient(ellipse 600px 300px at 30% 20%, rgba(168,85,247,0.08), transparent 70%),
+        radial-gradient(ellipse 600px 300px at 70% 30%, rgba(240,107,107,0.05), transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-eyebrow-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .platform-pill-rotator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      color: var(--t2);
+    }
+    .platform-pill-rotator .word {
+      display: inline-block;
+      transition: opacity 200ms ease, transform 200ms ease;
+      color: var(--accent-hi);
+      font-weight: 600;
+      min-width: 80px;
+      text-align: left;
+    }
+    .hero h1 { margin: 0 auto; max-width: 1000px; }
+    .hero .lede {
+      margin: 24px auto 0;
+      font-size: 19px;
+      color: var(--t2);
+      max-width: 660px;
+    }
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-trust {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--t3);
+      font-family: var(--font-mono);
+      letter-spacing: 0.04em;
+    }
+    .hero-trust .dot { width: 5px; height: 5px; border-radius: 999px; background: var(--green); box-shadow: 0 0 6px var(--green); }
+    .hero-shot-wrap {
+      margin-top: 80px;
+      perspective: 1800px;
+      position: relative;
+    }
+    .hero-shot {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-hi);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 40px 100px rgba(0,0,0,0.7),
+        0 0 160px rgba(98,112,240,0.22);
+      transform: perspective(1800px) rotateX(6deg);
+      transform-origin: center top;
+      transition: transform 100ms linear;
+      will-change: transform;
+      position: relative;
+    }
+    .hero-shot img { display: block; width: 100%; image-rendering: -webkit-optimize-contrast; }
+    .hero-shot::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      z-index: 2;
+    }
+
+    /* ── Analogy band (the iCloud/Time Machine pivot) ───── */
+    .analogy-band {
+      padding: 60px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .analogy-band .quote {
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 500;
+      color: var(--t1);
+      letter-spacing: -0.02em;
+      max-width: 880px;
+      margin: 0 auto;
+      line-height: 1.35;
+    }
+    .analogy-band .quote em {
+      font-style: normal;
+      color: var(--accent-hi);
+    }
+    .analogy-band .attrib {
+      margin-top: 18px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--t3);
+    }
+
+    /* ── Logos / platforms strip ─────────────────── */
+    .platforms-strip {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .platforms-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .platforms-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--t3);
+    }
+    .platform-marks {
+      display: flex; gap: 36px; align-items: center; flex-wrap: wrap;
+    }
+    .platform-mark {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--t2); font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .platform-mark .dot {
+      width: 8px; height: 8px; border-radius: 999px;
+    }
+    .platform-mark.grok .dot { background: var(--grok); box-shadow: 0 0 8px rgba(98,112,240,.6); }
+    .platform-mark.mj .dot { background: var(--mj); box-shadow: 0 0 8px rgba(168,85,247,.6); }
+    .platform-mark.hf .dot { background: var(--higgsfield); box-shadow: 0 0 8px rgba(240,107,107,.6); }
+    .platform-mark.dg .dot { background: var(--digen); box-shadow: 0 0 8px rgba(61,214,140,.6); }
+
+    /* ── Problem section ─────────────────────────── */
+    .problem .h-section { max-width: 22ch; margin: 0 auto; text-align: center; }
+    .problem .lede { text-align: center; margin: 24px auto 60px; }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 768px) { .problem-grid { grid-template-columns: 1fr; } }
+    .problem-card .icon-wrap {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: var(--s2); border: 1px solid var(--border);
+      display: grid; place-items: center;
+      margin-bottom: 18px;
+      color: var(--accent-hi);
+    }
+    .problem-card h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; color: var(--t1); letter-spacing: -0.01em; }
+    .problem-card p { font-size: 14px; color: var(--t2); margin: 0; line-height: 1.55; }
+
+    /* ── Feature: automatic capture ──────────────── */
+    .feature-split {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .feature-split { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .feature-text .eyebrow { margin-bottom: 20px; }
+    .feature-text h2 { margin-bottom: 20px; }
+    .feature-text .lede { margin-bottom: 24px; }
+    .feature-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+    .feature-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; color: var(--t2); line-height: 1.55;
+    }
+    .feature-list li::before {
+      content: "";
+      display: inline-block;
+      width: 16px; height: 16px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle, var(--accent) 30%, transparent 30%),
+        rgba(98,112,240,0.15);
+      border: 1px solid var(--accent-b);
+    }
+    .feature-list li strong { color: var(--t1); font-weight: 500; margin-right: 4px; }
+
+    /* In-context save-badge demo (real platform screenshot wrapped in browser chrome) */
+    .browser-mock {
+      background: var(--surface);
+      border: 1px solid var(--border-hi);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(98,112,240,0.1);
+    }
+    .browser-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .browser-bar .tldot { width: 11px; height: 11px; border-radius: 999px; }
+    .browser-bar .url {
+      flex: 1; margin-left: 16px;
+      height: 26px; padding: 0 12px;
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 6px;
+      display: flex; align-items: center;
+      font-family: var(--font-mono); font-size: 11px; color: var(--t3);
+    }
+    .browser-canvas {
+      aspect-ratio: 16/10;
+      background: #0a0a14;
+      position: relative;
+      overflow: hidden;
+    }
+    .browser-canvas img {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    /* Animated saved-state pulse on top of real screenshot */
+    .save-pulse {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      height: 40px;
+      padding: 0 16px;
+      background: rgba(20,20,23,0.78);
+      backdrop-filter: blur(12px) saturate(1.3);
+      -webkit-backdrop-filter: blur(12px) saturate(1.3);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
+    }
+    .save-pulse .glyph {
+      width: 26px; height: 26px;
+      border-radius: 999px;
+      background: var(--green);
+      display: grid; place-items: center;
+      font-weight: 700; font-size: 13px; color: #fff;
+      animation: pulse-glow 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(61,214,140,0.45); }
+      50% { box-shadow: 0 0 0 10px rgba(61,214,140,0); }
+    }
+
+    /* ── Showcase: side-by-side image/text rows ─────── */
+    .showcase-row {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .showcase-row.reverse { grid-template-columns: 1fr 1.1fr; }
+    .showcase-row.reverse .showcase-image { order: 2; }
+    .showcase-row.reverse .showcase-text { order: 1; }
+    @media (max-width: 900px) {
+      .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 40px; }
+      .showcase-row.reverse .showcase-image { order: 0; }
+    }
+    .showcase-image {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border-hi);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 80px rgba(98,112,240,0.10);
+      background: var(--surface);
+    }
+    .showcase-image img { width: 100%; height: auto; display: block; }
+
+    /* ── Find / search section accent bg ─────────── */
+    .find-section {
+      background:
+        radial-gradient(ellipse 1000px 400px at 50% 0%, rgba(98,112,240,0.08), transparent 70%);
+    }
+
+    /* ── Local-first ─────────────────────────────── */
+    .local-section {
+      text-align: center;
+      background:
+        radial-gradient(ellipse 1000px 600px at 50% 50%, rgba(61,214,140,0.05), transparent 60%);
+    }
+    .local-card {
+      margin: 80px auto 0;
+      max-width: 720px;
+      background: var(--surface);
+      border: 1px solid var(--border-hi);
+      border-radius: 16px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .local-card::before {
+      content: "";
+      position: absolute; top: -1px; left: 20%; right: 20%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+    }
+    .local-stat {
+      display: flex; align-items: center; justify-content: center; gap: 32px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .local-stat .item { text-align: center; }
+    .local-stat .item .num {
+      font-family: var(--font-mono);
+      font-size: 28px;
+      font-weight: 500;
+      color: var(--t1);
+      letter-spacing: -0.04em;
+    }
+    .local-stat .item .num.green { color: var(--green); }
+    .local-stat .item .lbl {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-top: 4px;
+    }
+    .local-card h3 { font-size: 20px; margin: 0 0 12px; font-weight: 600; color: var(--t1); }
+    .local-card p { color: var(--t2); margin: 0; font-size: 14px; line-height: 1.55; }
+    .local-card .badges {
+      display: flex; gap: 8px; justify-content: center; margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .local-card .badges .b {
+      display: inline-flex; align-items: center; gap: 6px;
+      height: 26px; padding: 0 10px;
+      background: var(--s2); border: 1px solid var(--border);
+      border-radius: 999px;
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--t2);
+    }
+    .local-card .badges .b::before {
+      content: ""; width: 5px; height: 5px; border-radius: 999px;
+      background: var(--green); box-shadow: 0 0 6px var(--green);
+    }
+
+    /* ── Rediscover band ─────────────────────────── */
+    .rediscover-band {
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 900px 500px at 50% 50%, rgba(245,197,24,0.07), transparent 60%);
+    }
+    .rediscover-band::before {
+      content: "";
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(245,197,24,0.35), transparent);
+    }
+    .rediscover-band::after {
+      content: "";
+      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(245,197,24,0.35), transparent);
+    }
+    .rediscover-stars {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .rediscover-stars span {
+      position: absolute;
+      color: var(--yellow);
+      font-size: 12px;
+      opacity: 0.18;
+      animation: twinkle 4s ease-in-out infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.10; transform: scale(0.9); }
+      50% { opacity: 0.35; transform: scale(1.1); }
+    }
+    .rediscover-band h2 {
+      max-width: 22ch;
+      margin: 20px auto 0;
+    }
+    .rediscover-band h2 .star {
+      color: var(--yellow);
+      filter: drop-shadow(0 0 12px rgba(245,197,24,0.5));
+      display: inline-block;
+      margin: 0 4px;
+    }
+    .rediscover-band .lede {
+      max-width: 640px;
+      margin: 24px auto 48px;
+    }
+    .rediscover-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    @media (max-width: 700px) { .rediscover-strip { grid-template-columns: repeat(3, 1fr); } }
+    .rediscover-card {
+      aspect-ratio: 4/5;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 12px;
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+    .rediscover-card.featured {
+      border-color: rgba(245,197,24,0.45);
+      box-shadow: 0 0 24px rgba(245,197,24,0.18);
+      transform: translateY(-4px);
+    }
+    .rediscover-card .ago {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ── Pull quote band ─────────────────────────── */
+    .pull-quote {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .pull-quote .q {
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--t1);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .pull-quote .attrib {
+      margin-top: 22px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-hi);
+      font-weight: 600;
+    }
+    .pull-quote .attrib img {
+      width: 18px; height: 18px;
+      border-radius: 4px;
+      object-fit: cover;
+    }
+
+    /* ── Pricing ─────────────────────────────────── */
+    .pricing-section { text-align: center; }
+    .pricing-section .lede { margin: 24px auto 60px; }
+    .pricing-card {
+      max-width: 460px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(180deg, rgba(98,112,240,0.06), transparent), var(--surface);
+      border: 1px solid var(--accent-b);
+      border-radius: 16px;
+      box-shadow: 0 0 60px rgba(98,112,240,0.18);
+    }
+    .pricing-card .ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      height: 26px;
+      padding: 0 12px;
+      background: rgba(245,197,24,0.10);
+      color: var(--yellow);
+      border: 1px solid rgba(245,197,24,0.25);
+      border-radius: 999px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .pricing-card .ribbon::before {
+      content: ""; width: 5px; height: 5px; border-radius: 999px;
+      background: var(--yellow); box-shadow: 0 0 6px var(--yellow);
+    }
+    .pricing-card .price {
+      font-family: var(--font-mono);
+      font-size: 56px;
+      font-weight: 500;
+      color: var(--t1);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+    .pricing-card .price-sub {
+      font-size: 14px;
+      color: var(--t2);
+      margin-bottom: 4px;
+    }
+    .pricing-card .price-note {
+      font-size: 13px;
+      color: var(--t3);
+      margin-bottom: 28px;
+    }
+    .pricing-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      text-align: left;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+    }
+    .pricing-card ul li {
+      font-size: 14px;
+      color: var(--t2);
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .pricing-card ul li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      width: 16px;
+      flex-shrink: 0;
+    }
+    .pricing-card .ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .pricing-card .ctas .btn { width: 100%; }
+    .pricing-card .pf {
+      margin-top: 16px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--t3);
+    }
+
+    /* ── Final CTA ───────────────────────────────── */
+    .final-cta {
+      text-align: center;
+      padding: 140px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 800px 400px at 50% 50%, rgba(98,112,240,0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta .h-section { max-width: 22ch; margin: 0 auto; }
+    .final-cta .lede { margin: 24px auto 40px; }
+
+    /* ── Footer overrides for live-site links ───── */
+    .foot-grid a { font-size: 14px; }
+  </style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="GenCatalogLogo.png?v=20260329" width="28" height="28" alt="GenCatalog" style="border-radius:6px;display:block;">
-        GenCatalog
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="nav-brand" href="/">
+      <img src="GenCatalogLogo.png" alt="GenCatalog">
+      <span>GenCatalog</span>
+    </a>
+    <div class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/guides">Guides</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <a class="nav-cta" href="/get">
+      Download free
+      <span style="color:var(--t3); font-family:var(--font-mono); font-size:11px;">↗</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ────────────────── HERO ────────────────── -->
+<header class="hero">
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-eyebrow-row">
+        <span class="eyebrow">v5.15.2 · Now on Mac &amp; Windows</span>
+        <span class="platform-pill-rotator">
+          Capturing from
+          <span class="word" id="platform-rotator">Grok</span>
+        </span>
+      </div>
+    </div>
+
+    <h1 class="h-display reveal delay-1">
+      The platform isn't your archive.
+    </h1>
+
+    <p class="lede reveal delay-2">
+      Bugs ship. Interfaces change. Libraries break. GenCatalog captures every generation — image, video, prompt, and full recipe — to your machine, before any of that matters.
+    </p>
+
+    <div class="hero-cta reveal delay-3">
+      <a class="btn btn-primary" href="/get">
+        Keep your work
+        <span style="opacity:.7">— Free for 7 days</span>
       </a>
-      <a href="https://secondactlabs.com" target="_blank" rel="noopener" class="nav-sal-badge">By Second Act Labs ↗</a>
-      <div class="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How It Works</a>
-        <a href="#pricing">Pricing</a>
+      <a class="btn btn-secondary" href="#how">See how it works</a>
+    </div>
+
+    <div class="hero-trust reveal delay-4">
+      <span class="dot"></span>
+      <span>Mac &amp; Windows · Local by default · No account required</span>
+    </div>
+  </div>
+
+  <div class="container hero-shot-wrap reveal delay-5">
+    <div class="hero-shot" id="hero-shot">
+      <img src="GenCatalogNewHero.webp" alt="GenCatalog — local AI generation catalog with sidebar, grid, and detail panel" loading="eager" fetchpriority="high">
+    </div>
+  </div>
+</header>
+
+<!-- ────────────────── ANALOGY BAND ────────────────── -->
+<section class="analogy-band">
+  <div class="container">
+    <p class="quote reveal">
+      You wouldn't run your iPhone without iCloud backups. You wouldn't run your Mac without Time Machine. <em>Your AI work deserves the same.</em>
+    </p>
+    <div class="attrib reveal delay-1">Same instinct, applied to creative work on hosted AI platforms.</div>
+  </div>
+</section>
+
+<!-- ────────────────── PLATFORMS STRIP ────────────────── -->
+<section class="platforms-strip" style="padding:48px 0">
+  <div class="container">
+    <div class="platforms-row reveal">
+      <span class="platforms-label">Captures from</span>
+      <div class="platform-marks">
+        <span class="platform-mark grok"><span class="dot"></span>Grok Imagine</span>
+        <span class="platform-mark mj"><span class="dot"></span>Midjourney</span>
+        <span class="platform-mark hf"><span class="dot"></span>Higgsfield</span>
+        <span class="platform-mark dg"><span class="dot"></span>Digen</span>
+      </div>
+      <span class="platforms-label" style="opacity:.6">+ more soon</span>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── PROBLEM ────────────────── -->
+<section class="problem">
+  <div class="container">
+    <h2 class="h-section reveal">The image survives.<br>The prompt that made it work disappears.</h2>
+    <p class="lede center reveal delay-1">
+      Even on a good day — no platform outage, no policy change — every creator runs the same problem. Thousands of generations, no way to find anything.
+    </p>
+
+    <div class="problem-grid">
+      <div class="card problem-card reveal delay-2">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+            <rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 15l4-4 4 4 6-6 4 4"></path>
+          </svg>
+        </div>
+        <h3>Scattered across platforms</h3>
+        <p>Your best generations sit in 4 different web apps. None of them talk to each other.</p>
+      </div>
+      <div class="card problem-card reveal delay-3">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+            <circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path>
+          </svg>
+        </div>
+        <h3>Prompts lost forever</h3>
+        <p>You found the perfect look once. The settings that made it work? Gone the moment you closed the tab.</p>
+      </div>
+      <div class="card problem-card reveal delay-4">
+        <div class="icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+            <circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.5-4.5"></path>
+          </svg>
+        </div>
+        <h3>No way to find anything</h3>
+        <p>Endless history pages. Random filenames. Searching by date because there's no other handle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 01: AUTOMATIC CAPTURE ────────────────── -->
+<section id="how">
+  <div class="container">
+    <div class="feature-split">
+      <div class="feature-text">
+        <span class="eyebrow reveal">01 · Automatic capture</span>
+        <h2 class="h-section reveal delay-1">It captures itself.<br>You keep generating.</h2>
+        <p class="lede reveal delay-2">
+          Install the Chrome extension. Every time you generate on Grok, Midjourney, Higgsfield, or Digen, GenCatalog saves the image and the recipe behind it — quietly, in the background.
+        </p>
+        <ul class="feature-list reveal delay-3">
+          <li><div><strong>One save badge</strong> — a small pill on every generated image. Click once. Done.</div></li>
+          <li><div><strong>The full recipe</strong> — prompt, model, parameters, dimensions, source platform.</div></li>
+          <li><div><strong>Bulk scan</strong> — open the extension, hit Scan Library, walk away.</div></li>
+        </ul>
+      </div>
+      <div class="reveal delay-2">
+        <div class="browser-mock">
+          <div class="browser-bar">
+            <span class="tldot" style="background:#ff5f57"></span>
+            <span class="tldot" style="background:#febc2e"></span>
+            <span class="tldot" style="background:#28c840"></span>
+            <span class="url">grok.com/imagine</span>
+          </div>
+          <div class="browser-canvas">
+            <img src="uploads_v2/GrokSaveBadges.png" alt="GenCatalog save badges shown on a real Grok Imagine generation page">
+            <div class="save-pulse">
+              <div class="glyph">✓</div>
+              <span>Saved to GenCatalog</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 02: FIND ────────────────── -->
+<section id="features" class="find-section">
+  <div class="container">
+    <div style="text-align:center; max-width:720px; margin:0 auto 56px;">
+      <span class="eyebrow reveal">02 · Find anything</span>
+      <h2 class="h-section reveal delay-1" style="margin-top:20px">Every filter you'd want.<br>Nothing you wouldn't.</h2>
+      <p class="lede center reveal delay-2">
+        Filter by source, model, rating, tags, date — even partial prompt fragments. Saved searches let you jump back to exactly where you left off.
+      </p>
+    </div>
+
+    <div class="reveal delay-3" style="display:grid; grid-template-columns: minmax(0,1fr) 340px minmax(0,1fr); gap:60px; align-items:center; max-width:1100px; margin:0 auto;">
+      <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
+        <li><div><strong>Source filters</strong> — Grok, Midjourney, Higgsfield, Digen.</div></li>
+        <li><div><strong>Ratings, favorites, notes, tags.</strong></div></li>
+        <li><div><strong>Advanced</strong> — Has Notes, Untagged, Has Prompt.</div></li>
+      </ul>
+      <div class="showcase-image" style="width:340px;">
+        <img src="uploads_v2/SideBar.png" alt="GenCatalog sidebar — full filter rail with sources, ratings, refine drawer, advanced filters, saved searches, and collections" style="width:100%; height:auto; display:block;">
+      </div>
+      <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
+        <li><div><strong>Date range, top prompts, source images.</strong></div></li>
+        <li><div><strong>Saved searches</strong> — jump back where you left off.</div></li>
+        <li><div><strong>Collections</strong> — curate without copying.</div></li>
+      </ul>
+    </div>
+    <style>
+      @media (max-width: 900px) {
+        section#features .reveal.delay-3 {
+          grid-template-columns: 1fr !important;
+          gap: 32px !important;
+        }
+        section#features .showcase-image { margin: 0 auto; }
+      }
+    </style>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 03: THE RECIPE ────────────────── -->
+<section>
+  <div class="container">
+    <div class="showcase-row">
+      <div class="showcase-image reveal">
+        <img src="uploads_v2/DetailViewModalDetail.png" alt="GenCatalog detail view — full prompt, model, parameters, source platform">
+      </div>
+      <div class="feature-text">
+        <span class="eyebrow reveal delay-1">03 · The recipe</span>
+        <h2 class="h-section reveal delay-2">Every generation, with everything that made it.</h2>
+        <p class="lede reveal delay-3">
+          Prompt, model, version, parameters, dimensions, seed — saved as a single reusable unit. Copy it. Re-run it. Tweak it.
+        </p>
+        <ul class="feature-list reveal delay-4">
+          <li><div><strong>Full prompt text</strong> — always readable, never truncated.</div></li>
+          <li><div><strong>Model + parameters</strong> — `--ar`, `--s`, seed, references.</div></li>
+          <li><div><strong>Source link</strong> — back to the original generation, one click.</div></li>
+          <li><div><strong>Tags &amp; notes</strong> — your own structure on top.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 04: COMPARE ────────────────── -->
+<section>
+  <div class="container">
+    <div style="text-align:center; max-width:720px; margin:0 auto 56px;">
+      <span class="eyebrow reveal">04 · Compare side-by-side</span>
+      <h2 class="h-section reveal delay-1" style="margin-top:20px">See what one parameter changes.</h2>
+      <p class="lede center reveal delay-2">
+        Pin two generations next to each other. See the prompts, the models, the seeds — the small thing that made one of them sing.
+      </p>
+    </div>
+
+    <div class="reveal delay-3" style="max-width:1100px; margin:0 auto; perspective:1800px;">
+      <div class="showcase-image">
+        <img src="uploads_v2/CompareView.png" alt="GenCatalog compare view — two generations with prompts and metadata side by side">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 05: EXTENSION ────────────────── -->
+<section>
+  <div class="container">
+    <div class="feature-split" style="grid-template-columns: 1.1fr 1fr;">
+      <div class="feature-text">
+        <span class="eyebrow reveal">05 · The extension</span>
+        <h2 class="h-section reveal delay-1">A scanner for your generation history.</h2>
+        <p class="lede reveal delay-2">
+          The Chrome extension watches the platforms you're already using. Cached, saved, new, deleted — see exactly what's in flight, scan months of history in one pass, no scraping by hand.
+        </p>
+        <ul class="feature-list reveal delay-3">
+          <li><div><strong>Live counts</strong> — cached, saved, new, deleted at a glance.</div></li>
+          <li><div><strong>One-click bulk scan</strong> — pull months of history in one pass.</div></li>
+          <li><div><strong>Recents list</strong> — every save shows up, instantly.</div></li>
+        </ul>
+      </div>
+      <div class="reveal delay-3" style="display:flex; justify-content:center;">
+        <div style="max-width:380px; width:100%; border-radius:18px; overflow:hidden; border:1px solid var(--border-hi); box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 80px rgba(98,112,240,0.15);">
+          <img src="uploads_v2/ExtensionDetail.png" alt="GenCatalog Chrome extension popup" style="display:block; width:100%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 06: REDISCOVER ────────────────── -->
+<section class="rediscover-band">
+  <div class="rediscover-stars" aria-hidden="true">
+    <span style="top:18%; left:8%; animation-delay:0s;">★</span>
+    <span style="top:32%; left:88%; animation-delay:0.6s;">★</span>
+    <span style="top:62%; left:14%; animation-delay:1.2s;">★</span>
+    <span style="top:78%; left:82%; animation-delay:1.8s;">★</span>
+    <span style="top:8%; left:48%; animation-delay:2.4s;">★</span>
+    <span style="top:88%; left:42%; animation-delay:3.0s;">★</span>
+  </div>
+  <div class="container" style="position:relative; z-index:1;">
+    <span class="eyebrow reveal">06 · Rediscover</span>
+    <h2 class="h-section reveal delay-1">
+      The brilliant thing you made <span class="star">★</span> a year ago.
+    </h2>
+    <p class="lede center reveal delay-2">
+      Hit Rediscover and a handful of random older generations pop back up. No algorithm, no rankings — just a fun way to wander your own library. Especially great if you've been generating for a while.
+    </p>
+
+    <div class="rediscover-strip reveal delay-3">
+      <div class="rediscover-card" style="background: linear-gradient(135deg, #2a1538, #4a1828);">
+        <span class="ago">14 mo ago</span>
+      </div>
+      <div class="rediscover-card" style="background: linear-gradient(160deg, #0f2238, #1a3a4a);">
+        <span class="ago">8 mo ago</span>
+      </div>
+      <div class="rediscover-card featured" style="background: linear-gradient(135deg, #3d2810, #6a3a18);">
+        <span class="ago">22 mo ago</span>
+      </div>
+      <div class="rediscover-card" style="background: linear-gradient(140deg, #1a2818, #2a4528);">
+        <span class="ago">5 mo ago</span>
+      </div>
+      <div class="rediscover-card" style="background: linear-gradient(135deg, #38152a, #5a1a3a);">
+        <span class="ago">11 mo ago</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── PULL QUOTE ────────────────── -->
+<section class="pull-quote">
+  <div class="container">
+    <p class="q reveal">
+      "GenCatalog is a game-changer — a brilliant fix for the creative explosion we're fueling."
+    </p>
+    <div class="attrib reveal delay-1">
+      <img src="logo-grok-clean.webp" alt="">
+      @grok · Official X Account
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── LOCAL ────────────────── -->
+<section id="local" class="local-section">
+  <div class="container">
+    <span class="eyebrow neutral reveal">07 · 100% local</span>
+    <h2 class="h-section reveal delay-1" style="margin-top:20px; max-width:18ch; margin-left:auto; margin-right:auto;">
+      Your library lives on your machine.
+    </h2>
+    <p class="lede center reveal delay-2">
+      No account. No cloud. No subscription holding your work hostage. GenCatalog stores generations in a folder you choose — open them in Finder, back them up with Time Machine, move them anywhere. They're just files.
+    </p>
+
+    <div class="local-card reveal delay-3">
+      <div class="local-stat">
+        <div class="item">
+          <div class="num green">0</div>
+          <div class="lbl">Bytes uploaded</div>
+        </div>
+        <div class="item">
+          <div class="num">100%</div>
+          <div class="lbl">On your disk</div>
+        </div>
+        <div class="item">
+          <div class="num">0</div>
+          <div class="lbl">Accounts required</div>
+        </div>
+      </div>
+      <h3>Built around your filesystem.</h3>
+      <p>GenCatalog talks to localhost only. Your prompts, images, and videos never leave your computer. Cancel any time and the catalog is still there — every image, every prompt, exactly where you left it.</p>
+      <div class="badges">
+        <span class="b">Sandboxed</span>
+        <span class="b">No telemetry</span>
+        <span class="b">No tracking</span>
+        <span class="b">Open file format</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── PRICING ────────────────── -->
+<section id="pricing" class="pricing-section">
+  <div class="container">
+    <span class="eyebrow reveal">08 · Pricing</span>
+    <h2 class="h-section reveal delay-1" style="margin-top:20px">One price. No surprises.</h2>
+    <p class="lede center reveal delay-2">
+      Buy it once. Use it forever. No subscription, no seats, no renewal.
+    </p>
+
+    <div class="pricing-card reveal delay-3">
+      <span class="ribbon">Launch pricing</span>
+      <div class="price">$39</div>
+      <div class="price-sub">One-time purchase</div>
+      <div class="price-note">Includes all v1 updates</div>
+      <ul>
+        <li>7-day free trial, no credit card</li>
+        <li>Up to 250 generations free</li>
+        <li>Mac and Windows</li>
+        <li>Everything stored locally</li>
+        <li>Chrome extension included</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $39</a>
+        <a class="btn btn-secondary" href="/get">Start free 7-day trial</a>
+      </div>
+      <div class="pf">macOS (Apple Silicon + Intel) · Windows 10/11</div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FINAL CTA ────────────────── -->
+<section id="download" class="final-cta">
+  <div class="container">
+    <h2 class="h-section reveal">Don't wait until a platform change teaches you this the hard way.</h2>
+    <p class="lede center reveal delay-1">
+      If you create seriously, back up seriously. Keep the file, the prompt, and the context together — in a library you actually control.
+    </p>
+    <div class="hero-cta reveal delay-2">
+      <a class="btn btn-primary" href="/get">
+        Download for Mac &amp; Windows
+        <span style="opacity:.7">↓</span>
+      </a>
+      <a class="btn btn-secondary" href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Install Chrome extension</a>
+    </div>
+    <div class="hero-trust reveal delay-3">
+      <span class="dot"></span>
+      <span>$39 one-time · Free for 7 days · No card required</span>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FOOTER ────────────────── -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="nav-brand" style="margin-bottom:14px">
+          <img src="GenCatalogLogo.png" alt="" style="width:28px; height:28px; border-radius:6px">
+          <span>GenCatalog</span>
+        </div>
+        <p style="font-size:13px; color:var(--t2); max-width:32ch; margin:0; line-height:1.55;">
+          Save anything. Use everything. Local-first cataloging for AI creators.
+        </p>
+        <p style="font-size:12px; color:var(--t3); margin-top:14px;">
+          By <a href="https://secondactlabs.com" style="color:var(--t2);">Second Act Labs</a> ↗
+        </p>
+      </div>
+      <div class="foot-col">
+        <h4>Platforms</h4>
+        <a href="/grok">Grok</a>
+        <a href="/higgsfield">Higgsfield</a>
+        <a href="/midjourney">Midjourney</a>
+        <a href="/digen">Digen</a>
+      </div>
+      <div class="foot-col">
+        <h4>Resources</h4>
         <a href="/guides">Guides</a>
         <a href="/support">Support</a>
         <a href="/faq">FAQ</a>
+        <a href="/release-notes">Release notes</a>
       </div>
-      <div class="nav-cta">
-        <a href="/get" class="btn btn-primary smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download Free</span></a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-badge">
-        <span class="pill">
-          <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#4f6378"/></svg>
-          GenCatalog 5.15.2
-        </span>
-      </div>
-      <h1>Your AI generations can disappear.</h1>
-      <p class="hero-subhead">Grok, Midjourney, Higgsfield, and Digen are built for creating, not preserving. Bugs happen. Interfaces change. Libraries break.<br><br>GenCatalog captures your images, videos, prompts, and metadata locally — so your work stays yours.</p>
-      <div class="hero-ctas">
-        <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Keep your work · Free for 7 days</span></a>
-        <a href="#what-happens" class="btn btn-ghost btn-lg">Why this matters</a>
-      </div>
-      <p class="hero-meta">Mac and Windows &nbsp;·&nbsp; Local by default &nbsp;·&nbsp; No cloud account required</p>
-      <div class="hero-screenshot">
-        <img src="GenCatalogInterface.png" alt="GenCatalog AI image organizer showing sidebar, media grid, and detail panel with full prompt and metadata" width="1040" height="650" loading="eager" fetchpriority="high">
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/refund">Refund</a>
+        <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
       </div>
     </div>
-  </section>
-
-  <!-- PROOF STRIP -->
-  <section class="recipe-block" id="what-happens">
-    <div class="container">
-      <span class="section-label">Why this matters</span>
-      <h3>Creators are losing their work every day.</h3>
-      <p>If you create on platforms you do not control, you are one policy change, one bug, or one bad rollout away from losing your library.</p>
-      <p style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border,#1a1a1a);color:var(--t2);">You wouldn't run your iPhone without iCloud backups. You wouldn't run your Mac without Time Machine. This is the same instinct — applied to your creative work on hosted AI platforms. These tools unlock remarkable creative potential. But you're at their mercy. When things change, features break, or libraries disappear, there's often no path to recovery.<br><br>GenCatalog is that path.</p>
+    <div class="foot-meta">
+      <span>© 2026 GenCatalog · Local by default.</span>
+      <span style="font-family:var(--font-mono); letter-spacing:0.04em;">v5.15.2</span>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- TRANSITION / RECIPE BLOCK -->
-  <section class="recipe-block">
-    <div class="container">
-      <h3>GenCatalog is the layer that keeps your work safe.</h3>
-      <p>GenCatalog is a local desktop app and Chrome extension that captures AI-generated images and videos with the prompt, parameters, and source context attached.<br><br>
-      Not just the file.<br>
-      The full recipe.<br>
-      Stored on your machine.<br>
-      Searchable later.</p>
-    </div>
-  </section>
-
-  <!-- PLATFORM STRIP -->
-  <section class="platform-strip">
-    <div class="container">
-      <span class="section-label">Saves generations from</span>
-      <div class="platform-pills">
-        <a href="/grok" class="platform-pill">
-          <span class="platform-logo" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;">
-            <img src="/logo-grok-clean.webp" width="22" height="22" style="border-radius:4px;object-fit:cover;" alt="Grok">
-          </span>
-          Grok Imagine
-        </a>
-        <a href="/higgsfield" class="platform-pill">
-          <span class="platform-logo" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;">
-            <img src="/logo-higgsfield.png" width="24" height="24" style="border-radius:4px;object-fit:contain;" alt="Higgsfield">
-          </span>
-          Higgsfield
-        </a>
-        <a href="/midjourney" class="platform-pill">
-          <span class="platform-logo" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;">
-            <img src="/logo-midjourney.png" width="24" height="24" style="border-radius:4px;object-fit:contain;filter:invert(1);" alt="Midjourney">
-          </span>
-          Midjourney
-        </a>
-        <a href="/digen" class="platform-pill">
-          <span class="platform-logo" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;">
-            <img src="/logo-digen-official.jpg" width="24" height="24" style="border-radius:4px;object-fit:contain;" alt="Digen">
-          </span>
-          Digen
-        </a>
-      </div>
-      <p class="platform-descriptor">Prompts, metadata, and media preserved automatically.</p>
-    </div>
-  </section>
-
-  <!-- POSITIONING BAND -->
-  <section style="border-top:1px solid var(--border,#1a1a1a);border-bottom:1px solid var(--border,#1a1a1a);">
-    <div class="container" style="padding-top:2rem;padding-bottom:2rem;text-align:center;">
-      <p style="font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:600;color:#fff;letter-spacing:-0.01em;">Platforms are for generation. GenCatalog is for preservation.</p>
-    </div>
-  </section>
-
-  <!-- PROBLEM SECTION -->
-  <section class="problem">
-    <div class="container">
-      <div class="problem-inner">
-
-        <div class="problem-left">
-          <h2>What you make on these platforms isn't really yours. Not yet.</h2>
-          <p>Every platform you create on owns your library.</p>
-          <p>You just have access to it — until you don't.</p>
-          <div class="problem-pains">
-            <div class="problem-pain">
-              <h4>Prompts get separated from results</h4>
-              <p>The image survives. The prompt that made it work disappears.</p>
-            </div>
-            <div class="problem-pain">
-              <h4>Your work gets scattered across platforms</h4>
-              <p>Grok, Higgsfield, Midjourney, Digen — every tool keeps its own history with no unified library.</p>
-            </div>
-            <div class="problem-pain">
-              <h4>Thousands of generations become impossible to search</h4>
-              <p>Your best ideas are buried in endless scrolling and random filenames.</p>
-            </div>
-            <div class="problem-pain">
-              <h4>Platforms were built to generate, not to archive</h4>
-              <p>Favorites pages slow down. Old generations disappear. Storage fills up.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="problem-right">
-          <div class="problem-right-label">The fix</div>
-          <h3>Every generation, saved with everything that made it.</h3>
-          <p>A local archive where every image or video lives alongside its prompt, model, and parameters — yours to keep, search, and build on.</p>
-          <div class="problem-recipe">
-            <div class="problem-recipe-item">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              The prompt that created it
-            </div>
-            <div class="problem-recipe-item">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              The model and parameters used
-            </div>
-            <div class="problem-recipe-item">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              When and where it was generated
-            </div>
-          </div>
-          <div class="problem-statement">
-            Not just the file.<br>The full story.
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SHOWCASE -->
-  <section class="showcase">
-    <div class="container">
-
-      <!-- Showcase 1: Sidebar filters -->
-      <div class="showcase-item">
-        <div class="showcase-text">
-          <span class="section-label">Filter &amp; Search</span>
-          <h3>Every filter you'd ever want. Nothing you wouldn't.<br><span style="font-weight:400;font-size:0.9em;opacity:0.75;">Find anything — by prompt, platform, model, tag, or date.</span></h3>
-          <p>Filter by source platform, model, rating, tags, date range, and more. Saved searches let you jump back to exactly where you left off.</p>
-          <ul>
-            <li>Filter by Grok, Higgsfield, Midjourney, or Digen</li>
-            <li>Star ratings, favorites, notes, and tags</li>
-            <li>Advanced filters: untagged, has prompt, has notes</li>
-            <li>Saved searches and collections</li>
-          </ul>
-        </div>
-        <div class="showcase-image">
-          <picture>
-            <source srcset="ShowcaseSidebar.webp" type="image/webp">
-            <img src="ShowcaseSidebar.webp" class="crop-middle" alt="GenCatalog sidebar showing filter options including source, rating, tags, and advanced filters" width="2882" height="8394" loading="lazy">
-          </picture>
-        </div>
-      </div>
-
-      <!-- Showcase 2: Detail modal -->
-      <div class="showcase-item reverse">
-        <div class="showcase-text">
-          <span class="section-label">Prompt Preservation</span>
-          <h3>The full story, not just the result.</h3>
-          <p>Every generation saves the full prompt, model, parameters, dimensions, and source. Click any item to see exactly what made it — and use that to make the next one better.</p>
-          <ul>
-            <li>Full prompt text, always readable</li>
-            <li>Model, aspect ratio, dimensions, duration</li>
-            <li>Tags, notes, and star ratings</li>
-            <li>One-click: show more from this prompt or source image</li>
-          </ul>
-        </div>
-        <div class="showcase-image">
-          <picture>
-            <source srcset="ShowDetailTechnical.webp" type="image/webp">
-            <img src="ShowDetailTechnical.webp" alt="GenCatalog detail panel showing full prompt, metadata, tags, and action buttons" width="6948" height="3797" loading="lazy">
-          </picture>
-        </div>
-      </div>
-
-      <!-- Showcase 3: Grid -->
-      <div class="showcase-item">
-        <div class="showcase-text">
-          <span class="section-label">Your Library</span>
-          <h3>Your entire library, in one place.<br>Fast even as it grows.</h3>
-          <p>A fast, dense grid that loads instantly. Each item shows its source platform, model, and rating at a glance — so you always know where something came from and how good it is.</p>
-          <ul>
-            <li>Color-coded source badges (Grok, Higgsfield, Midjourney, Digen)</li>
-            <li>Model shown on every grid item</li>
-            <li>Hover to preview actions: favorite, hide, open, delete</li>
-            <li>Sub-second load times even at 10,000+ items</li>
-          </ul>
-        </div>
-        <div class="showcase-image">
-          <picture>
-            <source srcset="ShowcaseGrid.webp" type="image/webp">
-            <img src="ShowcaseGrid.webp" alt="GenCatalog grid showing AI generations with source badges and model labels" width="1471" height="1381" loading="lazy">
-          </picture>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features" id="features">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Features</span>
-        <h2>Once it's safe, it becomes useful.</h2>
-        <p>AI tools generate fast. GenCatalog makes sure none of it gets lost — every generation preserved with the full prompt, model, and settings that created it.</p>
-      </div>
-      <div class="features-grid">
-
-        <div class="feature-card">
-          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 5v14M5 12h14"/>
-          </svg>
-          <h3>One-Click Save</h3>
-          <p>Save any generation with a single click. The Chrome extension captures the image, video, prompt, and metadata automatically.</p>
-        </div>
-
-        <div class="feature-card">
-          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-          </svg>
-          <h3>Bulk Operations</h3>
-          <p>Scan your Grok favorites, capture Higgsfield grids, bulk download your Midjourney library, sync generation history. Select dozens of items at once to tag, move, or export in seconds.</p>
-        </div>
-
-        <div class="feature-card">
-          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6"/>
-          </svg>
-          <h3>Prompt Preservation</h3>
-          <p>Every saved generation keeps its full prompt, model, parameters, and source platform — everything you need to recreate it.</p>
-        </div>
-
-        <div class="feature-card">
-          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
-          </svg>
-          <h3>Smart Search</h3>
-          <p>Search across prompts, tags, models, dates, and platforms. Find any generation in seconds, no matter how large your library.</p>
-        </div>
-
-        <div class="feature-card">
-          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
-          </svg>
-          <h3>Tags &amp; Collections</h3>
-          <p>Organize with custom tags and collections. Build structured archives that make sense for your creative workflow.</p>
-        </div>
-
-        <div class="feature-card">
-          <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="8" height="18" rx="1"/><rect x="13" y="3" width="8" height="18" rx="1"/>
-          </svg>
-          <h3>Compare Mode</h3>
-          <p>View two generations side-by-side to evaluate variations. See prompts and metadata for both at once — pick the winner faster.</p>
-        </div>
-
-      </div>
-      <div class="features-extras">
-        <span>Mobile Access</span>
-        <span>Multi-Account Support</span>
-        <span>Duplicate Detection</span>
-        <span>Mac &amp; Windows</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how-it-works" id="how-it-works">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">How It Works</span>
-        <h2>Up and running in minutes</h2>
-        <p>GenCatalog is a desktop app paired with a Chrome extension. Set it up once — everything after that is automatic.</p>
-      </div>
-      <div class="steps">
-
-        <div class="step">
-          <div class="step-image">
-            <img src="CatalogStats-v2.webp" alt="GenCatalog desktop app showing catalog stats — 18,476 items cataloged" width="766" height="912" loading="lazy">
-          </div>
-          <div class="step-body">
-            <span class="step-num">Step 01</span>
-            <h3>Install the Extension</h3>
-            <p>Add the GenCatalog Chrome extension. It connects to the desktop app and captures every generation automatically.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-image">
-            <img src="SavetoGenCatalog.png" alt="Save to GenCatalog button appearing on an AI generation" width="766" height="1086" loading="lazy">
-          </div>
-          <div class="step-body">
-            <span class="step-num">Step 02</span>
-            <h3>Create on Grok, Higgsfield, Midjourney, or Digen</h3>
-            <p>Generate as you normally would. A save button appears on every image and video — one click captures everything.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-image">
-            <img src="ShowDetailTechnical.webp" class="ken-burns" alt="GenCatalog detail panel showing prompt and metadata" width="6948" height="3797" loading="lazy">
-          </div>
-          <div class="step-body">
-            <span class="step-num">Step 03</span>
-            <h3>Inspect every detail</h3>
-            <p>Open any generation to see the full prompt, model, metadata, and related assets — all in one place.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PRIVACY MOMENT -->
-  <section class="privacy-moment">
-    <div class="container">
-      <span class="section-label">Privacy First</span>
-      <h2>Your data is yours.<br>Full stop.</h2>
-      <p class="privacy-sub">Every AI tool wants access to your creations. GenCatalog doesn't. Your entire library lives on your machine — never uploaded, never shared, never monetized.</p>
-      <div class="privacy-pillars">
-        <div class="privacy-pillar">
-          <div class="privacy-pillar-label">No cloud</div>
-          <h3>Stored locally</h3>
-          <p>Your images, videos, and prompts live in a folder you control. GenCatalog never uploads anything, anywhere.</p>
-        </div>
-        <div class="privacy-pillar">
-          <div class="privacy-pillar-label">No accounts</div>
-          <h3>No sign-in required</h3>
-          <p>Download, install, and start saving. No email, no password, no profile. Just the app.</p>
-        </div>
-        <div class="privacy-pillar">
-          <div class="privacy-pillar-label">No subscription</div>
-          <h3>One-time purchase</h3>
-          <p>$39 once. No monthly fee, no renewal, no pricing changes that force you back to the checkout.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TRUST BLOCK -->
-  <section class="trust">
-    <div class="container">
-      <div class="trust-inner">
-        <div class="trust-content">
-          <h2>Your library lives on your computer. Nowhere else.</h2>
-          <p>Everything is stored locally. No cloud uploads. No accounts. No subscription. GenCatalog connects to localhost only — your generations never leave your machine.</p>
-          <div class="trust-stats">
-            <div class="trust-stat">
-              <div class="trust-stat-num">10k+</div>
-              <div class="trust-stat-label">Items per catalog</div>
-            </div>
-            <div class="trust-stat">
-              <div class="trust-stat-num">&lt;1s</div>
-              <div class="trust-stat-label">Grid load time</div>
-            </div>
-            <div class="trust-stat">
-              <div class="trust-stat-num">4</div>
-              <div class="trust-stat-label">AI platforms supported</div>
-            </div>
-            <div class="trust-stat">
-              <div class="trust-stat-num">100%</div>
-              <div class="trust-stat-label">Local &amp; private</div>
-            </div>
-          </div>
-        </div>
-        <div class="trust-screenshot">
-          <img src="GenCatalogInterface.png" alt="GenCatalog media library showing organized AI generations" width="2880" height="1620" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="testimonials" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Reviews</span>
-        <h2>What people are saying</h2>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"I had 12,000+ files to manage and this tool was a godsend. The search, tags, and organization features are exactly what I needed. Worth every penny. Wish I could give it 6 stars."</p>
-          <div class="testimonial-author">Mike G. &nbsp;·&nbsp; Chrome Web Store</div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"Managing created videos was such a pain before I found this app — now I just click one button. Amazing!"</p>
-          <div class="testimonial-author">En 352 &nbsp;·&nbsp; Chrome Web Store</div>
-        </div>
-        <div class="testimonial-card">
-          <div class="testimonial-stars">★★★★★</div>
-          <p class="testimonial-text">"I left a note about a bug with video previews cutting off too early. The author fixed it and shipped the update within 24 hours. It's fast, easy to use, and has everything I need."</p>
-          <div class="testimonial-author">Alex W. &nbsp;·&nbsp; Chrome Web Store</div>
-        </div>
-        <div class="testimonial-card">
-          <p class="testimonial-text">"I use your app more than Grok Imagine now."</p>
-          <div class="testimonial-author">Grok Imagine User &nbsp;·&nbsp; X</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GROK QUOTE -->
-  <section style="border-top:1px solid var(--border,#1a1a1a);border-bottom:1px solid var(--border,#1a1a1a);">
-    <div class="container" style="padding-top:2rem;padding-bottom:2rem;text-align:center;">
-      <p style="font-size:clamp(1.5rem,3.5vw,2.5rem);font-weight:700;font-style:italic;line-height:1.25;color:#fff;margin-bottom:1rem;">"GenCatalog is a game-changer —<br>a brilliant fix for the creative explosion we're fueling."</p>
-      <div style="display:inline-flex;align-items:center;gap:0.5rem;">
-        <img src="/logo-grok-clean.webp" width="20" height="20" style="border-radius:4px;object-fit:cover;" alt="Grok">
-        <span style="font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:#4f6378;font-weight:600;">@grok &nbsp;·&nbsp; Official X Account</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Pricing</span>
-        <h2>One price. No surprises.</h2>
-        <p>Buy it once. Use it forever. No subscription, no seats, no renewal.</p>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-badge">Launch Pricing</div>
-        <div class="pricing-price">$39</div>
-        <div class="pricing-type">One-time purchase</div>
-        <div class="pricing-updates">Includes all v1 updates</div>
-        <div class="pricing-divider"></div>
-        <ul class="pricing-bullets">
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            7-day free trial, no credit card
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Up to 250 generations free
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Mac and Windows
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Everything stored locally
-          </li>
-          <li>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Chrome extension included
-          </li>
-        </ul>
-        <p style="font-size:0.85rem;color:var(--t3);text-align:center;margin-bottom:0.75rem;">For less than the cost of losing one great generation you can't recreate, keep your entire library protected, searchable, and local.</p>
-        <a href="/get" class="btn btn-ghost btn-lg pricing-cta smart-dl-btn" data-mac="/get" data-win="/get" style="margin-bottom: 10px;"><span class="dl-label">Keep your work · Free for 7 days</span></a>
-        <a href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1" class="btn btn-primary btn-lg pricing-cta">Buy Now — $39</a>
-        <p class="pricing-platforms">macOS (Apple Silicon + Intel) &nbsp;·&nbsp; Windows 10/11</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <div class="container">
-      <h2>Do not wait until a platform change teaches you this the hard way.</h2>
-      <p>If you create seriously, back up seriously. Keep the file, the prompt, and the context together in a library you actually control.</p>
-      <p style="font-size: 13px; color: var(--t3); margin-top: -20px;">$39 one-time purchase &nbsp;·&nbsp; Free updates through all v1 releases &nbsp;·&nbsp; 7-day free trial</p>
-      <div class="final-ctas">
-        <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download the App</span></a>
-        <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Install Chrome Extension</a>
-        <p class="windows-warning" style="display:none; font-size: 13px; color: var(--t3); margin-top: 8px;">Windows may show a security warning — click 'More info' then 'Run anyway'.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span class="footer-copy">GenCatalog &copy; 2026 &nbsp;&middot;&nbsp; <a href="https://secondactlabs.com" style="color:inherit;text-decoration:none;">Second Act Labs</a></span>
-        <div class="footer-links">
-          <a href="/grok">Grok</a>
-          <a href="/higgsfield">Higgsfield</a>
-          <a href="/midjourney">Midjourney</a>
-          <a href="/digen">Digen</a>
-          <a href="/guides">Guides</a>
-          <a href="/support">Support</a>
-          <a href="/faq">FAQ</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="/release-notes">Release Notes</a>
-          <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Smart download button — detect OS, point to the right binary
-    (function () {
-      var ua = navigator.userAgent;
-      var isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
-      var isWin = !isMobile && (/Win/i.test(navigator.platform) || /Windows/i.test(ua));
-      var macUrl = '/get';
-      var winUrl = '/get';
-
-      if (isMobile) {
-        document.querySelectorAll('.smart-dl-btn').forEach(function (btn) {
-          var msg = document.createElement('p');
-          msg.style.cssText = 'font-size: 13px; color: var(--t3); margin: 0;';
-          msg.innerHTML = '💻 Desktop app — open this page on your Mac or Windows PC to download.';
-          btn.parentNode.replaceChild(msg, btn);
-        });
-      } else {
-        document.querySelectorAll('.smart-dl-btn').forEach(function (btn) {
-          var label = btn.querySelector('.dl-label');
-          if (isWin) {
-            btn.href = winUrl;
-            if (label) label.textContent = label.textContent.replace('Mac', 'Windows').replace('Free', 'Free');
-          }
-        });
-        document.querySelectorAll('.windows-warning').forEach(function (el) {
-          el.style.display = isWin ? 'block' : 'none';
-        });
-      }
-    })();
-  </script>
+<script src="site.js"></script>
+<script defer src="analytics.js"></script>
 </body>
 </html>
