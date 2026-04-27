@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8EV2H78B6F');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Bulk Download Grok Imagine Favorites with Prompts | GenCatalog</title>
+  <meta name="description" content="Bulk download Grok Imagine favorites and preserve the prompts, model settings, source, and metadata that make each image reusable.">
+  <link rel="canonical" href="https://gencatalog.app/blog-download-grok-imagine-favorites" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#111a28" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://gencatalog.app/blog-download-grok-imagine-favorites" />
+  <meta property="og:site_name" content="GenCatalog" />
+  <meta property="og:title" content="How to Bulk Download Grok Imagine Favorites with Prompts" />
+  <meta property="og:description" content="Save Grok Imagine favorites locally with prompts and metadata intact." />
+  <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Bulk Download Grok Imagine Favorites with Prompts" />
+  <meta name="twitter:description" content="A local-first workflow for saving Grok Imagine favorites, prompts, and metadata." />
+  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Bulk Download Grok Imagine Favorites with Prompts",
+    "description": "Bulk download Grok Imagine favorites and preserve the prompts, model settings, source, and metadata that make each image reusable.",
+    "datePublished": "2026-04-26",
+    "dateModified": "2026-04-26",
+    "author": {"@type": "Organization", "name": "GenCatalog", "url": "https://gencatalog.app"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "GenCatalog",
+      "url": "https://gencatalog.app",
+      "logo": {"@type": "ImageObject", "url": "https://gencatalog.app/GenCatalogLogo.png"}
+    },
+    "mainEntityOfPage": "https://gencatalog.app/blog-download-grok-imagine-favorites"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I bulk download Grok Imagine favorites?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Grok provides file downloads, and GenCatalog adds a local archive workflow that saves the image or video together with the prompt, platform source, and searchable metadata."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why should I save Grok prompts with the images?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The prompt is the recipe that makes a generation reusable. If you only download image files, you may keep the output but lose the context needed to recreate, compare, or improve it later."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-deep: #09090b;
+      --bg-surface: #18181b;
+      --bg-elevated: #27272a;
+      --text-primary: #fafafa;
+      --text-secondary: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --text-dim: #71717a;
+      --primary: #4f6378;
+      --accent: #61758a;
+      --border: rgba(255,255,255,0.07);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-deep); color: var(--text-secondary); line-height: 1.75; }
+    nav { border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; background: rgba(9,9,11,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); font-size: 17px; font-weight: 600; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
+    .article { max-width: 740px; margin: 0 auto; padding: 56px 24px 100px; }
+    .article-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
+    h1 { font-size: 36px; font-weight: 700; color: var(--text-primary); line-height: 1.25; margin-bottom: 20px; }
+    .meta { font-size: 14px; color: var(--text-dim); margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin: 40px 0 14px; }
+    p { margin-bottom: 18px; color: var(--text-muted); font-size: 16px; }
+    ul, ol { margin: 0 0 18px 24px; color: var(--text-muted); font-size: 16px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--text-secondary); }
+    .answer, .callout {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+    .answer p, .callout p { margin-bottom: 10px; color: var(--text-secondary); }
+    .answer p:last-child, .callout p:last-child { margin-bottom: 0; }
+    .cta-block {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .cta-block h3 { font-size: 22px; color: var(--text-primary); margin-bottom: 10px; }
+    .btn { display: inline-block; background: #4f6378; color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; transition: background 0.2s; }
+    .btn:hover { background: #61758a; }
+    .related-links { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 0; margin: 34px 0; display: grid; gap: 8px; font-size: 15px; }
+    footer { border-top: 1px solid var(--border); padding: 22px 24px 28px; text-align: center; color: var(--text-dim); font-size: 13px; }
+    footer a { color: var(--text-dim); text-decoration: none; margin: 0 12px; }
+    footer a:hover { color: var(--text-muted); }
+    @media (max-width: 720px) {
+      h1 { font-size: 30px; }
+      .nav-links { display: none; }
+    }
+  </style>
+  <script defer src="/analytics.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="GenCatalogLogo.png?v=20260330" width="22" height="22" alt="" style="border-radius:5px;display:block;">
+      GenCatalog
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/grok">Grok Saver</a>
+      <a href="/guides">Guides</a>
+      <a href="/support">Support</a>
+      <a href="/faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<main class="article">
+  <div class="article-label">Grok Imagine</div>
+  <h1>How to Bulk Download Grok Imagine Favorites with Prompts</h1>
+  <div class="meta">Published April 2026 · 5 min read</div>
+
+  <p>If you only download Grok Imagine files, you keep the pixels but lose the recipe. A useful archive needs both: the image or video and the prompt, model details, source, and metadata that explain how it was made.</p>
+
+  <div class="answer">
+    <p><strong>Short answer:</strong> bulk download your Grok Imagine favorites, then save the prompts and metadata into a local catalog. GenCatalog does this with a desktop app plus Chrome extension, so your Grok library stays searchable even if the platform changes.</p>
+  </div>
+
+  <h2>Why bulk download Grok favorites at all?</h2>
+
+  <p>Favorites are convenient, but they are not a backup. They live inside Grok's cloud interface, and that means your library depends on account state, UI changes, service behavior, and storage limits. If the favorites view gets slow, changes shape, or temporarily loses items, your creative history becomes hard to trust.</p>
+
+  <p>A local archive gives you a copy you control. It also makes the library faster to browse because you are no longer waiting for a web app to load months of older generations.</p>
+
+  <h2>The missing piece: prompts</h2>
+
+  <p>Downloading files is only half the job. A folder of anonymous images is useful for viewing, but not for recreating a look, comparing settings, or finding a shot by what you asked for. The prompt is the search handle and the creative recipe.</p>
+
+  <div class="callout">
+    <p><strong>Rule of thumb:</strong> if the prompt is not saved with the output, the archive is incomplete.</p>
+  </div>
+
+  <h2>How GenCatalog handles the workflow</h2>
+
+  <ol>
+    <li><strong>Install the desktop app</strong> on Mac or Windows and choose a local storage folder.</li>
+    <li><strong>Install the Chrome extension</strong> so GenCatalog can see the supported generation pages you already use.</li>
+    <li><strong>Scan or save Grok favorites</strong> to pull images and videos into your local catalog.</li>
+    <li><strong>Keep prompt metadata attached</strong> so each file remains searchable and reusable.</li>
+    <li><strong>Use search, tags, ratings, and collections</strong> to turn a pile of files into a working creative library.</li>
+  </ol>
+
+  <p>Everything stays local. GenCatalog does not require a cloud account, and it does not upload your media or prompts to a remote service.</p>
+
+  <h2>When to use Grok's download tools vs. GenCatalog</h2>
+
+  <p>Use Grok's built-in download when you need a quick copy of a small batch of files. Use GenCatalog when you care about the full history: prompts, platform source, metadata, search, and repeatable organization.</p>
+
+  <p>That difference matters most once your library crosses a few hundred generations. At that point, naming folders by hand and copying prompts into notes becomes fragile. A catalog is the cleaner long-term system.</p>
+
+  <div class="related-links">
+    <strong>Related GenCatalog guides</strong>
+    <a href="/grok">Grok Imagine bulk download and backup page</a>
+    <a href="/blog-grok-favorites-disappeared">Grok Imagine favorites disappeared?</a>
+    <a href="/blog-organize-grok-imagine">Organize a large Grok Imagine library locally</a>
+  </div>
+
+  <h2>After the download: organize for retrieval</h2>
+
+  <p>The end goal is not just possession. It is finding the right generation again when you need it. After import, use tags for projects, ratings for selects, notes for client or prompt context, and collections for reusable sets.</p>
+
+  <p>That turns Grok Imagine from a feed you scroll through into a source library you can actually work from.</p>
+
+  <div class="cta-block">
+    <h3>Bulk save Grok favorites with prompts intact</h3>
+    <p>GenCatalog keeps your files, prompts, and metadata together in a local Mac or Windows library.</p>
+    <a href="/get" class="btn">Start Free 7-Day Trial</a>
+  </div>
+</main>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/grok">Grok Saver</a>
+  <a href="/guides">Guides</a>
+  <a href="/support">Support</a>
+  <a href="/faq">FAQ</a>
+  <a href="/release-notes">Release Notes</a>
+  <p style="margin-top:12px;">© 2026 GenCatalog. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

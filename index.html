@@ -239,7 +239,9 @@
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 14px; color: var(--t2); font-weight: 500;
       letter-spacing: -0.01em;
+      transition: color 140ms ease, transform 140ms ease;
     }
+    a.platform-mark:hover { color: var(--t1); transform: translateY(-1px); }
     .platform-mark .dot {
       width: 8px; height: 8px; border-radius: 999px;
     }
@@ -247,6 +249,44 @@
     .platform-mark.mj .dot { background: var(--mj); box-shadow: 0 0 8px rgba(168,85,247,.6); }
     .platform-mark.hf .dot { background: var(--higgsfield); box-shadow: 0 0 8px rgba(240,107,107,.6); }
     .platform-mark.dg .dot { background: var(--digen); box-shadow: 0 0 8px rgba(61,214,140,.6); }
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 28px;
+    }
+    .workflow-link {
+      display: block;
+      min-height: 150px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: rgba(255,255,255,0.025);
+      transition: border-color 140ms ease, background 140ms ease, transform 140ms ease;
+    }
+    .workflow-link:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-hi);
+      background: rgba(255,255,255,0.045);
+    }
+    .workflow-link strong {
+      display: block;
+      color: var(--t1);
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .workflow-link span {
+      display: block;
+      color: var(--t2);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    @media (max-width: 900px) {
+      .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 560px) {
+      .workflow-grid { grid-template-columns: 1fr; }
+    }
 
     /* ── Problem section ─────────────────────────── */
     .problem .h-section { max-width: 22ch; margin: 0 auto; text-align: center; }
@@ -766,12 +806,30 @@
     <div class="platforms-row reveal">
       <span class="platforms-label">Captures from</span>
       <div class="platform-marks">
-        <span class="platform-mark grok"><span class="dot"></span>Grok Imagine</span>
-        <span class="platform-mark mj"><span class="dot"></span>Midjourney</span>
-        <span class="platform-mark hf"><span class="dot"></span>Higgsfield</span>
-        <span class="platform-mark dg"><span class="dot"></span>Digen</span>
+        <a class="platform-mark grok" href="/grok"><span class="dot"></span>Grok Imagine</a>
+        <a class="platform-mark mj" href="/midjourney"><span class="dot"></span>Midjourney</a>
+        <a class="platform-mark hf" href="/higgsfield"><span class="dot"></span>Higgsfield</a>
+        <a class="platform-mark dg" href="/digen"><span class="dot"></span>Digen</a>
       </div>
       <span class="platforms-label" style="opacity:.6">+ more soon</span>
+    </div>
+    <div class="workflow-grid reveal delay-1">
+      <a class="workflow-link" href="/grok">
+        <strong>Grok favorites backup</strong>
+        <span>Bulk download Grok Imagine favorites and keep prompts, parameters, and metadata attached locally.</span>
+      </a>
+      <a class="workflow-link" href="/blog-grok-favorites-disappeared">
+        <strong>Favorites disappeared?</strong>
+        <span>What to do when Grok favorites go missing, and how to protect your library before it happens again.</span>
+      </a>
+      <a class="workflow-link" href="/blog-organize-grok-imagine">
+        <strong>Organize Grok images</strong>
+        <span>Turn a large Grok Imagine library into a fast, searchable local archive.</span>
+      </a>
+      <a class="workflow-link" href="/midjourney">
+        <strong>Save Midjourney prompts</strong>
+        <span>Archive generations with prompt text, model version, aspect ratio, seeds, and reference parameters.</span>
+      </a>
     </div>
   </div>
 </section>

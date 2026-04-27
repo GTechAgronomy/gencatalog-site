@@ -1,6 +1,26 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-04-26 — Search Console SEO pass and Grok content cluster
+
+### What Changed
+- Reviewed Google Search Console performance, indexing, sitemap, HTTPS, FAQ enhancement, removals, and links data.
+- Added `search-console-seo-report-2026-04-26.md` with findings, recommendations, and a 30-day traffic plan.
+- Added `/blog-download-grok-imagine-favorites` to target high-intent Grok favorites bulk-download queries.
+- Reworked the two existing Grok blog pages for clearer search intent around disappeared favorites, bulk download, prompt preservation, and local backup.
+- Added visible internal links from the homepage, guides, FAQ, and support pages into the Grok content cluster.
+- Updated `sitemap.xml` with the new article and fresh `lastmod` values for changed pages.
+
+### Verification
+- Confirmed changed static pages, `sitemap.xml`, and `robots.txt` return `200` on a local server.
+- Confirmed changed pages have titles, canonicals, and valid JSON-LD where present.
+- Confirmed internal link targets in changed pages resolve to existing site files.
+- Confirmed `sitemap.xml` parses as valid XML.
+
+### Status
+- Ready to review and deploy via Cloudflare Pages on push.
+
+---
 ## 2026-04-24 — Published 5.15.1 download links and release notes
 
 ### What Changed
