@@ -1,6 +1,20 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-08 — Added Hit the Griddy support download
+
+### What Changed
+- Published `hit-the-griddy.js` as a static support download.
+- Added a Higgsfield helper section to `support.html` with usage steps and a direct download link.
+
+### Verification
+- Confirmed the helper script file exists in the site root.
+- Confirmed the support page links to `/hit-the-griddy.js`.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-08 — Added public release copy rule
 
 ### What Changed
