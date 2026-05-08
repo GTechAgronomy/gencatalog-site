@@ -1,6 +1,20 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-08 — Added public release copy rule
+
+### What Changed
+- Added `AGENTS.md` for site-specific guidance.
+- Added a release-copy rule requiring public release notes to describe customer-visible outcomes only.
+- Explicitly moved branch/provenance/build/process language to internal docs such as `DEVLOG.md`, PR descriptions, and handoff notes.
+
+### Verification
+- Confirmed the rule covers release notes, homepage copy, download pages, and support pages.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-04-26 — Search Console SEO pass and Grok content cluster
 
 ### What Changed
