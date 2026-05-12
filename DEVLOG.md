@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-12 — Published 5.15.8 Venice prompt hotfix
+
+### What Changed
+- Updated homepage and `/get` desktop version references to 5.15.8.
+- Added release notes for desktop 5.15.8 and Chrome extension 5.22.
+- Updated FAQ and privacy copy so Venice.ai is named consistently without referring to "Venice chats" in product overview copy.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.15.8 desktop artifacts, update feeds, and 5.22 extension ZIP.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-12 — Tightened Venice.ai product-page wording
 
 ### What Changed
