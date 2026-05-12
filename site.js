@@ -52,7 +52,7 @@
   // Platform rotator on hero badge
   const platformWord = document.getElementById('platform-rotator');
   if (platformWord) {
-    const list = ['Grok', 'Midjourney', 'Higgsfield', 'Digen'];
+    const list = ['Grok', 'Midjourney', 'Higgsfield', 'Digen', 'Venice'];
     let i = 0;
     setInterval(() => {
       i = (i + 1) % list.length;

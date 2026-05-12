@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-12 — Published Venice limited-support release copy
+
+### What Changed
+- Updated homepage, support, privacy, terms, and release notes copy for desktop 5.15.7 and extension 5.21.
+- Added customer-facing limited Venice.ai chat support guidance, including the video play-before-save caveat.
+- Updated `/get` to point at the 5.15.7 desktop downloads and refreshed sitemap lastmod values for changed public pages.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.15.7 desktop artifacts, update feeds, and 5.21 extension ZIP.
+- Confirmed static copy avoids internal release-process language.
+- Confirmed `git diff --check` passes.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-11 — Search Console CTR and Grok query follow-up
 
 ### What Changed
