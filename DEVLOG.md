@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-12 — Tightened Venice.ai product-page wording
+
+### What Changed
+- Changed homepage and metadata references from "Venice chats" to "Venice.ai".
+- Removed the homepage "Limited support" label from the platform strip.
+- Kept chat-only limitations in release notes and support copy where users expect setup details.
+
+### Verification
+- Confirmed product-facing homepage copy no longer says "Venice chats" or "Limited support".
+- Confirmed `git diff --check` passes.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-12 — Published Venice limited-support release copy
 
 ### What Changed
