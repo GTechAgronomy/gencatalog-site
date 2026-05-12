@@ -532,12 +532,25 @@
             <div class="platform-badge badge-venice">✓ venice.ai/chat</div>
 
             <h3>Saving Chat Items</h3>
-            <p>Open a Venice chat and use the GenCatalog save badge on visible image or video generations. GenCatalog saves the media file and captures prompt and model details when Venice exposes them on the page.</p>
+            <p>Open a Venice.ai chat and scroll to the generation you want to keep. A GenCatalog save badge appears on visible image generations, and on video generations after the video has rendered on the page.</p>
+            <p>Click the badge to save the image or video into your local GenCatalog library. GenCatalog captures prompt and model details when Venice exposes them near the visible generation.</p>
+
+            <h3>Videos Need to Be Played First</h3>
+            <p>For Venice.ai videos, press play before saving. Venice does not always render the video element until playback starts, so GenCatalog may not have a media target to attach to until the video has been played once.</p>
+
+            <h3>What Gets Saved</h3>
+            <ul style="margin: 8px 0 0 20px; color: var(--t2); font-size: 14px; line-height: 2;">
+                <li>The visible image or video file</li>
+                <li>Prompt text when Venice exposes it on the chat page</li>
+                <li>Model details when they are visible or recoverable from the page</li>
+                <li>Source platform, save date, and local catalog metadata</li>
+            </ul>
 
             <h3>Current Limits</h3>
             <ul style="margin: 8px 0 0 20px; color: var(--t2); font-size: 14px; line-height: 2;">
-                <li>Venice support is chat-only. Public feed capture and bulk import are not included.</li>
+                <li>Venice.ai support is chat-page only. Public feed capture and bulk import are not included.</li>
                 <li>For videos, press play first so the save badge can attach to the rendered video.</li>
+                <li>Prompt and model capture depend on what Venice exposes in the visible chat layout.</li>
                 <li>Saved Venice items stay local in GenCatalog, just like your other catalog media.</li>
             </ul>
         </div>

@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-12 — Added Venice.ai support and FAQ guidance
+
+### What Changed
+- Expanded the Venice.ai section on the support page with chat-page save steps, video playback guidance, saved metadata, and current limits.
+- Added a dedicated Venice.ai FAQ section covering support scope, save steps, video behavior, and metadata capture.
+- Updated FAQ metadata and structured data so Venice.ai support is represented consistently.
+
+### Verification
+- Confirmed `/support.html` and `/faq.html` return `200` on a local static server.
+- Confirmed FAQ structured data parses as valid JSON-LD.
+- Confirmed `git diff --check` passes.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-12 — Published 5.15.8 Venice prompt hotfix
 
 ### What Changed
