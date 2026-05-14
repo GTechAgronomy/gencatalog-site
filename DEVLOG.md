@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-14 — Published 5.15.9 Venice prompt repair release copy
+
+### What Changed
+- Updated homepage and `/get` desktop version references to 5.15.9.
+- Added release notes for desktop 5.15.9 and Chrome extension 5.23.
+- Refreshed sitemap lastmod values for the homepage and release notes.
+
+### Verification
+- `python3` XML parse confirms `sitemap.xml` is well-formed.
+- `git diff --check` passes.
+- Public release artifacts returned HTTP 200 from `downloads.gencatalog.app`.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-12 — Added Venice.ai support and FAQ guidance
 
 ### What Changed
