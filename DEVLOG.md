@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-16 — Added purchase attribution carry-through
+
+### What Changed
+- Stored inbound `source`, `channel`, `surface`, and UTM parameters in local browser attribution state.
+- Decorated Lemon Squeezy checkout links with official `checkout[custom][...]` metadata before checkout opens.
+- Added the stored attribution fields to GA conversion click and download redirect events.
+
+### Verification
+- Confirmed checkout URLs can be generated with Lemon Squeezy custom metadata fields.
+- Confirmed `/get` download redirect events include the available attribution fields.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-14 — Published 5.15.9 Venice prompt repair release copy
 
 ### What Changed

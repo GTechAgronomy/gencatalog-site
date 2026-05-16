@@ -71,6 +71,27 @@
     var secondary = document.getElementById('secondary');
     var headline = document.getElementById('headline');
     var body = document.getElementById('body');
+    var attribution = (function () {
+      var key = 'gc_attribution_v1';
+      var params = new URLSearchParams(location.search);
+      var stored = {};
+      try { stored = JSON.parse(localStorage.getItem(key) || '{}') || {}; } catch (_) {}
+      var source = (params.get('source') || stored.lastSource || stored.firstSource || '').trim();
+      var channel = (params.get('channel') || stored.lastChannel || stored.firstChannel || '').trim();
+      var surface = (params.get('surface') || stored.lastSurface || '').trim();
+      if (source || channel || surface) {
+        stored.lastSource = source || stored.lastSource;
+        stored.lastChannel = channel || stored.lastChannel;
+        stored.lastSurface = surface || stored.lastSurface;
+        stored.lastLandingPage = location.href;
+        stored.lastSeenAt = new Date().toISOString();
+        if (!stored.firstSource && source) stored.firstSource = source;
+        if (!stored.firstChannel && channel) stored.firstChannel = channel;
+        if (!stored.firstLandingPage) stored.firstLandingPage = location.href;
+        try { localStorage.setItem(key, JSON.stringify(stored)); } catch (_) {}
+      }
+      return { source: source, channel: channel, surface: surface };
+    })();
 
     if (isMobile) {
       headline.textContent = 'Open this page on your Mac or PC';
@@ -93,6 +114,9 @@
           event_category: 'conversion',
           event_label: isWin ? 'Windows installer' : 'Mac installer',
           link_url: target,
+          gc_source: attribution.source,
+          gc_channel: attribution.channel,
+          gc_surface: attribution.surface,
           transport_type: 'beacon'
         });
       }
