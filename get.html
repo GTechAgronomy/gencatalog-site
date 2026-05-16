@@ -93,14 +93,26 @@
       return { source: source, channel: channel, surface: surface };
     })();
 
+    function withAttribution(url) {
+      var next = new URL(url);
+      ['source', 'channel', 'surface'].forEach(function (key) {
+        if (attribution[key]) next.searchParams.set(key, attribution[key]);
+      });
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (key) {
+        var value = new URLSearchParams(location.search).get(key);
+        if (value) next.searchParams.set(key, value);
+      });
+      return next.toString();
+    }
+
     if (isMobile) {
       headline.textContent = 'Open this page on your Mac or PC';
       body.textContent = 'GenCatalog is a desktop app. Head to your computer and visit gencatalog.app/get to download.';
       primary.href = 'https://gencatalog.app';
       primary.textContent = 'Back to gencatalog.app';
     } else {
-      var target = isWin ? winUrl : macUrl;
-      var other = isWin ? macUrl : winUrl;
+      var target = withAttribution(isWin ? winUrl : macUrl);
+      var other = withAttribution(isWin ? macUrl : winUrl);
       var otherLabel = isWin ? 'Download for Mac' : 'Download for Windows';
 
       primary.href = target;
