@@ -1,6 +1,23 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-16 — Added May Grok favorites outage SEO update
+
+### What Changed
+- Updated `/blog-grok-favorites-disappeared` around Search Console queries for Grok favorites not loading, not showing, unable to load, and saved images disappeared.
+- Added a May 2026 update section near the top of the article.
+- Refreshed the article title, meta description, Open Graph copy, FAQ structured data, and sitemap lastmod.
+
+### Verification
+- Confirmed article metadata and JSON-LD parse correctly.
+- Confirmed `sitemap.xml` parses as valid XML.
+- Confirmed `/blog-grok-favorites-disappeared.html`, `sitemap.xml`, and `robots.txt` return `200` on a local static server.
+- Confirmed `git diff --check` passes.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-16 — Added purchase attribution carry-through
 
 ### What Changed
