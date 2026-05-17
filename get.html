@@ -79,6 +79,27 @@
       var source = (params.get('source') || stored.lastSource || stored.firstSource || '').trim();
       var channel = (params.get('channel') || stored.lastChannel || stored.firstChannel || '').trim();
       var surface = (params.get('surface') || stored.lastSurface || '').trim();
+      if (!source && document.referrer) {
+        try {
+          var ref = new URL(document.referrer);
+          var host = ref.hostname.replace(/^www\./, '').toLowerCase();
+          var searchSources = {
+            'google.com': 'google_organic',
+            'bing.com': 'bing_organic',
+            'duckduckgo.com': 'duckduckgo_organic',
+            'yahoo.com': 'yahoo_organic',
+            'ecosia.org': 'ecosia_organic',
+            'search.brave.com': 'brave_organic',
+            'perplexity.ai': 'perplexity_referral',
+            'chatgpt.com': 'chatgpt_referral'
+          };
+          if (host !== location.hostname) {
+            source = searchSources[host] || ('referral_' + host.replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 80));
+            channel = channel || (source.indexOf('_organic') !== -1 ? 'organic_search' : (source.indexOf('_referral') !== -1 ? 'ai_referral' : 'referral'));
+            surface = surface || 'website';
+          }
+        } catch (_) {}
+      }
       if (source || channel || surface) {
         stored.lastSource = source || stored.lastSource;
         stored.lastChannel = channel || stored.lastChannel;

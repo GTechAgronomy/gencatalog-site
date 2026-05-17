@@ -48,9 +48,41 @@
     return inbound;
   }
 
+  function referrerAttribution() {
+    var ref = safeUrl(document.referrer);
+    if (!ref || ref.hostname === window.location.hostname) return {};
+
+    var host = ref.hostname.replace(/^www\./, '').toLowerCase();
+    var searchEngines = {
+      'google.com': 'google_organic',
+      'bing.com': 'bing_organic',
+      'duckduckgo.com': 'duckduckgo_organic',
+      'yahoo.com': 'yahoo_organic',
+      'ecosia.org': 'ecosia_organic',
+      'search.brave.com': 'brave_organic',
+      'perplexity.ai': 'perplexity_referral',
+      'chatgpt.com': 'chatgpt_referral'
+    };
+
+    if (searchEngines[host]) {
+      return {
+        source: searchEngines[host],
+        channel: searchEngines[host].indexOf('_organic') !== -1 ? 'organic_search' : 'ai_referral',
+        surface: 'website'
+      };
+    }
+
+    return {
+      source: 'referral_' + host.replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '').slice(0, 80),
+      channel: 'referral',
+      surface: 'website'
+    };
+  }
+
   function updateAttribution() {
     var stored = readStoredAttribution();
     var inbound = getInboundAttribution();
+    if (!Object.keys(inbound).length) inbound = referrerAttribution();
     var hasInbound = Object.keys(inbound).length > 0;
     var now = new Date().toISOString();
 

@@ -25,6 +25,7 @@
 - Decorated Lemon Squeezy checkout links with official `checkout[custom][...]` metadata before checkout opens.
 - Added the stored attribution fields to GA conversion click and download redirect events.
 - Passed the same attribution fields through to the final DMG/EXE URLs so the download tracker can record source context on installer downloads.
+- Added referrer fallback attribution for organic search and external referrals when visitors arrive without explicit source or UTM parameters.
 
 ### Verification
 - Confirmed checkout URLs can be generated with Lemon Squeezy custom metadata fields.
