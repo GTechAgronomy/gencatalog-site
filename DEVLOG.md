@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-23 — Published 5.15.10 source image release copy
+
+### What Changed
+- Updated homepage and `/get` desktop version references to 5.15.10.
+- Added release notes for desktop 5.15.10 and Chrome extension 5.25.
+- Refreshed sitemap lastmod values for the homepage and release notes.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.15.10 desktop artifacts, update feeds, and 5.25 extension ZIP.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-16 — Added May Grok favorites outage SEO update
 
 ### What Changed
