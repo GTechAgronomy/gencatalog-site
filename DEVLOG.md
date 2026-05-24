@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-23 — Published 5.15.11 customer QOL release
+
+### What Changed
+- Updated `/get` desktop download redirect to 5.15.11.
+- Added customer-facing release notes for desktop 5.15.11 and Chrome extension 5.26.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.15.11 desktop artifacts, update feeds, and 5.26 extension ZIP.
+- Confirmed the live updater feeds point to 5.15.11 with the final post-staple DMG hash and Windows installer hash.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-23 — Published 5.15.10 source image release copy
 
 ### What Changed
