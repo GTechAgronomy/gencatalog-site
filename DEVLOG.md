@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-23 — Published 5.15.12 Grok URL visibility release
+
+### What Changed
+- Updated `/get` desktop download redirect to 5.15.12.
+- Added customer-facing release notes for desktop 5.15.12 and Chrome extension 5.27.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.15.12 desktop artifacts, update feeds, and 5.27 extension ZIP.
+- Confirmed the live updater feeds point to 5.15.12 with the final post-staple DMG hash and Windows installer hash.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-23 — Published 5.15.11 customer QOL release
 
 ### What Changed
