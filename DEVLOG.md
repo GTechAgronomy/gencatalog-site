@@ -4,6 +4,7 @@
 ## 2026-05-23 — Published 5.15.12 Grok URL visibility release
 
 ### What Changed
+- Updated homepage visible version references and structured-data software version to 5.15.12.
 - Updated `/get` desktop download redirect to 5.15.12.
 - Added customer-facing release notes for desktop 5.15.12 and Chrome extension 5.27.
 
