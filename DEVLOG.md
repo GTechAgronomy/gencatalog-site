@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-05-24 — Published 5.15.13 preview sync and Higgsfield video release
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.15.13.
+- Updated `/get` desktop download redirect to 5.15.13.
+- Added customer-facing release notes for desktop 5.15.13 and Chrome extension 5.28.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.15.13 desktop artifacts and update feeds.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-23 — Published 5.15.12 Grok URL visibility release
 
 ### What Changed
