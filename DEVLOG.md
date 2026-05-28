@@ -302,3 +302,18 @@ Verify each URL returns `200` via `curl -I https://downloads.gencatalog.app/<fil
 
 ### Status:
 - Ready to deploy via Cloudflare Pages on push.
+
+---
+## 2026-05-28 — Published 5.15.14 desktop hotfix surfaces
+
+### What Changed
+- Updated `/get` so macOS and Windows downloads resolve to 5.15.14 artifacts.
+- Updated the homepage visible version badge and structured-data software version.
+- Added customer-facing release notes for GenCatalog 5.15.14 while leaving the Chrome extension at 5.28.
+
+### Verification
+- Confirmed public R2 URLs returned 200 for the 5.15.14 DMG, macOS ZIP, Windows EXE, `latest-mac.yml`, and `latest.yml`.
+- Confirmed the updater feeds report version 5.15.14.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
