@@ -1,6 +1,24 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-01 — Published 5.16.0 GPT Image and Grok upscale release copy
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.16.0.
+- Updated `/get` desktop download redirect to 5.16.0.
+- Added customer-facing release notes for desktop 5.16.0 and Chrome extension 5.30.
+- Added GPT Image to homepage, support, FAQ, privacy, and machine-readable `llms.txt` platform support copy.
+- Updated `llms.txt` to point at the current 5.16.0 macOS DMG download.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.16.0 desktop artifacts, updater feeds, and 5.30 extension ZIP before updating site copy.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+- Confirmed `git diff --check` passes.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-05-24 — Published 5.15.13 preview sync and Higgsfield video release
 
 ### What Changed

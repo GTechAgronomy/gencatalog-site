@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenCatalog Support Guide — Grok Favorites and Saved Images Recovery</title>
-    <meta name="description" content="Step-by-step GenCatalog support: recover Grok favorites or missing saved images/videos, bulk download with prompts, and set up Grok, Midjourney, Higgsfield, Digen, and Venice.ai workflows.">
+    <meta name="description" content="Step-by-step GenCatalog support: recover Grok favorites, scan GPT Image chats, bulk download with prompts, and set up Grok, Midjourney, Higgsfield, Digen, and Venice.ai workflows.">
     <link rel="canonical" href="https://gencatalog.app/support" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/support" />
     <meta property="og:title" content="GenCatalog Support Guide — Grok Favorites and Saved Images Recovery" />
-    <meta property="og:description" content="Recover Grok favorites or missing saved images/videos, bulk download with prompts, and set up GenCatalog workflows across supported platforms." />
+    <meta property="og:description" content="Recover Grok favorites, scan GPT Image chats, bulk download with prompts, and set up GenCatalog workflows across supported platforms." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
     <style>
         :root {
@@ -130,6 +130,7 @@
         .dot-digen { background: #3dd68c; }
         .dot-midjourney { background: #4f6378; }
         .dot-venice { background: #d6a64f; }
+        .dot-gpt { background: #e879f9; }
         .content {
             padding: 48px 48px 100px;
             max-width: 780px;
@@ -310,6 +311,7 @@
         <a href="#extension">Chrome Extension</a>
         <div class="sidebar-label">Platforms</div>
         <a href="#grok"><span class="dot dot-grok"></span>Grok Imagine</a>
+        <a href="#gpt-image"><span class="dot dot-gpt"></span>GPT Image</a>
         <a href="#higgsfield"><span class="dot dot-higgsfield"></span>Higgsfield</a>
         <a href="#higgsfield-helper"><span class="dot dot-higgsfield"></span>Higgsfield Helper</a>
         <a href="#venice"><span class="dot dot-venice"></span>Venice.ai</a>
@@ -331,8 +333,8 @@
     <main class="content">
         <div class="page-label">Support Guide</div>
         <h1>How to Use GenCatalog</h1>
-        <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across <a href="/grok">Grok Imagine</a>, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br><a href="/release-notes">See latest release notes and update details.</a></p>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with Grok saved-images recovery, favorites backup, bulk download, and metadata-preservation workflows.</div>
+        <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across <a href="/grok">Grok Imagine</a>, GPT Image, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br><a href="/release-notes">See latest release notes and update details.</a></p>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with GPT Image support, Grok saved-images recovery, favorites backup, bulk download, and metadata-preservation workflows.</div>
 
         <div class="section" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -407,7 +409,7 @@
             <ul>
                 <li><strong>Connection state</strong> — if the desktop app is open, the popup connects automatically; if not, open the app and wait a few seconds</li>
                 <li><strong>Trial or license state</strong> — the chip and banner explain whether you're licensed, in trial, offline, or at a save limit</li>
-                <li><strong>Platform strip + action rail</strong> — Grok, Midjourney, Higgsfield, Digen, and Venice each show the controls that apply to that site</li>
+                <li><strong>Active platform controls</strong> — Grok, GPT Image, Midjourney, Higgsfield, Digen, and Venice each show the controls that apply to that site</li>
                 <li><strong>Recent saves</strong> — your latest captured items and save confirmations</li>
                 <li><strong>Open Catalog / Settings</strong> — launch your catalog or manage persistent download preferences</li>
             </ul>
@@ -462,6 +464,24 @@
             <h3>Smart Sync &amp; Exclusion</h3>
             <p>When you delete an item through GenCatalog, it's added to a permanent exclusion list and will never be re-downloaded during future bulk scans — even if it's still in your Grok favorites.</p>
             <div class="warning"><strong>Always delete through GenCatalog</strong> — not by removing files in Finder. Only GenCatalog-deleted items are added to the exclusion list.</div>
+        </div>
+
+        <div class="section" id="gpt-image">
+            <h2>GPT Image</h2>
+            <p class="section-desc">Scan current ChatGPT image conversations, import prompt-matched images, and repair missing prompts on existing GPT Image catalog items.</p>
+            <div class="platform-badge">✓ chatgpt.com &nbsp;·&nbsp; chat.openai.com</div>
+
+            <h3>Scanning a Chat</h3>
+            <p>Open a ChatGPT conversation that contains GPT Image outputs, then open the GenCatalog extension popup and click <strong>Scan</strong>. GenCatalog counts image outputs it can pair with a visible prompt on that chat.</p>
+
+            <h3>Downloading New Images</h3>
+            <p>After scan, click <strong>Download N new items</strong> when new prompt-matched GPT Image outputs are available. Items that are already in your catalog are not offered for duplicate download.</p>
+
+            <h3>Updating Missing Prompts</h3>
+            <p>If the chat contains GPT Image outputs that are already saved but missing prompt text in your catalog, the popup shows <strong>Update prompts</strong>. Use it to fill in the missing prompt metadata without re-downloading the images.</p>
+
+            <h3>Held Items</h3>
+            <p>Media-only images with no matched prompt are held back by default. This keeps your GPT Image imports useful and searchable instead of filling the catalog with promptless mystery files.</p>
         </div>
 
         <div class="section" id="higgsfield">
@@ -643,7 +663,7 @@
             <p>Type in the search bar to filter your entire catalog by prompt text. Search is instant across all platforms.</p>
             <h3>Filters</h3>
             <ul>
-                <li><strong>Platform</strong> — show only Grok Imagine, Higgsfield, Midjourney, Digen, or Venice content</li>
+                <li><strong>Platform</strong> — show only Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, or Venice content</li>
                 <li><strong>Media type</strong> — images or videos only</li>
                 <li><strong>Favorites</strong> — show only starred items</li>
                 <li><strong>Tags</strong> — click any tag to filter by it</li>
