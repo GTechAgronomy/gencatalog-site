@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-03 — Published 5.16.3 Venice and large-catalog stability copy
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.16.3.
+- Updated `/get` desktop download redirect to 5.16.3.
+- Added customer-facing release notes for desktop 5.16.3 and Chrome extension 5.33.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.16.3 desktop artifacts and update feeds before updating site copy.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-03 — Published 5.16.2 fullscreen video navigation hotfix copy
 
 ### What Changed
