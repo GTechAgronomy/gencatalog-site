@@ -413,7 +413,7 @@
                 <li><strong>Recent saves</strong> — your latest captured items and save confirmations</li>
                 <li><strong>Open Catalog / Settings</strong> — launch your catalog or manage persistent download preferences</li>
             </ul>
-            <div class="tip"><strong>Download options:</strong> Download HD, Upscale videos, and Smart Sync now live in Settings and stay remembered after you set them once.</div>
+            <div class="tip"><strong>Download options:</strong> Smart Sync lives in Settings and stays remembered after you set it once. Grok video upscaling is handled from the desktop catalog, not from the extension scan flow.</div>
             <div class="warning"><strong>If the popup cannot connect:</strong> Open the GenCatalog desktop app, wait a few seconds, then try again.</div>
         </div>
 
@@ -460,6 +460,33 @@
 
             <h3>Multiple Grok Accounts</h3>
             <p>GenCatalog supports saving from multiple Grok accounts into a single catalog. Each item is automatically tagged with the account it came from, so you can filter your catalog by account. To save from another account: log out of Grok, log in to your second account, and use the extension as normal.</p>
+
+            <h3>Upscaling Grok Imagine Videos</h3>
+            <p>Grok video upscaling is available from the GenCatalog desktop app so you can choose exactly which saved videos to change. The Chrome extension does not bulk-upscale videos during scan or download.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Open the video in your desktop catalog</strong>
+                        <p>Click a saved Grok Imagine video to open its detail view. If the video can be upgraded, the Upgrade row appears below the Grok link.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Choose the next quality level</strong>
+                        <p>Select the available target, such as 720p or 1080p, then click <strong>Upgrade</strong>. GenCatalog queues the upgrade and updates the local file when Grok returns the upgraded version.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Use the right Grok account</strong>
+                        <p>Keep grok.com open in Chrome using the account or Chrome profile that created the video. If you use multiple Grok accounts, switch to the saved item's source account before retrying an upgrade.</p>
+                    </div>
+                </div>
+            </div>
+            <p>You can also select multiple Grok videos in the desktop app, then use the selected-item <strong>Upgrade</strong> action to queue those chosen videos. For large libraries, review a small group first so you are confident the upgraded versions are the ones you want to keep.</p>
 
             <h3>Smart Sync &amp; Exclusion</h3>
             <p>When you delete an item through GenCatalog, it's added to a permanent exclusion list and will never be re-downloaded during future bulk scans — even if it's still in your Grok favorites.</p>

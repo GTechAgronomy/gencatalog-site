@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-04 — Published extension 5.35 Grok upscale safety copy
+
+### What Changed
+- Added customer-facing release notes for Chrome extension 5.35.
+- Updated support guidance to explain that Grok video upscaling happens in the desktop app, not during extension scan/download.
+- Added FAQ instructions for single-video and selected-item Grok upgrades from the desktop app.
+- Removed stale guide copy that described bulk upscaling as part of the Grok recovery workflow.
+
+### Verification
+- Confirmed static HTML no longer contains stale extension-upscale settings copy.
+- `git diff --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-03 — Published 5.16.3 Venice and large-catalog stability copy
 
 ### What Changed
