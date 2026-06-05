@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-05 — Published desktop 5.16.5 release copy
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.16.5.
+- Updated `/get` desktop download redirect to 5.16.5.
+- Added customer-facing release notes for desktop 5.16.5.
+- Noted that the matching Chrome extension Save & Favorite and import receipt improvements are coming soon after Web Store approval.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.16.5 desktop artifacts and updater feeds before updating site copy.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-04 — Published extension 5.35 Grok upscale safety copy
 
 ### What Changed
