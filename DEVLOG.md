@@ -12,9 +12,10 @@
 ### Verification
 - Confirmed public download URLs return `200` for the 5.16.6 desktop artifacts and updater feeds before updating site copy.
 - Confirmed release copy stays customer-facing and avoids internal process language.
+- Confirmed live `gencatalog.app`, `/get.html`, and `/release-notes` propagated to 5.16.6 after push.
 
 ### Status
-- Ready to deploy via Cloudflare Pages on push.
+- Deployed via Cloudflare Pages and verified live.
 
 ---
 ## 2026-06-05 — Published desktop 5.16.5 release copy
