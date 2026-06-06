@@ -8,10 +8,10 @@
 - Kept the public 5.16.5 notes focused on user-visible Save & Favorite and import receipt readiness.
 
 ### Verification
-- Pending live site verification after push.
+- Confirmed live `/release-notes` no longer contains the About-panel ownership copy.
 
 ### Status
-- Pending deploy.
+- Deployed via Cloudflare Pages and verified live.
 
 ---
 ## 2026-06-05 — Published desktop 5.16.6 release copy
