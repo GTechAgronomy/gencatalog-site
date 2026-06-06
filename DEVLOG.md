@@ -1,6 +1,19 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-06 — Removed internal About-panel release note
+
+### What Changed
+- Removed the 5.16.5 release-note section that called out the macOS About-panel ownership text.
+- Kept the public 5.16.5 notes focused on user-visible Save & Favorite and import receipt readiness.
+
+### Verification
+- Pending live site verification after push.
+
+### Status
+- Pending deploy.
+
+---
 ## 2026-06-05 — Published desktop 5.16.6 release copy
 
 ### What Changed
