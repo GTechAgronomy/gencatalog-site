@@ -311,9 +311,16 @@
             max-width: 100%;
             height: auto;
         }
+
+        /* Mobile: let the nav wrap instead of overflowing the viewport */
+        @media (max-width: 640px) {
+            .nav-inner { flex-wrap: wrap; height: auto; padding: 8px 0; row-gap: 2px; }
+            .nav-links { flex-wrap: wrap; gap: 2px; }
+            .nav-links a { font-size: 13px; padding: 8px 9px; }
+        }
     </style>
-  
-  
+
+
   <!-- already added --><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {
@@ -419,7 +426,7 @@
     </div>
 </nav>
 
-<div class="page">
+<main class="page">
     <div class="page-header">
         <div class="page-label">Help Center</div>
         <h1>Frequently Asked Questions</h1>
@@ -1002,7 +1009,7 @@
         <p>We're happy to help. Send us an email and we'll get back to you within 1–2 business days.</p>
         <a href="mailto:support@gencatalog.app">Contact Support</a>
     </div>
-</div>
+</main>
 
 <footer>
     <a href="/">Home</a>

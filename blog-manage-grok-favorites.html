@@ -128,7 +128,14 @@
       h1 { font-size: 30px; }
       .nav-links { display: none; }
     }
-  </style>
+
+        /* Mobile: let the nav wrap instead of overflowing the viewport */
+        @media (max-width: 640px) {
+            .nav-inner { flex-wrap: wrap; height: auto; padding: 8px 0; row-gap: 2px; }
+            .nav-links { flex-wrap: wrap; gap: 2px; }
+            .nav-links a { font-size: 13px; padding: 8px 9px; }
+        }
+    </style>
   <script defer src="/analytics.js"></script>
 </head>
 <body>
