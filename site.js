@@ -22,23 +22,6 @@
 
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  // Parallax for hero screenshot
-  const heroShot = document.getElementById('hero-shot');
-  if (heroShot) {
-    let raf = 0;
-    const onScrollParallax = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const y = Math.min(window.scrollY, 800);
-        const tilt = 6 - (y / 800) * 6; // tilt 6deg → 0deg
-        const lift = y * 0.15;
-        heroShot.style.transform = `perspective(1800px) rotateX(${tilt}deg) translateY(${-lift}px)`;
-      });
-    };
-    window.addEventListener('scroll', onScrollParallax, { passive: true });
-    onScrollParallax();
-  }
-
   // Platform rotator on hero badge
   const platformWord = document.getElementById('platform-rotator');
   if (platformWord) {

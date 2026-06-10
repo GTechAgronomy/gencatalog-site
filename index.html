@@ -170,13 +170,9 @@
         0 0 0 1px rgba(255,255,255,0.05),
         0 40px 100px rgba(0,0,0,0.7),
         0 0 160px rgba(98,112,240,0.22);
-      transform: perspective(1800px) rotateX(6deg);
-      transform-origin: center top;
-      transition: transform 100ms linear;
-      will-change: transform;
       position: relative;
     }
-    .hero-shot img { display: block; width: 100%; image-rendering: -webkit-optimize-contrast; }
+    .hero-shot img { display: block; width: 100%; height: auto; image-rendering: -webkit-optimize-contrast; }
     .hero-shot::before {
       content: "";
       position: absolute; top: 0; left: 0; right: 0; height: 1px;
@@ -1094,7 +1090,7 @@
       </div>
       <div class="reveal delay-3" style="display:flex; justify-content:center;">
         <div style="max-width:380px; width:100%; border-radius:18px; overflow:hidden; border:1px solid var(--border-hi); box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 80px rgba(98,112,240,0.15);">
-          <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension popup" width="762" height="1174" loading="lazy" decoding="async" style="display:block; width:100%;">
+          <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension popup" width="762" height="1174" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
         </div>
       </div>
     </div>
@@ -1274,7 +1270,7 @@
   </div>
 </footer>
 
-<script src="site.js"></script>
+<script src="site.js?v=20260610-image-fix"></script>
 <script defer src="analytics.js"></script>
 </body>
 </html>
