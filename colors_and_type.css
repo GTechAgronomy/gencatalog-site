@@ -6,26 +6,6 @@
    source for the design system.
    ============================================================ */
 
-/* Geist sans — vendored locally as a variable font (weight axis 100–900). */
-@font-face {
-  font-family: "Geist";
-  src: url("./fonts/Geist-VariableFont_wght.ttf") format("truetype-variations"),
-       url("./fonts/Geist-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Geist Mono — vendored locally as a variable font (weight axis 100–900). */
-@font-face {
-  font-family: "Geist Mono";
-  src: url("./fonts/GeistMono-VariableFont_wght.ttf") format("truetype-variations"),
-       url("./fonts/GeistMono-VariableFont_wght.ttf") format("truetype");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   /* ── Surfaces (dark stack) ─────────────────────────────── */
   --bg:        #0e0e11;     /* canvas */
