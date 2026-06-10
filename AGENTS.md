@@ -9,5 +9,8 @@
 
 ## Release Updates
 - Keep `index.html`, `get.html`, and `release-notes.html` aligned on the current public desktop version
+- Use `scripts/update-version.sh <new-version>` to bump all version surfaces at once — it refuses to bump until the download artifacts return `200`
+- Run `scripts/update-version.sh --check` before pushing any release; it fails if version surfaces disagree, release notes are missing, or artifacts are not live
 - Verify download URLs return `200` before announcing a release
+- `llms.txt` links `/get` instead of a versioned download URL on purpose — keep it that way
 - Leave unrelated site copy, formatting, and generated files untouched unless the task explicitly calls for them

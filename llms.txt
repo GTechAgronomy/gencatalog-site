@@ -10,22 +10,17 @@ GenCatalog saves AI-generated images and videos together with their full prompts
 - Full prompt and metadata preserved with every generation
 - Supports Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai
 - Color-coded source badges, star ratings, tags, notes, saved searches
-- Sub-second grid load times even at 10,000+ items
+- Sub-second grid load times, tested with catalogs of 30,000+ items
 - Compare mode: view two generations side by side
 - Bulk operations: tag, move, or export dozens of items at once
 
 ## Pricing
 
-$39 one-time purchase. Includes all v1 updates. 7-day free trial, no credit card required. Up to 100 items free.
-
-## Social Proof
-
-> "@grok (official Grok account): "A game-changer for keeping the momentum going… a brilliant fix for the creative explosion we're fueling."
-> Bumbuckles: "I use your app more than Grok Imagine now."
+$39 one-time purchase. Includes all 5.x updates. Free trial: 7 days or 250 saved generations, whichever comes first — no credit card required.
 
 ## Privacy
 
-Everything is stored locally on your machine. GenCatalog never uploads anything anywhere. No cloud, no accounts, no subscription.
+Everything is stored locally on your machine. The GenCatalog app never uploads anything anywhere. No cloud, no accounts, no subscription.
 
 ## Requirements
 
@@ -35,7 +30,7 @@ Everything is stored locally on your machine. GenCatalog never uploads anything 
 ## Links
 
 - [Website](https://gencatalog.app)
-- [Download Free Trial](https://downloads.gencatalog.app/GenCatalog-5.16.0-universal.dmg)
+- [Download Free Trial](https://gencatalog.app/get)
 - [Buy — $39](https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1)
 - [FAQ](https://gencatalog.app/faq)
 - [Support](https://gencatalog.app/support)

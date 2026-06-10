@@ -1,0 +1,8 @@
+# Keep internal working files out of public reach.
+# Cloudflare Pages evaluates these before serving static assets.
+/DEVLOG.md / 302
+/AGENTS.md / 302
+/AUDIT.md / 302
+/search-console-seo-report-2026-04-26.md / 302
+/brand/* / 302
+/scripts/* / 302

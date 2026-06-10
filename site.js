@@ -39,16 +39,6 @@
     onScrollParallax();
   }
 
-  // Live counter
-  const counterEl = document.getElementById('hero-counter');
-  if (counterEl) {
-    let n = 20650;
-    setInterval(() => {
-      n += Math.floor(Math.random() * 3);
-      counterEl.textContent = n.toLocaleString();
-    }, 1800);
-  }
-
   // Platform rotator on hero badge
   const platformWord = document.getElementById('platform-rotator');
   if (platformWord) {

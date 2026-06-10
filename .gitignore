@@ -2,3 +2,6 @@
 **/.DS_Store
 output/.DS_Store
 ShowcaseDetail.png
+lighthouse-*.report.html
+lighthouse-*.report.json
+AUDIT.md

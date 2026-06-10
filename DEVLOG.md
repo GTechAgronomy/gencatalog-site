@@ -1,6 +1,32 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-10 — Audit fixes: privacy scoping, trust cleanup, 404, image weight (Batches 1–3)
+
+### What Changed
+- Rewrote `/privacy` to scope no-telemetry claims to the app/extension and disclose website Google Analytics + localStorage attribution honestly. GA stays installed.
+- Deleted the dormant `#hero-counter` fake-counter block from `site.js`.
+- Removed the unsourced @grok pull quote from the homepage (no post URL available to cite).
+- Unified trial framing site-wide: "7 days or 250 generations, whichever comes first, no credit card." Fixed `llms.txt` ("100 items" → 250-generation framing) and pointed its download link at `/get` instead of a versioned DMG so it can't go stale.
+- Standardized performance claims to "tested with catalogs of 30,000+ items."
+- "Includes all v1 updates" → "Includes all 5.x updates" (pricing card + FAQ JSON-LD).
+- Added `404.html` (Cloudflare Pages now returns real 404s instead of soft-200 homepage fallback).
+- Added `_redirects` keeping DEVLOG.md, AGENTS.md, AUDIT.md, the Search Console report, `brand/`, and `scripts/` out of public reach.
+- Added `scripts/update-version.sh` + version consistency check.
+- Converted oversized homepage/platform images to right-sized WebP; added lazy-loading and width/height attributes; fixed `/#how-it-works` → `/#how`; fixed higgsfield picture fallback; added long-lived asset caching to `_headers`.
+
+### Manual follow-up: www subdomain (NXDOMAIN today)
+`www.gencatalog.app` does not resolve — anyone typing www gets a browser error. Fix in the Cloudflare dashboard (no code change possible):
+1. Cloudflare dashboard → Workers & Pages → the gencatalog.app Pages project → **Custom domains** → Add `www.gencatalog.app`. Pages will create the DNS record and route it.
+2. Then add a redirect to apex: dashboard → the gencatalog.app zone → **Rules → Redirect Rules** → create rule: if hostname equals `www.gencatalog.app`, 301 to `https://gencatalog.app` preserving path and query. (Or use Bulk Redirects.)
+3. Verify: `curl -sI https://www.gencatalog.app/` returns 301 → `https://gencatalog.app/`.
+4. Optional afterward: submit to hstspreload.org (preload requires the working www redirect).
+
+### Verification
+- Public download URLs for the current released desktop version verified `200` before completion.
+- Grep checks: no `hero-counter`, no stale `5.16.0` DMG link, no `/#how-it-works`, no "100 items".
+
+---
 ## 2026-06-06 — Removed internal About-panel release note
 
 ### What Changed

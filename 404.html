@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page not found — GenCatalog</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#0e0e11" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0e0e11;
+      color: #eeeef2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: #9ba8f8;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    p {
+      color: #84848f;
+      max-width: 44ch;
+      margin-bottom: 32px;
+    }
+    .links { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    a.btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 600;
+    }
+    a.primary { background: linear-gradient(135deg, #6270f0, #7a5ce0); color: #fff; }
+    a.ghost { border: 1px solid rgba(255,255,255,0.16); color: #eeeef2; }
+    a.ghost:hover { border-color: rgba(255,255,255,0.32); }
+    .foot { margin-top: 48px; font-size: 13px; }
+    .foot a { color: #84848f; }
+  </style>
+</head>
+<body>
+  <div class="code">404</div>
+  <h1>This page isn't in the catalog.</h1>
+  <p>The address may have changed, or it never existed. Your library is fine — it's on your machine, not ours.</p>
+  <div class="links">
+    <a class="btn primary" href="/">Back to home</a>
+    <a class="btn ghost" href="/guides">Guides</a>
+    <a class="btn ghost" href="/support">Support</a>
+  </div>
+  <p class="foot"><a href="/faq">FAQ</a> · <a href="mailto:support@gencatalog.app">support@gencatalog.app</a></p>
+</body>
+</html>
