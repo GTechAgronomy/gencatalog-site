@@ -45,7 +45,7 @@
       {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), ChatGPT/GPT Image, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages so you can keep generations with the prompt context that is available."}},
       {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."}},
       {"@type":"Question","name":"Is my data stored in the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog stores everything locally on your computer. Your prompts, images, videos, and metadata never leave your device. No account required and no internet connection needed after installation."}},
-      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $39 as a one-time purchase with a 7-day free trial, no credit card required. The price includes all v1 updates — no subscription, no renewals."}},
+      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $39 as a one-time purchase. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The price includes all 5.x updates — no subscription, no renewals."}},
       {"@type":"Question","name":"Does GenCatalog work on both Mac and Windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."}},
       {"@type":"Question","name":"What metadata does GenCatalog save from Midjourney?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog saves the full prompt text, model version (--v), aspect ratio (--ar), chaos, seed, style mode, style references (--sref), character references (--cref), stylize weight, and all other parameters. All four image variants per generation are saved individually."}}
     ]
@@ -64,7 +64,7 @@
     "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
     "url": "https://gencatalog.app",
     "screenshot": "https://gencatalog.app/og-image-v5.jpg",
-    "softwareVersion": "5.16.9",
+    "softwareVersion": "5.16.10",
     "creator": {"@type":"Organization","name":"Second Act Labs","url":"https://secondactlabs.com"}
   }
   </script>
@@ -432,6 +432,76 @@
       background: var(--surface);
     }
     .showcase-image img { width: 100%; height: auto; display: block; }
+    .recipe-card-section {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    }
+    .recipe-card-demo {
+      max-width: 430px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 18px;
+      background: #f5f2ec;
+      color: #141414;
+      overflow: hidden;
+      box-shadow: 0 36px 90px rgba(0,0,0,0.55), 0 0 80px rgba(98,112,240,0.18);
+    }
+    .recipe-card-art {
+      min-height: 310px;
+      background:
+        linear-gradient(135deg, rgba(10,10,10,0.18), rgba(10,10,10,0.02)),
+        url("uploads_v2/DetailViewModalDetail.png") center / cover;
+      position: relative;
+    }
+    .recipe-card-chip {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.88);
+      font: 700 11px/1 var(--font-mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111;
+    }
+    .recipe-card-body { padding: 24px; }
+    .recipe-card-prompt {
+      margin: 0 0 18px;
+      font-size: 18px;
+      line-height: 1.45;
+      letter-spacing: 0;
+    }
+    .recipe-card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 22px;
+    }
+    .recipe-card-meta span {
+      border: 1px solid rgba(0,0,0,0.14);
+      border-radius: 999px;
+      padding: 7px 9px;
+      font: 600 11px/1 var(--font-mono);
+      color: rgba(0,0,0,0.72);
+    }
+    .recipe-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      border-top: 1px solid rgba(0,0,0,0.12);
+      padding-top: 14px;
+      font-size: 13px;
+      font-weight: 650;
+      color: rgba(0,0,0,0.72);
+    }
+    .recipe-card-footer img {
+      width: 22px;
+      height: 22px;
+      border-radius: 6px;
+    }
+    @media (max-width: 900px) {
+      .recipe-card-demo { max-width: 100%; }
+    }
 
     /* ── Find / search section accent bg ─────────── */
     .find-section {
@@ -584,39 +654,6 @@
       color: rgba(255,255,255,0.85);
     }
 
-    /* ── Pull quote band ─────────────────────────── */
-    .pull-quote {
-      padding: 80px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    .pull-quote .q {
-      font-size: clamp(22px, 3vw, 36px);
-      font-weight: 600;
-      font-style: italic;
-      color: var(--t1);
-      letter-spacing: -0.02em;
-      line-height: 1.3;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .pull-quote .attrib {
-      margin-top: 22px;
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-hi);
-      font-weight: 600;
-    }
-    .pull-quote .attrib img {
-      width: 18px; height: 18px;
-      border-radius: 4px;
-      object-fit: cover;
-    }
-
     /* ── Pricing ─────────────────────────────────── */
     .pricing-section { text-align: center; }
     .pricing-section .lede { margin: 24px auto 60px; }
@@ -755,7 +792,7 @@
   <div class="container">
     <div class="reveal">
       <div class="hero-eyebrow-row">
-        <span class="eyebrow">v5.16.9</span>
+        <span class="eyebrow">v5.16.10</span>
         <span class="platform-pill-rotator">
           Capturing from
           <span class="word" id="platform-rotator">Grok</span>
@@ -925,7 +962,7 @@
       <span class="eyebrow reveal">02 · Find anything</span>
       <h2 class="h-section reveal delay-1" style="margin-top:20px">Every filter you'd want.<br>Nothing you wouldn't.</h2>
       <p class="lede center reveal delay-2">
-        Filter by source, model, rating, tags, date — even partial prompt fragments. Saved searches let you jump back to exactly where you left off.
+        Search across prompts, tags, models, platforms, filenames, notes, and creator/account fields. Saved searches let you jump back to exactly where you left off.
       </p>
     </div>
 
@@ -980,11 +1017,51 @@
   </div>
 </section>
 
-<!-- ────────────────── FEATURE 04: COMPARE ────────────────── -->
+<!-- ────────────────── FEATURE 04: RECIPE CARDS ────────────────── -->
+<section class="recipe-card-section">
+  <div class="container">
+    <div class="showcase-row reverse">
+      <div class="feature-text">
+        <span class="eyebrow reveal">04 · Recipe Cards</span>
+        <h2 class="h-section reveal delay-1">Turn a saved generation into a shareable recipe.</h2>
+        <p class="lede reveal delay-2">
+          Copy a polished PNG from any item detail view: full media, full prompt, model, dimensions, date, and the parameters that made the result. It is a share card, a sales asset, and a receipt for the creative process.
+        </p>
+        <ul class="feature-list reveal delay-3">
+          <li><div><strong>Full prompt included</strong> — long recipes make taller cards instead of disappearing.</div></li>
+          <li><div><strong>Full image or video frame visible</strong> — no surprise crops hiding the work.</div></li>
+          <li><div><strong>Privacy-respecting by default</strong> — attribution is on, creator/account details are opt-in.</div></li>
+        </ul>
+      </div>
+      <div class="reveal delay-2">
+        <div class="recipe-card-demo" aria-label="Example GenCatalog Recipe Card">
+          <div class="recipe-card-art">
+            <span class="recipe-card-chip">Midjourney</span>
+          </div>
+          <div class="recipe-card-body">
+            <p class="recipe-card-prompt">A cinematic fashion editorial portrait with soft window light, preserved color detail, textured fabric, and a reusable generation recipe attached.</p>
+            <div class="recipe-card-meta">
+              <span>v7.0</span>
+              <span>1344 x 896</span>
+              <span>--style raw</span>
+              <span>--stylize 0</span>
+            </div>
+            <div class="recipe-card-footer">
+              <img src="GenCatalogLogo.png" alt="">
+              <span>Saved with GenCatalog</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ────────────────── FEATURE 05: COMPARE ────────────────── -->
 <section>
   <div class="container">
     <div style="text-align:center; max-width:720px; margin:0 auto 56px;">
-      <span class="eyebrow reveal">04 · Compare side-by-side</span>
+      <span class="eyebrow reveal">05 · Compare side-by-side</span>
       <h2 class="h-section reveal delay-1" style="margin-top:20px">See what one parameter changes.</h2>
       <p class="lede center reveal delay-2">
         Pin two generations next to each other. See the prompts, the models, the seeds — the small thing that made one of them sing.
@@ -999,12 +1076,12 @@
   </div>
 </section>
 
-<!-- ────────────────── FEATURE 05: EXTENSION ────────────────── -->
+<!-- ────────────────── FEATURE 06: EXTENSION ────────────────── -->
 <section>
   <div class="container">
     <div class="feature-split" style="grid-template-columns: 1.1fr 1fr;">
       <div class="feature-text">
-        <span class="eyebrow reveal">05 · The extension</span>
+        <span class="eyebrow reveal">06 · The extension</span>
         <h2 class="h-section reveal delay-1">A scanner for your generation history.</h2>
         <p class="lede reveal delay-2">
           The Chrome extension watches the platforms you're already using. Cached, saved, new, deleted — see exactly what's in flight, scan months of history in one pass, no scraping by hand.
@@ -1024,7 +1101,7 @@
   </div>
 </section>
 
-<!-- ────────────────── FEATURE 06: REDISCOVER ────────────────── -->
+<!-- ────────────────── FEATURE 07: REDISCOVER ────────────────── -->
 <section class="rediscover-band">
   <div class="rediscover-stars" aria-hidden="true">
     <span style="top:18%; left:8%; animation-delay:0s;">★</span>
@@ -1035,7 +1112,7 @@
     <span style="top:88%; left:42%; animation-delay:3.0s;">★</span>
   </div>
   <div class="container" style="position:relative; z-index:1;">
-    <span class="eyebrow reveal">06 · Rediscover</span>
+    <span class="eyebrow reveal">07 · Rediscover</span>
     <h2 class="h-section reveal delay-1">
       The brilliant thing you made <span class="star">★</span> a year ago.
     </h2>
@@ -1063,23 +1140,10 @@
   </div>
 </section>
 
-<!-- ────────────────── PULL QUOTE ────────────────── -->
-<section class="pull-quote">
-  <div class="container">
-    <p class="q reveal">
-      "GenCatalog is a game-changer — a brilliant fix for the creative explosion we're fueling."
-    </p>
-    <div class="attrib reveal delay-1">
-      <img src="logo-grok-clean.webp" alt="">
-      @grok · Official X Account
-    </div>
-  </div>
-</section>
-
 <!-- ────────────────── LOCAL ────────────────── -->
 <section id="local" class="local-section">
   <div class="container">
-    <span class="eyebrow neutral reveal">07 · 100% local</span>
+    <span class="eyebrow neutral reveal">08 · 100% local</span>
     <h2 class="h-section reveal delay-1" style="margin-top:20px; max-width:18ch; margin-left:auto; margin-right:auto;">
       Your library lives on your machine.
     </h2>
@@ -1107,7 +1171,7 @@
       <div class="badges">
         <span class="b">Sandboxed</span>
         <span class="b">No telemetry</span>
-        <span class="b">No tracking</span>
+        <span class="b">No cloud</span>
         <span class="b">Open file format</span>
       </div>
     </div>
@@ -1117,7 +1181,7 @@
 <!-- ────────────────── PRICING ────────────────── -->
 <section id="pricing" class="pricing-section">
   <div class="container">
-    <span class="eyebrow reveal">08 · Pricing</span>
+    <span class="eyebrow reveal">09 · Pricing</span>
     <h2 class="h-section reveal delay-1" style="margin-top:20px">One price. No surprises.</h2>
     <p class="lede center reveal delay-2">
       Buy it once. Use it forever. No subscription, no seats, no renewal.
@@ -1127,10 +1191,10 @@
       <span class="ribbon">Launch pricing</span>
       <div class="price">$39</div>
       <div class="price-sub">One-time purchase</div>
-      <div class="price-note">Includes all v1 updates</div>
+      <div class="price-note">Includes all 5.x updates</div>
       <ul>
-        <li>7-day free trial, no credit card</li>
-        <li>Up to 250 generations free</li>
+        <li>Free trial — 7 days or 250 generations, whichever comes first</li>
+        <li>No credit card required</li>
         <li>Mac and Windows</li>
         <li>Everything stored locally</li>
         <li>Chrome extension included</li>
@@ -1205,7 +1269,7 @@
     </div>
     <div class="foot-meta">
       <span>© 2026 GenCatalog · Local by default.</span>
-      <span style="font-family:var(--font-mono); letter-spacing:0.04em;">v5.16.9</span>
+      <span style="font-family:var(--font-mono); letter-spacing:0.04em;">v5.16.10</span>
     </div>
   </div>
 </footer>
