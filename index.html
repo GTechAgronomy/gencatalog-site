@@ -170,6 +170,10 @@
         0 0 0 1px rgba(255,255,255,0.05),
         0 40px 100px rgba(0,0,0,0.7),
         0 0 160px rgba(98,112,240,0.22);
+      transform: perspective(1800px) rotateX(6deg);
+      transform-origin: center top;
+      transition: transform 100ms linear;
+      will-change: transform;
       position: relative;
     }
     .hero-shot img { display: block; width: 100%; height: auto; image-rendering: -webkit-optimize-contrast; }
@@ -1270,7 +1274,7 @@
   </div>
 </footer>
 
-<script src="site.js?v=20260610-image-fix"></script>
+<script src="site.js?v=20260610-parallax-restore"></script>
 <script defer src="analytics.js"></script>
 </body>
 </html>
