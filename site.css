@@ -3,7 +3,7 @@
    Raycast-inspired: dark, refined, sophisticated
    ============================================================ */
 
-@import url("./colors_and_type.css");
+@import url("./colors_and_type.css?v=20260610-fontfix");
 
 * { box-sizing: border-box; }
 
