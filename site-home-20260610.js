@@ -1,6 +1,8 @@
 // Sweeping scroll reveals + parallax + nav blur
 
 (() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Nav blur on scroll
   const nav = document.querySelector('.nav');
   const onScroll = () => {
@@ -11,20 +13,24 @@
   onScroll();
 
   // Reveal on intersect
-  const io = new IntersectionObserver((entries) => {
-    for (const e of entries) {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-        io.unobserve(e.target);
+  if (reduceMotion) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
       }
-    }
-  }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
 
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  }
 
   // Parallax for hero screenshot
   const heroShot = document.getElementById('hero-shot');
-  if (heroShot) {
+  if (heroShot && !reduceMotion) {
     let raf = 0;
     const onScrollParallax = () => {
       cancelAnimationFrame(raf);
@@ -41,7 +47,7 @@
 
   // Platform rotator on hero badge
   const platformWord = document.getElementById('platform-rotator');
-  if (platformWord) {
+  if (platformWord && !reduceMotion) {
     const list = ['Grok', 'GPT Image', 'Midjourney', 'Higgsfield', 'Digen', 'Venice'];
     let i = 0;
     setInterval(() => {
@@ -58,7 +64,7 @@
 
   // Save FAB demo loop in "automatic capture" section
   const fabDemo = document.getElementById('fab-demo');
-  if (fabDemo) {
+  if (fabDemo && !reduceMotion) {
     const states = ['rest', 'hover', 'saving', 'saved'];
     let i = 0;
     setInterval(() => {

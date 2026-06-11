@@ -748,6 +748,23 @@
       .nav.open .nav-links { display: flex; }
       .nav-links a { padding: 13px 4px; font-size: 16px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero-shot {
+        transform: none !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1177,7 +1194,7 @@
       </ul>
       <div class="ctas">
         <a class="btn btn-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $39</a>
-        <a class="btn btn-secondary" href="/get">Start free 7-day trial</a>
+        <a class="btn btn-secondary" href="/get">Download free</a>
       </div>
       <div class="pf">macOS (Apple Silicon + Intel) · Windows 10/11</div>
     </div>
@@ -1193,7 +1210,7 @@
     </p>
     <div class="hero-cta reveal delay-2">
       <a class="btn btn-primary" href="/get">
-        Download for Mac &amp; Windows
+        Download free
         <span style="opacity:.7">↓</span>
       </a>
       <a class="btn btn-secondary" href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Install Chrome extension</a>

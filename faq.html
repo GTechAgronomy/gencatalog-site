@@ -42,8 +42,8 @@
             --t1: #eeeef2;
             --t2: #84848f;
             --t2: #84848f;
-            --t3: #404048;
-            --accent: #4f6378;
+            --t3: #7b7b88;
+            --accent: #8aa4c2;
             --accent-fill: #172939;
             --cyan: #3dd68c;
             --border: rgba(255,255,255,0.072);
@@ -225,6 +225,7 @@
             border-top: 1px solid var(--border);
             padding-top: 16px;
         }
+        .faq-a[hidden] { display: none; }
         .faq-item.open .faq-a { display: block; }
         .faq-a p { margin-bottom: 12px; }
         .faq-a p:last-child { margin-bottom: 0; }
@@ -260,7 +261,7 @@
         }
         .tag-grok { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
         .tag-higgsfield { background: rgba(240,107,107,0.15); color: #f06b6b; border: 1px solid rgba(240,107,107,0.3); }
-        .tag-midjourney { background: rgba(23,41,57,0.78); color: #4f6378; border: 1px solid rgba(79,99,120,0.35); }
+        .tag-midjourney { background: rgba(23,41,57,0.78); color: var(--accent); border: 1px solid rgba(79,99,120,0.35); }
         .tag-digen { background: rgba(61,214,140,0.15); color: #3dd68c; border: 1px solid rgba(61,214,140,0.3); }
         .tag-venice { background: rgba(245,197,24,0.13); color: #d9ad14; border: 1px solid rgba(245,197,24,0.28); }
         .tag-gpt { background: rgba(232,121,249,0.14); color: #e879f9; border: 1px solid rgba(232,121,249,0.3); }
@@ -287,7 +288,7 @@
             border-radius: 12px;
             text-align: center;
         }
-        .contact-banner h3 { color: var(--t1); font-size: 20px; margin-bottom: 8px; }
+        .contact-banner h2 { color: var(--t1); font-size: 20px; margin-bottom: 8px; }
         .contact-banner p { color: var(--t2); margin-bottom: 20px; }
         .contact-banner a {
             display: inline-block;
@@ -306,8 +307,16 @@
             padding: 24px;
             text-align: center;
         }
-        footer a { color: var(--t3); text-decoration: none; font-size: 13px; margin: 0 12px; }
-        footer a:hover { color: var(--t2); }
+        footer > a {
+            color: var(--t2);
+            text-decoration: none;
+            font-size: 13px;
+            margin: 0 8px;
+            min-height: 24px;
+            display: inline-flex;
+            align-items: center;
+        }
+        footer > a:hover { color: var(--t1); }
         .footer-badge {
             margin-top: 16px;
         }
@@ -1015,7 +1024,7 @@
     </div>
 
     <div class="contact-banner">
-        <h3>Still have questions?</h3>
+        <h2>Still have questions?</h2>
         <p>We're happy to help. Send us an email and we'll get back to you within 1–2 business days.</p>
         <a href="mailto:support@gencatalog.app">Contact Support</a>
     </div>
@@ -1035,14 +1044,37 @@
 </footer>
 
 <script>
+    const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+    faqItems.forEach((item, index) => {
+        const btn = item.querySelector('.faq-q');
+        const panel = item.querySelector('.faq-a');
+        const icon = item.querySelector('.faq-icon');
+        if (!btn || !panel) return;
+        const panelId = panel.id || `faq-answer-${index + 1}`;
+        panel.id = panelId;
+        btn.setAttribute('aria-controls', panelId);
+        btn.setAttribute('aria-expanded', String(item.classList.contains('open')));
+        icon?.setAttribute('aria-hidden', 'true');
+        panel.hidden = !item.classList.contains('open');
+    });
+
     document.querySelectorAll('.faq-q').forEach(btn => {
         btn.addEventListener('click', () => {
             const item = btn.closest('.faq-item');
             const isOpen = item.classList.contains('open');
-            // Close all
-            document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-            // Open this one if it was closed
-            if (!isOpen) item.classList.add('open');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                const q = i.querySelector('.faq-q');
+                const a = i.querySelector('.faq-a');
+                i.classList.remove('open');
+                q?.setAttribute('aria-expanded', 'false');
+                if (a) a.hidden = true;
+            });
+            if (!isOpen) {
+                const panel = item.querySelector('.faq-a');
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                if (panel) panel.hidden = false;
+            }
         });
     });
 
@@ -1050,7 +1082,10 @@
         pill.addEventListener('click', e => {
             e.preventDefault();
             const target = document.querySelector(pill.getAttribute('href'));
-            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (target) {
+                const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+            }
         });
     });
 </script>
