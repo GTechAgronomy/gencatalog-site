@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8EV2H78B6F');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Back Up Your Grok Imagine Library Locally | GenCatalog</title>
+  <meta name="description" content="A practical Grok Imagine backup workflow: save favorites, prompts, videos, images, and metadata into a local library you control.">
+  <link rel="canonical" href="https://gencatalog.app/blog-grok-imagine-library-backup" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#111a28" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://gencatalog.app/blog-grok-imagine-library-backup" />
+  <meta property="og:site_name" content="GenCatalog" />
+  <meta property="og:title" content="Back Up Your Grok Imagine Library Locally" />
+  <meta property="og:description" content="Keep Grok Imagine files, prompts, and metadata in a local archive you control." />
+  <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Back Up Your Grok Imagine Library Locally" />
+  <meta name="twitter:description" content="A local-first backup workflow for Grok Imagine libraries." />
+  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Back Up Your Grok Imagine Library Locally",
+    "description": "A practical Grok Imagine backup workflow: save favorites, prompts, videos, images, and metadata into a local library you control.",
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-10",
+    "author": {"@type": "Organization", "name": "GenCatalog", "url": "https://gencatalog.app"},
+    "publisher": {
+      "@type": "Organization",
+      "name": "GenCatalog",
+      "url": "https://gencatalog.app",
+      "logo": {"@type": "ImageObject", "url": "https://gencatalog.app/GenCatalogLogo.png"}
+    },
+    "mainEntityOfPage": "https://gencatalog.app/blog-grok-imagine-library-backup"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I back up a Grok Imagine library?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Save the images and videos locally, keep prompts and metadata attached, then store the GenCatalog library folder somewhere you control, such as your Mac, Windows PC, external drive, or normal computer backup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Grok favorites the same as a backup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Favorites are useful inside Grok, but they are not a local copy. A backup means your files and prompt context are saved outside the platform."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://gencatalog.app/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://gencatalog.app/guides"},
+      {"@type": "ListItem", "position": 3, "name": "Grok Library Backup", "item": "https://gencatalog.app/blog-grok-imagine-library-backup"}
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      --bg-deep: #09090b;
+      --bg-surface: #18181b;
+      --bg-elevated: #27272a;
+      --text-primary: #fafafa;
+      --text-secondary: #e4e4e7;
+      --text-muted: #a1a1aa;
+      --text-dim: #85858f;
+      --primary: #8aa4c2;
+      --primary-fill: #4f6378;
+      --border: rgba(255,255,255,0.07);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg-deep); color: var(--text-secondary); line-height: 1.75; }
+    nav { border-bottom: 1px solid var(--border); padding: 0 24px; position: sticky; top: 0; background: rgba(9,9,11,0.95); backdrop-filter: blur(12px); z-index: 100; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-primary); font-size: 17px; font-weight: 600; }
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 14px; padding: 6px 14px; border-radius: 6px; transition: all 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); background: var(--bg-elevated); }
+    .article { max-width: 740px; margin: 0 auto; padding: 56px 24px 100px; }
+    .article-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; }
+    h1 { font-size: 36px; font-weight: 700; color: var(--text-primary); line-height: 1.25; margin-bottom: 20px; }
+    .meta { font-size: 14px; color: var(--text-dim); margin-bottom: 40px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+    h2 { font-size: 22px; font-weight: 700; color: var(--text-primary); margin: 40px 0 14px; }
+    p { margin-bottom: 18px; color: var(--text-muted); font-size: 16px; }
+    ul, ol { margin: 0 0 18px 24px; color: var(--text-muted); font-size: 16px; }
+    li { margin-bottom: 8px; }
+    a { color: var(--text-secondary); }
+    .answer, .callout {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 28px 0;
+    }
+    .answer p, .callout p { margin-bottom: 10px; color: var(--text-secondary); }
+    .answer p:last-child, .callout p:last-child { margin-bottom: 0; }
+    .cta-block {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      margin: 48px 0;
+      text-align: center;
+    }
+    .cta-block h2 { font-size: 22px; color: var(--text-primary); margin: 0 0 10px; }
+    .btn { display: inline-block; background: var(--primary-fill); color: #fff; text-decoration: none; padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; transition: background 0.2s; }
+    .btn:hover { background: #61758a; }
+    .related-links { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 18px 0; margin: 34px 0; display: grid; gap: 8px; font-size: 15px; }
+    footer { border-top: 1px solid var(--border); padding: 22px 24px 28px; text-align: center; color: var(--text-dim); font-size: 13px; }
+    footer a { color: var(--text-dim); text-decoration: none; margin: 0 12px; min-height: 24px; display: inline-flex; align-items: center; }
+    footer a:hover { color: var(--text-muted); }
+    @media (max-width: 720px) {
+      h1 { font-size: 30px; }
+      .nav-inner { flex-wrap: wrap; height: auto; padding: 8px 0; row-gap: 2px; }
+      .nav-links { flex-wrap: wrap; gap: 2px; }
+      .nav-links a { font-size: 13px; padding: 8px 9px; }
+    }
+  </style>
+  <script defer src="/analytics.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <img src="GenCatalogLogo-64.webp" width="22" height="22" alt="" style="border-radius:5px;display:block;">
+      GenCatalog
+    </a>
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/grok">Grok Saver</a>
+      <a href="/guides">Guides</a>
+      <a href="/support">Support</a>
+      <a href="/faq">FAQ</a>
+    </div>
+  </div>
+</nav>
+
+<main class="article">
+  <div class="article-label">Grok Imagine</div>
+  <h1>Back Up Your Grok Imagine Library Locally</h1>
+  <div class="meta">Published June 2026 · 5 min read</div>
+
+  <p>Grok favorites are useful, but they are not the same as a backup. If your best generations only live inside a hosted interface, your library depends on that interface staying available, searchable, and unchanged.</p>
+
+  <div class="answer">
+    <p><strong>Short answer:</strong> back up your Grok Imagine library by saving images, videos, prompts, and metadata into a local folder you control. GenCatalog turns that folder into a searchable Mac or Windows library.</p>
+  </div>
+
+  <h2>What a real Grok backup includes</h2>
+
+  <p>A useful backup is more than a pile of downloaded files. It should preserve the media and the context that makes the media valuable later.</p>
+
+  <ul>
+    <li>Original images and videos</li>
+    <li>Prompt text when available</li>
+    <li>Source platform and saved date</li>
+    <li>Account context if you use more than one Grok account</li>
+    <li>Your tags, ratings, notes, and project groupings</li>
+  </ul>
+
+  <h2>Why favorites alone are not enough</h2>
+
+  <p>Favorites are a product feature. A backup is a copy you control. That distinction matters when the platform UI changes, an account has trouble, older items become harder to load, or a favorites view stops matching your memory of what was saved.</p>
+
+  <p>If an image or video matters, it deserves to live somewhere outside the feed.</p>
+
+  <div class="callout">
+    <p><strong>Backup test:</strong> if you lost access to the web page tomorrow, could you still find the file and the prompt that created it?</p>
+  </div>
+
+  <h2>A local-first backup workflow</h2>
+
+  <ol>
+    <li><strong>Run a first bulk save</strong> for existing Grok favorites.</li>
+    <li><strong>Check that prompts are attached</strong> for the items where prompt context is available.</li>
+    <li><strong>Use tags and ratings</strong> to mark projects, selects, and experiments.</li>
+    <li><strong>Keep the library folder in your normal computer backup</strong> if you use Time Machine, external drives, or another backup system.</li>
+    <li><strong>Save new work as you go</strong> so the archive stays current.</li>
+  </ol>
+
+  <h2>Where GenCatalog fits</h2>
+
+  <p>GenCatalog saves supported Grok Imagine media into a local desktop library. The Chrome extension handles capture from the platform, and the desktop app handles search, tags, ratings, collections, and file organization.</p>
+
+  <p>That means you can keep creating in Grok while treating your local catalog as the durable archive.</p>
+
+  <h2>What to do if favorites already disappeared</h2>
+
+  <p>If favorites are missing, first check what is still available in Grok and save anything important immediately. Then search your local GenCatalog library if you have used it before. Anything already saved locally remains available there even if it no longer appears in the platform view.</p>
+
+  <p>For the recovery workflow, start with the <a href="/blog-grok-favorites-disappeared">Grok favorites disappeared guide</a>. For a first full save, use the <a href="/blog-download-grok-imagine-favorites">bulk download Grok favorites guide</a>.</p>
+
+  <div class="related-links">
+    <strong>Related GenCatalog guides</strong>
+    <a href="/grok">Grok Imagine bulk download and backup page</a>
+    <a href="/blog-save-grok-prompts">Save Grok prompts with images and videos</a>
+    <a href="/blog-download-grok-imagine-favorites">Bulk download Grok favorites with prompts</a>
+    <a href="/blog-manage-grok-favorites">Manage favorites in Grok and xAI</a>
+  </div>
+
+  <h2>The end state</h2>
+
+  <p>Your Grok account can stay focused on active creation. Your local library can hold the long-term record: files, prompts, metadata, and the project structure that makes older work usable again.</p>
+
+  <div class="cta-block">
+    <h2>Back up Grok Imagine locally</h2>
+    <p>GenCatalog keeps your Grok files, prompts, and metadata together in a local Mac or Windows library.</p>
+    <a href="/get" class="btn">Download free</a>
+  </div>
+</main>
+
+<footer>
+  <a href="/">Home</a>
+  <a href="/grok">Grok Saver</a>
+  <a href="/guides">Guides</a>
+  <a href="/support">Support</a>
+  <a href="/faq">FAQ</a>
+  <a href="/release-notes">Release Notes</a>
+  <p style="margin-top:12px;">© 2026 GenCatalog. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
