@@ -12,9 +12,11 @@
 ### Verification
 - Confirmed public download URLs return `200` for the 5.16.12 macOS DMG and Windows installer before updating site copy.
 - Confirmed release copy stays customer-facing and avoids internal process language.
+- `scripts/update-version.sh --check` passed with all version surfaces at 5.16.12, release notes present, and desktop artifacts live.
+- Verified live `gencatalog.app`, `/get`, and `/release-notes` propagated to 5.16.12 after push.
 
 ### Status
-- Pending push/deploy verification.
+- Deployed via Cloudflare Pages and verified live.
 
 ---
 ## 2026-06-10 — Audit fixes: privacy scoping, trust cleanup, 404, image weight (Batches 1–3)
