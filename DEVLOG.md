@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-13 — Published desktop 5.16.12 Higgsfield release copy
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.16.12.
+- Updated `/get` desktop download redirect to 5.16.12.
+- Added customer-facing release notes for desktop 5.16.12 and Chrome extension 5.41.
+- Highlighted improved Higgsfield Favorites, private folder metadata, Nano Banana Pro metadata, and action-label filtering.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.16.12 macOS DMG and Windows installer before updating site copy.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Pending push/deploy verification.
+
+---
 ## 2026-06-10 — Audit fixes: privacy scoping, trust cleanup, 404, image weight (Batches 1–3)
 
 ### What Changed
