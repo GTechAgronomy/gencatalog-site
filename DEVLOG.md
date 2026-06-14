@@ -1,6 +1,24 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-14 — Published desktop 5.16.14 Higgsfield source-image release copy
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.16.14.
+- Updated `/get` desktop download redirect to 5.16.14.
+- Added customer-facing release notes for desktop 5.16.14 and Chrome extension 5.43.
+- Highlighted Higgsfield reference-image saves, separate folder context, source-image detail cards, filter reset, zoom-out, and license refresh behavior.
+- Refreshed sitemap lastmod values for the homepage and release notes.
+
+### Verification
+- Confirmed public download URLs return `200` for the 5.16.14 macOS DMG and Windows installer before updating site copy.
+- Confirmed release copy stays customer-facing and avoids internal process language.
+- `scripts/update-version.sh --check` passed with all version surfaces at 5.16.14, release notes present, and desktop artifacts live.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-13 — Published desktop 5.16.12 Higgsfield release copy
 
 ### What Changed
