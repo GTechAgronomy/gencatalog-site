@@ -8,11 +8,11 @@
 
 :root {
   /* ── Surfaces (dark stack) ─────────────────────────────── */
-  --bg:        #0e0e11;     /* canvas */
-  --surface:   #141417;     /* cards, header, footer */
-  --s2:        #1a1a1e;     /* inputs, soft fills */
-  --s3:        #202024;     /* hover, kbd chips */
-  --s4:        #26262b;     /* highest neutral fill */
+  --bg:        #0d0f13;     /* canvas */
+  --surface:   #15171c;     /* cards, header, footer */
+  --s2:        #1c1f27;     /* inputs, soft fills */
+  --s3:        #1c1f27;     /* hover, kbd chips */
+  --s4:        #1c1f27;     /* highest neutral fill */
 
   /* ── Borders ───────────────────────────────────────────── */
   --border:    rgba(255,255,255,0.072);
@@ -20,27 +20,28 @@
   --border-lo: rgba(255,255,255,0.04);
 
   /* ── Text ──────────────────────────────────────────────── */
-  --t1: #eeeef2;            /* primary */
-  --t2: #84848f;            /* secondary */
-  --t3: #404048;            /* muted / tertiary */
+  --t1: #f2f3f7;            /* primary */
+  --t2: #a5a8b4;            /* secondary */
+  --t3: #767a86;            /* muted / tertiary */
 
-  /* ── Brand accent (indigo / periwinkle) ────────────────── */
-  --accent:    #6270f0;
-  --accent-lo: rgba(98,112,240,0.10);
-  --accent-b:  rgba(98,112,240,0.28);
-  --accent-hi: #9ba8f8;
-  --accent-fill: rgba(98,112,240,0.16);
+  /* ── Brand accent (cobalt / periwinkle) ────────────────── */
+  --accent:    #5865e8;
+  --accent-hover: #6b76f0;
+  --accent-lo: rgba(88,101,232,0.10);
+  --accent-b:  rgba(88,101,232,0.28);
+  --accent-hi: #aeb7ff;
+  --accent-fill: rgba(88,101,232,0.16);
 
   /* ── Semantic ──────────────────────────────────────────── */
-  --green:  #3dd68c;
-  --red:    #f06b6b;
-  --yellow: #f5c518;
+  --green:  #30d68b;
+  --red:    #e86969;
+  --yellow: #d9b84f;
 
   /* ── Platform brand dots ───────────────────────────────── */
-  --grok:        #6270f0;   /* indigo, same as accent */
-  --higgsfield:  #f06b6b;   /* red */
-  --digen:       #3dd68c;   /* green */
-  --mj:          #a855f7;   /* violet (popup uses #8b6ff5; UI uses #a855f7) */
+  --grok:        #5865e8;   /* cobalt, same as accent */
+  --higgsfield:  #e86969;   /* platform red */
+  --digen:       #30d68b;   /* trust / local / saved */
+  --mj:          #aeb7ff;   /* accent high */
 
   /* ── Radii ─────────────────────────────────────────────── */
   --r-sm:   6px;
@@ -65,14 +66,14 @@
   --shadow-modal:  0 16px 48px rgba(0,0,0,0.5);
   --shadow-toast:  0 8px 24px rgba(0,0,0,0.4);
   --shadow-fab:    0 6px 18px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.04);
-  --shadow-accent: 0 0 14px rgba(98,112,240,0.2);
+  --shadow-accent: 0 0 14px rgba(88,101,232,0.2);
 
   /* ── Gradients ─────────────────────────────────────────── */
-  --gradient-primary:  linear-gradient(135deg, #6270f0 0%, #8b6ff5 100%);
-  --gradient-text:     linear-gradient(135deg, #f0f0f8 0%, #7070a0 100%);
-  --gradient-text-mut: linear-gradient(135deg, #e8e8f0 20%, #7070a0 100%);
+  --gradient-primary:  linear-gradient(135deg, #5865e8 0%, #6b76f0 100%);
+  --gradient-text:     linear-gradient(135deg, #f2f3f7 0%, #a5a8b4 100%);
+  --gradient-text-mut: linear-gradient(135deg, #f2f3f7 20%, #a5a8b4 100%);
   --gradient-popup-glow:
-      radial-gradient(circle at top right, rgba(98,112,240,0.14), transparent 42%),
+      radial-gradient(circle at top right, rgba(88,101,232,0.14), transparent 42%),
       linear-gradient(180deg, rgba(255,255,255,0.02), transparent 28%);
 
   /* ── Typography ────────────────────────────────────────── */

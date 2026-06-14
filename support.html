@@ -18,7 +18,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <meta name="theme-color" content="#111a28" />
+    <meta name="theme-color" content="#0d0f13" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/support" />
     <meta property="og:title" content="GenCatalog Support: Grok Favorites, Bulk Download & Setup" />
@@ -36,20 +36,20 @@
   </script>
     <style>
         :root {
-            --bg: #0e0e11;
-            --surface: #141417;
-            --s2: #1a1a1e;
-            --t1: #eeeef2;
-            --t2: #84848f;
-            --t2: #84848f;
-            --t3: #404048;
-            --accent: #4f6378;
-            --accent-fill: #172939;
-            --cyan: #3dd68c;
-            --green: #3dd68c;
-            --yellow: #f5c518;
+            --bg: #0d0f13;
+            --surface: #15171c;
+            --s2: #1c1f27;
+            --t1: #f2f3f7;
+            --t2: #a5a8b4;
+            --t2: #a5a8b4;
+            --t3: #767a86;
+            --accent: #5865e8;
+            --accent-fill: #5865e8;
+            --cyan: #30d68b;
+            --green: #30d68b;
+            --yellow: #d9b84f;
             --border: rgba(255,255,255,0.072);
-            --gradient: linear-gradient(135deg, #172939, #23394d);
+            --gradient: linear-gradient(135deg, #5865e8, #6b76f0);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -63,7 +63,7 @@
             padding: 0 24px;
             position: sticky;
             top: 0;
-            background: rgba(9,9,11,0.95);
+            background: rgba(13,15,19,0.95);
             backdrop-filter: blur(12px);
             z-index: 100;
         }
@@ -133,14 +133,14 @@
             margin-bottom: 2px;
         }
         .sidebar a:hover { color: var(--t1); background: var(--s2); }
-        .sidebar a.active { color: var(--accent); background: rgba(23,41,57,0.78); }
+        .sidebar a.active { color: var(--accent); background: rgba(88,101,232,0.12); }
         .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-        .dot-grok { background: #10b981; }
-        .dot-higgsfield { background: #f06b6b; }
-        .dot-digen { background: #3dd68c; }
-        .dot-midjourney { background: #4f6378; }
-        .dot-venice { background: #d6a64f; }
-        .dot-gpt { background: #e879f9; }
+        .dot-grok { background: #30d68b; }
+        .dot-higgsfield { background: #e86969; }
+        .dot-digen { background: #30d68b; }
+        .dot-midjourney { background: #5865e8; }
+        .dot-venice { background: #d9b84f; }
+        .dot-gpt { background: #aeb7ff; }
         .content {
             padding: 48px 48px 100px;
             max-width: 780px;
@@ -207,8 +207,8 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: rgba(23,41,57,0.82);
-            border: 1.5px solid rgba(79,99,120,0.42);
+            background: rgba(88,101,232,0.14);
+            border: 1.5px solid rgba(88,101,232,0.32);
             color: var(--accent);
             font-size: 13px;
             font-weight: 700;
@@ -228,14 +228,14 @@
             margin: 16px 0;
             line-height: 1.6;
         }
-        .tip { background: rgba(23,41,57,0.72); border-left: 3px solid var(--accent); }
+        .tip { background: rgba(88,101,232,0.10); border-left: 3px solid var(--accent); }
         .tip strong { color: var(--accent); }
-        .warning { background: rgba(245,158,11,0.08); border-left: 3px solid var(--yellow); }
+        .warning { background: rgba(217,184,79,0.08); border-left: 3px solid var(--yellow); }
         .warning strong { color: var(--yellow); }
-        .note { background: rgba(61,214,140,0.08); border-left: 3px solid var(--accent); }
+        .note { background: rgba(48,214,139,0.08); border-left: 3px solid var(--accent); }
         .note strong { color: var(--accent); }
         .download-card {
-            background: rgba(20,20,23,0.72);
+            background: rgba(21,23,28,0.72);
             border: 1px solid var(--border);
             border-radius: 10px;
             padding: 18px;
@@ -264,14 +264,14 @@
             font-weight: 600;
             margin-bottom: 16px;
         }
-        .badge-grok { background: rgba(16,185,129,0.12); color: #10b981; border: 1px solid rgba(16,185,129,0.25); }
-        .badge-higgsfield { background: rgba(240,107,107,0.12); color: #f06b6b; border: 1px solid rgba(240,107,107,0.25); }
-        .badge-digen { background: rgba(61,214,140,0.12); color: #3dd68c; border: 1px solid rgba(61,214,140,0.25); }
-        .badge-midjourney { background: rgba(23,41,57,0.78); color: #4f6378; border: 1px solid rgba(79,99,120,0.35); }
-        .badge-venice { background: rgba(214,166,79,0.12); color: #d6a64f; border: 1px solid rgba(214,166,79,0.25); }
+        .badge-grok { background: rgba(48,214,139,0.12); color: #30d68b; border: 1px solid rgba(48,214,139,0.25); }
+        .badge-higgsfield { background: rgba(232,105,105,0.12); color: #e86969; border: 1px solid rgba(232,105,105,0.25); }
+        .badge-digen { background: rgba(48,214,139,0.12); color: #30d68b; border: 1px solid rgba(48,214,139,0.25); }
+        .badge-midjourney { background: rgba(88,101,232,0.12); color: #5865e8; border: 1px solid rgba(88,101,232,0.30); }
+        .badge-venice { background: rgba(217,184,79,0.12); color: #d9b84f; border: 1px solid rgba(217,184,79,0.25); }
         .contact-box {
-            background: linear-gradient(135deg, rgba(23,41,57,0.82), rgba(35,57,77,0.56));
-            border: 1px solid rgba(79,99,120,0.3);
+            background: linear-gradient(135deg, rgba(88,101,232,0.14), rgba(107,118,240,0.18));
+            border: 1px solid rgba(88,101,232,0.24);
             border-radius: 12px;
             padding: 28px;
             text-align: center;
