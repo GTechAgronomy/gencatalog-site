@@ -245,10 +245,31 @@
             <article class="release">
         <div class="release-head">
             <div>
-                <h2 class="release-version">GenCatalog 5.16.14</h2>
+                <h2 class="release-version">GenCatalog 5.16.15</h2>
                 <div class="release-date">Published June 14, 2026</div>
             </div>
             <span class="pill">Latest</span>
+        </div>
+
+        <div class="change">
+            <h2>Safer Grok duplicate cleanup</h2>
+            <p>GenCatalog now handles duplicate Grok Imagine imports more carefully, including cases where two copies of the same generation arrive at nearly the same time.</p>
+            <p>Duplicate cleanup keeps one copy of the generation instead of accidentally removing every matching copy, and it no longer marks the surviving asset as previously deleted.</p>
+        </div>
+
+        <div class="change">
+            <h2>More reliable Grok imports</h2>
+            <p>New Grok downloads are protected against rapid duplicate saves, so repeated or simultaneous requests resolve to the existing catalog item instead of creating another row.</p>
+        </div>
+
+    </article>
+
+            <article class="release">
+        <div class="release-head">
+            <div>
+                <h2 class="release-version">GenCatalog 5.16.14</h2>
+                <div class="release-date">Published June 14, 2026</div>
+            </div>
         </div>
 
         <div class="change">
