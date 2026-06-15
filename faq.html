@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenCatalog FAQ: Grok Favorites, Recovery & Bulk Download</title>
-    <meta name="description" content="Answers about Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, privacy, and local metadata capture.">
+    <meta name="description" content="Answers about GenCatalog App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture.">
     <link rel="canonical" href="https://gencatalog.app/faq" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/faq" />
     <meta property="og:title" content="GenCatalog FAQ: Grok Favorites, Recovery & Bulk Download" />
-    <meta property="og:description" content="Answers about Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, privacy, and local metadata capture." />
+    <meta property="og:description" content="Answers about GenCatalog App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -354,6 +354,30 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No. Everything stays on your computer. GenCatalog runs entirely locally — there is no cloud sync, no remote storage, and no account required. Your files and prompts never leave your machine."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I lock GenCatalog with Touch ID or a password?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open GenCatalog, go to Settings, then Privacy, and turn on App Lock. Create an App Lock password and, on supported Macs, enable Touch ID unlock. Windows uses the App Lock password."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does Privacy Mode do?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Privacy Mode blurs sensitive previews while you browse, demo, or screen-share your library. Videos stay muted while Privacy Mode is on, and turning Privacy Mode off requires App Lock confirmation when App Lock is enabled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are App Lock and Privacy Mode encrypted vaults?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside the app. They are not encrypted vaults. Stronger encrypted privacy features are planned for GenCatalog's privacy roadmap."
         }
       },
       {
@@ -905,7 +929,7 @@
             <button class="faq-q">How do I hide items without deleting them?<span class="faq-icon">+</span></button>
             <div class="faq-a">
                 <p>Click any item to open it, then click <strong>Hide</strong>. Hidden items disappear from your main grid but stay in your catalog — nothing is deleted.</p>
-                <p>To view or restore hidden items: click <strong>Hidden Items</strong> in the sidebar. From there you can unhide individual items or manage them as a group.</p>
+                <p>To view or restore hidden items: click <strong>Hidden Items</strong> in the sidebar. If App Lock is enabled, GenCatalog asks for the same App Lock confirmation used by Privacy settings. If App Lock is not enabled, Hidden Items can still use the older Hidden Items PIN flow.</p>
                 <div class="tip"><strong>Tip:</strong> Hiding is great for generations you want to keep but don't want cluttering your main view — drafts, experiments, or anything NSFW.</div>
             </div>
         </div>
@@ -1000,6 +1024,32 @@
                 <p><strong>Almost none.</strong> GenCatalog runs entirely on your local machine. Your media files, prompts, tags, and catalog data never leave your computer.</p>
                 <p>The only external communication is license key validation with Lemon Squeezy (our payment processor), which sends only your license key identifier — never your media, prompts, or personal data.</p>
                 <p>The Chrome Web Store version of the extension may report anonymous usage statistics (installs, active users) to Google, as is standard for all Chrome extensions that opt into Google Analytics.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I lock GenCatalog with Touch ID or a password?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Open GenCatalog, go to <strong>Settings</strong> → <strong>Privacy</strong>, then turn on <strong>App Lock</strong>. GenCatalog will ask you to create and confirm an App Lock password.</p>
+                <p>On supported Macs, you can also enable Touch ID unlock. On Windows, App Lock uses your App Lock password.</p>
+                <p>You can choose when GenCatalog locks, including on launch, after idle time, when your computer sleeps, or when you manually lock it.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What does Privacy Mode do?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Privacy Mode helps when you are browsing around other people, screen-sharing, or demoing your catalog. It blurs sensitive previews so your library is not fully visible at a glance.</p>
+                <p>While Privacy Mode is on, videos stay muted by default. That prevents a blurred or private video from unexpectedly playing audio if it is clicked.</p>
+                <p>If App Lock is enabled, turning Privacy Mode off or opening Privacy settings requires App Lock confirmation.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Do App Lock and Privacy Mode encrypt my catalog?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>No. App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside GenCatalog. They are not encrypted vaults and should not be described as encrypted storage.</p>
+                <p>For stronger at-rest protection today, use your operating system's disk encryption, such as FileVault on macOS or BitLocker on Windows. Encrypted GenCatalog privacy features are planned for a future phase.</p>
             </div>
         </div>
 

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenCatalog Support: Grok Favorites, Missing Images/Videos & Setup</title>
-    <meta name="description" content="Set up GenCatalog, scan Grok favorites, recover missing saved images or videos, bulk download with prompts, and troubleshoot supported AI platforms.">
+    <meta name="description" content="Set up GenCatalog, turn on privacy tools, scan Grok favorites, recover missing saved images or videos, bulk download with prompts, and troubleshoot supported AI platforms.">
     <link rel="canonical" href="https://gencatalog.app/support" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/support" />
     <meta property="og:title" content="GenCatalog Support: Grok Favorites, Missing Images/Videos & Setup" />
-    <meta property="og:description" content="Set up GenCatalog, scan Grok favorites, recover missing saved images or videos, bulk download with prompts, and troubleshoot supported AI platforms." />
+    <meta property="og:description" content="Set up GenCatalog, turn on privacy tools, scan Grok favorites, recover missing saved images or videos, bulk download with prompts, and troubleshoot supported AI platforms." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -338,6 +338,7 @@
         <a href="#browsing">Browsing &amp; Search</a>
         <a href="#organizing">Tags &amp; Favorites</a>
         <a href="#bulk">Bulk Operations</a>
+        <a href="#privacy-tools">Privacy Tools</a>
         <a href="#hidden">Hidden Items</a>
         <a href="#trash">Trash &amp; Deletion</a>
         <a href="#duplicates">Duplicate Detection</a>
@@ -351,7 +352,7 @@
         <div class="page-label">Support Guide</div>
         <h1>GenCatalog Support and Setup Guide</h1>
         <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across <a href="/grok">Grok Imagine</a>, GPT Image, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
         <div class="section" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -763,24 +764,52 @@
             <p>Press <strong>Escape</strong> or click the checkbox icon again to exit multi-select mode.</p>
         </div>
 
+        <div class="section" id="privacy-tools">
+            <h2>Privacy Tools</h2>
+            <p class="section-desc">GenCatalog's first privacy tools help keep your local library covered when someone else can see or use your computer.</p>
+
+            <h3>What App Lock Does</h3>
+            <p>App Lock requires confirmation before opening GenCatalog. On supported Macs, you can unlock with Touch ID or your App Lock password. On Windows, App Lock uses your App Lock password.</p>
+            <p>App Lock is designed for everyday desktop privacy: stepping away from your computer, sharing a workspace, or keeping your local catalog from opening casually.</p>
+
+            <h3>Turn On App Lock</h3>
+            <ol>
+                <li>Open GenCatalog.</li>
+                <li>Go to <strong>Settings</strong> → <strong>Privacy</strong>.</li>
+                <li>Turn on <strong>App Lock</strong>.</li>
+                <li>Create and confirm your App Lock password.</li>
+                <li>On supported Macs, enable Touch ID unlock if you want biometric unlock.</li>
+                <li>Choose when GenCatalog should lock, such as on launch, idle, sleep, or manual lock.</li>
+            </ol>
+            <div class="tip"><strong>Tip:</strong> Once App Lock is configured, GenCatalog asks for confirmation before opening Privacy settings or turning Privacy Mode off.</div>
+
+            <h3>What Privacy Mode Does</h3>
+            <p>Privacy Mode gives you a safer way to browse, demo, or screen-share your catalog. It blurs sensitive previews and keeps videos muted while protection is on, so clicking a blurred video does not unexpectedly play audio.</p>
+            <p>You can turn Privacy Mode on from the app's Privacy controls. Turning it off requires App Lock confirmation when App Lock is enabled.</p>
+
+            <h3>Important Security Boundary</h3>
+            <p>App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside the app. They are not the same as encrypted vaults. Stronger encrypted library features are planned as part of GenCatalog's broader privacy roadmap.</p>
+        </div>
+
         <div class="section" id="hidden">
             <h2>Hidden Items</h2>
-            <p class="section-desc">Keep private generations out of sight with PIN protection — without deleting them.</p>
-            <p>Hidden Items is a PIN-protected vault inside your catalog. Hidden content is removed from the main grid and can only be accessed by entering your PIN. Nothing is deleted — your files, prompts, and metadata are fully preserved.</p>
+            <p class="section-desc">Keep private generations out of the main grid without deleting them.</p>
+            <p>Hidden Items removes selected content from your main catalog view. Nothing is deleted — your files, prompts, and metadata are preserved, and hidden content can be restored later.</p>
 
             <h3>Hiding Items</h3>
             <p>Open any item in the detail view and click <strong>Hide</strong>. The item disappears from the main grid immediately and moves to your hidden collection.</p>
 
             <h3>Accessing Hidden Items</h3>
-            <p>Click <strong>Hidden Items</strong> in the sidebar. You'll be prompted to enter your PIN. Once verified, hidden items appear in a separate grid view with the same browsing, search, and filter capabilities as the main catalog.</p>
+            <p>Click <strong>Hidden Items</strong> in the sidebar. If App Lock is enabled, GenCatalog asks for the same App Lock confirmation used for the rest of your privacy controls. On supported Macs, that can be Touch ID; on Windows, it is your App Lock password.</p>
+            <p>If you have not enabled App Lock, Hidden Items can still use the older Hidden Items PIN flow. Once verified, hidden items appear in a separate grid view with the same browsing, search, and filter capabilities as the main catalog.</p>
 
             <h3>Restoring Hidden Items</h3>
             <p>While in the hidden view, hover over any item and click <strong>Unhide</strong>. The item returns to your main catalog.</p>
 
-            <h3>Setting or Changing Your PIN</h3>
-            <p>Go to the sidebar → Hidden Items → <strong>Change PIN</strong>. You can set a new PIN at any time without affecting your hidden collection. Your PIN and your hidden list are stored separately — changing one doesn't affect the other.</p>
+            <h3>Changing Hidden Access</h3>
+            <p>For the simplest setup, turn on App Lock in <strong>Settings</strong> → <strong>Privacy</strong> and use that unlock flow for Hidden Items. If App Lock is not enabled, go to the sidebar → Hidden Items → <strong>Change PIN</strong> to manage the fallback PIN.</p>
 
-            <div class="warning"><strong>Security note:</strong> Five incorrect PIN attempts triggers a lockout with increasing wait times, preventing brute-force access to your hidden content.</div>
+            <div class="warning"><strong>Security note:</strong> Hidden Items is a privacy feature for the app interface. It is not encrypted storage. For stronger at-rest protection, use your operating system's disk encryption and watch for GenCatalog's upcoming encrypted privacy features.</div>
         </div>
 
         <div class="section" id="trash">
