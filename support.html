@@ -254,6 +254,17 @@
             text-decoration: none;
         }
         .download-card .btn:hover { text-decoration: none; filter: brightness(1.08); }
+        .testimonial-card {
+            background: rgba(21,23,28,0.72);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 32px 0 0;
+        }
+        .testimonial-card h3 { color: var(--t1); margin-top: 0; margin-bottom: 12px; }
+        .testimonial-rating { color: var(--yellow); letter-spacing: 0.08em; font-size: 13px; margin-bottom: 12px; }
+        .testimonial-quote { color: var(--t1); font-size: 15px; line-height: 1.65; margin-bottom: 12px; }
+        .testimonial-source { color: var(--t3); font-size: 13px; font-style: normal; }
         .platform-badge {
             display: inline-flex;
             align-items: center;
@@ -882,6 +893,13 @@
             </ul>
             <p>You can activate your license at any time during or after the trial. Purchase at <a href="/">gencatalog.app</a>.</p>
         </div>
+
+        <figure class="testimonial-card">
+            <h3>Support that ships fixes.</h3>
+            <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
+            <blockquote class="testimonial-quote">The author fixed my issue and uploaded the change within 24 hours. It’s fast, easy to use, and has everything I need.</blockquote>
+            <figcaption><cite class="testimonial-source">Verified Chrome Web Store review</cite></figcaption>
+        </figure>
 
         <div class="contact-box">
             <h3>Need more help?</h3>
