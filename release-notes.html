@@ -245,10 +245,36 @@
             <article class="release">
         <div class="release-head">
             <div>
+                <h2 class="release-version">GenCatalog 5.16.21</h2>
+                <div class="release-date">Published June 16, 2026</div>
+            </div>
+            <span class="pill">Latest</span>
+        </div>
+
+        <div class="change">
+            <h2>Private Vault with Encryption at Rest</h2>
+            <p>Private Vault is now available for generations you want to protect more strongly than the normal library, Hidden Items, App Lock, or Privacy Mode.</p>
+            <p>When you move an item into your Private Vault, GenCatalog encrypts its media file, thumbnail, prompt, and metadata on disk, then removes the normal plaintext library copies. While the Vault is locked, GenCatalog does not show the Vault contents, counts, names, thumbnails, or prompts.</p>
+            <p>"Encryption at rest" means the Vault data is stored in encrypted form while it is sitting on your drive. Someone browsing your catalog folder in Finder or File Explorer should not be able to read Vault media or metadata without unlocking the Vault in GenCatalog.</p>
+            <p>The boundary is important: App Lock keeps the GenCatalog window closed, Privacy Mode hides previews on screen, and Hidden Items keeps items out of the main grid. Private Vault is the feature for encrypted storage. Once you unlock the Vault, its items can be viewed and moved back to the normal library as regular unencrypted files.</p>
+            <p>Set up your Vault with a Vault password and save the recovery key. On supported Macs, you can also enable Touch ID for day-to-day Vault unlocks.</p>
+        </div>
+
+        <div class="change">
+            <h2>Capture Fixes for Grok, Venice, and Higgsfield</h2>
+            <p>Grok bulk downloads now avoid treating one previously deleted child generation as a reason to skip other new children from the same parent, so newly created videos can still be found and saved.</p>
+            <p>Venice saves now refresh the catalog automatically and preserve visible model names such as Seedance when that information appears in the generation view.</p>
+            <p>Higgsfield saves are safer when you open a reference generation from another Higgsfield detail view, and Nano Banana Pro generations are labeled more consistently.</p>
+        </div>
+
+    </article>
+
+            <article class="release">
+        <div class="release-head">
+            <div>
                 <h2 class="release-version">GenCatalog 5.16.20</h2>
                 <div class="release-date">Published June 15, 2026</div>
             </div>
-            <span class="pill">Latest</span>
         </div>
 
         <div class="change">

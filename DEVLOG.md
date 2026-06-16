@@ -1,6 +1,25 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-16 — Published 5.16.21 Private Vault release copy
+
+### What Changed
+- Added customer-facing release notes for GenCatalog 5.16.21, leading with Private Vault and explaining encryption at rest in plain language.
+- Updated Support with a dedicated Private Vault section covering what it encrypts, how it differs from App Lock, Privacy Mode, and Hidden Items, and the password/recovery-key boundary.
+- Updated FAQ visible copy and FAQPage structured data for Private Vault, encrypted storage, and encryption at rest.
+- Updated `/get`, homepage version surfaces, and sitemap lastmod values to 5.16.21 after public desktop artifacts returned `200`.
+
+### Verification
+- `./scripts/update-version.sh 5.16.21` verified the 5.16.21 macOS DMG and Windows installer URLs before changing public version surfaces.
+- `./scripts/update-version.sh --check` passed with all version surfaces at 5.16.21, release notes present, and desktop artifacts live.
+- `git diff --check` passed.
+- `xmllint --noout sitemap.xml` passed.
+- FAQ JSON-LD parse passed for both structured-data blocks.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-14 — Published desktop 5.16.14 Higgsfield source-image release copy
 
 ### What Changed

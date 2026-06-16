@@ -11,8 +11,8 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenCatalog FAQ: Grok Favorites, Recovery & Bulk Download</title>
-    <meta name="description" content="Answers about GenCatalog App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture.">
+    <title>GenCatalog FAQ: Private Vault, Grok Favorites & Bulk Download</title>
+    <meta name="description" content="Answers about GenCatalog Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture.">
     <link rel="canonical" href="https://gencatalog.app/faq" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -21,8 +21,8 @@
     <meta name="theme-color" content="#0d0f13" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/faq" />
-    <meta property="og:title" content="GenCatalog FAQ: Grok Favorites, Recovery & Bulk Download" />
-    <meta property="og:description" content="Answers about GenCatalog App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture." />
+    <meta property="og:title" content="GenCatalog FAQ: Private Vault, Grok Favorites & Bulk Download" />
+    <meta property="og:description" content="Answers about GenCatalog Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -387,10 +387,18 @@
       },
       {
         "@type": "Question",
-        "name": "Are App Lock and Privacy Mode encrypted vaults?",
+        "name": "Does GenCatalog have encrypted storage?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside the app. They are not encrypted vaults. Stronger encrypted privacy features are planned for GenCatalog's privacy roadmap."
+          "text": "Yes. Private Vault encrypts the generations you move into it, including media files, thumbnails, prompts, and metadata. App Lock, Privacy Mode, and Hidden Items are still interface privacy controls; they do not encrypt normal library files on disk."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What does encryption at rest mean in GenCatalog?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Encryption at rest means Private Vault data is stored in encrypted form while it sits on your drive. While the Vault is locked, GenCatalog does not show Vault contents, counts, names, thumbnails, prompts, or metadata, and someone browsing the catalog folder should not be able to read Vault media or metadata without unlocking the Vault."
         }
       },
       {
@@ -598,6 +606,7 @@
                     <li><code>videos/</code> — all saved videos</li>
                     <li><code>thumbnails/</code> — auto-generated video thumbnails</li>
                     <li><code>catalog.json</code> — your metadata database (prompts, tags, etc.)</li>
+                    <li><code>vault/</code> — encrypted Private Vault data, if you create a Vault</li>
                     <li><code>trash/</code> — deleted items (recoverable)</li>
                 </ul>
                 <p>You can move this folder to an external drive or NAS at any time — just relaunch GenCatalog and point it to the new location.</p>
@@ -1059,10 +1068,20 @@
         </div>
 
         <div class="faq-item">
-            <button class="faq-q">Do App Lock and Privacy Mode encrypt my catalog?<span class="faq-icon">+</span></button>
+            <button class="faq-q">Does GenCatalog have encrypted storage?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>No. App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside GenCatalog. They are not encrypted vaults and should not be described as encrypted storage.</p>
-                <p>For stronger at-rest protection today, use your operating system's disk encryption, such as FileVault on macOS or BitLocker on Windows. Encrypted GenCatalog privacy features are planned for a future phase.</p>
+                <p>Yes. Private Vault encrypts the generations you move into it, including media files, thumbnails, prompts, and metadata. It is designed for items that need stronger protection than hiding, blurring, or locking the app window.</p>
+                <p>App Lock, Privacy Mode, and Hidden Items are still useful privacy controls, but they do not encrypt normal library files on disk. Use Private Vault when you specifically want encrypted storage inside GenCatalog.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What does encryption at rest mean in GenCatalog?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Encryption at rest means the Private Vault data is stored in encrypted form while it is sitting on your drive. While the Vault is locked, GenCatalog does not show Vault contents, counts, names, thumbnails, prompts, or metadata.</p>
+                <p>If someone browses your catalog folder in Finder or File Explorer while the Vault is locked, the Vault media and metadata should not be readable without unlocking the Vault in GenCatalog.</p>
+                <p>Once you unlock the Vault, those items can be viewed in GenCatalog. If you move an item back to the normal library, GenCatalog decrypts it and restores it as a regular, unencrypted library item.</p>
+                <div class="tip"><strong>Recovery note:</strong> Save your Vault recovery key. If you lose both your Vault password and recovery key, encrypted Vault contents cannot be recovered.</div>
             </div>
         </div>
 

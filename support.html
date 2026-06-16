@@ -350,6 +350,7 @@
         <a href="#organizing">Tags &amp; Favorites</a>
         <a href="#bulk">Bulk Operations</a>
         <a href="#privacy-tools">Privacy Tools</a>
+        <a href="#private-vault">Private Vault</a>
         <a href="#hidden">Hidden Items</a>
         <a href="#trash">Trash &amp; Deletion</a>
         <a href="#duplicates">Duplicate Detection</a>
@@ -363,7 +364,7 @@
         <div class="page-label">Support Guide</div>
         <h1>GenCatalog Support and Setup Guide</h1>
         <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across <a href="/grok">Grok Imagine</a>, GPT Image, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
         <div class="section" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -799,7 +800,33 @@
             <p>You can turn Privacy Mode on from the app's Privacy controls. Turning it off requires App Lock confirmation when App Lock is enabled.</p>
 
             <h3>Important Security Boundary</h3>
-            <p>App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside the app. They are not the same as encrypted vaults. Stronger encrypted library features are planned as part of GenCatalog's broader privacy roadmap.</p>
+            <p>App Lock, Privacy Mode, and Hidden Items protect against casual viewing inside the app. They do not encrypt normal library files on disk. For encrypted storage, move selected generations into Private Vault.</p>
+        </div>
+
+        <div class="section" id="private-vault">
+            <h2>Private Vault</h2>
+            <p class="section-desc">Private Vault is encrypted storage for generations that need stronger protection than hiding, blurring, or locking the app window.</p>
+
+            <h3>What Private Vault Does</h3>
+            <p>Private Vault creates a separate encrypted area inside your GenCatalog library. When you move an item into the Vault, GenCatalog encrypts that item's media file, thumbnail, prompt, and metadata, then removes the normal plaintext library copies.</p>
+            <p>While the Vault is locked, GenCatalog does not show Vault contents, counts, names, thumbnails, prompts, or metadata. Unlock the Vault when you need to view those items or move them back to your normal library.</p>
+
+            <h3>What "Encryption at Rest" Means</h3>
+            <p>Encryption at rest means the Vault data is stored in encrypted form while it is sitting on your drive. If someone browses your catalog folder in Finder or File Explorer while the Vault is locked, the Vault media and metadata should not be readable without unlocking the Vault in GenCatalog.</p>
+            <p>This is different from App Lock or Privacy Mode. App Lock controls access to the GenCatalog window. Privacy Mode blurs content on screen. Hidden Items keeps items out of the main grid. Private Vault is the feature that encrypts selected items on disk.</p>
+
+            <h3>Set Up and Unlock</h3>
+            <ol>
+                <li>Open GenCatalog.</li>
+                <li>Click <strong>Private Vault</strong> in the sidebar.</li>
+                <li>Create a Vault password.</li>
+                <li>Save the recovery key somewhere safe.</li>
+                <li>On supported Macs, enable Touch ID if you want faster day-to-day unlocks.</li>
+            </ol>
+            <div class="warning"><strong>Recovery note:</strong> Keep your Vault password and recovery key safe. If both are lost, encrypted Vault contents cannot be recovered.</div>
+
+            <h3>Move Items In or Out</h3>
+            <p>Use <strong>Move to Vault</strong> on a library item or selected group of items. To restore an item to the normal library, unlock the Vault and choose <strong>Move to Library</strong>. Moving an item out decrypts it and restores it as a regular, unencrypted library item.</p>
         </div>
 
         <div class="section" id="hidden">
@@ -820,7 +847,7 @@
             <h3>Changing Hidden Access</h3>
             <p>For the simplest setup, turn on App Lock in <strong>Settings</strong> → <strong>Privacy</strong> and use that unlock flow for Hidden Items. If App Lock is not enabled, go to the sidebar → Hidden Items → <strong>Change PIN</strong> to manage the fallback PIN.</p>
 
-            <div class="warning"><strong>Security note:</strong> Hidden Items is a privacy feature for the app interface. It is not encrypted storage. For stronger at-rest protection, use your operating system's disk encryption and watch for GenCatalog's upcoming encrypted privacy features.</div>
+            <div class="warning"><strong>Security note:</strong> Hidden Items is a privacy feature for the app interface. It is not encrypted storage. For stronger at-rest protection inside GenCatalog, move selected items into Private Vault.</div>
         </div>
 
         <div class="section" id="trash">
