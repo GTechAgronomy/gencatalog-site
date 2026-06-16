@@ -1,6 +1,24 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-16 — Added Grok local-folder retrieval positioning
+
+### What Changed
+- Added Grok retrieval positioning around local folders vs. a searchable, source-aware catalog.
+- Added related Grok FAQ copy explaining why downloaded files alone are not enough for reliable retrieval.
+- Added a small homepage reinforcement under the core workflow section without changing download links or layout structure.
+
+### Verification
+- JSON-LD parse passed for updated pages.
+- Structural tag balance check passed for `grok.html`, `index.html`, and `faq.html`.
+- `git diff --check` passed.
+- `./scripts/update-version.sh --check` passed with all version surfaces still at 5.16.21.
+- Local browser review confirmed the new Grok sections use existing feature grid/card classes and collapse cleanly on a narrow viewport.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-16 — Published 5.16.21 Private Vault release copy
 
 ### What Changed
