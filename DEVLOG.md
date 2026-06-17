@@ -1,6 +1,19 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-17 — Added Gemini to homepage platform rotator
+
+### What Changed
+- Added Gemini to the homepage hero "Capturing from" platform rotator.
+
+### Verification
+- `git diff --check` passed.
+- `./scripts/update-version.sh --check` passed with all version surfaces at 5.16.22 and both desktop artifacts live.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-16 — Added Grok local-folder retrieval positioning
 
 ### What Changed
