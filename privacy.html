@@ -145,7 +145,7 @@
 
     <main>
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: June 10, 2026</p>
+        <p class="last-updated">Last updated: June 17, 2026</p>
 
         <div class="highlight-box">
             <h3>The Short Version</h3>
@@ -153,7 +153,7 @@
         </div>
 
         <h2>1. What GenCatalog Is</h2>
-        <p>GenCatalog is a desktop application and Chrome browser extension that helps you save and organize AI-generated images and videos from platforms like Grok Imagine, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai. It is developed and operated by Second Act Labs ("we", "us", "our").</p>
+        <p>GenCatalog is a desktop application and Chrome browser extension that helps you save and organize AI-generated images and videos from platforms like Grok Imagine, Gemini, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai. It is developed and operated by Second Act Labs ("we", "us", "our").</p>
 
         <h2>2. Data the App and Extension Collect</h2>
         <p>The GenCatalog desktop app and Chrome extension do not collect personal information, usage data, analytics, telemetry, or browsing history. They contain no tracking of any kind. The only external request the app makes is periodic license-key validation via Lemon Squeezy, as described below.</p>
@@ -167,7 +167,8 @@
         <ul>
             <li><strong>activeTab</strong>: To detect AI-generated content on the current page and add save buttons to grid items and detail pages on supported platforms.</li>
             <li><strong>storage</strong>: To store extension settings and local extension state needed for save workflows and server communication. This data stays in your browser and is never transmitted externally.</li>
-            <li><strong>Host permissions (grok.com, midjourney.com, higgsfield.ai, digen.ai, venice.ai)</strong>: To access the supported AI generation platforms where the extension adds save functionality. The extension reads page content to extract media URLs, prompts, and metadata for saving to your local catalog.</li>
+            <li><strong>downloads</strong>: To track a Gemini full-size image download after you click a GenCatalog save badge, import that file into your local catalog, and remove the temporary duplicate from Downloads.</li>
+            <li><strong>Host permissions (grok.com, gemini.google.com, chatgpt.com, midjourney.com, higgsfield.ai, digen.ai, venice.ai)</strong>: To access the supported AI generation platforms where the extension adds save functionality. The extension reads page content to extract media URLs, prompts, and metadata for saving to your local catalog.</li>
             <li><strong>Host permission (localhost)</strong>: To communicate with the companion GenCatalog desktop application running on your local machine. All saved media and metadata is sent only to this local server, never to any external endpoint.</li>
         </ul>
 
@@ -175,7 +176,7 @@
         <p>The GenCatalog extension communicates only with:</p>
         <ul>
             <li><strong>Your local machine (localhost)</strong>: To send saved media and metadata to the companion desktop app.</li>
-            <li><strong>Supported AI platforms (grok.com, midjourney.com, higgsfield.ai, digen.ai, venice.ai)</strong>: To read page content and download media files you choose to save.</li>
+            <li><strong>Supported AI platforms (grok.com, gemini.google.com, chatgpt.com, midjourney.com, higgsfield.ai, digen.ai, venice.ai)</strong>: To read page content and download media files you choose to save.</li>
             <li><strong>Lemon Squeezy API (api.lemonsqueezy.com)</strong>: Solely for license key validation, approximately once every 7 days. Only your license key is transmitted; no personal data or usage information is included.</li>
         </ul>
         <p>GenCatalog does not communicate with any other external servers, APIs, or services.</p>

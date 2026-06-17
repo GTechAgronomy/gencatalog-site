@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenCatalog FAQ: Private Vault, Grok Favorites & Bulk Download</title>
-    <meta name="description" content="Answers about GenCatalog Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture.">
+    <meta name="description" content="Answers about GenCatalog Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture.">
     <link rel="canonical" href="https://gencatalog.app/faq" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/faq" />
     <meta property="og:title" content="GenCatalog FAQ: Private Vault, Grok Favorites & Bulk Download" />
-    <meta property="og:description" content="Answers about GenCatalog Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture." />
+    <meta property="og:description" content="Answers about GenCatalog Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -265,6 +265,7 @@
         .tag-digen { background: rgba(48,214,139,0.15); color: #30d68b; border: 1px solid rgba(48,214,139,0.3); }
         .tag-venice { background: rgba(217,184,79,0.13); color: #d9b84f; border: 1px solid rgba(217,184,79,0.28); }
         .tag-gpt { background: rgba(174,183,255,0.14); color: #aeb7ff; border: 1px solid rgba(174,183,255,0.3); }
+        .tag-gemini { background: rgba(66,133,244,0.14); color: #8ab4f8; border: 1px solid rgba(66,133,244,0.3); }
         .tag-all { background: rgba(232,105,105,0.12); color: #e86969; border: 1px solid rgba(232,105,105,0.25); }
 
         /* TIP BOX */
@@ -350,7 +351,7 @@
         "name": "What is GenCatalog?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer. Every generation is saved with its prompt, platform, model, and metadata when available — not just the file."
+          "text": "GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer. Every generation is saved with its prompt, platform, model, and metadata when available — not just the file."
         }
       },
       {
@@ -358,7 +359,7 @@
         "name": "What platforms does GenCatalog support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog currently supports Grok Imagine, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, and limited Venice.ai chat-page capture. GPT Image support scans current ChatGPT conversations for prompt-matched image outputs and can update missing prompts on already saved items."
+          "text": "GenCatalog currently supports Grok Imagine, Gemini, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, and limited Venice.ai chat-page capture. Gemini and GPT Image support work best when you save prompt-matched outputs while the chat context is visible."
         }
       },
       {
@@ -443,6 +444,14 @@
       },
       {
         "@type": "Question",
+        "name": "Does GenCatalog support Gemini?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, with limited chat-page support. GenCatalog can save visible Gemini image generations with prompt context and use Gemini's full-size download when Gemini exposes it. We recommend clicking the save badge at generation time so the image, prompt, and context are saved together."
+        }
+      },
+      {
+        "@type": "Question",
         "name": "Does GenCatalog support Venice.ai?",
         "acceptedAnswer": {
           "@type": "Answer",
@@ -495,6 +504,7 @@
         <a class="cat-pill" href="#general">General</a>
         <a class="cat-pill" href="#getting-started">Getting Started</a>
         <a class="cat-pill" href="#grok">Grok Imagine</a>
+        <a class="cat-pill" href="#gemini">Gemini</a>
         <a class="cat-pill" href="#gpt-image">GPT Image</a>
         <a class="cat-pill" href="#higgsfield">Higgsfield</a>
         <a class="cat-pill" href="#midjourney">Midjourney</a>
@@ -528,7 +538,7 @@
         <div class="faq-item">
             <button class="faq-q">What is GenCatalog?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer.</p>
+                <p>GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer.</p>
                 <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, and metadata</strong> when available — not just the file. So six months from now you can find exactly what you made and recreate it.</p>
             </div>
         </div>
@@ -539,6 +549,7 @@
                 <p>GenCatalog currently supports these platforms:</p>
                 <ul>
                     <li><a href="/grok"><span class="platform-tag tag-grok">Grok Imagine</span></a> — Full support including bulk favorites download, individual saves, prompt extraction, and multi-account support</li>
+                    <li><span class="platform-tag tag-gemini">Gemini</span> — Limited chat-page support for visible image generations, prompt context, and full-size downloads when Gemini exposes them</li>
                     <li><span class="platform-tag tag-gpt">GPT Image</span> — Scan current ChatGPT image chats, import prompt-matched outputs, and update missing prompts on existing GPT Image items</li>
                     <li><a href="/higgsfield"><span class="platform-tag tag-higgsfield">Higgsfield</span></a> — Full support including individual saves, bulk saves, model/preset capture, and metadata extraction</li>
                     <li><a href="/midjourney"><span class="platform-tag tag-midjourney">Midjourney</span></a> — Individual saves and full library scan; captures prompt, model version, and all parameters (--ar, --chaos, --sref, --cref, seed, etc.)</li>
@@ -569,7 +580,7 @@
         <div class="faq-item">
             <button class="faq-q">Is GenCatalog affiliated with Grok, Higgsfield, or Digen?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>No. GenCatalog is an independent product by Second Act Labs. We are not affiliated with, endorsed by, or partnered with xAI (Grok), Higgsfield, Midjourney, Digen, or Venice.ai. GenCatalog works with the publicly available interfaces of these platforms.</p>
+                <p>No. GenCatalog is an independent product by Second Act Labs. We are not affiliated with, endorsed by, or partnered with xAI (Grok), Google Gemini, Higgsfield, Midjourney, Digen, or Venice.ai. GenCatalog works with the publicly available interfaces of these platforms.</p>
             </div>
         </div>
     </div>
@@ -586,7 +597,7 @@
                     <li>Launch GenCatalog — on first run, it will ask you to choose a folder where your media will be stored</li>
                     <li>Install the Chrome extension from the Chrome Web Store</li>
                     <li>Make sure GenCatalog is running (you'll see it in your menu bar (Mac) or system tray (Windows))</li>
-                    <li>Browse to Grok Imagine, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, or a supported Venice.ai chat page — platform-specific controls will appear automatically</li>
+                    <li>Browse to Grok Imagine, Gemini, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, or a supported Venice.ai chat page — platform-specific controls will appear automatically</li>
                 </ol>
                 <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content, so if the popup cannot connect, make sure the desktop app is open.</div>
             </div>
@@ -721,6 +732,38 @@
             <div class="faq-a">
                 <p>GenCatalog maintains an <strong>exclusion list</strong> — when you delete something from your catalog, it's added to this list so it's never re-downloaded during future scans.</p>
                 <p>If an item keeps reappearing, it likely wasn't deleted through GenCatalog (e.g., you deleted the file manually from Finder). To fix this, find the item in your catalog, delete it using the GenCatalog interface (not Finder), and it will be permanently excluded from future scans.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GEMINI -->
+    <div class="faq-section" id="gemini">
+        <div class="section-title">Gemini</div>
+
+        <div class="faq-item">
+            <button class="faq-q">Does GenCatalog support Gemini?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes, with limited chat-page support. GenCatalog can save visible Gemini image generations with prompt context and use Gemini's full-size download when Gemini exposes it.</p>
+                <p>We recommend clicking the GenCatalog save badge at generation time so the image, prompt, and context are saved together while they are still visible in the chat.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">How do I save Gemini images?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <ol>
+                    <li>Open the Gemini chat that contains your generated image.</li>
+                    <li>Wait for the GenCatalog save badge to appear on the generated image.</li>
+                    <li>Click the badge to save the image, prompt, and available metadata into your local catalog.</li>
+                </ol>
+                <p>If Gemini exposes a full-size download, GenCatalog imports that file into your catalog and removes the temporary copy from Downloads.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can GenCatalog bulk import Gemini history?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>No. Gemini support is focused on visible chat-page generations, not bulk history import. Save the generations you care about while they are visible so GenCatalog can preserve the file and prompt context reliably.</p>
             </div>
         </div>
     </div>
@@ -937,7 +980,7 @@
                 <ul>
                     <li>Prompt text — find any generation by what you typed</li>
                     <li>Tags — search by tags you've added</li>
-                    <li>Platform — filter to Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, or Venice.ai only</li>
+                    <li>Platform — filter to Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, or Venice.ai only</li>
                     <li>Media type — filter to images or videos only</li>
                     <li>Favorites — show only starred items</li>
                     <li>Source image — find all generations created from the same source image</li>
@@ -1103,7 +1146,7 @@
         <div class="faq-item">
             <button class="faq-q">Does GenCatalog work without an internet connection?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>Yes — browsing your catalog, searching, tagging, and organizing all work completely offline. The only things that require internet are: saving new content from Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, or Venice.ai (since those platforms require internet), and periodic license revalidation (approximately every 7 days, with a 30-day offline grace period).</p>
+                <p>Yes — browsing your catalog, searching, tagging, and organizing all work completely offline. The only things that require internet are: saving new content from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, or Venice.ai (since those platforms require internet), and periodic license revalidation (approximately every 7 days, with a 30-day offline grace period).</p>
             </div>
         </div>
     </div>

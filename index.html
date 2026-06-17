@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GenCatalog — Bulk Download Grok Favorites and Save Prompts Locally</title>
-  <meta name="description" content="Bulk download Grok favorites, save prompts and metadata locally, and organize AI generations from Grok, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai. Free 7-day trial.">
+  <meta name="description" content="Bulk download Grok favorites, save prompts and metadata locally, and organize AI generations from Grok, Gemini, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai. Free 7-day trial.">
   <link rel="canonical" href="https://gencatalog.app/" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -23,13 +23,13 @@
   <meta property="og:url" content="https://gencatalog.app/" />
   <meta property="og:site_name" content="GenCatalog" />
   <meta property="og:title" content="GenCatalog — Local AI Image &amp; Video Organizer" />
-  <meta property="og:description" content="Save AI generations from Grok, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
+  <meta property="og:description" content="Save AI generations from Grok, Gemini, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
   <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="GenCatalog — Local AI Image &amp; Video Organizer" />
-  <meta name="twitter:description" content="Save AI generations from Grok, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
+  <meta name="twitter:description" content="Save AI generations from Grok, Gemini, GPT Image, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
   <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,8 +41,8 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"What is GenCatalog?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is a local AI image and video organizer for Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai. It automatically saves your AI generations with full prompts, model settings, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."}},
-      {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), ChatGPT/GPT Image, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages so you can keep generations with the prompt context that is available."}},
+      {"@type":"Question","name":"What is GenCatalog?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is a local AI image and video organizer for Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai. It automatically saves your AI generations with full prompts, model settings, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."}},
+      {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), Gemini, ChatGPT/GPT Image, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages so you can keep generations with the prompt context that is available."}},
       {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."}},
       {"@type":"Question","name":"Is my data stored in the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog stores everything locally on your computer. Your prompts, images, videos, and metadata never leave your device. No account required and no internet connection needed after installation."}},
       {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $39 as a one-time purchase. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The price includes all 5.x updates — no subscription, no renewals."}},
@@ -61,10 +61,10 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "macOS, Windows",
     "offers": {"@type":"Offer","price":"39.00","priceCurrency":"USD"},
-    "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
+    "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
     "url": "https://gencatalog.app",
     "screenshot": "https://gencatalog.app/og-image-v5.jpg",
-    "softwareVersion": "5.16.21",
+    "softwareVersion": "5.16.22",
     "creator": {"@type":"Organization","name":"Second Act Labs","url":"https://secondactlabs.com"}
   }
   </script>
@@ -288,6 +288,7 @@
     .platform-mark.dg .dot { background: var(--digen); box-shadow: 0 0 8px rgba(48,214,139,.6); }
     .platform-mark.vn .dot { background: #d9b84f; box-shadow: 0 0 8px rgba(217,184,79,.55); }
     .platform-mark.gpt .dot { background: #aeb7ff; box-shadow: 0 0 8px rgba(174,183,255,.55); }
+    .platform-mark.gemini .dot { background: #4285f4; box-shadow: 0 0 8px rgba(66,133,244,.55); }
 
     /* ── Problem section ─────────────────────────── */
     .problem .h-section { max-width: 22ch; margin: 0 auto; text-align: center; }
@@ -973,7 +974,7 @@
   <div class="container">
     <div class="reveal">
       <div class="hero-eyebrow-row">
-        <span class="eyebrow">v5.16.21</span>
+        <span class="eyebrow">v5.16.22</span>
         <span class="platform-pill-rotator">
           Capturing from
           <span class="word" id="platform-rotator">Grok</span>
@@ -1038,6 +1039,7 @@
         <a class="platform-mark mj" href="/midjourney"><span class="dot"></span>Midjourney</a>
         <a class="platform-mark hf" href="/higgsfield"><span class="dot"></span>Higgsfield</a>
         <a class="platform-mark dg" href="/digen"><span class="dot"></span>Digen</a>
+        <a class="platform-mark gemini" href="/support#gemini"><span class="dot"></span>Gemini</a>
         <a class="platform-mark gpt" href="/support#gpt-image"><span class="dot"></span>GPT Image</a>
         <a class="platform-mark vn" href="/support#venice"><span class="dot"></span>Venice.ai</a>
       </div>
@@ -1156,7 +1158,7 @@
 
     <div class="reveal delay-3" style="display:grid; grid-template-columns: minmax(0,1fr) 340px minmax(0,1fr); gap:60px; align-items:center; max-width:1100px; margin:0 auto;">
       <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
-        <li><div><strong>Source filters</strong> — Grok, GPT Image, Midjourney, Higgsfield, Digen, Venice.</div></li>
+        <li><div><strong>Source filters</strong> — Grok, Gemini, GPT Image, Midjourney, Higgsfield, Digen, Venice.</div></li>
         <li><div><strong>Ratings, favorites, notes, tags.</strong></div></li>
         <li><div><strong>Advanced</strong> — Has Notes, Untagged, Has Prompt.</div></li>
       </ul>
@@ -1482,7 +1484,7 @@
     </div>
     <div class="foot-meta">
       <span>© 2026 GenCatalog · Local by default.</span>
-      <span style="font-family:var(--font-mono); letter-spacing:0.04em;">v5.16.21</span>
+      <span style="font-family:var(--font-mono); letter-spacing:0.04em;">v5.16.22</span>
     </div>
   </div>
 </footer>
