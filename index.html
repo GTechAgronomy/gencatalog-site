@@ -257,10 +257,12 @@
     }
     .platforms-row {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 40px;
+      justify-content: center;
+      gap: 18px;
       flex-wrap: wrap;
+      text-align: center;
     }
     .platforms-label {
       font-family: var(--font-mono);
@@ -270,7 +272,7 @@
       color: var(--t3);
     }
     .platform-marks {
-      display: flex; gap: 36px; align-items: center; flex-wrap: wrap;
+      display: flex; gap: 16px 36px; align-items: center; justify-content: center; flex-wrap: wrap;
     }
     .platform-mark {
       display: inline-flex; align-items: center; gap: 8px;
@@ -960,7 +962,7 @@
       <a href="/faq">FAQ</a>
     </div>
     <a class="nav-cta" href="/get">
-      Download free
+      Start free
       <span style="color:var(--t3); font-family:var(--font-mono); font-size:11px;">↗</span>
     </a>
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
@@ -998,15 +1000,15 @@
 
     <div class="hero-cta reveal delay-4">
       <a class="btn btn-primary" href="/get">
-        Keep your work
-        <span style="opacity:.7">— Free for 7 days</span>
+        Start free
+        <span style="opacity:.7">— No card needed</span>
       </a>
       <a class="btn btn-secondary" href="#how">See how it works</a>
     </div>
 
     <div class="hero-trust reveal delay-5">
       <span class="dot"></span>
-      <span>Mac &amp; Windows · Local by default · No account required</span>
+      <span>7-day trial · Up to 250 saves free · Local by default</span>
     </div>
   </div>
 
@@ -1163,7 +1165,7 @@
         <li><div><strong>Advanced</strong> — Has Notes, Untagged, Has Prompt.</div></li>
       </ul>
       <div class="showcase-image" style="width:340px;">
-        <img src="uploads_v2/SideBar-642.webp" alt="GenCatalog sidebar — full filter rail with sources, ratings, refine drawer, advanced filters, saved searches, and collections" width="642" height="2200" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;">
+        <img src="uploads_v2/SideBar-642.webp" alt="GenCatalog sidebar — full filter rail with sources, ratings, refine drawer, advanced filters, saved searches, and collections" width="642" height="2322" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;">
       </div>
       <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
         <li><div><strong>Date range, top prompts, source images.</strong></div></li>
@@ -1414,7 +1416,7 @@
       <p class="pricing-value-line">Buy once for $39 before it moves to $79.</p>
       <div class="ctas">
         <a class="btn btn-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $39</a>
-        <a class="btn btn-secondary" href="/get">Download free</a>
+        <a class="btn btn-secondary" href="/get">Start free trial</a>
       </div>
       <div class="pf">macOS (Apple Silicon + Intel) · Windows 10/11</div>
     </div>
@@ -1430,8 +1432,8 @@
     </p>
     <div class="hero-cta reveal delay-2">
       <a class="btn btn-primary" href="/get">
-        Download free
-        <span style="opacity:.7">↓</span>
+        Start free trial
+        <span style="opacity:.7">— No card</span>
       </a>
       <a class="btn btn-secondary" href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Install Chrome extension</a>
     </div>
