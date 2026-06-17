@@ -5,10 +5,12 @@
 
 ### What Changed
 - Added Gemini to the homepage hero "Capturing from" platform rotator.
+- Added a homepage script cache-bust so visitors receive the updated rotator immediately instead of a stale cached JavaScript asset.
 
 ### Verification
 - `git diff --check` passed.
 - `./scripts/update-version.sh --check` passed with all version surfaces at 5.16.22 and both desktop artifacts live.
+- Live check confirmed the unversioned JavaScript asset was still a Cloudflare cache HIT without Gemini, while the cache-busted asset returned the updated Gemini list.
 
 ### Status
 - Ready to deploy via Cloudflare Pages on push.
