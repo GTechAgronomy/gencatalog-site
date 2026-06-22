@@ -45,7 +45,7 @@
       {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), Gemini, ChatGPT/GPT Image, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages so you can keep generations with the prompt context that is available."}},
       {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."}},
       {"@type":"Question","name":"Is my data stored in the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog stores everything locally on your computer. Your prompts, images, videos, and metadata never leave your device. No account required and no internet connection needed after installation."}},
-      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $39 as a one-time purchase. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The price includes all 5.x updates — no subscription, no renewals."}},
+      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $79 as a one-time purchase. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The price includes all 5.x updates — no subscription, no renewals."}},
       {"@type":"Question","name":"Does GenCatalog work on both Mac and Windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."}},
       {"@type":"Question","name":"What metadata does GenCatalog save from Midjourney?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog saves the full prompt text, model version (--v), aspect ratio (--ar), chaos, seed, style mode, style references (--sref), character references (--cref), stylize weight, and all other parameters. All four image variants per generation are saved individually."}}
     ]
@@ -60,7 +60,7 @@
     "name": "GenCatalog",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "macOS, Windows",
-    "offers": {"@type":"Offer","price":"39.00","priceCurrency":"USD"},
+    "offers": {"@type":"Offer","price":"79.00","priceCurrency":"USD"},
     "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
     "url": "https://gencatalog.app",
     "screenshot": "https://gencatalog.app/og-image-v5.jpg",
@@ -136,30 +136,6 @@
       font-size: 19px;
       color: var(--t2);
       max-width: 660px;
-    }
-    .hero-launch-banner {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      max-width: 100%;
-      margin: 28px auto 0;
-      padding: 8px 14px;
-      border: 1px solid rgba(217,184,79,0.24);
-      border-radius: 999px;
-      background: rgba(217,184,79,0.08);
-      color: var(--t2);
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: -0.005em;
-    }
-    .hero-launch-banner strong {
-      color: var(--yellow);
-      font-weight: 600;
-    }
-    .hero-launch-banner .sep {
-      color: rgba(217,184,79,0.7);
-      flex: 0 0 auto;
     }
     .hero-cta {
       display: flex;
@@ -717,30 +693,6 @@
     @media (max-width: 900px) {
       .testimonial-grid { grid-template-columns: 1fr; }
     }
-    .pricing-deadline {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: -22px auto 14px;
-      padding: 7px 12px;
-      border: 1px solid rgba(217,184,79,0.25);
-      border-radius: 999px;
-      background: rgba(217,184,79,0.09);
-      color: var(--yellow);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-    .pricing-deadline::before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      border-radius: 999px;
-      background: var(--yellow);
-      box-shadow: 0 0 6px var(--yellow);
-    }
     .pricing-card {
       max-width: 460px;
       margin: 0 auto;
@@ -750,27 +702,6 @@
       border: 1px solid var(--accent-b);
       border-radius: 16px;
       box-shadow: 0 0 60px rgba(88,101,232,0.18);
-    }
-    .pricing-card .ribbon {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      height: 26px;
-      padding: 0 12px;
-      background: rgba(217,184,79,0.10);
-      color: var(--yellow);
-      border: 1px solid rgba(217,184,79,0.25);
-      border-radius: 999px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .pricing-card .ribbon::before {
-      content: ""; width: 5px; height: 5px; border-radius: 999px;
-      background: var(--yellow); box-shadow: 0 0 6px var(--yellow);
     }
     .pricing-card .price {
       font-family: var(--font-mono);
@@ -818,13 +749,6 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-    }
-    .pricing-value-line {
-      margin: 0 0 16px;
-      color: var(--yellow);
-      font-size: 13px;
-      font-weight: 600;
-      line-height: 1.5;
     }
     .pricing-proof {
       margin: -4px 0 18px;
@@ -918,13 +842,6 @@
       }
       .nav.open .nav-links { display: flex; }
       .nav-links a { padding: 13px 4px; font-size: 16px; }
-      .hero-launch-banner {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 4px 8px;
-        border-radius: 12px;
-      }
-      .pricing-deadline { margin-top: -28px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -991,12 +908,6 @@
     <p class="lede reveal delay-2">
       Prompts disappear. Favorites become cluttered. Downloads pile up in random folders. GenCatalog turns AI images and videos into a searchable local library, with prompts and metadata preserved.
     </p>
-
-    <div class="hero-launch-banner reveal delay-3" role="note" aria-label="Launch pricing announcement">
-      <strong>Launch pricing ends June 22</strong>
-      <span class="sep" aria-hidden="true">•</span>
-      <span>Buy once for $39 before it moves to $79.</span>
-    </div>
 
     <div class="hero-cta reveal delay-4">
       <a class="btn btn-primary" href="/get">
@@ -1394,11 +1305,8 @@
       Buy it once. Use it forever. No subscription, no seats, no renewal.
     </p>
 
-    <div class="pricing-deadline reveal delay-3">Launch pricing ends June 22</div>
-
     <div class="pricing-card reveal delay-4">
-      <span class="ribbon">Launch pricing</span>
-      <div class="price">$39</div>
+      <div class="price">$79</div>
       <div class="price-sub">One-time purchase. No subscription.</div>
       <div class="price-note">Includes all 5.x updates</div>
       <ul>
@@ -1413,9 +1321,8 @@
         <blockquote>“Worth every penny.”</blockquote>
         <figcaption><cite>Chrome Web Store review</cite></figcaption>
       </figure>
-      <p class="pricing-value-line">Buy once for $39 before it moves to $79.</p>
       <div class="ctas">
-        <a class="btn btn-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $39</a>
+        <a class="btn btn-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $79</a>
         <a class="btn btn-secondary" href="/get">Start free trial</a>
       </div>
       <div class="pf">macOS (Apple Silicon + Intel) · Windows 10/11</div>
@@ -1439,7 +1346,7 @@
     </div>
     <div class="hero-trust reveal delay-3">
       <span class="dot"></span>
-      <span>$39 one-time · Free for 7 days · No card required</span>
+      <span>$79 one-time · Free for 7 days · No card required</span>
     </div>
   </div>
 </section>
