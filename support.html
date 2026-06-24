@@ -11,8 +11,8 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenCatalog Support: Grok Favorites, Missing Images/Videos & Setup</title>
-    <meta name="description" content="Set up GenCatalog, save Gemini and GPT Image chats, turn on privacy tools, scan Grok favorites, recover missing saved images or videos, bulk download with prompts, and troubleshoot supported AI platforms.">
+    <title>GenCatalog Support: Import Local Media, Grok Favorites & Setup</title>
+    <meta name="description" content="Set up GenCatalog, import local images and videos, save Gemini and GPT Image chats, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms.">
     <link rel="canonical" href="https://gencatalog.app/support" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -21,8 +21,8 @@
     <meta name="theme-color" content="#0d0f13" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/support" />
-    <meta property="og:title" content="GenCatalog Support: Grok Favorites, Missing Images/Videos & Setup" />
-    <meta property="og:description" content="Set up GenCatalog, save Gemini and GPT Image chats, turn on privacy tools, scan Grok favorites, recover missing saved images or videos, bulk download with prompts, and troubleshoot supported AI platforms." />
+    <meta property="og:title" content="GenCatalog Support: Import Local Media, Grok Favorites & Setup" />
+    <meta property="og:description" content="Set up GenCatalog, import local images and videos, save Gemini and GPT Image chats, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -349,6 +349,7 @@
         <a href="#midjourney"><span class="dot dot-midjourney"></span>Midjourney</a>
         <a href="#digen"><span class="dot dot-digen"></span>Digen</a>
         <div class="sidebar-label">Your Catalog</div>
+        <a href="#local-import">Local Media Import</a>
         <a href="#browsing">Browsing &amp; Search</a>
         <a href="#organizing">Tags &amp; Favorites</a>
         <a href="#bulk">Bulk Operations</a>
@@ -366,8 +367,8 @@
     <main class="content">
         <div class="page-label">Support Guide</div>
         <h1>GenCatalog Support and Setup Guide</h1>
-        <p class="intro">A complete guide to capturing, organizing, and browsing your AI-generated content across <a href="/grok">Grok Imagine</a>, Gemini, GPT Image, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
+        <p class="intro">A complete guide to importing, capturing, organizing, and browsing your AI-generated content across local files, <a href="/grok">Grok Imagine</a>, Gemini, GPT Image, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
         <div class="section" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -450,6 +451,49 @@
             </ul>
             <div class="tip"><strong>Download options:</strong> Smart Sync lives in Settings and stays remembered after you set it once. Grok video upscaling is handled from the desktop catalog, not from the extension scan flow.</div>
             <div class="warning"><strong>If the popup cannot connect:</strong> Open the GenCatalog desktop app, wait a few seconds, then try again.</div>
+        </div>
+
+        <div class="section" id="local-import">
+            <h2>Local Media Import</h2>
+            <p class="section-desc">Bring downloaded images and videos into GenCatalog even when they did not come from the browser extension.</p>
+            <p>Use local import for API-generated videos, files you saved manually, old downloads, exported images, screen recordings, or media from a generator GenCatalog does not capture yet. GenCatalog copies those files into your selected catalog folder so they live beside the rest of your library.</p>
+
+            <h3>How to Import Files</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Open the GenCatalog desktop app</strong>
+                        <p>Local import uses the desktop app because it needs permission to read files from your Mac or PC.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Choose files or drag them in</strong>
+                        <p>Click <strong>Import</strong> in the toolbar, use the import card in Settings → Capture &amp; Import, or drag supported files onto the GenCatalog window.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Review the batch</strong>
+                        <p>After import, use the review drawer to set source, model, tags, prompts, and notes. This is useful for API outputs where the file is yours but the browser page is gone.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Supported File Types</h3>
+            <ul>
+                <li><strong>Videos:</strong> MP4, MOV, WEBM, and M4V</li>
+                <li><strong>Images:</strong> JPG, JPEG, PNG, WEBP, GIF, and AVIF</li>
+            </ul>
+
+            <h3>Duplicates and Undo</h3>
+            <p>GenCatalog checks exact file hashes during import. If the same file is already in your catalog, it is skipped by default. You can still choose <strong>Import anyway</strong> from the review drawer when you intentionally want another copy.</p>
+            <p>If you import the wrong batch, click <strong>Undo</strong> from the import toast. GenCatalog removes the just-imported items and their copied files from the catalog.</p>
+
+            <div class="tip"><strong>Tip:</strong> For xAI/Grok API videos, download the file before leaving the console page, then import it into GenCatalog. The imported copy stays in your local library and can be tagged or labeled like any other saved generation.</div>
         </div>
 
         <div class="section" id="grok">

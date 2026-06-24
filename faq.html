@@ -11,8 +11,8 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenCatalog FAQ: Private Vault, Grok Favorites & Bulk Download</title>
-    <meta name="description" content="Answers about GenCatalog Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture.">
+    <title>GenCatalog FAQ: Import Local Media, Private Vault & Grok Favorites</title>
+    <meta name="description" content="Answers about GenCatalog local media import, Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, bulk downloads with prompts, setup, and local metadata capture.">
     <link rel="canonical" href="https://gencatalog.app/faq" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -21,8 +21,8 @@
     <meta name="theme-color" content="#0d0f13" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/faq" />
-    <meta property="og:title" content="GenCatalog FAQ: Private Vault, Grok Favorites & Bulk Download" />
-    <meta property="og:description" content="Answers about GenCatalog Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, missing saved images or videos, bulk downloads with prompts, setup, and local metadata capture." />
+    <meta property="og:title" content="GenCatalog FAQ: Import Local Media, Private Vault & Grok Favorites" />
+    <meta property="og:description" content="Answers about GenCatalog local media import, Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, bulk downloads with prompts, setup, and local metadata capture." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -351,7 +351,7 @@
         "name": "What is GenCatalog?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer. Every generation is saved with its prompt, platform, model, and metadata when available — not just the file."
+          "text": "GenCatalog is a desktop application and Chrome extension that captures, imports, catalogs, and organizes your AI-generated images and videos from local files, Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer. Every generation can be saved with its prompt, platform, model, and metadata when available — not just the file."
         }
       },
       {
@@ -359,7 +359,15 @@
         "name": "What platforms does GenCatalog support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog currently supports Grok Imagine, Gemini, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, and limited Venice.ai chat-page capture. Gemini and GPT Image support work best when you save prompt-matched outputs while the chat context is visible."
+          "text": "GenCatalog currently supports local media import plus Grok Imagine, Gemini, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, and limited Venice.ai chat-page capture. Gemini and GPT Image support work best when you save prompt-matched outputs while the chat context is visible."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I import images or videos I already downloaded?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Open the GenCatalog desktop app, click Import, or drag supported files into the app. GenCatalog copies local MP4, MOV, WEBM, M4V, JPG, JPEG, PNG, WEBP, GIF, and AVIF files into your catalog, checks for exact duplicates, and lets you review source, model, tags, prompts, and notes after import."
         }
       },
       {
@@ -367,7 +375,7 @@
         "name": "Does GenCatalog upload my content anywhere?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. Everything stays on your computer. GenCatalog runs entirely locally — there is no cloud sync, no remote storage, and no account required. Your files and prompts never leave your machine."
+          "text": "No. Everything stays on your computer. GenCatalog runs entirely locally — there is no cloud sync, no remote storage, and no account required. Your captured files, imported files, and prompts never leave your machine."
         }
       },
       {
@@ -471,7 +479,7 @@
         "name": "Where does GenCatalog store my files?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog stores everything in a folder on your computer that you choose during setup. You have full control — it's just a regular folder with your files and a local database."
+          "text": "GenCatalog stores everything in a folder on your computer that you choose during setup. Captured and imported media are copied into that catalog folder, with thumbnails and metadata stored locally beside them."
         }
       }
     ]
@@ -503,6 +511,7 @@
     <div class="cat-nav">
         <a class="cat-pill" href="#general">General</a>
         <a class="cat-pill" href="#getting-started">Getting Started</a>
+        <a class="cat-pill" href="#local-import">Local Import</a>
         <a class="cat-pill" href="#grok">Grok Imagine</a>
         <a class="cat-pill" href="#gemini">Gemini</a>
         <a class="cat-pill" href="#gpt-image">GPT Image</a>
@@ -538,8 +547,8 @@
         <div class="faq-item">
             <button class="faq-q">What is GenCatalog?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>GenCatalog is a desktop application and Chrome extension that automatically captures, catalogs, and organizes your AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer.</p>
-                <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, and metadata</strong> when available — not just the file. So six months from now you can find exactly what you made and recreate it.</p>
+                <p>GenCatalog is a desktop application and Chrome extension that captures, imports, catalogs, and organizes your AI-generated images and videos from local files, Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer.</p>
+                <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, and metadata</strong> when available — not just the file. If you already downloaded a file yourself, you can import it and add that context afterward.</p>
             </div>
         </div>
 
@@ -548,6 +557,7 @@
             <div class="faq-a">
                 <p>GenCatalog currently supports these platforms:</p>
                 <ul>
+                    <li><span class="platform-tag">Local files</span> — Import downloaded images and videos from your computer, including API outputs and files from unsupported generators</li>
                     <li><a href="/grok"><span class="platform-tag tag-grok">Grok Imagine</span></a> — Full support including bulk favorites download, individual saves, prompt extraction, and multi-account support</li>
                     <li><span class="platform-tag tag-gemini">Gemini</span> — Limited chat-page support for visible image generations, prompt context, and full-size downloads when Gemini exposes them</li>
                     <li><span class="platform-tag tag-gpt">GPT Image</span> — Scan current ChatGPT image chats, import prompt-matched outputs, and update missing prompts on existing GPT Image items</li>
@@ -563,7 +573,7 @@
         <div class="faq-item">
             <button class="faq-q">Does GenCatalog upload my content anywhere?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p><strong>No.</strong> Everything stays on your computer. GenCatalog runs entirely locally — there is no cloud sync, no remote storage, and no account required. Your files and prompts never leave your machine.</p>
+                <p><strong>No.</strong> Everything stays on your computer. GenCatalog runs entirely locally — there is no cloud sync, no remote storage, and no account required. Your captured files, imported files, and prompts never leave your machine.</p>
                 <p>The only external communication is periodic license key validation with our payment processor (Lemon Squeezy), which sends only your license key — never your media or prompts.</p>
             </div>
         </div>
@@ -598,6 +608,7 @@
                     <li>Install the Chrome extension from the Chrome Web Store</li>
                     <li>Make sure GenCatalog is running (you'll see it in your menu bar (Mac) or system tray (Windows))</li>
                     <li>Browse to Grok Imagine, Gemini, ChatGPT/GPT Image, Higgsfield, Midjourney, Digen, or a supported Venice.ai chat page — platform-specific controls will appear automatically</li>
+                    <li>To add media you already downloaded, click <strong>Import</strong> in the desktop app or drag supported files into the GenCatalog window</li>
                 </ol>
                 <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content, so if the popup cannot connect, make sure the desktop app is open.</div>
             </div>
@@ -619,7 +630,7 @@
         <div class="faq-item">
             <button class="faq-q">Where does GenCatalog store my files?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>You choose the folder on first launch. GenCatalog creates this structure inside it:</p>
+                <p>You choose the folder on first launch. Captured and imported media are copied into this folder. GenCatalog creates this structure inside it:</p>
                 <ul>
                     <li><code>images/</code> — all saved images</li>
                     <li><code>videos/</code> — all saved videos</li>
@@ -647,6 +658,53 @@
                 <p><strong>On Mac:</strong> During setup, GenCatalog will offer to install FFmpeg automatically. The process takes about a minute and doesn't require any technical steps.</p>
                 <p><strong>On Windows:</strong> During setup, you'll be directed to a download page with the files you need. Follow the on-screen instructions to install FFmpeg, then restart GenCatalog.</p>
                 <p>If you skipped this step and video thumbnails still aren't showing, quit and relaunch GenCatalog — the FFmpeg setup prompt will appear again.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOCAL IMPORT -->
+    <div class="faq-section" id="local-import">
+        <div class="section-title">Local Import</div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I import images or videos I already downloaded?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. Open the GenCatalog desktop app and click <strong>Import</strong> in the toolbar, drag supported files into the app, or use Settings → Capture &amp; Import → Local media files.</p>
+                <p>GenCatalog copies those files into your catalog folder, creates thumbnails when possible, and opens a review drawer so you can add source, model, tags, prompts, and notes.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What file types can I import?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog can import common AI media formats:</p>
+                <ul>
+                    <li><strong>Videos:</strong> MP4, MOV, WEBM, and M4V</li>
+                    <li><strong>Images:</strong> JPG, JPEG, PNG, WEBP, GIF, and AVIF</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I import videos made with an API?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. If you generate a video through an API or console, download the file before leaving that page, then import it into GenCatalog. This is especially useful when the browser page does not keep the video available later.</p>
+                <p>After import, use the review drawer to label the source, model, tags, prompt, and notes so the file is searchable like the rest of your catalog.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">What happens if I import the same file twice?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>GenCatalog checks exact file hashes during import. If the same file is already in your catalog, it is skipped by default.</p>
+                <p>If you intentionally want another copy, choose <strong>Import anyway</strong> from the review drawer.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can I undo an import?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. After an import finishes, the import toast includes <strong>Undo</strong>. Undo removes the just-imported items and their copied files from your catalog.</p>
             </div>
         </div>
     </div>
