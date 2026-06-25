@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-24 — Published desktop 5.16.28 selection release copy
+
+### What Changed
+- Updated homepage visible version references and structured-data software version to 5.16.28.
+- Updated `/get` desktop download redirect to 5.16.28.
+- Added customer-facing release notes for restored Shift+Arrow grid multi-select behavior.
+
+### Verification
+- `scripts/update-version.sh 5.16.28` verified the 5.16.28 macOS DMG and Windows installer URLs before changing public version surfaces.
+- `scripts/update-version.sh --check` passed with all version surfaces at 5.16.28, release notes present, and desktop artifacts live.
+- Release copy stays customer-facing and avoids internal process language.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-17 — Added Gemini to homepage platform rotator
 
 ### What Changed
