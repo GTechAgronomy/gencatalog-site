@@ -1,6 +1,23 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Refreshed Recipe Card landing example
+
+### What Changed
+- Replaced the `/r` landing page Recipe Card sample image with the supplied
+  exported card.
+- Kept the existing `/recipe-card-demo.webp` asset path so `/r.html` markup
+  and public copy stayed unchanged.
+
+### Verification
+- Converted the supplied 1040x1440 PNG to a lossless WebP at the existing
+  asset path.
+- Confirmed `/r.html` still references `/recipe-card-demo.webp`.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-29 — Fixed live Recipe Card landing route
 
 ### What Changed
