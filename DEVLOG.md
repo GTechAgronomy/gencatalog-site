@@ -1,6 +1,22 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Cache-busted Recipe Card landing image
+
+### What Changed
+- Added `/recipe-card-demo-2026-06-29.webp` and pointed `/r.html` at it so
+  the refreshed Recipe Card example is not blocked by immutable caching of the
+  previous `/recipe-card-demo.webp` asset.
+
+### Verification
+- Confirmed the live old asset was still serving the previous 107540-byte file
+  with `cache-control: public, max-age=31536000, immutable`.
+- Confirmed the new asset is a 1040x1440 lossless WebP.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-29 — Refreshed Recipe Card landing example
 
 ### What Changed
