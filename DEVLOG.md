@@ -1,6 +1,31 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Scaffolded opt-in telemetry surfaces
+
+### What Changed
+- Updated `/privacy` to describe opt-in aggregate app telemetry while keeping
+  the local-library privacy promise explicit.
+- Added a fail-closed `/api/telemetry` Cloudflare Pages Function scaffold that
+  validates aggregate rows only and does not assume a storage binding.
+- Added a disabled `/admin/telemetry` scaffold that requires Cloudflare Access
+  headers before returning anything.
+- Documented the remaining storage decision in code: Analytics Engine versus
+  R2 daily summaries.
+
+### Verification
+- Local module smoke confirmed `/api/telemetry` returns `202` with
+  `stored:false` for a schema-versioned aggregate payload.
+- Local module smoke confirmed `/api/telemetry` returns `204` for a payload
+  containing a blocked content key.
+- Local module smoke confirmed `/admin/telemetry` returns `403` without
+  Cloudflare Access headers and `501` scaffold-only with the Access header.
+- `git diff --check`
+
+### Status
+- Ready to deploy after the app-side telemetry foundation is reviewed.
+
+---
 ## 2026-06-29 — Cache-busted Recipe Card landing image
 
 ### What Changed
