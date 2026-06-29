@@ -1,6 +1,50 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Updated Recipe Card landing example
+
+### What Changed
+- Replaced the `/r` landing page example image with a real exported Recipe
+  Card sample.
+- Kept the existing `/recipe-card-demo.webp` asset path so the landing page
+  markup did not need to change.
+
+### Verification
+- Confirmed the replacement asset is a 1040x1440 WebP.
+- Confirmed `/r.html` still references `/recipe-card-demo.webp`.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
+## 2026-06-29 — Added Recipe Card attribution landing page
+
+### What Changed
+- Added `/r` as a lightweight Recipe Card landing page for campaign-level
+  attribution from shared PNGs.
+- Added a Cloudflare Pages rewrite from `/r` to `/r.html`.
+- Kept the page generic: it explains that the shared image was made with
+  GenCatalog, points visitors to download or learn more, and states that the
+  shared image was not uploaded or tied to the exporter.
+- Preserved incoming UTM parameters on the page CTAs so `/get` and homepage
+  visits can keep the recipe-card campaign context.
+
+### Files
+- `r.html`
+- `_redirects`
+- `DEVLOG.md`
+
+### Verification
+- `git diff --check`
+- Confirmed `recipe-card-demo.webp` and `GenCatalogLogo-64.webp` exist.
+- Focused Node check confirmed inline scripts compile and the page includes
+  the expected UTM-preserving links and privacy-safe generic copy.
+- Focused Node check confirmed `_redirects` contains `/r /r.html 200`.
+
+### Status
+- Ready to review and deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-24 — Published desktop 5.16.28 selection release copy
 
 ### What Changed
