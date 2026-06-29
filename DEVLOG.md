@@ -1,6 +1,33 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Wired privacy-safe telemetry storage
+
+### What Changed
+- Added a Cloudflare Pages R2 binding for dedicated telemetry storage.
+- Updated `/api/telemetry` to store only allowlisted aggregate counters in R2
+  daily summaries.
+- Kept invalid or non-allowlisted telemetry fail-closed: unsupported payloads
+  are ignored and no request metadata is stored.
+- Updated `/admin/telemetry` into a private read-only dashboard that reads the
+  summaries and requires Cloudflare Access headers.
+- Added `.wrangler/` to `.gitignore` so local Cloudflare cache files stay out
+  of commits.
+
+### Verification
+- `wrangler pages functions build .`
+- Local module smoke confirmed a valid aggregate payload stores one R2 daily
+  summary object.
+- Local module smoke confirmed a blocked `prompt` dimension returns `204` and
+  stores nothing.
+- Local module smoke confirmed `/admin/telemetry` returns `403` without
+  Cloudflare Access headers and renders with Access-shaped headers.
+
+### Status
+- `gencatalog-telemetry` R2 bucket created; ready to deploy via Cloudflare
+  Pages.
+
+---
 ## 2026-06-29 — Emphasized privacy plain-English promise
 
 ### What Changed
