@@ -1,6 +1,24 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Published 5.16.32 site surfaces
+
+### What Changed
+- Added the GenCatalog 5.16.32 release notes entry.
+- Updated homepage and download page version surfaces to 5.16.32.
+- Kept the opt-in telemetry privacy scaffold and updated privacy-policy copy on
+  the same deployment branch.
+
+### Verification
+- `scripts/update-version.sh 5.16.32`
+- `scripts/update-version.sh --check`
+- Confirmed the 5.16.32 macOS DMG and Windows installer returned `200` before
+  bumping public version surfaces.
+
+### Status
+- Ready to deploy via Cloudflare Pages on merge/push.
+
+---
 ## 2026-06-29 — Scaffolded opt-in telemetry surfaces
 
 ### What Changed
