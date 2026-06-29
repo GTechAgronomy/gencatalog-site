@@ -1,5 +1,6 @@
 # Keep internal working files out of public reach.
 # Cloudflare Pages evaluates these before serving static assets.
+/r /r.html 200
 /DEVLOG.md / 302
 /AGENTS.md / 302
 /AUDIT.md / 302

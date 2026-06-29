@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8EV2H78B6F');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Made with GenCatalog</title>
+  <meta name="description" content="This shared AI recipe image was made with GenCatalog, a local app for saving AI generations with prompts and metadata.">
+  <link rel="canonical" href="https://gencatalog.app/r">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0d0f13">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gencatalog.app/r">
+  <meta property="og:site_name" content="GenCatalog">
+  <meta property="og:title" content="Made with GenCatalog">
+  <meta property="og:description" content="Save AI generations with the prompt, source, settings, and metadata that make them reusable.">
+  <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Made with GenCatalog">
+  <meta name="twitter:description" content="Save AI generations with the prompt, source, settings, and metadata that make them reusable.">
+  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script defer src="/analytics.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d0f13;
+      --surface: #151821;
+      --surface-2: #1d2230;
+      --text: #f3f4f8;
+      --muted: #a6acbb;
+      --soft: #737b90;
+      --border: rgba(255,255,255,0.11);
+      --accent: #5865e8;
+      --accent-hi: #aeb7ff;
+      --green: #42d392;
+      --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-mono: "Geist Mono", "SF Mono", Menlo, Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(760px 420px at 50% -120px, rgba(88,101,232,0.22), transparent 70%),
+        linear-gradient(180deg, #0d0f13 0%, #11131a 100%);
+      color: var(--text);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .page {
+      width: min(1120px, calc(100vw - 40px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 650;
+    }
+    .brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+    .nav-link {
+      color: var(--muted);
+      font-size: 14px;
+      transition: color 140ms ease;
+    }
+    .nav-link:hover { color: var(--text); }
+    main {
+      min-height: calc(100vh - 128px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.78fr);
+      gap: clamp(40px, 7vw, 88px);
+      align-items: center;
+      padding: 72px 0 44px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: var(--accent-hi);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(66,211,146,0.7);
+    }
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(44px, 8vw, 76px);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+    .lede {
+      margin: 24px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.6;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 36px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+    }
+    .btn:hover { transform: translateY(-1px); border-color: rgba(255,255,255,0.2); }
+    .btn-primary {
+      background: var(--accent);
+      border-color: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.04);
+      color: var(--text);
+    }
+    .note {
+      margin-top: 24px;
+      color: var(--soft);
+      font-size: 13px;
+      line-height: 1.55;
+      max-width: 560px;
+    }
+    .visual {
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      padding: 14px;
+      box-shadow: 0 28px 90px rgba(0,0,0,0.42);
+    }
+    .visual img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: #0a0b0f;
+    }
+    .caption {
+      margin: 14px 4px 0;
+      color: var(--soft);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+    @media (max-width: 860px) {
+      .page { width: min(100% - 32px, 680px); }
+      main {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        padding-top: 56px;
+      }
+      .visual { order: -1; }
+      h1 { font-size: clamp(38px, 13vw, 58px); }
+      .lede { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/" data-campaign-link>
+        <img src="/GenCatalogLogo-64.webp" alt="">
+        <span>GenCatalog</span>
+      </a>
+      <a class="nav-link" href="/privacy">Privacy</a>
+    </nav>
+
+    <main>
+      <section>
+        <div class="eyebrow">Shared Recipe Card</div>
+        <h1>This image was made with GenCatalog.</h1>
+        <p class="lede">GenCatalog saves AI images and videos with the prompt, source, settings, and metadata that make them useful later. Your library stays local on your computer.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="/get" data-campaign-link>Download GenCatalog</a>
+          <a class="btn btn-secondary" href="/" data-campaign-link>Learn More</a>
+        </div>
+        <p class="note">This page is generic. The shared image was not uploaded here, and this link does not identify who exported the card.</p>
+      </section>
+
+      <aside class="visual" aria-label="Recipe Card example">
+        <img src="/recipe-card-demo.webp" alt="A GenCatalog Recipe Card example">
+        <p class="caption">Recipe Cards are portable PNGs for sharing the generation and the recipe behind it.</p>
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var allowed = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      var campaign = new URLSearchParams();
+      allowed.forEach(function (key) {
+        var value = params.get(key);
+        if (value) campaign.set(key, value);
+      });
+      if (!campaign.toString()) return;
+      document.querySelectorAll('[data-campaign-link]').forEach(function (link) {
+        var url = new URL(link.getAttribute('href'), window.location.origin);
+        campaign.forEach(function (value, key) {
+          url.searchParams.set(key, value);
+        });
+        link.href = url.pathname + url.search + url.hash;
+      });
+    })();
+  </script>
+</body>
+</html>
