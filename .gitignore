@@ -5,3 +5,4 @@ ShowcaseDetail.png
 lighthouse-*.report.html
 lighthouse-*.report.json
 AUDIT.md
+.wrangler/
