@@ -1,6 +1,19 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Emphasized privacy plain-English promise
+
+### What Changed
+- Made the final plain-English privacy promise in `/privacy` bold and accent
+  colored.
+
+### Verification
+- Confirmed the copy remains unchanged except for presentation.
+
+### Status
+- Ready to deploy via Cloudflare Pages on merge/push.
+
+---
 ## 2026-06-29 — Published 5.16.32 site surfaces
 
 ### What Changed
