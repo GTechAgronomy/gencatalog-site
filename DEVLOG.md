@@ -1,6 +1,23 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-06-29 — Fixed live Recipe Card landing route
+
+### What Changed
+- Removed the `/r /r.html 200` Cloudflare Pages rewrite because Pages already
+  canonicalizes `/r.html` to `/r`, and the rewrite caused a `/r` redirect loop.
+- Embedded the small GenCatalog header mark directly in `/r.html` so the top
+  left brand icon works in both live and local file previews.
+
+### Verification
+- Confirmed live `/r` was returning repeated `308 location: /r` responses
+  before the fix.
+- Confirmed the page still references the Recipe Card sample image.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-06-29 — Updated Recipe Card landing example
 
 ### What Changed
