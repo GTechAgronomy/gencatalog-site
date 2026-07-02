@@ -1,6 +1,24 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-02 — Made telemetry dashboard useful
+
+### What Changed
+- Expanded `/admin/telemetry` from a basic counter page into an operator view
+  with event totals, app versions, daily trend, platform/media/OS/failure
+  breakdowns, recent aggregate rows, `?days=` range controls, and
+  `?format=json` export.
+- Kept the dashboard private behind Cloudflare Access headers.
+
+### Verification
+- Local function smoke confirmed HTML and JSON responses render with fake R2
+  data and Access-shaped headers.
+- Local function smoke confirmed the route still returns `403` without Access
+  headers.
+- Live spoofed Access-header check still returned `403`.
+- Pending: deploy and live Access-protected dashboard check.
+
+---
 ## 2026-06-29 — Wired privacy-safe telemetry storage
 
 ### What Changed
