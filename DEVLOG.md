@@ -9,6 +9,8 @@
   breakdowns, recent aggregate rows, `?days=` range controls, and
   `?format=json` export.
 - Kept the dashboard private behind Cloudflare Access headers.
+- Added `scripts/telemetry-report.mjs` to generate the same kind of useful
+  dashboard from R2 locally without running a Python localhost server.
 
 ### Verification
 - Local function smoke confirmed HTML and JSON responses render with fake R2
@@ -16,6 +18,8 @@
 - Local function smoke confirmed the route still returns `403` without Access
   headers.
 - Live spoofed Access-header check still returned `403`.
+- `scripts/telemetry-report.mjs /tmp/gencatalog-telemetry-dashboard.html`
+  generated a local HTML dashboard from the R2 summaries.
 - Pending: deploy and live Access-protected dashboard check.
 
 ---
