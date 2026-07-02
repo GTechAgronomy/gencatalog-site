@@ -69,6 +69,13 @@ try {
   const byMediaType = new Map();
   const byOs = new Map();
   const byReason = new Map();
+  const appOpensByDay = new Map();
+  const byFeatureArea = new Map();
+  const byCatalogSize = new Map();
+  const byVisualCount = new Map();
+  const byMotionCount = new Map();
+  const byFavoriteCount = new Map();
+  let librarySnapshots = 0;
 
   for (const row of allRows) {
     const count = Number(row.count || 0);
@@ -81,9 +88,24 @@ try {
     add(byMediaType, row.dimensions?.mediaType, count);
     add(byOs, row.dimensions?.osFamily, count);
     add(byReason, row.dimensions?.reason, count);
+    if (row.name === 'app.opened') add(appOpensByDay, row.day, count);
+    if (row.name === 'feature.used') add(byFeatureArea, row.dimensions?.area, count);
+    if (row.name === 'library.snapshot') {
+      librarySnapshots += count;
+      add(byCatalogSize, row.dimensions?.catalogSize, count);
+      add(byVisualCount, row.dimensions?.visualCount, count);
+      add(byMotionCount, row.dimensions?.motionCount, count);
+      add(byFavoriteCount, row.dimensions?.favoriteCount, count);
+    }
   }
 
   const latest = summaries.at(-1);
+  const appOpens = byEvent.get('app.opened') || 0;
+  const featureEvents = byEvent.get('feature.used') || 0;
+  const newestVersion = Array.from(byAppVersion.keys())
+    .filter(Boolean)
+    .sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }))
+    .pop() || 'No data';
   const html = `<!doctype html>
 <html lang="en">
 <head>
@@ -119,20 +141,26 @@ try {
     <header>
       <div>
         <h1>Telemetry Report</h1>
-        <p>Aggregate event counters only. Generated from R2 daily summaries.</p>
+        <p>Aggregate, opt-in product signals only. Generated from R2 daily summaries.</p>
       </div>
       <div class="pill">${escapeHtml(new Date().toLocaleString())}</div>
     </header>
     <section class="metric">
-      <div class="card"><span>Total counted events</span><strong>${total.toLocaleString()}</strong></div>
-      <div class="card"><span>Rows</span><strong>${allRows.length.toLocaleString()}</strong></div>
-      <div class="card"><span>Latest day</span><strong>${escapeHtml(latest?.day || 'No data')}</strong></div>
-      <div class="card"><span>Storage objects</span><strong>${summaries.length.toLocaleString()}</strong></div>
+      <div class="card"><span>App opens</span><strong>${appOpens.toLocaleString()}</strong></div>
+      <div class="card"><span>Feature events</span><strong>${featureEvents.toLocaleString()}</strong></div>
+      <div class="card"><span>Library snapshots</span><strong>${librarySnapshots.toLocaleString()}</strong></div>
+      <div class="card"><span>Newest version seen</span><strong>${escapeHtml(newestVersion)}</strong></div>
     </section>
     <section class="grid">
-      <div class="card"><h2>Events</h2><table>${rowsFor(byEvent)}</table></div>
+      <div class="card"><h2>Feature Usage</h2><table>${rowsFor(byFeatureArea)}</table></div>
+      <div class="card"><h2>Library Size</h2><table>${rowsFor(byCatalogSize)}</table></div>
+      <div class="card"><h2>App Opens by Day</h2><table>${dayRowsFor(appOpensByDay)}</table></div>
       <div class="card"><h2>App Versions</h2><table>${rowsFor(byAppVersion)}</table></div>
-      <div class="card"><h2>Daily Trend</h2><table>${dayRowsFor(byDay)}</table></div>
+      <div class="card"><h2>Image Count Buckets</h2><table>${rowsFor(byVisualCount)}</table></div>
+      <div class="card"><h2>Video Count Buckets</h2><table>${rowsFor(byMotionCount)}</table></div>
+      <div class="card"><h2>Favorite Count Buckets</h2><table>${rowsFor(byFavoriteCount)}</table></div>
+      <div class="card"><h2>Events</h2><table>${rowsFor(byEvent)}</table></div>
+      <div class="card"><h2>Daily Event Trend</h2><table>${dayRowsFor(byDay)}</table></div>
       <div class="card"><h2>Platforms</h2><table>${rowsFor(byPlatform)}</table></div>
       <div class="card"><h2>Media Types</h2><table>${rowsFor(byMediaType)}</table></div>
       <div class="card"><h2>OS Family</h2><table>${rowsFor(byOs)}</table></div>

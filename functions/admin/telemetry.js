@@ -79,8 +79,15 @@ function summarize(summaries) {
   const totalsByAppVersion = new Map();
   const totalsByExtensionVersion = new Map();
   const totalsByDay = new Map();
+  const appOpensByDay = new Map();
+  const totalsByFeatureArea = new Map();
+  const totalsByCatalogSize = new Map();
+  const totalsByVisualCount = new Map();
+  const totalsByMotionCount = new Map();
+  const totalsByFavoriteCount = new Map();
   const recentRows = [];
   let total = 0;
+  let librarySnapshots = 0;
 
   for (const summary of summaries) {
     for (const row of Object.values(summary.counts || {})) {
@@ -95,6 +102,15 @@ function summarize(summaries) {
       addToMap(totalsByAppVersion, row.dimensions?.appVersion, count);
       addToMap(totalsByExtensionVersion, row.dimensions?.extensionVersion, count);
       addToMap(totalsByDay, row.day, count);
+      if (row.name === 'app.opened') addToMap(appOpensByDay, row.day, count);
+      if (row.name === 'feature.used') addToMap(totalsByFeatureArea, row.dimensions?.area, count);
+      if (row.name === 'library.snapshot') {
+        librarySnapshots += count;
+        addToMap(totalsByCatalogSize, row.dimensions?.catalogSize, count);
+        addToMap(totalsByVisualCount, row.dimensions?.visualCount, count);
+        addToMap(totalsByMotionCount, row.dimensions?.motionCount, count);
+        addToMap(totalsByFavoriteCount, row.dimensions?.favoriteCount, count);
+      }
       recentRows.push(row);
     }
   }
@@ -109,6 +125,13 @@ function summarize(summaries) {
     totalsByAppVersion,
     totalsByExtensionVersion,
     totalsByDay,
+    appOpensByDay,
+    totalsByFeatureArea,
+    totalsByCatalogSize,
+    totalsByVisualCount,
+    totalsByMotionCount,
+    totalsByFavoriteCount,
+    librarySnapshots,
     recentRows: recentRows
       .sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || '')))
       .slice(0, 30)
@@ -147,6 +170,13 @@ function mapToObject(map) {
   return Object.fromEntries(sortedEntries(map));
 }
 
+function latestVersion(map) {
+  return Array.from(map.keys())
+    .filter(Boolean)
+    .sort((a, b) => String(a).localeCompare(String(b), undefined, { numeric: true }))
+    .pop() || 'No data yet';
+}
+
 function jsonPayload({ summaries, stats, maxDays }) {
   return {
     schemaVersion: 1,
@@ -162,6 +192,12 @@ function jsonPayload({ summaries, stats, maxDays }) {
     byAppVersion: mapToObject(stats.totalsByAppVersion),
     byExtensionVersion: mapToObject(stats.totalsByExtensionVersion),
     byDay: Object.fromEntries(Array.from(stats.totalsByDay.entries()).sort((a, b) => a[0].localeCompare(b[0]))),
+    appOpensByDay: Object.fromEntries(Array.from(stats.appOpensByDay.entries()).sort((a, b) => a[0].localeCompare(b[0]))),
+    byFeatureArea: mapToObject(stats.totalsByFeatureArea),
+    byCatalogSize: mapToObject(stats.totalsByCatalogSize),
+    byVisualCount: mapToObject(stats.totalsByVisualCount),
+    byMotionCount: mapToObject(stats.totalsByMotionCount),
+    byFavoriteCount: mapToObject(stats.totalsByFavoriteCount),
     recentRows: stats.recentRows
   };
 }
@@ -170,6 +206,9 @@ function renderDashboard({ accessUser, summaries, stats, maxDays }) {
   const latestDay = summaries[0]?.day || 'No data yet';
   const earliestDay = summaries[summaries.length - 1]?.day || 'No data yet';
   const updatedAt = summaries[0]?.updatedAt || 'No data yet';
+  const appOpens = stats.totalsByEvent.get('app.opened') || 0;
+  const featureEvents = stats.totalsByEvent.get('feature.used') || 0;
+  const newestVersion = latestVersion(stats.totalsByAppVersion);
   return `<!doctype html>
 <html lang="en">
 <head>
@@ -210,7 +249,7 @@ function renderDashboard({ accessUser, summaries, stats, maxDays }) {
     <header>
       <div>
         <h1>Telemetry</h1>
-        <p>Aggregate event counters only. GenCatalog collects events, not content.</p>
+        <p>Aggregate, opt-in product signals only. GenCatalog collects events and buckets, not catalog content.</p>
       </div>
       <div class="actions">
         <div class="pill"><strong>${maxDays}</strong>&nbsp;days</div>
@@ -222,15 +261,21 @@ function renderDashboard({ accessUser, summaries, stats, maxDays }) {
       </div>
     </header>
     <section class="metric">
-      <div class="card"><span>Total counted events</span><strong>${stats.total.toLocaleString()}</strong></div>
-      <div class="card"><span>Latest day</span><strong>${escapeHtml(latestDay)}</strong></div>
-      <div class="card"><span>Earliest day shown</span><strong>${escapeHtml(earliestDay)}</strong></div>
-      <div class="card"><span>Last updated</span><strong>${escapeHtml(updatedAt)}</strong></div>
+      <div class="card"><span>App opens</span><strong>${appOpens.toLocaleString()}</strong></div>
+      <div class="card"><span>Feature events</span><strong>${featureEvents.toLocaleString()}</strong></div>
+      <div class="card"><span>Library snapshots</span><strong>${stats.librarySnapshots.toLocaleString()}</strong></div>
+      <div class="card"><span>Newest version seen</span><strong>${escapeHtml(newestVersion)}</strong></div>
     </section>
     <section class="grid">
-      <div class="card"><h2>Events</h2><table>${rowsFor(stats.totalsByEvent)}</table></div>
+      <div class="card"><h2>Feature Usage</h2><table>${rowsFor(stats.totalsByFeatureArea)}</table></div>
+      <div class="card"><h2>Library Size</h2><table>${rowsFor(stats.totalsByCatalogSize)}</table></div>
+      <div class="card"><h2>App Opens by Day</h2><table>${rowsForDays(stats.appOpensByDay)}</table></div>
       <div class="card"><h2>App Versions</h2><table>${rowsFor(stats.totalsByAppVersion)}</table></div>
-      <div class="card"><h2>Daily Trend</h2><table>${rowsForDays(stats.totalsByDay)}</table></div>
+      <div class="card"><h2>Image Count Buckets</h2><table>${rowsFor(stats.totalsByVisualCount)}</table></div>
+      <div class="card"><h2>Video Count Buckets</h2><table>${rowsFor(stats.totalsByMotionCount)}</table></div>
+      <div class="card"><h2>Favorite Count Buckets</h2><table>${rowsFor(stats.totalsByFavoriteCount)}</table></div>
+      <div class="card"><h2>Events</h2><table>${rowsFor(stats.totalsByEvent)}</table></div>
+      <div class="card"><h2>Daily Event Trend</h2><table>${rowsForDays(stats.totalsByDay)}</table></div>
       <div class="card"><h2>Platforms</h2><table>${rowsFor(stats.totalsByPlatform)}</table></div>
       <div class="card"><h2>Media Types</h2><table>${rowsFor(stats.totalsByMediaType)}</table></div>
       <div class="card"><h2>OS Family</h2><table>${rowsFor(stats.totalsByOs)}</table></div>

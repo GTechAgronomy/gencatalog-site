@@ -43,7 +43,16 @@ const ALLOWED_DIMENSIONS = new Set([
   'facetsCaptured',
   'facetRatio',
   'durationMs',
-  'selectorKey'
+  'selectorKey',
+  'area',
+  'catalogSize',
+  'visualCount',
+  'motionCount',
+  'favoriteCount',
+  'sourceCount',
+  'recent30Count',
+  'hasLabels',
+  'hasPrivateVault'
 ]);
 
 function json(body, status = 200) {

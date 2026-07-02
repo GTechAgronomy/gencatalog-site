@@ -5,18 +5,22 @@
 
 ### What Changed
 - Expanded `/admin/telemetry` from a basic counter page into an operator view
-  with event totals, app versions, daily trend, platform/media/OS/failure
-  breakdowns, recent aggregate rows, `?days=` range controls, and
-  `?format=json` export.
+  with app opens, feature usage, library-size buckets, version adoption, daily
+  app-open trend, platform/media/OS/failure breakdowns, recent aggregate rows,
+  `?days=` range controls, and `?format=json` export.
+- Updated `/api/telemetry` to accept the new allowlisted feature usage and
+  bucketed library-size dimensions while keeping blocked content-shaped keys
+  fail-closed.
 - Kept the dashboard private behind Cloudflare Access headers.
 - Added `scripts/telemetry-report.mjs` to generate the same kind of useful
   dashboard from R2 locally without running a Python localhost server.
 
 ### Verification
 - Local function smoke confirmed HTML and JSON responses render with fake R2
-  data and Access-shaped headers.
+  data and Access-shaped headers, including feature and library-size sections.
 - Local function smoke confirmed the route still returns `403` without Access
   headers.
+- `npx wrangler pages functions build .`
 - Live spoofed Access-header check still returned `403`.
 - `scripts/telemetry-report.mjs /tmp/gencatalog-telemetry-dashboard.html`
   generated a local HTML dashboard from the R2 summaries.
