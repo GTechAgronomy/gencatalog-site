@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8EV2H78B6F');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse and Search ComfyUI Workflows | GenCatalog</title>
+  <meta name="description" content="Turn ComfyUI output folders into a searchable local workflow library. Browse prompts, checkpoints, seeds, CFG, LoRAs, and generation settings in seconds.">
+  <link rel="canonical" href="https://gencatalog.app/comfyui-workflow-viewer" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#0d0f13" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gencatalog.app/comfyui-workflow-viewer" />
+  <meta property="og:title" content="Browse and Search ComfyUI Workflows" />
+  <meta property="og:description" content="Turn a folder of ComfyUI outputs into a searchable local workflow library with prompts, checkpoints, seeds, CFG, LoRAs, and generation settings." />
+  <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Browse and Search ComfyUI Workflows" />
+  <meta name="twitter:description" content="A ComfyUI workflow viewer and metadata browser for the output folder you already have." />
+  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="problem-intent.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GenCatalog","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, Windows","offers":{"@type":"Offer","price":"79.00","priceCurrency":"USD"},"url":"https://gencatalog.app"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gencatalog.app/"},{"@type":"ListItem","position":2,"name":"ComfyUI Workflow Viewer","item":"https://gencatalog.app/comfyui-workflow-viewer"}]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can GenCatalog browse ComfyUI PNG metadata?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Drag a ComfyUI output folder into GenCatalog to build a local library where embedded workflow metadata, prompts, checkpoints, seeds, CFG, sampler, scheduler, LoRAs, and generation settings are easier to search and inspect."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is GenCatalog a ComfyUI prompt manager?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GenCatalog is a local visual library for AI work. For ComfyUI users, it helps search ComfyUI prompts, view PNG metadata, browse old workflow history, and recover the settings behind saved generations."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    body{--badge-color:#30d68b;--badge-bg:rgba(48,214,139,0.12);--badge-border:rgba(48,214,139,0.30)}
+    .comfy-shell{margin:56px auto 0;max-width:1060px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);overflow:hidden;text-align:left;box-shadow:0 24px 80px rgba(0,0,0,0.22)}
+    .comfy-bar{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);padding:12px 16px;background:rgba(255,255,255,0.025)}
+    .window-dot{width:10px;height:10px;border-radius:50%;background:var(--t3);opacity:.8}.window-dot:nth-child(1){background:#e86969}.window-dot:nth-child(2){background:#d9b84f}.window-dot:nth-child(3){background:#30d68b}
+    .comfy-content{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(260px,.95fr);gap:1px;background:var(--border)}
+    .comfy-pane{background:var(--surface);padding:24px}
+    .file-tree{font-family:'Geist Mono',monospace;font-size:13px;line-height:1.8;color:var(--t2);white-space:pre-wrap}
+    .search-stack{display:grid;gap:10px}
+    .search-row{display:flex;align-items:center;gap:10px;border:1px solid var(--border);border-radius:var(--radius-sm);background:rgba(255,255,255,0.035);padding:11px 13px;font-size:14px;color:var(--t1)}
+    .search-row span{font-family:'Geist Mono',monospace;color:var(--green);font-size:12px}
+    .metadata-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:30px;max-width:880px}
+    .metadata-chip{border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);padding:10px 12px;color:var(--t2);font-size:14px}
+    .metadata-chip strong{display:block;color:var(--t1);font-size:12px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+    .quote-mark{color:var(--yellow);font-size:13px;letter-spacing:.08em;margin-bottom:16px}
+    @media(max-width:900px){.comfy-content,.metadata-grid{grid-template-columns:1fr}.comfy-shell{margin-top:40px}}
+  </style>
+  <script defer src="analytics.js"></script>
+</head>
+<body>
+<nav><div class="nav-inner"><a href="/" class="nav-logo"><img src="GenCatalogLogo-64.webp" width="28" height="28" alt="" style="border-radius:6px;display:block;">GenCatalog</a><div class="nav-links"><a href="/#features">Features</a><a href="/#how">How It Works</a><a href="/#pricing">Pricing</a><a href="/support">Support</a><a href="/faq">FAQ</a></div><div class="nav-cta"><a href="/get" class="btn btn-primary smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a></div></div></nav>
+<main>
+<div class="breadcrumb"><div class="container"><div class="breadcrumb-inner"><a href="/">Home</a><span>&gt;</span><span>ComfyUI Workflow Viewer</span></div></div></div>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge"><span class="platform-badge"><span class="platform-dot"></span>ComfyUI workflow browser</span></div>
+    <h1>Stop digging through folders full of ComfyUI PNGs.</h1>
+    <p class="hero-subhead">ComfyUI outputs can carry the story of how they were created. GenCatalog extracts your workflow, prompts, checkpoint, seed, CFG, sampler, scheduler, LoRAs, and generation settings into one searchable local library when that metadata is present.</p>
+    <div class="hero-ctas"><a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download GenCatalog</span></a><a href="/local-ai-media-import" class="btn btn-ghost btn-lg">Import existing folders</a></div>
+    <p class="hero-meta">Drag in your ComfyUI output folder &nbsp;&middot;&nbsp; Images and supported videos &nbsp;&middot;&nbsp; No database setup &nbsp;&middot;&nbsp; No workflow changes</p>
+    <div class="comfy-shell" aria-label="Before and after ComfyUI output folder comparison">
+      <div class="comfy-bar"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span></div>
+      <div class="comfy-content">
+        <div class="comfy-pane">
+          <span class="section-label">Before</span>
+          <div class="file-tree">output/
+00000001.png
+00000002.png
+00000003.png
+good/
+good2/
+final/
+portrait_final_v3.png</div>
+        </div>
+        <div class="comfy-pane">
+          <span class="section-label">After: GenCatalog</span>
+          <div class="search-stack">
+            <div class="search-row"><span>Search</span> cyberpunk portrait</div>
+            <div class="search-row"><span>Search</span> dreamshaper</div>
+            <div class="search-row"><span>Search</span> ControlNet</div>
+            <div class="search-row"><span>Search</span> LoRA: AnimeEyes</div>
+            <div class="search-row"><span>Search</span> CFG 7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="problem">
+  <div class="container">
+    <span class="section-label">The problem</span>
+    <h2>The images survived. The workflow became almost impossible to browse.</h2>
+    <p>If you have been using ComfyUI for a while, you probably already have thousands of outputs. Maybe they are organized. Maybe they are not.</p>
+    <p>Either way, finding an old workflow usually means opening PNGs one by one, inspecting embedded metadata, trying to remember which checkpoint you used, which LoRA was active, or why one generation worked while another did not.</p>
+    <p>ComfyUI stores an incredible amount of information inside PNG metadata. The problem is not preserving it. The problem is using it.</p>
+    <div class="problem-pains">
+      <div class="problem-pain"><h4>Folders remember filenames, not creative intent</h4><p>A filename rarely tells you which prompt, checkpoint, seed, CFG, sampler, scheduler, or LoRA made the image worth saving.</p></div>
+      <div class="problem-pain"><h4>PNG Info is too slow for a large library</h4><p>Opening files one at a time works for a handful of images. It breaks down when you need a real ComfyUI metadata viewer for years of output.</p></div>
+      <div class="problem-pain"><h4>Good generations become hard to repeat</h4><p>Weeks later, the final image is still there, but the recipe behind it is buried inside a folder you do not want to manually inspect again.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <span class="section-label">GenCatalog solution</span>
+    <h2>Your ComfyUI output folder becomes a visual workflow library.</h2>
+    <div class="features-grid">
+      <div class="feature-card"><h3>Browse ComfyUI workflows visually</h3><p>Drag an existing folder of ComfyUI outputs into GenCatalog. Browse by image or video first, then inspect the workflow and generation details behind it.</p></div>
+      <div class="feature-card"><h3>Search ComfyUI prompts and settings</h3><p>Use GenCatalog as a ComfyUI prompt manager for the library you already made. Search prompt text, checkpoint names, seeds, CFG values, LoRAs, and other saved context.</p></div>
+      <div class="feature-card"><h3>View ComfyUI metadata without the PNG Info grind</h3><p>Stop opening PNGs one at a time. GenCatalog turns hidden ComfyUI PNG metadata into a local image library you can scan, search, and return to.</p></div>
+      <div class="feature-card"><h3>Recover generation history</h3><p>Use your ComfyUI seed history, checkpoint history, LoRA choices, dimensions, and workflow graph to understand why one generation worked and another did not.</p></div>
+    </div>
+    <div class="metadata-grid" aria-label="ComfyUI metadata fields">
+      <div class="metadata-chip"><strong>Prompts</strong>Positive and negative</div>
+      <div class="metadata-chip"><strong>Models</strong>Checkpoint browser</div>
+      <div class="metadata-chip"><strong>Seeds</strong>Generation history</div>
+      <div class="metadata-chip"><strong>Guidance</strong>CFG, sampler, scheduler</div>
+      <div class="metadata-chip"><strong>LoRAs</strong>Names and weights</div>
+      <div class="metadata-chip"><strong>Workflow</strong>Embedded graph and settings</div>
+    </div>
+  </div>
+</section>
+
+<section class="workflow">
+  <div class="container">
+    <span class="section-label">How it works</span>
+    <h2>Organize ComfyUI outputs without changing how you create.</h2>
+    <div class="workflow-grid">
+      <div class="workflow-step"><div class="step-num">01</div><h3>Keep generating in ComfyUI</h3><p>GenCatalog does not ask you to rename files, change nodes, rewrite prompts, or set up a separate database.</p></div>
+      <div class="workflow-step"><div class="step-num">02</div><h3>Drag in your output folder</h3><p>Use the folder you already have. GenCatalog imports the images into your local desktop catalog.</p></div>
+      <div class="workflow-step"><div class="step-num">03</div><h3>Extract the recipe</h3><p>Embedded workflow metadata becomes searchable context when present: prompts, checkpoint, seed, CFG, sampler, scheduler, LoRAs, dimensions, and settings.</p></div>
+      <div class="workflow-step"><div class="step-num">04</div><h3>Browse and search later</h3><p>Find the image first. Then inspect the workflow. Not the other way around.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <span class="section-label">Creative recovery</span>
+    <h2>Recover the recipes behind your best ComfyUI work.</h2>
+    <div class="features-grid">
+      <div class="feature-card"><h3>ComfyUI checkpoint browser</h3><p>Find old images by the checkpoint that produced them, then compare what changed across prompts, seeds, and settings.</p></div>
+      <div class="feature-card"><h3>ComfyUI LoRA browser</h3><p>Search for LoRA names and weights when you need to understand which combinations shaped a generation.</p></div>
+      <div class="feature-card"><h3>ComfyUI output organizer</h3><p>Turn a messy output folder into a searchable visual archive without losing the embedded metadata that made the generation reproducible.</p></div>
+      <div class="feature-card"><h3>ComfyUI image library</h3><p>Keep your visual history and workflow history together in one local desktop library built for rediscovery.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="container">
+    <span class="section-label">Customer proof</span>
+    <h2>Organized my entire collection with ease.</h2>
+    <p><span class="quote-mark">5 out of 5</span><br>"Even helped me find old gens that I didn't remember making." That is the point of a ComfyUI workflow viewer: not just saving files, but getting back to the creative recipe when you need it.</p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <h2>Recover years of ComfyUI work in minutes.</h2>
+    <p>Stop opening files one by one. Turn your existing ComfyUI output folder into a searchable local workflow library.</p>
+    <div class="cta-buttons"><a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download GenCatalog</span></a><a href="/support#local-import" class="btn btn-ghost btn-lg">Read import setup</a></div>
+    <p class="meta">$79 one-time purchase &nbsp;&middot;&nbsp; Includes all 5.x updates &nbsp;&middot;&nbsp; 7-day free trial</p>
+  </div>
+</section>
+
+<section class="cross-links">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:20px;"><span class="section-label">Related pages</span></div>
+    <div class="cross-links-inner">
+      <a href="/local-ai-media-import" class="cross-link"><span class="cross-dot" style="background:var(--green)"></span>Import Existing AI Images and Videos</a>
+      <a href="/rescue-your-ai-library" class="cross-link">Rescue Your AI Library</a>
+      <a href="/ai-generation-backup" class="cross-link">AI Generation Backup</a>
+      <a href="/save-ai-prompts-locally" class="cross-link">Save AI Prompts Locally</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container"><div class="footer-inner"><span class="footer-copy">GenCatalog &copy; 2026 &nbsp;&middot;&nbsp; Second Act Labs</span><div class="footer-links"><a href="/grok">Grok</a><a href="/higgsfield">Higgsfield</a><a href="/midjourney">Midjourney</a><a href="/digen">Digen</a><a href="/support">Support</a><a href="/faq">FAQ</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/release-notes">Release Notes</a><a href="mailto:support@gencatalog.app">support@gencatalog.app</a></div></div></div></footer>
+<script>(function(){var ua=navigator.userAgent;var isMobile=/iPhone|iPad|iPod|Android/i.test(ua);var isWin=!isMobile&&(/Win/i.test(navigator.platform)||/Windows/i.test(ua));if(isMobile){document.querySelectorAll('.smart-dl-btn').forEach(function(btn){var msg=document.createElement('p');msg.style.cssText='font-size:13px;color:var(--t3);margin:0;';msg.innerHTML='Desktop app - open this page on your Mac or Windows PC to download.';btn.parentNode.replaceChild(msg,btn);});}else{document.querySelectorAll('.smart-dl-btn').forEach(function(btn){var label=btn.querySelector('.dl-label');if(isWin){btn.href='/get';if(label)label.textContent=label.textContent.replace('Mac','Windows');}});}})();</script>
+</body>
+</html>

@@ -1,6 +1,32 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Published 5.16.39 ComfyUI release and SEO page
+
+### What Changed
+- Bumped public desktop download/version surfaces from 5.16.38 to 5.16.39 after
+  the Mac and Windows artifacts were live.
+- Added the 5.16.39 release note for ComfyUI folder imports, searchable ComfyUI
+  settings and LoRAs, and clearer ComfyUI/Rogue Studio labels.
+- Added `/comfyui-workflow-viewer` as a search-intent page for creators who
+  need to browse and search ComfyUI output folders, embedded workflow metadata,
+  prompts, checkpoints, seeds, CFG, sampler/scheduler settings, and LoRAs.
+- Linked the new page from Guides, local import, AI backup, prompt recovery,
+  rescue, `llms.txt`, and `sitemap.xml`.
+
+### What I Learned
+- The strongest public framing is "ComfyUI output folder to searchable local
+  workflow library." ComfyUI should be described as a creation tool/source, with
+  checkpoints and LoRAs presented as searchable generation ingredients.
+
+### Verification
+- `scripts/update-version.sh 5.16.39`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Strengthened local AI media import narrative
 
 ### What Changed
