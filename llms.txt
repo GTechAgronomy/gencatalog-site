@@ -4,10 +4,11 @@
 
 ## What it does
 
-GenCatalog saves AI-generated images and videos together with their full prompts, model settings, and metadata. One click from the Chrome extension captures everything.
+GenCatalog helps creators recover, remember, and rediscover AI-generated images and videos by keeping files, prompts, source context, notes, and generation details together in a local library.
 
 - Browse, search, and filter your entire AI media library
-- Full prompt and metadata preserved with every generation
+- Recover old AI work from folders, favorites, downloads, and platform histories
+- Full prompt and creative recipe preserved with every generation when available
 - Supports Grok Imagine, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai
 - Color-coded source badges, star ratings, tags, notes, saved searches
 - Sub-second grid load times, tested with catalogs of 30,000+ items
@@ -32,6 +33,11 @@ Everything is stored locally on your machine. The GenCatalog app never uploads a
 - [Website](https://gencatalog.app)
 - [Download Free Trial](https://gencatalog.app/get)
 - [Buy — $79](https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1)
+- [Search Grok Favorites](https://gencatalog.app/search-grok-favorites)
+- [Rescue Your AI Library](https://gencatalog.app/rescue-your-ai-library)
+- [Import Local AI Media](https://gencatalog.app/local-ai-media-import)
+- [Save AI Prompts Locally](https://gencatalog.app/save-ai-prompts-locally)
+- [AI Generation Backup](https://gencatalog.app/ai-generation-backup)
 - [FAQ](https://gencatalog.app/faq)
 - [Support](https://gencatalog.app/support)
 - [Privacy Policy](https://gencatalog.app/privacy)
