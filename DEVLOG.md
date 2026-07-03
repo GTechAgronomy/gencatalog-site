@@ -1,6 +1,26 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Added prompt recovery intent pages
+
+### What Changed
+- Added `/save-grok-prompts` for Grok creators who need to preserve prompts, source context, and saved outputs together.
+- Added `/save-ai-prompts-locally` for the broader local AI prompt archive workflow.
+- Linked both pages from `/guides` and added them to `sitemap.xml`.
+
+### What I Learned
+- The site does not have a separate generator for the problem-intent pages; the existing static guide/article pages provide the reusable problem, workflow, related-links, and CTA structure.
+- The prompt-preservation copy should stay focused on creator recovery: find the file, recover the prompt, understand the context, and make the next GenCatalog action explicit.
+
+### Verification
+- `git diff --check`
+- `xmllint --noout sitemap.xml`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Added local AI media import SEO page
 
 ### What Changed
