@@ -1,6 +1,19 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Shortened Grok large-library release copy
+
+### What Changed
+- Rewrote the Grok large-library release note to focus on the user-visible reliability improvement instead of connection-recovery details.
+
+### Verification
+- Confirmed the release-note paragraph no longer mentions extension connection or tab reconnection details.
+- `git diff --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Simplified Higgsfield release-note copy
 
 ### What Changed
