@@ -1,6 +1,26 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Added local AI media import SEO page
+
+### What Changed
+- Added `/local-ai-media-import` as a problem-intent SEO page for AI creators with existing folders of downloaded generations.
+- Focused the page on the concrete GenCatalog local import workflow: Import button, drag-and-drop, Settings import, duplicate hash checks, batch review, tags, prompts, notes, and search.
+- Added the page to the Guides index and sitemap so it is internally linked and discoverable.
+
+### What I Learned
+- Local import is already described in support/FAQ as a customer-facing workflow, so the new page mirrors those exact entry points and file-type claims instead of inventing broader import promises.
+- The strongest intent is not generic "AI organizer"; it is the folder-to-library transition for people whose media is saved but not retrievable.
+
+### Verification
+- `git diff --check`
+- `xmllint --noout sitemap.xml`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Added Chrome extension 5.64 availability note
 
 ### What Changed
