@@ -1,6 +1,26 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Strengthened local AI media import narrative
+
+### What Changed
+- Reworked `/local-ai-media-import` from a feature-first explanation into a recovery-focused page for creators with existing AI download folders, exported ZIPs, external drives, local tool outputs, and old projects.
+- Moved the core insight higher: the files may be saved, but the archive is not usable when creative context is gone.
+- Added a Before/After comparison, a Local Import differentiator section for yesterday's work, an anonymous Chrome Web Store proof quote, and an outcome-led CTA.
+- Updated meta and structured-data language to include natural search phrases around downloaded AI images, downloaded AI videos, existing AI generations, AI prompt archive, and AI media library.
+
+### What I Learned
+- The stronger conversion story is emotional recovery first, file import second: GenCatalog helps users rediscover and reconnect with a library they already spent time building.
+
+### Verification
+- `git diff --check`
+- `scripts/update-version.sh --check`
+- Local `curl` smoke confirmed `/local-ai-media-import.html` and `uploads_v2/LocalImportReview.png` return `200`, and the served page includes the new hero, Before/After section, proof quote, and CTA.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Added prompt recovery intent pages
 
 ### What Changed

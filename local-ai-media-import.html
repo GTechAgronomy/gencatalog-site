@@ -5,8 +5,8 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8EV2H78B6F');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Import Local AI Media Folders into a Searchable Library | GenCatalog</title>
-  <meta name="description" content="Already have folders of downloaded AI images and videos? Import local generations into GenCatalog, review metadata, skip duplicates, and make old work searchable.">
+  <title>Recover Your Existing AI Media Library | GenCatalog</title>
+  <meta name="description" content="Organize downloaded AI images, downloaded AI videos, exported ZIPs, and old AI projects into a searchable local GenCatalog library.">
   <link rel="canonical" href="https://gencatalog.app/local-ai-media-import" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -15,12 +15,12 @@
   <meta name="theme-color" content="#0d0f13" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gencatalog.app/local-ai-media-import" />
-  <meta property="og:title" content="Import Local AI Media Folders into GenCatalog" />
-  <meta property="og:description" content="Turn folders of downloaded AI generations into a local searchable library with duplicate checks, review, tags, prompts, and notes." />
+  <meta property="og:title" content="Recover Your Existing AI Media Library" />
+  <meta property="og:description" content="Turn AI download folders, exported ZIPs, and old AI projects into a searchable local library with prompts, tags, notes, and context." />
   <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Import Local AI Media Folders into GenCatalog" />
-  <meta name="twitter:description" content="A concrete local-import workflow for AI creators with existing folders of downloaded generations." />
+  <meta name="twitter:title" content="Recover Your Existing AI Media Library" />
+  <meta name="twitter:description" content="A concrete recovery workflow for AI creators with existing folders of downloaded generations." />
   <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
         "name": "Can I import AI images and videos I already downloaded?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Open the GenCatalog desktop app, click Import, drag supported files into the app, or use Settings > Capture & Import > Local media files. GenCatalog copies supported media into your local catalog, checks exact duplicate file hashes, and opens a review drawer for source, model, tags, prompts, and notes."
+          "text": "Yes. Open the GenCatalog desktop app, click Import, drag supported files into the app, or use Settings > Capture & Import > Local media files. GenCatalog copies supported media into your local catalog, checks exact duplicate file hashes, and opens a review drawer for source, model, tags, prompts, and notes, so existing AI generations can become searchable again."
         }
       },
       {
@@ -45,7 +45,7 @@
         "name": "Why not just keep downloaded AI generations in folders?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Folders store the files, but they do not make old generations easy to search, compare, tag, or reconnect with source, prompt, model, project notes, and duplicate status. GenCatalog turns those folders into a searchable local library."
+          "text": "Folders store the files, but they do not make old generations easy to search, compare, tag, remember, or reconnect with source, prompt, model, project notes, and duplicate status. GenCatalog turns AI download folders into a searchable local media library."
         }
       }
     ]
@@ -113,6 +113,22 @@
     .step-num{font-family:'Geist Mono',monospace;font-size:12px;color:var(--local);margin-bottom:14px}
     .workflow-step h3{font-size:15px;font-weight:600;color:var(--t1);margin-bottom:8px}
     .workflow-step p{font-size:14px;color:var(--t2);line-height:1.6}
+    .comparison{padding:80px 0;border-top:1px solid var(--border)}
+    .comparison h2{font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--t1);margin:12px 0 8px;letter-spacing:-0.01em}
+    .comparison p{font-size:16px;color:var(--t2);line-height:1.7;max-width:680px;margin-bottom:0}
+    .comparison-grid{display:grid;grid-template-columns:1fr auto 1fr;align-items:stretch;gap:16px;margin-top:40px}
+    .compare-panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:28px}
+    .compare-panel h3{font-size:16px;font-weight:600;color:var(--t1);margin-bottom:16px}
+    .compare-panel ul{list-style:none;display:grid;gap:10px}
+    .compare-panel li{font-size:14px;color:var(--t2);padding:9px 12px;background:rgba(255,255,255,0.035);border:1px solid var(--border);border-radius:var(--radius-sm)}
+    .compare-panel.after li{border-color:rgba(48,214,139,0.22)}
+    .compare-arrow{display:flex;align-items:center;justify-content:center;color:var(--local);font-family:'Geist Mono',monospace;font-size:20px;padding:0 8px}
+    .proof{padding:72px 0;border-top:1px solid var(--border)}
+    .proof h2{font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--t1);margin:12px 0 20px;letter-spacing:-0.01em}
+    .proof-card{max-width:760px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:28px}
+    .proof-rating{color:var(--yellow);font-size:13px;letter-spacing:0.08em;margin-bottom:16px}
+    .proof-quote{color:var(--t1);font-size:17px;line-height:1.65;margin-bottom:18px}
+    .proof-source{color:var(--t3);font-size:13px;font-style:normal}
     .recipe{padding:72px 0;border-top:1px solid var(--border);text-align:center}
     .recipe h2{font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--t1);margin:12px 0 14px;letter-spacing:-0.01em}
     .recipe p{font-size:16px;color:var(--t2);max-width:640px;margin:0 auto 32px;line-height:1.7}
@@ -138,7 +154,7 @@
     .footer-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
     .footer-links a{font-size:13px;color:var(--t3);transition:color var(--transition)}.footer-links a:hover{color:var(--t2)}
     @media(max-width:1100px){.workflow-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:900px){.features-grid,.workflow-grid{grid-template-columns:1fr}.nav-links{display:none}.container,.nav-inner{padding-left:24px;padding-right:24px}.hero{padding-top:64px}}
+    @media(max-width:900px){.features-grid,.workflow-grid,.comparison-grid{grid-template-columns:1fr}.compare-arrow{padding:4px 0}.nav-links{display:none}.container,.nav-inner{padding-left:24px;padding-right:24px}.hero{padding-top:64px}}
     :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
   </style>
   <script defer src="/analytics.js"></script>
@@ -184,13 +200,13 @@
         Local AI media
       </span>
     </div>
-    <h1>Turn folders of downloaded AI generations into a searchable library.</h1>
-    <p class="hero-subhead">If your AI images and videos already live in Downloads, exports, project folders, or external drives, GenCatalog gives you a concrete import workflow: copy them into a local catalog, review the batch, skip duplicates, and add the context folders cannot hold.</p>
+    <h1>Recover the AI library you already built.</h1>
+    <p class="hero-subhead">You may already have thousands of AI images and downloaded AI videos sitting in Downloads, exported ZIPs, external drives, client folders, API output folders, local tools, and old projects. The files are technically saved, but the archive is not usable. You do not have to start over.</p>
     <div class="hero-ctas">
       <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a>
       <a href="/support#local-import" class="btn btn-ghost btn-lg">View import steps</a>
     </div>
-    <p class="hero-meta">macOS and Windows &nbsp;&middot;&nbsp; Local desktop library &nbsp;&middot;&nbsp; Works with existing downloaded files</p>
+    <p class="hero-meta">macOS and Windows &nbsp;&middot;&nbsp; Local desktop library &nbsp;&middot;&nbsp; Built for existing AI generations</p>
     <div class="hero-screenshot">
       <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel showing source, model, tags, prompt, notes, and imported status." width="996" height="858" loading="eager" fetchpriority="high" decoding="async">
     </div>
@@ -200,21 +216,86 @@
 <section class="problem">
   <div class="container">
     <span class="section-label">The Problem</span>
-    <h2>AI creators already have the files. The hard part is finding the right one later.</h2>
-    <p>Downloaded generations tend to scatter across platform export folders, browser downloads, client folders, API output directories, and external drives. The files are technically saved, but the archive is not usable.</p>
-    <p>GenCatalog turns those folders into a working local library, so older AI media can sit next to everything you capture going forward.</p>
+    <h2>The files survived. The creative context did not.</h2>
+    <p>Months or years of AI work can end up as loose files: downloaded AI images in one folder, downloaded AI videos in another, final client selects somewhere else, and old AI projects you only half remember.</p>
+    <p>That is the painful part of an AI media library. The result is still on disk, but the prompt, project, source, model, notes, and reason you kept it are no longer attached.</p>
+    <p>GenCatalog helps you recover that library by turning scattered AI download folders into one searchable local archive.</p>
     <div class="problem-pains">
       <div class="problem-pain">
-        <h4>Filenames do not describe the creative decision</h4>
-        <p>Random download names rarely tell you the prompt, source, model, project, client, or version that made the result matter.</p>
+        <h4>Filenames do not remember what you were making</h4>
+        <p>Random download names rarely tell you the prompt, source, model, project, client, or decision that made the result worth saving.</p>
       </div>
       <div class="problem-pain">
-        <h4>Duplicates multiply across folders</h4>
-        <p>The same image or video can exist in Downloads, a client folder, and an export folder. GenCatalog checks exact file hashes during import and skips duplicates by default.</p>
+        <h4>Duplicate folders hide the real archive</h4>
+        <p>The same image or video can exist in Downloads, Downloads 2, a client folder, and an external drive. GenCatalog checks exact file hashes and skips duplicates by default.</p>
       </div>
       <div class="problem-pain">
-        <h4>Old work gets separated from new captures</h4>
-        <p>A platform save button is useful for future generations. Local import closes the gap for everything you already downloaded before you started using GenCatalog.</p>
+        <h4>Old work gets stranded outside your current workflow</h4>
+        <p>A platform save button helps with what you create tomorrow. Local Import closes the gap for everything you already made yesterday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="comparison">
+  <div class="container">
+    <span class="section-label">Before and after</span>
+    <h2>From scattered folders to one AI media library.</h2>
+    <p>The goal is not just to import files. It is to reconnect imported AI images and videos with the context that makes them findable, usable, and worth keeping.</p>
+    <div class="comparison-grid">
+      <div class="compare-panel">
+        <h3>Before</h3>
+        <ul>
+          <li>Downloads</li>
+          <li>Downloads 2</li>
+          <li>AI Exports</li>
+          <li>Client Final</li>
+          <li>Desktop</li>
+          <li>External Drive</li>
+          <li>Archive</li>
+        </ul>
+      </div>
+      <div class="compare-arrow" aria-hidden="true">-&gt;</div>
+      <div class="compare-panel after">
+        <h3>After: GenCatalog</h3>
+        <ul>
+          <li>Search</li>
+          <li>Prompt archive</li>
+          <li>Tags</li>
+          <li>Collections</li>
+          <li>Ratings</li>
+          <li>Notes</li>
+          <li>Everything together</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <span class="section-label">Local Import</span>
+    <h2>Not just for the work you create tomorrow.</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h5l2 2h11v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/><path d="M12 13v4M10 15h4"/></svg>
+        <h3>Recover yesterday's generations</h3>
+        <p>Local Import is for existing AI generations: the folders, exports, and old project media you already created before GenCatalog was part of the workflow.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/><path d="M18 14l3 3-3 3"/></svg>
+        <h3>Bring local tools and platform exports together</h3>
+        <p>Use it for AI download folders, API output folders, exported ZIPs you unpacked, and media from local tools or unsupported generators.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+        <h3>Rebuild the missing memory</h3>
+        <p>While the batch is fresh, add source, model, prompt notes, tags, and project context. GenCatalog becomes your AI prompt archive, not just another folder.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <h3>Rediscover old AI projects</h3>
+        <p>Once older media is imported, you can search across old and new work instead of remembering which drive, export folder, or project name held the file.</p>
       </div>
     </div>
   </div>
@@ -222,28 +303,28 @@
 
 <section class="workflow">
   <div class="container">
-    <span class="section-label">Concrete Workflow</span>
-    <h2>Import, review, clean up, then search.</h2>
+    <span class="section-label">Recovery workflow</span>
+    <h2>Choose a folder. Recover the context. Search again.</h2>
     <div class="workflow-grid">
       <div class="workflow-step">
         <div class="step-num">01</div>
-        <h3>Choose your existing files</h3>
+        <h3>Start with one real AI download folder</h3>
         <p>Click Import in the toolbar, drag supported files into GenCatalog, or use Settings &gt; Capture &amp; Import &gt; Local media files.</p>
       </div>
       <div class="workflow-step">
         <div class="step-num">02</div>
-        <h3>Let GenCatalog copy and check them</h3>
-        <p>Supported images and videos are copied into your local catalog. Exact duplicate hashes are detected so the same file does not keep coming back as new.</p>
+        <h3>Let GenCatalog bring them together</h3>
+        <p>Supported images and videos are copied into your local catalog. Exact duplicate hashes keep the same file from coming back as new.</p>
       </div>
       <div class="workflow-step">
         <div class="step-num">03</div>
-        <h3>Review the imported batch</h3>
-        <p>Use the review drawer to clean up source, model, tags, prompts, and notes while the batch is still fresh.</p>
+        <h3>Restore what the folder forgot</h3>
+        <p>Use the review drawer to add source, model, tags, prompts, and notes while you still recognize the batch.</p>
       </div>
       <div class="workflow-step">
         <div class="step-num">04</div>
-        <h3>Search it with the rest of your library</h3>
-        <p>Your older local generations become part of the same library as new Grok, Higgsfield, Midjourney, Digen, Rogue Studio, and browser captures.</p>
+        <h3>Rediscover it later</h3>
+        <p>Your older local generations become searchable alongside new Grok, Higgsfield, Midjourney, Digen, Rogue Studio, and browser captures.</p>
       </div>
     </div>
   </div>
@@ -252,17 +333,17 @@
 <section class="features">
   <div class="container">
     <span class="section-label">Why it matters</span>
-    <h2>A folder stores media. A catalog preserves working context.</h2>
+    <h2>Organize downloaded AI images by what they mean, not where they landed.</h2>
     <div class="features-grid">
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h5M8 16h8"/></svg>
-        <h3>Prompt and note recovery</h3>
+        <h3>Recover the prompt trail</h3>
         <p>When you still know what a file belongs to, add prompts, notes, tags, and source labels during review. That context is what makes older generations useful months later.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
-        <h3>Duplicate-aware migration</h3>
-        <p>Importing a messy folder should not create a mess inside the catalog. Exact hash checks keep already-imported files from being added again unless you choose Import anyway.</p>
+        <h3>Rescue the library without multiplying clutter</h3>
+        <p>Recovering a messy folder should not create a new mess inside the catalog. Exact hash checks keep already-imported files from being added again unless you choose Import anyway.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -271,7 +352,7 @@
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v13h12V7M9 7V4h6v3"/></svg>
-        <h3>Safer cleanup after import</h3>
+        <h3>Safer cleanup after recovery</h3>
         <p>After important downloaded files are inside your catalog, you can make clearer decisions about what belongs in Downloads, project folders, external drives, or your normal backup.</p>
       </div>
     </div>
@@ -280,7 +361,7 @@
 
 <section class="recipe">
   <div class="container">
-    <span class="section-label">What you can import</span>
+    <span class="section-label">What you can recover</span>
     <h2>Bring in the AI media you already have.</h2>
     <p>GenCatalog is built for local images and videos from supported platforms, API experiments, exported batches, and unsupported generators where a browser capture is not available yet.</p>
     <div class="recipe-items">
@@ -293,20 +374,32 @@
   </div>
 </section>
 
+<section class="proof">
+  <div class="container">
+    <span class="section-label">Customer proof</span>
+    <h2>Old generations become findable again.</h2>
+    <figure class="proof-card">
+      <div class="proof-rating" aria-label="5 out of 5 stars">★★★★★</div>
+      <blockquote class="proof-quote">"Organized my entire collection with ease. Even helped me find old gens that I didn't remember making."</blockquote>
+      <figcaption><cite class="proof-source">Verified Chrome Web Store review</cite></figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="trust">
   <div class="container">
     <span class="section-label">GenCatalog-specific next step</span>
-    <h2>Start with the folders that are already bothering you.</h2>
-    <p>Open GenCatalog, import one real folder of downloaded generations, review the batch, and search for a file you used to find by memory. That is the point: old AI media becomes part of a library you can actually use.</p>
+    <h2>Start with the folder that already bothers you.</h2>
+    <p>Open GenCatalog, recover one real folder of downloaded generations, review the batch, and search for a file you used to find by memory. That is the point: old AI media becomes part of a library you can actually use.</p>
   </div>
 </section>
 
 <section class="cta-section">
   <div class="container">
-    <h2>Import your existing AI media into GenCatalog.</h2>
-    <p>Download GenCatalog, choose a folder of downloaded generations, and turn it into a searchable local catalog.</p>
+    <h2>Start rescuing your AI library.</h2>
+    <p>Choose a folder of existing AI generations and turn it into a searchable local catalog.</p>
     <div class="cta-buttons">
-      <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a>
+      <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Recover your library</span></a>
       <a href="/support#local-import" class="btn btn-ghost btn-lg">Read local import setup</a>
     </div>
     <p class="meta">$79 one-time purchase &nbsp;&middot;&nbsp; Includes all 5.x updates &nbsp;&middot;&nbsp; 7-day free trial</p>
