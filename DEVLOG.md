@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-02 — Removed Higgsfield helper support section
+
+### What Changed
+- Removed the support sidebar link and support-page instructions for the old Higgsfield helper script.
+- Updated the Higgsfield bulk-save copy to describe the built-in Sync New flow that can open queued detail pages automatically for prompts and metadata.
+
+### Verification
+- Confirmed `support.html` no longer references `higgsfield-helper`, `Hit the Griddy`, `hit-the-griddy`, console steps, or `stopSync`.
+- Confirmed the Higgsfield sidebar link list and bulk-save section render coherently in the edited HTML.
+- `git diff --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-02 — Made telemetry dashboard useful
 
 ### What Changed
