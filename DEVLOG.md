@@ -1,6 +1,19 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Simplified Higgsfield release-note copy
+
+### What Changed
+- Rewrote the Higgsfield bulk-sync release note to describe the customer outcome instead of background-worker implementation details.
+
+### Verification
+- Confirmed the release-note paragraph no longer mentions background-worker or service-worker implementation details.
+- `git diff --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-02 — Removed Higgsfield helper support section
 
 ### What Changed
