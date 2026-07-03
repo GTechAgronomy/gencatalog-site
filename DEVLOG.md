@@ -1,6 +1,37 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Updated ComfyUI import website copy
+
+### What Changed
+- Updated the homepage metadata, platform strip, source-filter copy, and Local
+  Import feature section to describe ComfyUI output imports and embedded
+  workflow metadata.
+- Expanded FAQ metadata, structured FAQ data, visible platform guidance, and
+  local import answers with ComfyUI prompts, checkpoints, settings, and LoRAs.
+- Added support-page ComfyUI import guidance under Local Media Import, including
+  LoRA strength/model/clip values and the source-versus-checkpoint distinction.
+- Reworked the local AI media import SEO page around ComfyUI output folders
+  while keeping ordinary downloaded media and API outputs covered.
+
+### What I Learned
+- The clearest public framing is that ComfyUI is a creation tool/import source,
+  while the checkpoint remains the searchable model. The copy should emphasize
+  automatic metadata recovery when embedded data exists, then manual review for
+  ordinary local files.
+
+### Verification
+- `node` JSON-LD parse check for `index.html`, `faq.html`, `support.html`, and
+  `local-ai-media-import.html`
+- `git diff --check`
+- `xmllint --noout sitemap.xml`
+- `scripts/update-version.sh --check`
+- Pending: live production polling after push.
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Published 5.16.40 ComfyUI LoRA hotfix
 
 ### What Changed

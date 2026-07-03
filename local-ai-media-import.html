@@ -5,8 +5,8 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8EV2H78B6F');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Import Existing AI Images and Videos | GenCatalog</title>
-  <meta name="description" content="Import downloaded AI images, videos, exported folders, and old AI projects into a searchable local GenCatalog library.">
+  <title>Import ComfyUI Outputs and Existing AI Media | GenCatalog</title>
+  <meta name="description" content="Import ComfyUI output folders, downloaded AI images, videos, exported folders, and old AI projects into a searchable local GenCatalog library with prompts, settings, and LoRAs when available.">
   <link rel="canonical" href="https://gencatalog.app/local-ai-media-import" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -15,12 +15,12 @@
   <meta name="theme-color" content="#0d0f13" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gencatalog.app/local-ai-media-import" />
-  <meta property="og:title" content="Import Existing AI Images and Videos" />
-  <meta property="og:description" content="Turn AI download folders, exported ZIPs, and old AI projects into a searchable local library with prompts, tags, notes, and context." />
+  <meta property="og:title" content="Import ComfyUI Outputs and Existing AI Media" />
+  <meta property="og:description" content="Turn ComfyUI output folders, AI download folders, exported ZIPs, and old AI projects into a searchable local library with prompts, settings, LoRAs, tags, notes, and context." />
   <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Import Existing AI Images and Videos" />
-  <meta name="twitter:description" content="A concrete recovery workflow for AI creators with existing folders of downloaded generations." />
+  <meta name="twitter:title" content="Import ComfyUI Outputs and Existing AI Media" />
+  <meta name="twitter:description" content="A concrete recovery workflow for AI creators with ComfyUI outputs and existing folders of downloaded generations." />
   <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,15 @@
         "name": "Can I import AI images and videos I already downloaded?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Open the GenCatalog desktop app, click Import, drag supported files into the app, or use Settings > Capture & Import > Local media files. GenCatalog copies supported media into your local catalog, checks exact duplicate file hashes, and opens a review drawer for source, model, tags, prompts, and notes, so existing AI generations can become searchable again."
+          "text": "Yes. Open the GenCatalog desktop app, click Import, drag supported files into the app, or use Settings > Capture & Import > Local media files. GenCatalog copies supported media into your local catalog, checks exact duplicate file hashes, and opens a review drawer for source, model, tags, prompts, and notes. When ComfyUI prompt or workflow metadata is embedded, GenCatalog can also read prompts, checkpoints, seeds, steps, CFG, sampler, scheduler, denoise, dimensions, and LoRA details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can GenCatalog import ComfyUI output folders?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Drag ComfyUI output files or folders into GenCatalog. Files with embedded ComfyUI metadata are labeled as ComfyUI and can show the prompt, workflow, checkpoint, seed, steps, CFG, sampler, scheduler, denoise, dimensions, and LoRA names and weights. Files without embedded metadata still import as normal local media."
         }
       },
       {
@@ -197,16 +205,16 @@
     <div class="hero-badge">
       <span class="platform-badge">
         <span class="platform-dot"></span>
-        Local AI media
+        ComfyUI + local AI media
       </span>
     </div>
-    <h1>Recover the AI library you already built</h1>
-    <p class="hero-subhead">You already have the work. It is sitting in Downloads, Downloads 2, AI Exports, client folders, external drives, local tools, and old projects. The files survived. The creative context did not. You do not have to start over.</p>
+    <h1>Import ComfyUI outputs and the AI library you already built</h1>
+    <p class="hero-subhead">You already have the work. It is sitting in ComfyUI output folders, Downloads, AI Exports, client folders, external drives, local tools, and old projects. GenCatalog turns those files into a searchable local library, preserving embedded prompts, workflow settings, and LoRAs when the metadata is present.</p>
     <div class="hero-ctas">
       <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a>
       <a href="/support#local-import" class="btn btn-ghost btn-lg">View import steps</a>
     </div>
-    <p class="hero-meta">macOS and Windows &nbsp;&middot;&nbsp; Local desktop library &nbsp;&middot;&nbsp; Built for existing AI generations</p>
+    <p class="hero-meta">macOS and Windows &nbsp;&middot;&nbsp; Local desktop library &nbsp;&middot;&nbsp; Built for ComfyUI outputs and existing AI generations</p>
     <div class="hero-screenshot">
       <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel showing source, model, tags, prompt, notes, and imported status." width="996" height="858" loading="eager" fetchpriority="high" decoding="async">
     </div>
@@ -217,13 +225,13 @@
   <div class="container">
     <span class="section-label">The Problem</span>
     <h2>The files survived. The creative context did not.</h2>
-    <p>Months or years of AI work can end up as loose files: downloaded AI images in one folder, downloaded AI videos in another, final client selects somewhere else, and old AI projects you only half remember.</p>
-    <p>That is the painful part of an AI media library. The result is still on disk, but the prompt, project, source, model, notes, and reason you kept it are no longer attached.</p>
-    <p>You probably already own the work. You just do not own an organized library. GenCatalog helps you recover that library by turning scattered AI download folders into one searchable local archive.</p>
+    <p>Months or years of AI work can end up as loose files: ComfyUI output PNGs in one folder, downloaded AI videos in another, final client selects somewhere else, and old AI projects you only half remember.</p>
+    <p>That is the painful part of an AI media library. The result is still on disk, but the prompt, project, source, checkpoint, LoRAs, notes, and reason you kept it can become hard to inspect outside the original tool.</p>
+    <p>You probably already own the work. You just do not own an organized library. GenCatalog helps you recover that library by turning scattered ComfyUI outputs and AI download folders into one searchable local archive.</p>
     <div class="problem-pains">
       <div class="problem-pain">
         <h4>Filenames do not remember what you were making</h4>
-        <p>Random download names rarely tell you the prompt, source, model, project, client, or decision that made the result worth saving.</p>
+        <p>Random download names rarely tell you the prompt, source, checkpoint, LoRAs, project, client, or decision that made the result worth saving.</p>
       </div>
       <div class="problem-pain">
         <h4>Duplicate folders hide the real archive</h4>
@@ -308,23 +316,23 @@
     <div class="workflow-grid">
       <div class="workflow-step">
         <div class="step-num">01</div>
-        <h3>Start with one real AI download folder</h3>
-        <p>Click Import in the toolbar, drag supported files into GenCatalog, or use Settings &gt; Capture &amp; Import &gt; Local media files.</p>
+        <h3>Start with one real ComfyUI or AI download folder</h3>
+        <p>Click Import in the toolbar, drag supported files or folders into GenCatalog, or use Settings &gt; Capture &amp; Import &gt; Local media files.</p>
       </div>
       <div class="workflow-step">
         <div class="step-num">02</div>
-        <h3>Let GenCatalog bring them together</h3>
-        <p>Supported images and videos are copied into your local catalog. Exact duplicate hashes keep the same file from coming back as new.</p>
+        <h3>Let GenCatalog read what is embedded</h3>
+        <p>Supported images and videos are copied into your local catalog. ComfyUI metadata is read when present, and exact duplicate hashes keep the same file from coming back as new.</p>
       </div>
       <div class="workflow-step">
         <div class="step-num">03</div>
-        <h3>Restore what the folder forgot</h3>
-        <p>Use the review drawer to add source, model, tags, prompts, and notes while you still recognize the batch.</p>
+        <h3>Review the recovered context</h3>
+        <p>Use the detail view and review drawer to confirm source, checkpoint/model, prompt, tags, notes, settings, and LoRAs while you still recognize the batch.</p>
       </div>
       <div class="workflow-step">
         <div class="step-num">04</div>
         <h3>Rediscover it later</h3>
-        <p>Your older local generations become searchable alongside new Grok, Higgsfield, Midjourney, Digen, Rogue Studio, and browser captures.</p>
+        <p>Your older local generations become searchable alongside new ComfyUI imports, Grok, Higgsfield, Midjourney, Digen, Rogue Studio, and browser captures.</p>
       </div>
     </div>
   </div>
@@ -338,7 +346,7 @@
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h5M8 16h8"/></svg>
         <h3>Recover the prompt trail</h3>
-        <p>When you still know what a file belongs to, add prompts, notes, tags, and source labels during review. That context is what makes older generations useful months later.</p>
+        <p>For ComfyUI files with embedded metadata, GenCatalog can recover prompts and workflow details automatically. For everything else, add prompts, notes, tags, and source labels during review.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/></svg>
@@ -348,7 +356,7 @@
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         <h3>Search across old and new work</h3>
-        <p>Once imported, older downloaded generations can be found by media type, date, tags, source, notes, prompt text you add, and the normal GenCatalog library views.</p>
+        <p>Once imported, older downloaded generations can be found by media type, date, tags, source, notes, prompt text, checkpoint/model, and the normal GenCatalog library views.</p>
       </div>
       <div class="feature-card">
         <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M6 7v13h12V7M9 7V4h6v3"/></svg>
@@ -363,13 +371,15 @@
   <div class="container">
     <span class="section-label">What you can recover</span>
     <h2>Bring in the AI media you already have.</h2>
-    <p>GenCatalog is built for local images and videos from supported platforms, API experiments, exported batches, and unsupported generators where a browser capture is not available yet.</p>
+    <p>GenCatalog is built for local images and videos from ComfyUI, supported platforms, API experiments, exported batches, and unsupported generators where a browser capture is not available yet.</p>
     <div class="recipe-items">
       <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>MP4, MOV, WEBM, M4V</div>
       <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>JPG, JPEG, PNG</div>
       <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>WEBP, GIF, AVIF</div>
       <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Prompt notes and tags</div>
       <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Source and model labels</div>
+      <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>ComfyUI workflow metadata</div>
+      <div class="recipe-item"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>LoRA names and weights</div>
     </div>
   </div>
 </section>
@@ -390,14 +400,14 @@
   <div class="container">
     <span class="section-label">GenCatalog-specific next step</span>
     <h2>Start with the folder that already bothers you.</h2>
-    <p>Open GenCatalog, recover one real folder of downloaded generations, review the batch, and search for a file you used to find by memory. That is the point: old AI media becomes part of a library you can actually use.</p>
+    <p>Open GenCatalog, recover one real ComfyUI output folder or downloaded media folder, review the batch, and search for a file you used to find by memory. That is the point: old AI media becomes part of a library you can actually use.</p>
   </div>
 </section>
 
 <section class="cta-section">
   <div class="container">
     <h2>Recover years of AI work.</h2>
-    <p>Start with one folder that has been bothering you. Turn scattered files into a searchable local library you can actually remember.</p>
+    <p>Start with one folder that has been bothering you. Turn ComfyUI outputs and scattered files into a searchable local library you can actually remember.</p>
     <div class="cta-buttons">
       <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Recover your library</span></a>
       <a href="/support#local-import" class="btn btn-ghost btn-lg">Read local import setup</a>

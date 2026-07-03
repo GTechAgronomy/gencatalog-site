@@ -11,8 +11,8 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenCatalog FAQ: Import Local Media, Private Vault & Grok Favorites</title>
-    <meta name="description" content="Answers about GenCatalog local media import, Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, bulk downloads with prompts, setup, and local metadata capture.">
+    <title>GenCatalog FAQ: ComfyUI Import, Local Media, Private Vault & Grok Favorites</title>
+    <meta name="description" content="Answers about GenCatalog ComfyUI import, local media import, embedded workflow metadata, LoRAs, Gemini support, Private Vault encryption, Grok favorites recovery, setup, and local metadata capture.">
     <link rel="canonical" href="https://gencatalog.app/faq" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -21,8 +21,8 @@
     <meta name="theme-color" content="#0d0f13" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/faq" />
-    <meta property="og:title" content="GenCatalog FAQ: Import Local Media, Private Vault & Grok Favorites" />
-    <meta property="og:description" content="Answers about GenCatalog local media import, Gemini support, Private Vault encryption, App Lock, Privacy Mode, Grok favorites recovery, bulk downloads with prompts, setup, and local metadata capture." />
+    <meta property="og:title" content="GenCatalog FAQ: ComfyUI Import, Local Media, Private Vault & Grok Favorites" />
+    <meta property="og:description" content="Answers about GenCatalog ComfyUI import, local media import, embedded workflow metadata, LoRAs, Gemini support, Private Vault encryption, Grok favorites recovery, setup, and local metadata capture." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -352,7 +352,7 @@
         "name": "What is GenCatalog?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog is a desktop application and Chrome extension that captures, imports, catalogs, and organizes your AI-generated images and videos from local files, Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer. Every generation can be saved with its prompt, platform, model, and metadata when available — not just the file."
+          "text": "GenCatalog is a desktop application and Chrome extension that captures, imports, catalogs, and organizes your AI-generated images and videos from local files, ComfyUI, Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer. Every generation can be saved with its prompt, platform, model, workflow details, and metadata when available — not just the file."
         }
       },
       {
@@ -360,7 +360,7 @@
         "name": "What platforms does GenCatalog support?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "GenCatalog currently supports local media import plus Grok Imagine, Gemini, ChatGPT/GPT Image, Rogue Studio library imports, Higgsfield, Midjourney, Digen, and limited Venice.ai chat-page capture. Gemini and GPT Image support work best when you save prompt-matched outputs while the chat context is visible."
+          "text": "GenCatalog currently supports local media import, ComfyUI output imports, Grok Imagine, Gemini, ChatGPT/GPT Image, Rogue Studio library imports, Higgsfield, Midjourney, Digen, and limited Venice.ai chat-page capture. ComfyUI support works through local import by reading embedded prompt and workflow metadata from files when available."
         }
       },
       {
@@ -368,7 +368,15 @@
         "name": "Can I import images or videos I already downloaded?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. Open the GenCatalog desktop app, click Import, or drag supported files into the app. GenCatalog copies local MP4, MOV, WEBM, M4V, JPG, JPEG, PNG, WEBP, GIF, and AVIF files into your catalog, checks for exact duplicates, and lets you review source, model, tags, prompts, and notes after import."
+          "text": "Yes. Open the GenCatalog desktop app, click Import, or drag supported files into the app. GenCatalog copies local MP4, MOV, WEBM, M4V, JPG, JPEG, PNG, WEBP, GIF, and AVIF files into your catalog, checks for exact duplicates, and lets you review source, model, tags, prompts, and notes after import. When ComfyUI metadata is embedded, GenCatalog can also read prompt, workflow, checkpoint, seed, steps, CFG, sampler, scheduler, denoise, dimensions, and LoRA details."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can GenCatalog import ComfyUI outputs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Drag ComfyUI output files or folders into GenCatalog or use Import from the desktop app. When the file contains embedded ComfyUI prompt or workflow metadata, GenCatalog labels the item as ComfyUI and surfaces the prompt, checkpoint, seed, steps, CFG, sampler, scheduler, denoise, dimensions, and LoRA names and weights. Files without embedded ComfyUI metadata still import as normal local files."
         }
       },
       {
@@ -513,6 +521,7 @@
         <a class="cat-pill" href="#general">General</a>
         <a class="cat-pill" href="#getting-started">Getting Started</a>
         <a class="cat-pill" href="#local-import">Local Import</a>
+        <a class="cat-pill" href="#local-import">ComfyUI Import</a>
         <a class="cat-pill" href="#grok">Grok Imagine</a>
         <a class="cat-pill" href="#gemini">Gemini</a>
         <a class="cat-pill" href="#gpt-image">GPT Image</a>
@@ -549,8 +558,8 @@
         <div class="faq-item">
             <button class="faq-q">What is GenCatalog?<span class="faq-icon">+</span></button>
             <div class="faq-a">
-                <p>GenCatalog is a desktop application and Chrome extension that captures, imports, catalogs, and organizes your AI-generated images and videos from local files, Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer.</p>
-                <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, and metadata</strong> when available — not just the file. If you already downloaded a file yourself, you can import it and add that context afterward.</p>
+                <p>GenCatalog is a desktop application and Chrome extension that captures, imports, catalogs, and organizes your AI-generated images and videos from local files, ComfyUI, Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — all in one fast, searchable local library on your computer.</p>
+                <p>The core idea: every generation you create is saved with its <strong>prompt, platform, model, workflow details, and metadata</strong> when available — not just the file. If you already downloaded a file yourself, you can import it and add that context afterward.</p>
             </div>
         </div>
 
@@ -560,6 +569,7 @@
                 <p>GenCatalog currently supports these platforms:</p>
                 <ul>
                     <li><span class="platform-tag">Local files</span> — Import downloaded images and videos from your computer, including API outputs and files from unsupported generators</li>
+                    <li><a href="/comfyui-workflow-viewer"><span class="platform-tag">ComfyUI</span></a> — Import ComfyUI output folders and search embedded prompts, workflow metadata, checkpoints, seeds, CFG, sampler and scheduler settings, dimensions, and LoRAs when present</li>
                     <li><a href="/grok"><span class="platform-tag tag-grok">Grok Imagine</span></a> — Full support including bulk favorites download, individual saves, prompt extraction, and multi-account support</li>
                     <li><span class="platform-tag tag-gemini">Gemini</span> — Limited chat-page support for visible image generations, prompt context, and full-size downloads when Gemini exposes them</li>
                     <li><span class="platform-tag tag-gpt">GPT Image</span> — Scan current ChatGPT image chats, import prompt-matched outputs, and update missing prompts on existing GPT Image items</li>
@@ -611,7 +621,7 @@
                     <li>Install the Chrome extension from the Chrome Web Store</li>
                     <li>Make sure GenCatalog is running (you'll see it in your menu bar (Mac) or system tray (Windows))</li>
                     <li>Browse to Grok Imagine, Gemini, ChatGPT/GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, or a supported Venice.ai chat page — platform-specific controls will appear automatically</li>
-                    <li>To add media you already downloaded, click <strong>Import</strong> in the desktop app or drag supported files into the GenCatalog window</li>
+                    <li>To add media you already downloaded, including ComfyUI output folders, click <strong>Import</strong> in the desktop app or drag supported files into the GenCatalog window</li>
                 </ol>
                 <div class="tip"><strong>Tip:</strong> GenCatalog runs a local server in the background. The extension communicates with it to save your content, so if the popup cannot connect, make sure the desktop app is open.</div>
             </div>
@@ -673,7 +683,16 @@
             <button class="faq-q">Can I import images or videos I already downloaded?<span class="faq-icon">+</span></button>
             <div class="faq-a">
                 <p>Yes. Open the GenCatalog desktop app and click <strong>Import</strong> in the toolbar, drag supported files into the app, or use Settings → Capture &amp; Import → Local media files.</p>
-                <p>GenCatalog copies those files into your catalog folder, creates thumbnails when possible, and opens a review drawer so you can add source, model, tags, prompts, and notes.</p>
+                <p>GenCatalog copies those files into your catalog folder, creates thumbnails when possible, and opens a review drawer so you can add source, model, tags, prompts, and notes. For ComfyUI files with embedded metadata, GenCatalog can fill in source, prompt, checkpoint, settings, and LoRA details automatically.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-q">Can GenCatalog import ComfyUI outputs?<span class="faq-icon">+</span></button>
+            <div class="faq-a">
+                <p>Yes. Drag ComfyUI output files or folders into GenCatalog, or use <strong>Import</strong> from the desktop app. ComfyUI is treated as the creation source, while the checkpoint remains searchable as the model.</p>
+                <p>When the file includes embedded ComfyUI prompt or workflow metadata, GenCatalog can surface the prompt, checkpoint, seed, steps, CFG, sampler, scheduler, denoise, dimensions, and LoRA names with strengths, model weights, and clip weights.</p>
+                <p>If a file does not include ComfyUI metadata, it still imports as a normal local file and can be tagged, rated, searched, and annotated like the rest of your library.</p>
             </div>
         </div>
 
@@ -1060,7 +1079,7 @@
                 <ul>
                     <li>Prompt text — find any generation by what you typed</li>
                     <li>Tags — search by tags you've added</li>
-                    <li>Platform — filter to Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, or Venice.ai only</li>
+                    <li>Platform — filter to Grok Imagine, ComfyUI, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, or Venice.ai only</li>
                     <li>Media type — filter to images or videos only</li>
                     <li>Favorites — show only starred items</li>
                     <li>Source image — find all generations created from the same source image</li>

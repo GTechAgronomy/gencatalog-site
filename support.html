@@ -11,8 +11,8 @@
   </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GenCatalog Support: Import Local Media, Grok Favorites & Setup</title>
-    <meta name="description" content="Set up GenCatalog, import local images and videos, save Gemini, GPT Image, and Rogue Studio media, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms.">
+    <title>GenCatalog Support: ComfyUI Import, Local Media, Grok Favorites & Setup</title>
+    <meta name="description" content="Set up GenCatalog, import ComfyUI output folders with prompts, workflow metadata, settings, and LoRAs, save Gemini, GPT Image, and Rogue Studio media, scan Grok favorites, and troubleshoot supported AI platforms.">
     <link rel="canonical" href="https://gencatalog.app/support" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -21,8 +21,8 @@
     <meta name="theme-color" content="#0d0f13" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/support" />
-    <meta property="og:title" content="GenCatalog Support: Import Local Media, Grok Favorites & Setup" />
-    <meta property="og:description" content="Set up GenCatalog, import local images and videos, save Gemini, GPT Image, and Rogue Studio media, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms." />
+    <meta property="og:title" content="GenCatalog Support: ComfyUI Import, Local Media, Grok Favorites & Setup" />
+    <meta property="og:description" content="Set up GenCatalog, import ComfyUI output folders with prompts, workflow metadata, settings, and LoRAs, save Gemini, GPT Image, and Rogue Studio media, scan Grok favorites, and troubleshoot supported AI platforms." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -352,6 +352,7 @@
         <a href="#digen"><span class="dot dot-digen"></span>Digen</a>
         <div class="sidebar-label">Your Catalog</div>
         <a href="#local-import">Local Media Import</a>
+        <a href="#comfyui-import">ComfyUI Import</a>
         <a href="#browsing">Browsing &amp; Search</a>
         <a href="#organizing">Tags &amp; Favorites</a>
         <a href="#bulk">Bulk Operations</a>
@@ -369,8 +370,8 @@
     <main class="content">
         <div class="page-label">Support Guide</div>
         <h1>GenCatalog Support and Setup Guide</h1>
-        <p class="intro">A complete guide to importing, capturing, organizing, and browsing your AI-generated content across local files, <a href="/grok">Grok Imagine</a>, Gemini, GPT Image, Rogue Studio, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated July 2026 with Rogue Studio support, local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
+        <p class="intro">A complete guide to importing, capturing, organizing, and browsing your AI-generated content across local files, ComfyUI, <a href="/grok">Grok Imagine</a>, Gemini, GPT Image, Rogue Studio, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated July 2026 with ComfyUI output imports, fuller embedded workflow metadata and LoRA display, Rogue Studio support, local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
         <div class="section" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -458,7 +459,7 @@
         <div class="section" id="local-import">
             <h2>Local Media Import</h2>
             <p class="section-desc">Bring downloaded images and videos into GenCatalog even when they did not come from the browser extension.</p>
-            <p>Use local import for API-generated videos, files you saved manually, old downloads, exported images, screen recordings, or media from a generator GenCatalog does not capture yet. GenCatalog copies those files into your selected catalog folder so they live beside the rest of your library.</p>
+            <p>Use local import for ComfyUI output folders, API-generated videos, files you saved manually, old downloads, exported images, screen recordings, or media from a generator GenCatalog does not capture yet. GenCatalog copies those files into your selected catalog folder so they live beside the rest of your library.</p>
 
             <h3>How to Import Files</h3>
             <div class="steps">
@@ -480,10 +481,20 @@
                     <div class="step-num">3</div>
                     <div class="step-body">
                         <strong>Review the batch</strong>
-                        <p>After import, use the review drawer to set source, model, tags, prompts, and notes. This is useful for API outputs where the file is yours but the browser page is gone.</p>
+                        <p>After import, use the review drawer to set source, model, tags, prompts, and notes. For ComfyUI files with embedded metadata, GenCatalog can automatically fill in source, prompt, checkpoint, settings, and LoRA details.</p>
                     </div>
                 </div>
             </div>
+
+            <h3 id="comfyui-import">ComfyUI Metadata Import</h3>
+            <p>When imported files include embedded ComfyUI prompt or workflow metadata, GenCatalog labels the item as <strong>ComfyUI</strong> and surfaces the workflow context in the item detail view.</p>
+            <ul>
+                <li><strong>Prompt and workflow:</strong> positive and negative prompt text when present, plus the saved workflow metadata.</li>
+                <li><strong>Generation settings:</strong> checkpoint/model, seed, steps, CFG, sampler, scheduler, denoise, dimensions, and related settings when available.</li>
+                <li><strong>LoRAs:</strong> LoRA names plus strength, model strength, and clip strength values when the workflow includes them.</li>
+                <li><strong>Search behavior:</strong> ComfyUI remains the source/tool, while the checkpoint is searchable as the model.</li>
+            </ul>
+            <p>If a file has no embedded ComfyUI metadata, it still imports as a normal local file that you can tag, rate, annotate, and search.</p>
 
             <h3>Supported File Types</h3>
             <ul>
@@ -795,7 +806,7 @@
             <p>Type in the search bar to filter your entire catalog by prompt text. Search is instant across all platforms.</p>
             <h3>Filters</h3>
             <ul>
-                <li><strong>Platform</strong> — show only Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, or Venice content</li>
+                <li><strong>Platform</strong> — show only Grok Imagine, ComfyUI, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, or Venice content</li>
                 <li><strong>Media type</strong> — images or videos only</li>
                 <li><strong>Favorites</strong> — show only starred items</li>
                 <li><strong>Tags</strong> — click any tag to filter by it</li>

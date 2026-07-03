@@ -12,7 +12,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GenCatalog — Bulk Download Grok Favorites and Save Prompts Locally</title>
-  <meta name="description" content="Bulk download Grok favorites, save prompts and metadata locally, and organize AI generations from Grok, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai. Free 7-day trial.">
+  <meta name="description" content="Bulk download Grok favorites, import ComfyUI output folders, save prompts and metadata locally, and organize AI generations from Grok, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai. Free 7-day trial.">
   <link rel="canonical" href="https://gencatalog.app/" />
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -23,13 +23,13 @@
   <meta property="og:url" content="https://gencatalog.app/" />
   <meta property="og:site_name" content="GenCatalog" />
   <meta property="og:title" content="GenCatalog — Local AI Image &amp; Video Organizer" />
-  <meta property="og:description" content="Save AI generations from Grok, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
+  <meta property="og:description" content="Save AI generations from Grok, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
   <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="GenCatalog — Local AI Image &amp; Video Organizer" />
-  <meta name="twitter:description" content="Save AI generations from Grok, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
+  <meta name="twitter:description" content="Save AI generations from Grok, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
   <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,9 +41,9 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {"@type":"Question","name":"What is GenCatalog?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is a local AI image and video organizer for Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. It automatically saves your AI generations with full prompts, model settings, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."}},
-      {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), Gemini, ChatGPT/GPT Image, Rogue Studio, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages so you can keep generations with the prompt context that is available."}},
-      {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. For Midjourney, you can also scan your entire generation history at once."}},
+      {"@type":"Question","name":"What is GenCatalog?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is a local AI image and video organizer for Grok Imagine, ComfyUI, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. It saves and imports AI generations with prompts, model settings, workflow details, and metadata into a searchable desktop library. No cloud uploads required — everything stays on your computer."}},
+      {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), ComfyUI output imports, Gemini, ChatGPT/GPT Image, Rogue Studio, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages, while local import reads ComfyUI metadata from files when available."}},
+      {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. You can also import existing folders, including ComfyUI outputs with embedded prompts, workflow metadata, settings, and LoRAs when present."}},
       {"@type":"Question","name":"Is my data stored in the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog stores your library locally on your computer. Your prompts, images, videos, and metadata never leave your device as library content. No account required for your local catalog."}},
       {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $79 as a one-time purchase. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The price includes all 5.x updates — no subscription, no renewals."}},
       {"@type":"Question","name":"Does GenCatalog work on both Mac and Windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."}},
@@ -61,7 +61,7 @@
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "macOS, Windows",
     "offers": {"@type":"Offer","price":"79.00","priceCurrency":"USD"},
-    "description": "GenCatalog is a desktop app that automatically saves AI-generated images and videos from Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, and metadata — into a local, searchable library. No cloud uploads. No account required.",
+    "description": "GenCatalog is a desktop app that saves and imports AI-generated images and videos from Grok Imagine, ComfyUI, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, workflow details, and metadata — into a local, searchable library. No cloud uploads. No account required.",
     "url": "https://gencatalog.app",
     "screenshot": "https://gencatalog.app/og-image-v5.jpg",
     "softwareVersion": "5.16.40",
@@ -947,7 +947,7 @@
 <section class="platforms-strip" style="padding:48px 0">
   <div class="container">
     <div class="platforms-row reveal">
-      <span class="platforms-label">Captures from</span>
+      <span class="platforms-label">Captures and imports from</span>
       <div class="platform-marks">
         <a class="platform-mark grok" href="/grok"><span class="dot"></span>Grok Imagine</a>
         <a class="platform-mark mj" href="/midjourney"><span class="dot"></span>Midjourney</a>
@@ -956,6 +956,7 @@
         <a class="platform-mark gemini" href="/support#gemini"><span class="dot"></span>Gemini</a>
         <a class="platform-mark gpt" href="/support#gpt-image"><span class="dot"></span>GPT Image</a>
         <a class="platform-mark rogue" href="/support#rogue-studio"><span class="dot"></span>Rogue Studio</a>
+        <a class="platform-mark local" href="/comfyui-workflow-viewer"><span class="dot"></span>ComfyUI</a>
         <a class="platform-mark vn" href="/support#venice"><span class="dot"></span>Venice.ai</a>
       </div>
     </div>
@@ -1073,7 +1074,7 @@
 
     <div class="reveal delay-3" style="display:grid; grid-template-columns: minmax(0,1fr) 340px minmax(0,1fr); gap:60px; align-items:center; max-width:1100px; margin:0 auto;">
       <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
-        <li><div><strong>Source filters</strong> — Grok, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, Venice.</div></li>
+        <li><div><strong>Source filters</strong> — Grok, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, Venice.</div></li>
         <li><div><strong>Ratings, favorites, notes, tags.</strong></div></li>
         <li><div><strong>Advanced</strong> — Has Notes, Untagged, Has Prompt.</div></li>
       </ul>
@@ -1196,20 +1197,20 @@
   <div class="container">
     <div class="feature-split">
       <div class="feature-text">
-        <span class="eyebrow reveal">07 · Local import</span>
-        <h2 class="h-section reveal delay-1">Bring old downloads into your catalog.</h2>
+        <span class="eyebrow reveal">07 · Local import + ComfyUI</span>
+        <h2 class="h-section reveal delay-1">Turn output folders into searchable recipes.</h2>
         <p class="lede reveal delay-2">
-          Already have folders full of AI images and videos? Import local media directly into GenCatalog, review the batch, clean up source, model, tags, prompts, and notes, and make older work searchable alongside everything you capture going forward.
+          Drag in folders from ComfyUI, API runs, exports, and old downloads. GenCatalog reads embedded ComfyUI prompts, checkpoints, seeds, CFG, samplers, schedulers, denoise values, dimensions, and LoRAs when present, then keeps ordinary images and videos searchable beside everything you capture going forward.
         </p>
         <ul class="feature-list reveal delay-3">
-          <li><div><strong>Import images and videos</strong> from your Mac or Windows PC.</div></li>
-          <li><div><strong>Detect exact duplicates</strong> before they clutter your library.</div></li>
-          <li><div><strong>Undo recent imports</strong> if you brought in the wrong batch.</div></li>
+          <li><div><strong>Recover ComfyUI workflow context</strong> from PNG and embedded metadata, including prompts, checkpoints, settings, and LoRA names with weights.</div></li>
+          <li><div><strong>Import image and video folders</strong> from your Mac or Windows PC without changing the tools you already use.</div></li>
+          <li><div><strong>Keep old work searchable</strong> with duplicate checks, source cleanup, tags, notes, and undo for the wrong batch.</div></li>
         </ul>
       </div>
       <div class="reveal delay-2">
         <div class="showcase-image">
-          <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel showing source, model, tags, prompt, notes, and imported status." width="996" height="858" loading="lazy" decoding="async">
+          <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel for adding existing AI media into the catalog." width="996" height="858" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
