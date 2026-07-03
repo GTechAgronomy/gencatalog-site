@@ -1,6 +1,28 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Published 5.16.40 ComfyUI LoRA hotfix
+
+### What Changed
+- Bumped public desktop download/version surfaces from 5.16.39 to 5.16.40 after
+  the Mac and Windows artifacts were live.
+- Added the 5.16.40 release note for fuller ComfyUI LoRA metadata capture,
+  readable stacked LoRA lists, and compact ComfyUI Recipe Cards.
+
+### What I Learned
+- Public ComfyUI copy should separate detail-panel fidelity from shareable
+  Recipe Card readability: full LoRA details belong in the app detail view,
+  while cards need a concise summary.
+
+### Verification
+- `scripts/update-version.sh --check`
+- `xmllint --noout sitemap.xml`
+- `git diff --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Published 5.16.39 ComfyUI release and SEO page
 
 ### What Changed
