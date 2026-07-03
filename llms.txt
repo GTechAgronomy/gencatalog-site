@@ -1,6 +1,6 @@
 # GenCatalog
 
-> Local AI image and video organizer for Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Everything stored locally — nothing uploaded anywhere.
+> Local AI image and video organizer for Grok Imagine, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Everything stored locally — nothing uploaded anywhere.
 
 ## What it does
 
@@ -8,7 +8,7 @@ GenCatalog saves AI-generated images and videos together with their full prompts
 
 - Browse, search, and filter your entire AI media library
 - Full prompt and metadata preserved with every generation
-- Supports Grok Imagine, GPT Image, Higgsfield, Midjourney, Digen, and Venice.ai
+- Supports Grok Imagine, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai
 - Color-coded source badges, star ratings, tags, notes, saved searches
 - Sub-second grid load times, tested with catalogs of 30,000+ items
 - Compare mode: view two generations side by side

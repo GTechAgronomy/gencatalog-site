@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GenCatalog Support: Import Local Media, Grok Favorites & Setup</title>
-    <meta name="description" content="Set up GenCatalog, import local images and videos, save Gemini and GPT Image chats, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms.">
+    <meta name="description" content="Set up GenCatalog, import local images and videos, save Gemini, GPT Image, and Rogue Studio media, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms.">
     <link rel="canonical" href="https://gencatalog.app/support" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://gencatalog.app/support" />
     <meta property="og:title" content="GenCatalog Support: Import Local Media, Grok Favorites & Setup" />
-    <meta property="og:description" content="Set up GenCatalog, import local images and videos, save Gemini and GPT Image chats, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms." />
+    <meta property="og:description" content="Set up GenCatalog, import local images and videos, save Gemini, GPT Image, and Rogue Studio media, turn on privacy tools, scan Grok favorites, recover missing saved media, bulk download with prompts, and troubleshoot supported AI platforms." />
     <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <script type="application/ld+json">
   {
@@ -142,6 +142,7 @@
         .dot-venice { background: #d9b84f; }
         .dot-gpt { background: #aeb7ff; }
         .dot-gemini { background: #4285f4; }
+        .dot-rogue { background: #ff8a4c; }
         .content {
             padding: 48px 48px 100px;
             max-width: 780px;
@@ -280,6 +281,7 @@
         .badge-higgsfield { background: rgba(232,105,105,0.12); color: #e86969; border: 1px solid rgba(232,105,105,0.25); }
         .badge-digen { background: rgba(48,214,139,0.12); color: #30d68b; border: 1px solid rgba(48,214,139,0.25); }
         .badge-gemini { background: rgba(66,133,244,0.12); color: #8ab4f8; border: 1px solid rgba(66,133,244,0.28); }
+        .badge-rogue { background: rgba(255,138,76,0.12); color: #ffb088; border: 1px solid rgba(255,138,76,0.28); }
         .badge-midjourney { background: rgba(88,101,232,0.12); color: #5865e8; border: 1px solid rgba(88,101,232,0.30); }
         .badge-venice { background: rgba(217,184,79,0.12); color: #d9b84f; border: 1px solid rgba(217,184,79,0.25); }
         .contact-box {
@@ -343,6 +345,7 @@
         <a href="#grok"><span class="dot dot-grok"></span>Grok Imagine</a>
         <a href="#gemini"><span class="dot dot-gemini"></span>Gemini</a>
         <a href="#gpt-image"><span class="dot dot-gpt"></span>GPT Image</a>
+        <a href="#rogue-studio"><span class="dot dot-rogue"></span>Rogue Studio</a>
         <a href="#higgsfield"><span class="dot dot-higgsfield"></span>Higgsfield</a>
         <a href="#venice"><span class="dot dot-venice"></span>Venice.ai</a>
         <a href="#midjourney"><span class="dot dot-midjourney"></span>Midjourney</a>
@@ -366,8 +369,8 @@
     <main class="content">
         <div class="page-label">Support Guide</div>
         <h1>GenCatalog Support and Setup Guide</h1>
-        <p class="intro">A complete guide to importing, capturing, organizing, and browsing your AI-generated content across local files, <a href="/grok">Grok Imagine</a>, Gemini, GPT Image, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated June 2026 with local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
+        <p class="intro">A complete guide to importing, capturing, organizing, and browsing your AI-generated content across local files, <a href="/grok">Grok Imagine</a>, Gemini, GPT Image, Rogue Studio, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated July 2026 with Rogue Studio support, local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
         <div class="section" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -444,7 +447,7 @@
             <ul>
                 <li><strong>Connection state</strong> — if the desktop app is open, the popup connects automatically; if not, open the app and wait a few seconds</li>
                 <li><strong>Trial or license state</strong> — the chip and banner explain whether you're licensed, in trial, offline, or at a save limit</li>
-                <li><strong>Active platform controls</strong> — Grok, Gemini, GPT Image, Midjourney, Higgsfield, Digen, and Venice each show the controls that apply to that site</li>
+                <li><strong>Active platform controls</strong> — Grok, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice each show the controls that apply to that site</li>
                 <li><strong>Recent saves</strong> — your latest captured items and save confirmations</li>
                 <li><strong>Open Catalog / Settings</strong> — launch your catalog or manage persistent download preferences</li>
             </ul>
@@ -608,6 +611,23 @@
                 <li>Gemini support is chat-page focused. Bulk history import is not included.</li>
                 <li>Prompt capture depends on the prompt context visible in the current chat.</li>
                 <li>Saved Gemini items stay local in GenCatalog, just like your other catalog media.</li>
+            </ul>
+        </div>
+
+        <div class="section" id="rogue-studio">
+            <h2>Rogue Studio</h2>
+            <p class="section-desc">Import loaded Rogue Studio media into your local library with prompts and asset metadata when available.</p>
+            <div class="platform-badge badge-rogue">✓ Rogue Studio library imports</div>
+
+            <h3>Scanning Loaded Media</h3>
+            <p>Open Rogue Studio and load the media you want to keep. GenCatalog can scan loaded Rogue Studio media and identify items that are not already in your catalog.</p>
+
+            <h3>Captured Metadata</h3>
+            <ul>
+                <li>Detail-drawer prompt text when available</li>
+                <li>Asset metadata exposed by Rogue Studio</li>
+                <li>Source platform, save date, and local catalog metadata</li>
+                <li>Rogue Studio as its own source in desktop filters</li>
             </ul>
         </div>
 
@@ -775,7 +795,7 @@
             <p>Type in the search bar to filter your entire catalog by prompt text. Search is instant across all platforms.</p>
             <h3>Filters</h3>
             <ul>
-                <li><strong>Platform</strong> — show only Grok Imagine, Gemini, GPT Image, Higgsfield, Midjourney, Digen, or Venice content</li>
+                <li><strong>Platform</strong> — show only Grok Imagine, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, or Venice content</li>
                 <li><strong>Media type</strong> — images or videos only</li>
                 <li><strong>Favorites</strong> — show only starred items</li>
                 <li><strong>Tags</strong> — click any tag to filter by it</li>
