@@ -1,6 +1,20 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-03 — Added Chrome extension 5.64 availability note
+
+### What Changed
+- Added a latest-release note that Rogue Studio support and the new Higgsfield bulk sync require Chrome extension 5.64.
+- Noted that extension 5.64 has been uploaded to the Chrome Web Store and will be available after approval.
+
+### Verification
+- Confirmed the latest release notes include a Chrome extension 5.64 availability note.
+- `git diff --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Shortened Grok large-library release copy
 
 ### What Changed
