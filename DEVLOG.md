@@ -1,6 +1,28 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-04 — Published 5.16.44 desktop polish release
+
+### What Changed
+- Bumped public desktop download/version surfaces from 5.16.43 to 5.16.44 after
+  the Mac and Windows artifacts were live.
+- Added the 5.16.44 release note for more native desktop behavior, right-click
+  catalog actions, smoother search typing, and cleaner accessibility/motion
+  behavior.
+
+### What I Learned
+- This release is best described publicly as desktop polish users can feel:
+  expected app menus, remembered windows, useful context menus, and fewer
+  rough edges while typing or navigating.
+
+### Verification
+- `scripts/update-version.sh 5.16.44`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-04 — Published 5.16.42 integrated repair release
 
 ### What Changed
