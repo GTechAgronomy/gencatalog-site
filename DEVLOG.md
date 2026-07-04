@@ -1,6 +1,27 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-04 — Published 5.16.42 integrated repair release
+
+### What Changed
+- Bumped public desktop download/version surfaces from 5.16.41 to 5.16.42 after
+  the Mac and Windows artifacts were live.
+- Added the 5.16.42 release note for the integrated ComfyUI, Higgsfield,
+  Midjourney, Local files color, and Shift+Arrow selection fixes.
+
+### What I Learned
+- Public release copy should describe the visible recovery: one build that
+  includes the recent fixes users rely on, without exposing branch cleanup or
+  release-source mechanics.
+
+### Verification
+- `scripts/update-version.sh 5.16.42`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-04 — Published 5.16.41 Higgsfield video repair
 
 ### What Changed
