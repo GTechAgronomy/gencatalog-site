@@ -1,6 +1,27 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-04 — Published 5.16.41 Higgsfield video repair
+
+### What Changed
+- Bumped public desktop download/version surfaces from 5.16.40 to 5.16.41 after
+  the Mac and Windows artifacts were live.
+- Added the 5.16.41 release note for Higgsfield video repair sync and safer
+  bulk video imports that avoid saving preview thumbnails as videos.
+
+### What I Learned
+- Public release copy should state the customer-visible Higgsfield outcome:
+  broken thumbnail-only records are repaired by sync, and unavailable video
+  media fails clearly instead of creating another bad catalog item.
+
+### Verification
+- `scripts/update-version.sh 5.16.41`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-03 — Updated ComfyUI import website copy
 
 ### What Changed
