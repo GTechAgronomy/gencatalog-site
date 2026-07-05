@@ -64,18 +64,13 @@
     .breadcrumb-inner a{color:var(--t3);transition:color var(--transition)}.breadcrumb-inner a:hover{color:var(--t2)}
     .breadcrumb-sep{color:var(--t3)}
     .hero{padding:80px 0 72px}
-    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,480px);gap:48px;align-items:center}
+    .hero-grid{max-width:760px}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--arcana-lo);color:#b9a4ff;border:1px solid var(--arcana-b);border-radius:var(--radius-pill);padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:20px}
     .platform-dot{width:8px;height:8px;border-radius:50%;background:var(--arcana);box-shadow:0 0 10px rgba(139,92,246,.7);flex-shrink:0}
     h1{font-size:clamp(38px,5vw,62px);font-weight:700;color:var(--t1);line-height:1.04;letter-spacing:-0.02em;margin-bottom:20px}
     .hero-subhead{font-size:18px;color:var(--t2);max-width:650px;line-height:1.65;margin-bottom:32px}
     .hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
     .hero-meta{font-size:13px;color:var(--t3)}
-    .hero-card{background:linear-gradient(180deg,rgba(139,92,246,.10),rgba(21,23,28,.96));border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:20px;box-shadow:0 24px 80px rgba(0,0,0,.28)}
-    .proof-frame{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:var(--bg)}
-    .proof-caption{padding:18px 4px 2px}
-    .proof-caption strong{display:block;color:var(--t1);font-size:14px;margin-bottom:4px}
-    .proof-caption span{display:block;color:var(--t3);font-size:13px;line-height:1.55}
     .meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:42px}
     .meta-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px}
     .meta-card h3{font-size:14px;color:var(--t1);font-weight:600;margin-bottom:6px}
@@ -122,8 +117,8 @@
     .footer-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
     .footer-links a{font-size:13px;color:var(--t3);transition:color var(--transition)}.footer-links a:hover{color:var(--t2)}
     :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-    @media(max-width:1050px){.hero-grid,.split-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:760px){.container,.nav-inner{padding-left:24px;padding-right:24px}.nav-links{display:none}.hero{padding:56px 0}.meta-grid,.steps-grid,.faq-grid,.also-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:1fr}.hero-card{padding:14px}}
+    @media(max-width:1050px){.split-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.container,.nav-inner{padding-left:24px;padding-right:24px}.nav-links{display:none}.hero{padding:56px 0}.meta-grid,.steps-grid,.faq-grid,.also-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:1fr}}
   </style>
   <script defer src="/analytics.js"></script>
 </head>
@@ -171,15 +166,6 @@
             <a href="/support#arcana" class="btn btn-ghost btn-lg">See Setup Guide</a>
           </div>
           <p class="hero-meta">macOS and Windows &nbsp;&middot;&nbsp; Requires Chrome extension &nbsp;&middot;&nbsp; 7-day free trial</p>
-        </div>
-        <div class="hero-card" aria-label="Arcana-native proof">
-          <div class="proof-frame">
-            <img src="GenCatalogInterface.webp" alt="GenCatalog interface showing an AI generation library with searchable metadata" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
-          </div>
-          <p class="proof-caption">
-            <strong>Arcana-native proof</strong>
-            <span>Arcana saves appear as Arcana, not as a generic import, with project metadata, prompt IDs, generation IDs, model settings, and source links represented directly in the detail panel.</span>
-          </p>
         </div>
       </div>
       <div class="meta-grid">
