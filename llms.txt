@@ -33,6 +33,7 @@ Everything is stored locally on your machine. The GenCatalog app never uploads a
 - [Website](https://gencatalog.app)
 - [Download Free Trial](https://gencatalog.app/get)
 - [Buy — $79](https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1)
+- [Arcana Labs Support](https://gencatalog.app/arcana)
 - [Search Grok Favorites](https://gencatalog.app/search-grok-favorites)
 - [ComfyUI Workflow Viewer](https://gencatalog.app/comfyui-workflow-viewer)
 - [Rescue Your AI Library](https://gencatalog.app/rescue-your-ai-library)

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8EV2H78B6F');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GenCatalog for Arcana Labs | Save Arcana Images, Prompts, Projects, and Metadata</title>
+  <meta name="description" content="GenCatalog saves Arcana Labs generations into a searchable local library with prompts, negative prompts, project metadata, model details, generation IDs, and source links preserved.">
+  <link rel="canonical" href="https://gencatalog.app/arcana" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0d0f13" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://gencatalog.app/arcana" />
+  <meta property="og:site_name" content="GenCatalog" />
+  <meta property="og:title" content="GenCatalog for Arcana Labs" />
+  <meta property="og:description" content="Save Arcana Labs images and video assets with prompts, projects, model details, settings, and metadata intact in one private local library." />
+  <meta property="og:image" content="https://gencatalog.app/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GenCatalog for Arcana Labs" />
+  <meta name="twitter:description" content="A local Arcana workflow for saving generations, preserving prompts, and organizing project metadata." />
+  <meta name="twitter:image" content="https://gencatalog.app/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GenCatalog for Arcana Labs","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, Windows","description":"GenCatalog saves Arcana Labs generations into a searchable local library with prompts, negative prompts, project metadata, model details, generation IDs, and source links preserved.","url":"https://gencatalog.app/arcana","image":"https://gencatalog.app/og-image.jpg","offers":{"@type":"Offer","price":"79.00","priceCurrency":"USD"},"featureList":["Native Arcana Labs capture","Prompt and negative prompt preservation","Project and model metadata","Generation ID and prompt ID storage","Open in Arcana source links","Searchable local creative library"]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gencatalog.app/"},{"@type":"ListItem","position":2,"name":"Arcana Labs","item":"https://gencatalog.app/arcana"}]}</script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    :root{
+      --bg:#0d0f13;--surface:#15171c;--s2:#1c1f27;--s3:#252934;
+      --border:rgba(255,255,255,0.072);--border-hi:rgba(255,255,255,0.13);
+      --t1:#f2f3f7;--t2:#a5a8b4;--t3:#767a86;
+      --accent:#5865e8;--accent-fill:#5865e8;--accent-lo:rgba(88,101,232,0.12);--accent-b:rgba(88,101,232,0.32);
+      --arcana:#8b5cf6;--arcana-lo:rgba(139,92,246,0.13);--arcana-b:rgba(139,92,246,0.32);
+      --green:#30d68b;--red:#e86969;--yellow:#d9b84f;
+      --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-pill:999px;
+      --transition:180ms ease;--max-width:1360px;
+    }
+    body{background:var(--bg);color:var(--t2);font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{max-width:var(--max-width);margin:0 auto;padding:0 48px}
+    .narrow{max-width:980px}
+    nav{position:sticky;top:0;z-index:100;background:rgba(13,15,19,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;gap:32px}
+    .nav-logo{display:flex;align-items:center;gap:8px;color:var(--t1);font-weight:600;font-size:15px;flex-shrink:0}
+    .nav-links{display:flex;align-items:center;gap:24px;flex:1}
+    .nav-links a{font-size:14px;font-weight:500;color:var(--t2);transition:color var(--transition)}
+    .nav-links a:hover{color:var(--t1)}
+    .nav-cta{margin-left:auto}
+    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--radius-sm);padding:10px 20px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:background var(--transition),color var(--transition),border-color var(--transition),transform var(--transition);text-decoration:none;white-space:nowrap}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--accent-fill);color:#fff}.btn-primary:hover{background:#6b76f0}
+    .btn-ghost{background:transparent;border-color:var(--border-hi);color:var(--t2)}.btn-ghost:hover{background:var(--s2);color:var(--t1)}
+    .btn-lg{padding:12px 24px;font-size:15px}
+    .section-label{font-size:12px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--t3)}
+    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border)}
+    .breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t3)}
+    .breadcrumb-inner a{color:var(--t3);transition:color var(--transition)}.breadcrumb-inner a:hover{color:var(--t2)}
+    .breadcrumb-sep{color:var(--t3)}
+    .hero{padding:80px 0 72px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,480px);gap:48px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:var(--arcana-lo);color:#b9a4ff;border:1px solid var(--arcana-b);border-radius:var(--radius-pill);padding:6px 14px;font-size:13px;font-weight:600;margin-bottom:20px}
+    .platform-dot{width:8px;height:8px;border-radius:50%;background:var(--arcana);box-shadow:0 0 10px rgba(139,92,246,.7);flex-shrink:0}
+    h1{font-size:clamp(38px,5vw,62px);font-weight:700;color:var(--t1);line-height:1.04;letter-spacing:-0.02em;margin-bottom:20px}
+    .hero-subhead{font-size:18px;color:var(--t2);max-width:650px;line-height:1.65;margin-bottom:32px}
+    .hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+    .hero-meta{font-size:13px;color:var(--t3)}
+    .hero-card{background:linear-gradient(180deg,rgba(139,92,246,.10),rgba(21,23,28,.96));border:1px solid var(--border-hi);border-radius:var(--radius-lg);padding:20px;box-shadow:0 24px 80px rgba(0,0,0,.28)}
+    .proof-frame{border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;background:var(--bg)}
+    .proof-caption{padding:18px 4px 2px}
+    .proof-caption strong{display:block;color:var(--t1);font-size:14px;margin-bottom:4px}
+    .proof-caption span{display:block;color:var(--t3);font-size:13px;line-height:1.55}
+    .meta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:42px}
+    .meta-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px}
+    .meta-card h3{font-size:14px;color:var(--t1);font-weight:600;margin-bottom:6px}
+    .meta-card p{font-size:13px;color:var(--t2);line-height:1.55}
+    section{border-top:1px solid var(--border)}
+    .split-section{padding:80px 0}
+    .split-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:48px;align-items:start}
+    .section-heading{font-size:clamp(26px,3vw,38px);font-weight:700;color:var(--t1);line-height:1.15;letter-spacing:-0.01em;margin:12px 0 18px}
+    .section-lead{font-size:16px;color:var(--t2);line-height:1.75;max-width:720px}
+    .capture-list{display:grid;gap:12px;margin-top:30px}
+    .capture-item{display:flex;align-items:flex-start;gap:12px;color:var(--t2);font-size:15px}
+    .check{width:18px;height:18px;border-radius:50%;background:var(--arcana-lo);border:1px solid var(--arcana-b);color:#b9a4ff;display:inline-flex;align-items:center;justify-content:center;flex:0 0 18px;margin-top:3px}
+    .check svg{width:12px;height:12px}
+    .side-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:28px}
+    .side-card h2{font-size:24px;line-height:1.18;color:var(--t1);margin:10px 0 14px;letter-spacing:-0.01em}
+    .side-card p{font-size:15px;color:var(--t2);line-height:1.7;margin-bottom:16px}
+    .side-card ul{list-style:none;display:grid;gap:10px;margin:18px 0}
+    .side-card li{font-size:14px;color:var(--t2);border-left:2px solid var(--border-hi);padding-left:14px}
+    .cards-section{padding:80px 0}
+    .cards-head{text-align:center;max-width:760px;margin:0 auto 36px}
+    .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden}
+    .feature-card{background:var(--bg);padding:26px;transition:background var(--transition)}
+    .feature-card:hover{background:var(--surface)}
+    .feature-card h3{font-size:15px;font-weight:600;color:var(--t1);margin-bottom:8px}
+    .feature-card p{font-size:14px;color:var(--t2);line-height:1.65}
+    .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+    .step-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:28px}
+    .step-num{font-family:'Geist Mono',monospace;color:#b9a4ff;font-size:13px;margin-bottom:18px}
+    .step-card h3{color:var(--t1);font-size:17px;margin-bottom:8px}
+    .step-card p{font-size:14px;color:var(--t2);line-height:1.65}
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;margin-top:34px}
+    .also-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+    .also-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px;transition:border-color var(--transition),transform var(--transition)}
+    .also-card:hover{border-color:var(--border-hi);transform:translateY(-1px)}
+    .also-card h3{font-size:16px;color:var(--t1);margin-bottom:8px}
+    .also-card p{font-size:14px;color:var(--t2);line-height:1.6}
+    .cta-section{padding:80px 0;text-align:center}
+    .cta-section h2{font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--t1);line-height:1.1;letter-spacing:-0.02em;margin-bottom:14px}
+    .cta-section p{font-size:16px;color:var(--t2);max-width:620px;margin:0 auto 30px;line-height:1.7}
+    .cta-buttons{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+    footer{border-top:1px solid var(--border);padding:40px 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .footer-copy{font-size:13px;color:var(--t3)}
+    .footer-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .footer-links a{font-size:13px;color:var(--t3);transition:color var(--transition)}.footer-links a:hover{color:var(--t2)}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+    @media(max-width:1050px){.hero-grid,.split-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:760px){.container,.nav-inner{padding-left:24px;padding-right:24px}.nav-links{display:none}.hero{padding:56px 0}.meta-grid,.steps-grid,.faq-grid,.also-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:1fr}.hero-card{padding:14px}}
+  </style>
+  <script defer src="/analytics.js"></script>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="GenCatalogLogo-64.webp" width="28" height="28" alt="" style="border-radius:6px;display:block;">
+      GenCatalog
+    </a>
+    <div class="nav-links">
+      <a href="/#features">Features</a>
+      <a href="/#how">How It Works</a>
+      <a href="/#pricing">Pricing</a>
+      <a href="/support">Support</a>
+      <a href="/faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="/get" class="btn btn-primary smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download Free</span></a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="breadcrumb">
+    <div class="container">
+      <div class="breadcrumb-inner">
+        <a href="/">Home</a>
+        <span class="breadcrumb-sep">&rsaquo;</span>
+        <span>Arcana Labs</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge"><span class="platform-dot"></span>For Arcana Labs</div>
+          <h1>Turn Arcana generations into a working creative library.</h1>
+          <p class="hero-subhead">GenCatalog saves Arcana Labs generations with prompts, negative prompts, project metadata, model details, generation IDs, settings, and source links intact, so high-volume creative work stays searchable after the session ends.</p>
+          <div class="hero-ctas">
+            <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download Free</span></a>
+            <a href="/support#arcana" class="btn btn-ghost btn-lg">See Setup Guide</a>
+          </div>
+          <p class="hero-meta">macOS and Windows &nbsp;&middot;&nbsp; Requires Chrome extension &nbsp;&middot;&nbsp; 7-day free trial</p>
+        </div>
+        <div class="hero-card" aria-label="Arcana-native proof">
+          <div class="proof-frame">
+            <img src="GenCatalogInterface.webp" alt="GenCatalog interface showing an AI generation library with searchable metadata" width="1200" height="675" loading="eager" fetchpriority="high" decoding="async">
+          </div>
+          <p class="proof-caption">
+            <strong>Arcana-native proof</strong>
+            <span>Arcana saves appear as Arcana, not as a generic import, with project metadata, prompt IDs, generation IDs, model settings, and source links represented directly in the detail panel.</span>
+          </p>
+        </div>
+      </div>
+      <div class="meta-grid">
+        <div class="meta-card">
+          <h3>Project-Aware Saves</h3>
+          <p>Keep Arcana project context attached to the media instead of losing it in anonymous downloads.</p>
+        </div>
+        <div class="meta-card">
+          <h3>Prompt + Negative Prompt</h3>
+          <p>Preserve the prompt, negative prompt, model details, and settings that produced each result.</p>
+        </div>
+        <div class="meta-card">
+          <h3>Open in Arcana</h3>
+          <p>Jump back to the source generation when the original Arcana link is available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="container">
+      <div class="split-grid">
+        <div>
+          <span class="section-label">What It Captures</span>
+          <h2 class="section-heading">What GenCatalog captures from Arcana Labs</h2>
+          <p class="section-lead">Arcana can move quickly during real production work. GenCatalog keeps the creative context attached so finished images and video assets remain searchable after the session ends.</p>
+          <div class="capture-list">
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Original image or video media</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prompt text</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Negative prompt when present</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Project ID and project title when available</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Model and generation settings</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Prompt ID and generation ID</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Width, height, seed, source type, and creation date</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Favorite state and tags when exposed by Arcana</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Source URL for opening the generation back in Arcana</span></div>
+            <div class="capture-item"><span class="check"><svg viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>Local tags, notes, favorites, and collections inside GenCatalog</span></div>
+          </div>
+        </div>
+        <aside class="side-card">
+          <span class="section-label">Why Arcana Needs a Library</span>
+          <h2>Fast production tools create retrieval problems.</h2>
+          <p>Arcana is built for serious creative iteration. That speed is powerful, but it also means useful generations can disappear into large project histories, browser sessions, and generic downloads.</p>
+          <ul>
+            <li>Media can outlive the prompt that created it</li>
+            <li>Project context is easy to lose outside Arcana</li>
+            <li>Strong variations become difficult to compare later</li>
+            <li>Studio workflows need searchable metadata, not just files</li>
+          </ul>
+          <p>GenCatalog gives Arcana output a durable local retrieval layer: search, filters, tags, notes, collections, and source-aware metadata.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="container">
+      <div class="cards-head">
+        <span class="section-label">Platform Workflow</span>
+        <h2 class="section-heading">A cleaner way to manage Arcana output.</h2>
+        <p class="section-lead">GenCatalog is built for creators and studios who need to keep the asset, the recipe, and the production context together.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="feature-card">
+          <h3>Native Arcana source support</h3>
+          <p>Arcana items are labeled and filtered as Arcana, so they do not get mixed into another platform's workflow.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Prompt and metadata joins</h3>
+          <p>GenCatalog keeps the media file connected to the prompt data and generation metadata needed to understand how it was made.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Project-level organization</h3>
+          <p>Arcana project metadata can travel with each saved item, making it easier to organize work by client, concept, shot, or experiment.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Local-first archive</h3>
+          <p>Your saved media and catalog data stay on your machine, with no cloud library required for GenCatalog's core workflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="container narrow">
+      <span class="section-label">How It Works</span>
+      <h2 class="section-heading">Three steps to a searchable Arcana archive.</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <h3>Save from Arcana with GenCatalog running</h3>
+          <p>Keep the desktop app open and use the browser extension workflow to capture Arcana generations into your local catalog.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <h3>Preserve the context with the media</h3>
+          <p>GenCatalog stores the media alongside prompt text, negative prompt, project data, model settings, IDs, and source links where available.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-num">03</div>
+          <h3>Search, filter, and reuse later</h3>
+          <p>Find Arcana work by prompt fragments, project context, platform, media type, tags, dates, or notes without digging through download folders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="container">
+      <span class="section-label">Arcana FAQ</span>
+      <h2 class="section-heading">Questions that come up in real Arcana workflows.</h2>
+      <div class="faq-grid">
+        <div class="feature-card">
+          <h3>Does GenCatalog support Arcana Labs?</h3>
+          <p>Yes. GenCatalog includes native Arcana Labs support so Arcana generations can be saved and organized as Arcana items inside the local catalog.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Does GenCatalog save Arcana prompts?</h3>
+          <p>Yes. GenCatalog preserves prompt text and negative prompt data when available, along with related metadata such as model details, settings, prompt IDs, and generation IDs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Can I open a saved item back in Arcana?</h3>
+          <p>When the source link is available, GenCatalog stores an Open in Arcana link so you can jump back to the original generation or project context.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Does Arcana content stay local?</h3>
+          <p>Yes. GenCatalog stores the catalog, media, prompts, notes, tags, and metadata locally on your machine or the storage location you choose.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Is this useful for studio workflows?</h3>
+          <p>Yes. Arcana support was designed around high-volume creative workflows where project context, prompt history, metadata, and source links matter as much as the final media file.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="container">
+      <span class="section-label">Also Works With</span>
+      <h2 class="section-heading">One local system for the rest of your AI output.</h2>
+      <div class="also-grid">
+        <a href="/grok" class="also-card">
+          <h3>Grok Imagine</h3>
+          <p>Turn favorites and chat-era generations into a prompt-aware local library.</p>
+        </a>
+        <a href="/higgsfield" class="also-card">
+          <h3>Higgsfield</h3>
+          <p>Keep video clips with prompt, model, preset, and character metadata intact.</p>
+        </a>
+        <a href="/digen" class="also-card">
+          <h3>Digen</h3>
+          <p>Pull fast image experiments into the same searchable catalog.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Keep Arcana work searchable after the session ends.</h2>
+      <p>Save the asset, prompt, project context, and source metadata together so strong generations remain useful long after the browser tab is gone.</p>
+      <div class="cta-buttons">
+        <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download Free</span></a>
+        <a href="/support#arcana" class="btn btn-ghost btn-lg">See Setup Guide</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <span class="footer-copy">GenCatalog &copy; 2026 &nbsp;&middot;&nbsp; Second Act Labs</span>
+      <div class="footer-links">
+        <a href="/grok">Grok</a>
+        <a href="/arcana">Arcana Labs</a>
+        <a href="/higgsfield">Higgsfield</a>
+        <a href="/midjourney">Midjourney</a>
+        <a href="/digen">Digen</a>
+        <a href="/support">Support</a>
+        <a href="/faq">FAQ</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/release-notes">Release Notes</a>
+        <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var ua=navigator.userAgent;var isMobile=/iPhone|iPad|iPod|Android/i.test(ua);var isWin=!isMobile&&(/Win/i.test(navigator.platform)||/Windows/i.test(ua));if(isMobile){document.querySelectorAll('.smart-dl-btn').forEach(function(btn){var msg=document.createElement('p');msg.style.cssText='font-size:13px;color:var(--t3);margin:0;';msg.innerHTML='Desktop app &mdash; open this page on your Mac or Windows PC to download.';btn.parentNode.replaceChild(msg,btn);});}else{document.querySelectorAll('.smart-dl-btn').forEach(function(btn){var label=btn.querySelector('.dl-label');if(isWin){btn.href='/get';if(label)label.textContent=label.textContent.replace('Mac','Windows');}});}})();
+</script>
+</body>
+</html>
