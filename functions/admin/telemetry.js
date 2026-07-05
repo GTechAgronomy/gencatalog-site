@@ -80,11 +80,15 @@ function summarize(summaries) {
   const totalsByExtensionVersion = new Map();
   const totalsByDay = new Map();
   const appOpensByDay = new Map();
+  const activeInstallsByDay = new Map();
   const totalsByFeatureArea = new Map();
   const totalsByCatalogSize = new Map();
   const totalsByVisualCount = new Map();
   const totalsByMotionCount = new Map();
   const totalsByFavoriteCount = new Map();
+  const saveAttemptsByPlatform = new Map();
+  const saveSuccessByPlatform = new Map();
+  const saveBlocksByReason = new Map();
   const recentRows = [];
   let total = 0;
   let librarySnapshots = 0;
@@ -103,6 +107,10 @@ function summarize(summaries) {
       addToMap(totalsByExtensionVersion, row.dimensions?.extensionVersion, count);
       addToMap(totalsByDay, row.day, count);
       if (row.name === 'app.opened') addToMap(appOpensByDay, row.day, count);
+      if (row.name === 'install.active') addToMap(activeInstallsByDay, row.day, count);
+      if (row.name === 'ext.save.queued') addToMap(saveAttemptsByPlatform, row.dimensions?.platform, count);
+      if (row.name === 'ext.save.success') addToMap(saveSuccessByPlatform, row.dimensions?.platform, count);
+      if (row.name === 'ext.save.blocked') addToMap(saveBlocksByReason, row.dimensions?.reason, count);
       if (row.name === 'feature.used') addToMap(totalsByFeatureArea, row.dimensions?.area, count);
       if (row.name === 'library.snapshot') {
         librarySnapshots += count;
@@ -126,11 +134,15 @@ function summarize(summaries) {
     totalsByExtensionVersion,
     totalsByDay,
     appOpensByDay,
+    activeInstallsByDay,
     totalsByFeatureArea,
     totalsByCatalogSize,
     totalsByVisualCount,
     totalsByMotionCount,
     totalsByFavoriteCount,
+    saveAttemptsByPlatform,
+    saveSuccessByPlatform,
+    saveBlocksByReason,
     librarySnapshots,
     recentRows: recentRows
       .sort((a, b) => String(b.updatedAt || '').localeCompare(String(a.updatedAt || '')))
@@ -193,11 +205,15 @@ function jsonPayload({ summaries, stats, maxDays }) {
     byExtensionVersion: mapToObject(stats.totalsByExtensionVersion),
     byDay: Object.fromEntries(Array.from(stats.totalsByDay.entries()).sort((a, b) => a[0].localeCompare(b[0]))),
     appOpensByDay: Object.fromEntries(Array.from(stats.appOpensByDay.entries()).sort((a, b) => a[0].localeCompare(b[0]))),
+    activeInstallsByDay: Object.fromEntries(Array.from(stats.activeInstallsByDay.entries()).sort((a, b) => a[0].localeCompare(b[0]))),
     byFeatureArea: mapToObject(stats.totalsByFeatureArea),
     byCatalogSize: mapToObject(stats.totalsByCatalogSize),
     byVisualCount: mapToObject(stats.totalsByVisualCount),
     byMotionCount: mapToObject(stats.totalsByMotionCount),
     byFavoriteCount: mapToObject(stats.totalsByFavoriteCount),
+    saveAttemptsByPlatform: mapToObject(stats.saveAttemptsByPlatform),
+    saveSuccessByPlatform: mapToObject(stats.saveSuccessByPlatform),
+    saveBlocksByReason: mapToObject(stats.saveBlocksByReason),
     recentRows: stats.recentRows
   };
 }
@@ -207,6 +223,8 @@ function renderDashboard({ accessUser, summaries, stats, maxDays }) {
   const earliestDay = summaries[summaries.length - 1]?.day || 'No data yet';
   const updatedAt = summaries[0]?.updatedAt || 'No data yet';
   const appOpens = stats.totalsByEvent.get('app.opened') || 0;
+  const activeInstalls = stats.totalsByEvent.get('install.active') || 0;
+  const saveSuccesses = stats.totalsByEvent.get('ext.save.success') || 0;
   const featureEvents = stats.totalsByEvent.get('feature.used') || 0;
   const newestVersion = latestVersion(stats.totalsByAppVersion);
   return `<!doctype html>
@@ -261,12 +279,16 @@ function renderDashboard({ accessUser, summaries, stats, maxDays }) {
       </div>
     </header>
     <section class="metric">
+      <div class="card"><span>Active opted-in installs</span><strong>${activeInstalls.toLocaleString()}</strong></div>
       <div class="card"><span>App opens</span><strong>${appOpens.toLocaleString()}</strong></div>
+      <div class="card"><span>Save successes</span><strong>${saveSuccesses.toLocaleString()}</strong></div>
       <div class="card"><span>Feature events</span><strong>${featureEvents.toLocaleString()}</strong></div>
-      <div class="card"><span>Library snapshots</span><strong>${stats.librarySnapshots.toLocaleString()}</strong></div>
-      <div class="card"><span>Newest version seen</span><strong>${escapeHtml(newestVersion)}</strong></div>
     </section>
     <section class="grid">
+      <div class="card"><h2>Active Installs by Day</h2><table>${rowsForDays(stats.activeInstallsByDay)}</table></div>
+      <div class="card"><h2>Save Attempts by Source</h2><table>${rowsFor(stats.saveAttemptsByPlatform)}</table></div>
+      <div class="card"><h2>Save Successes by Source</h2><table>${rowsFor(stats.saveSuccessByPlatform)}</table></div>
+      <div class="card"><h2>Save Blocks by Reason</h2><table>${rowsFor(stats.saveBlocksByReason)}</table></div>
       <div class="card"><h2>Feature Usage</h2><table>${rowsFor(stats.totalsByFeatureArea)}</table></div>
       <div class="card"><h2>Library Size</h2><table>${rowsFor(stats.totalsByCatalogSize)}</table></div>
       <div class="card"><h2>App Opens by Day</h2><table>${rowsForDays(stats.appOpensByDay)}</table></div>
@@ -281,7 +303,7 @@ function renderDashboard({ accessUser, summaries, stats, maxDays }) {
       <div class="card"><h2>OS Family</h2><table>${rowsFor(stats.totalsByOs)}</table></div>
       <div class="card"><h2>Failure Reasons</h2><table>${rowsFor(stats.totalsByReason)}</table></div>
       <div class="card"><h2>Extension Versions</h2><table>${rowsFor(stats.totalsByExtensionVersion)}</table></div>
-      <div class="card"><h2>Storage</h2><table><tr><td>Backend</td><td><code>R2 daily summaries</code></td></tr><tr><td>Objects read</td><td>${summaries.length}</td></tr></table></div>
+      <div class="card"><h2>Storage</h2><table><tr><td>Backend</td><td><code>R2 daily summaries</code></td></tr><tr><td>Objects read</td><td>${summaries.length}</td></tr><tr><td>Range</td><td>${escapeHtml(earliestDay)} - ${escapeHtml(latestDay)}</td></tr><tr><td>Updated</td><td>${escapeHtml(updatedAt)}</td></tr><tr><td>Newest version</td><td>${escapeHtml(newestVersion)}</td></tr><tr><td>Library snapshots</td><td>${stats.librarySnapshots.toLocaleString()}</td></tr></table></div>
       <div class="card full"><h2>Recent Aggregate Rows</h2><table>${recentRowsTable(stats.recentRows)}</table></div>
     </section>
   </main>

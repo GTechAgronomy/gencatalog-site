@@ -70,11 +70,15 @@ try {
   const byOs = new Map();
   const byReason = new Map();
   const appOpensByDay = new Map();
+  const activeInstallsByDay = new Map();
   const byFeatureArea = new Map();
   const byCatalogSize = new Map();
   const byVisualCount = new Map();
   const byMotionCount = new Map();
   const byFavoriteCount = new Map();
+  const saveAttemptsByPlatform = new Map();
+  const saveSuccessByPlatform = new Map();
+  const saveBlocksByReason = new Map();
   let librarySnapshots = 0;
 
   for (const row of allRows) {
@@ -89,6 +93,10 @@ try {
     add(byOs, row.dimensions?.osFamily, count);
     add(byReason, row.dimensions?.reason, count);
     if (row.name === 'app.opened') add(appOpensByDay, row.day, count);
+    if (row.name === 'install.active') add(activeInstallsByDay, row.day, count);
+    if (row.name === 'ext.save.queued') add(saveAttemptsByPlatform, row.dimensions?.platform, count);
+    if (row.name === 'ext.save.success') add(saveSuccessByPlatform, row.dimensions?.platform, count);
+    if (row.name === 'ext.save.blocked') add(saveBlocksByReason, row.dimensions?.reason, count);
     if (row.name === 'feature.used') add(byFeatureArea, row.dimensions?.area, count);
     if (row.name === 'library.snapshot') {
       librarySnapshots += count;
@@ -101,6 +109,8 @@ try {
 
   const latest = summaries.at(-1);
   const appOpens = byEvent.get('app.opened') || 0;
+  const activeInstalls = byEvent.get('install.active') || 0;
+  const saveSuccesses = byEvent.get('ext.save.success') || 0;
   const featureEvents = byEvent.get('feature.used') || 0;
   const newestVersion = Array.from(byAppVersion.keys())
     .filter(Boolean)
@@ -146,12 +156,16 @@ try {
       <div class="pill">${escapeHtml(new Date().toLocaleString())}</div>
     </header>
     <section class="metric">
+      <div class="card"><span>Active opted-in installs</span><strong>${activeInstalls.toLocaleString()}</strong></div>
       <div class="card"><span>App opens</span><strong>${appOpens.toLocaleString()}</strong></div>
+      <div class="card"><span>Save successes</span><strong>${saveSuccesses.toLocaleString()}</strong></div>
       <div class="card"><span>Feature events</span><strong>${featureEvents.toLocaleString()}</strong></div>
-      <div class="card"><span>Library snapshots</span><strong>${librarySnapshots.toLocaleString()}</strong></div>
-      <div class="card"><span>Newest version seen</span><strong>${escapeHtml(newestVersion)}</strong></div>
     </section>
     <section class="grid">
+      <div class="card"><h2>Active Installs by Day</h2><table>${dayRowsFor(activeInstallsByDay)}</table></div>
+      <div class="card"><h2>Save Attempts by Source</h2><table>${rowsFor(saveAttemptsByPlatform)}</table></div>
+      <div class="card"><h2>Save Successes by Source</h2><table>${rowsFor(saveSuccessByPlatform)}</table></div>
+      <div class="card"><h2>Save Blocks by Reason</h2><table>${rowsFor(saveBlocksByReason)}</table></div>
       <div class="card"><h2>Feature Usage</h2><table>${rowsFor(byFeatureArea)}</table></div>
       <div class="card"><h2>Library Size</h2><table>${rowsFor(byCatalogSize)}</table></div>
       <div class="card"><h2>App Opens by Day</h2><table>${dayRowsFor(appOpensByDay)}</table></div>
@@ -166,7 +180,7 @@ try {
       <div class="card"><h2>OS Family</h2><table>${rowsFor(byOs)}</table></div>
       <div class="card"><h2>Failure Reasons</h2><table>${rowsFor(byReason)}</table></div>
       <div class="card"><h2>Extension Versions</h2><table>${rowsFor(byExtensionVersion)}</table></div>
-      <div class="card"><h2>Source</h2><table><tr><td>Bucket</td><td>${escapeHtml(bucket)}</td></tr></table></div>
+      <div class="card"><h2>Source</h2><table><tr><td>Bucket</td><td>${escapeHtml(bucket)}</td></tr><tr><td>Objects read</td><td>${summaries.length}</td></tr><tr><td>Latest day</td><td>${escapeHtml(latest?.day || 'No data')}</td></tr><tr><td>Updated</td><td>${escapeHtml(latest?.updatedAt || 'No data')}</td></tr><tr><td>Newest version</td><td>${escapeHtml(newestVersion)}</td></tr><tr><td>Library snapshots</td><td>${librarySnapshots.toLocaleString()}</td></tr></table></div>
       <div class="card full"><h2>Recent Aggregate Rows</h2><table>${recentRows(allRows)}</table></div>
     </section>
   </main>
