@@ -1,6 +1,6 @@
 # GenCatalog
 
-> Local AI image and video organizer for Grok Imagine, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Everything stored locally — nothing uploaded anywhere.
+> Local AI image and video organizer for Grok Imagine, Arcana Labs, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Everything stored locally — nothing uploaded anywhere.
 
 ## What it does
 
@@ -9,7 +9,7 @@ GenCatalog helps creators recover, remember, and rediscover AI-generated images 
 - Browse, search, and filter your entire AI media library
 - Recover old AI work from folders, favorites, downloads, and platform histories
 - Full prompt and creative recipe preserved with every generation when available
-- Supports Grok Imagine, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai
+- Supports Grok Imagine, Arcana Labs, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai
 - Color-coded source badges, star ratings, tags, notes, saved searches
 - Sub-second grid load times, tested with catalogs of 30,000+ items
 - Compare mode: view two generations side by side
