@@ -1,6 +1,27 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-08 — Published 5.16.51 large-batch smoothness release
+
+### What Changed
+- Bumped public desktop download/version surfaces from 5.16.50 to 5.16.51 after
+  the Mac and Windows artifacts were live.
+- Added the 5.16.51 release note for smoother large-batch catalog saves and
+  lighter sidebar refreshes during active imports.
+
+### What I Learned
+- Public copy for this release should stay focused on the practical feeling:
+  fewer pauses while new items are being added to large catalogs, especially on
+  external drives.
+
+### Verification
+- `scripts/update-version.sh 5.16.51`
+- `scripts/update-version.sh --check`
+
+### Status
+- Ready to deploy via Cloudflare Pages on push.
+
+---
 ## 2026-07-04 — Published 5.16.44 desktop polish release
 
 ### What Changed
