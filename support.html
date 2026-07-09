@@ -282,6 +282,7 @@
         .badge-higgsfield { background: rgba(232,105,105,0.12); color: #e86969; border: 1px solid rgba(232,105,105,0.25); }
         .badge-digen { background: rgba(48,214,139,0.12); color: #30d68b; border: 1px solid rgba(48,214,139,0.25); }
         .badge-gemini { background: rgba(66,133,244,0.12); color: #8ab4f8; border: 1px solid rgba(66,133,244,0.28); }
+        .badge-gpt { background: rgba(174,183,255,0.12); color: #c7ccff; border: 1px solid rgba(174,183,255,0.28); }
         .badge-rogue { background: rgba(255,138,76,0.12); color: #ffb088; border: 1px solid rgba(255,138,76,0.28); }
         .badge-midjourney { background: rgba(88,101,232,0.12); color: #5865e8; border: 1px solid rgba(88,101,232,0.30); }
         .badge-venice { background: rgba(217,184,79,0.12); color: #d9b84f; border: 1px solid rgba(217,184,79,0.25); }
@@ -617,20 +618,63 @@
 
         <div class="section" id="gpt-image">
             <h2>GPT Image</h2>
-            <p class="section-desc">Scan current ChatGPT image conversations, import prompt-matched images, and repair missing prompts on existing GPT Image catalog items.</p>
-            <div class="platform-badge">✓ chatgpt.com &nbsp;·&nbsp; chat.openai.com</div>
+            <p class="section-desc">Bulk download ChatGPT Images into your local catalog at full resolution, with recovered prompts attached when ChatGPT still exposes them.</p>
+            <div class="platform-badge badge-gpt">✓ chatgpt.com &nbsp;·&nbsp; chat.openai.com</div>
 
-            <h3>Scanning a Chat</h3>
-            <p>Open a ChatGPT conversation that contains GPT Image outputs, then open the GenCatalog extension popup and click <strong>Scan</strong>. GenCatalog counts image outputs it can pair with a visible prompt on that chat.</p>
+            <h3>Quick Start</h3>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Open ChatGPT Images</strong>
+                        <p>Sign in to ChatGPT and open your image library. Scroll the grid to load the images you want GenCatalog to see.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Click Scan in the GenCatalog extension</strong>
+                        <p>GenCatalog finds loaded ChatGPT Images, compares them with your local catalog, and recovers prompts for a small batch of the newest promptless images.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Download Ready images</strong>
+                        <p>When images are marked Ready, click Download to save the full-resolution files with their recovered prompts.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <strong>Backfill older prompts</strong>
+                        <p>If images are Held, click <strong>Backfill prompts</strong>. Backfill works in batches and resumes from the progress already made.</p>
+                    </div>
+                </div>
+            </div>
 
-            <h3>Downloading New Images</h3>
-            <p>After scan, click <strong>Download N new items</strong> when new prompt-matched GPT Image outputs are available. Items that are already in your catalog are not offered for duplicate download.</p>
+            <h3>What the Counts Mean</h3>
+            <ul>
+                <li><strong>Found</strong> — generated images GenCatalog can currently see in the loaded ChatGPT Images grid.</li>
+                <li><strong>Saved</strong> — found images already present in your GenCatalog catalog.</li>
+                <li><strong>Ready</strong> — new images with a recovered prompt, ready to download.</li>
+                <li><strong>Held</strong> — found images whose prompt has not been recovered yet.</li>
+            </ul>
+            <p>Held does not mean failed. It means GenCatalog found the image, but is still waiting to recover the prompt that belongs with it.</p>
 
-            <h3>Updating Missing Prompts</h3>
-            <p>If the chat contains GPT Image outputs that are already saved but missing prompt text in your catalog, the popup shows <strong>Update prompts</strong>. Use it to fill in the missing prompt metadata without re-downloading the images.</p>
+            <h3>Why Prompts Take Longer Than Images</h3>
+            <p>Finding images is fast because ChatGPT keeps an image library. Recovering prompts is slower because the prompt usually lives back in the original conversation where the image was created.</p>
+            <p>GenCatalog reads those conversations in small batches so Scan stays quick and Backfill can stop cleanly when ChatGPT starts limiting prompt lookups.</p>
 
-            <h3>Held Items</h3>
-            <p>Media-only images with no matched prompt are held back by default. This keeps your GPT Image imports useful and searchable instead of filling the catalog with promptless mystery files.</p>
+            <h3>Backfill Prompts</h3>
+            <p>Use <strong>Backfill prompts</strong> when you have older held images. Each run recovers as many prompts as ChatGPT currently allows, reports what changed, then stops. If ChatGPT rate limits the lookup, wait a few minutes and run Backfill again.</p>
+            <p>You do not need to wait for every held image to recover before downloading. Whenever images become Ready, you can download that ready set.</p>
+
+            <h3>Why Some Images Stay Held</h3>
+            <p>A small number of images may never get a recoverable prompt. The original conversation may have been deleted, the image may have come from a short photo-edit instruction, or the recoverable prompt may be only a brief follow-up such as "make it warmer."</p>
+            <p>GenCatalog does not invent missing prompts, and it intentionally leaves Held images out of download so your catalog stays searchable and useful.</p>
+
+            <div class="tip"><strong>Tip:</strong> Prompt recovery works best after a break or at the start of a session. Running Backfill repeatedly in quick succession may recover fewer prompts because ChatGPT has not refreshed the available lookup allowance yet.</div>
         </div>
 
         <div class="section" id="gemini">
