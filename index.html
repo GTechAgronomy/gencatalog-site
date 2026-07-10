@@ -197,7 +197,7 @@
           <p class="eyebrow reveal">The archive layer</p>
           <h2 class="section-title wide reveal">Creation is fast. Finding the right thing six months later is not.</h2>
           <p class="lede reveal">
-            Generation platforms help you make. GenCatalog helps you remember—without moving your work into another cloud or asking you to rebuild the context by hand.
+            Generation platforms help you create. GenCatalog helps you remember—without moving your work into another cloud or asking you to rebuild the context by hand.
           </p>
         </div>
 
@@ -206,7 +206,7 @@
             <span class="index">01</span>
             <div>
               <h3>Files drift away from their prompts.</h3>
-              <p>Downloads survive while the model, settings, source, and reason they mattered disappear.</p>
+              <p>Downloads pile up while the model, settings, source, and reason they mattered disappear.</p>
             </div>
           </article>
           <article class="problem-row">
@@ -247,15 +247,30 @@
                 <span>CONTEXT STAYS ATTACHED</span>
               </div>
               <div class="stage-panes">
-                <div class="stage-pane" data-pane="save">
-                  <img src="uploads_v2/GrokSaveBadges-1600.webp" alt="GenCatalog save controls on a Grok Imagine generation page" width="1600" height="727" loading="lazy" decoding="async">
+                <div class="stage-pane stage-pane-save" data-pane="save">
+                  <!-- Draft-only slot: replace with the new live Midjourney capture before release. -->
+                  <div class="capture-slot" role="img" aria-label="Reserved space for a new live Midjourney capture">
+                    <div class="capture-slot-bar">
+                      <span>LIVE PLATFORM CAPTURE</span>
+                      <span>16:9</span>
+                    </div>
+                    <div class="capture-slot-body">
+                      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                        <rect x="3.5" y="5.5" width="27" height="23" rx="3"></rect>
+                        <path d="M9 22l5-5 4 4 3-3 4 4"></path>
+                        <circle cx="22.5" cy="12" r="2"></circle>
+                      </svg>
+                      <p>New Midjourney capture</p>
+                      <span>Awaiting the final live source image</span>
+                    </div>
+                  </div>
                   <span class="stage-caption">SAVE / WHERE YOU CREATE</span>
                 </div>
-                <div class="stage-pane" data-pane="find">
-                  <img src="uploads_v2/DetailViewModalDetail-1100.webp" alt="GenCatalog detail view preserving the prompt, model, parameters, and source" width="1100" height="1320" loading="lazy" decoding="async">
+                <div class="stage-pane stage-pane-find" data-pane="find">
+                  <img src="ShowDetailTechnical.webp" alt="GenCatalog detail panel showing ratings, prompt, model, source, dimensions, tags, notes, and reusable actions" width="6948" height="3797" loading="lazy" decoding="async">
                   <span class="stage-caption">FIND / BY REAL CONTEXT</span>
                 </div>
-                <div class="stage-pane" data-pane="reuse">
+                <div class="stage-pane stage-pane-reuse" data-pane="reuse">
                   <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog compare view showing two generations and their metadata side by side" width="1600" height="773" loading="lazy" decoding="async">
                   <span class="stage-caption">REUSE / WITH THE RECIPE</span>
                 </div>
