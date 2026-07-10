@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8EV2H78B6F"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,29 +12,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GenCatalog — Bulk Download Grok Favorites and Save Prompts Locally</title>
   <meta name="description" content="Bulk download Grok favorites, import ComfyUI output folders, save prompts and metadata locally, and organize AI generations from Grok, Arcana Labs, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai. Free 7-day trial.">
-  <link rel="canonical" href="https://gencatalog.app/" />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <meta name="theme-color" content="#0d0f13" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gencatalog.app/" />
-  <meta property="og:site_name" content="GenCatalog" />
-  <meta property="og:title" content="GenCatalog — Local AI Image &amp; Video Organizer" />
-  <meta property="og:description" content="Save AI generations from Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
-  <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GenCatalog — Local AI Image &amp; Video Organizer" />
-  <meta name="twitter:description" content="Save AI generations from Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase." />
-  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <link rel="canonical" href="https://gencatalog.app/">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0b0d11">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gencatalog.app/">
+  <meta property="og:site_name" content="GenCatalog">
+  <meta property="og:title" content="GenCatalog — Local AI Image &amp; Video Organizer">
+  <meta property="og:description" content="Save AI generations from Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase.">
+  <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GenCatalog — Local AI Image &amp; Video Organizer">
+  <meta name="twitter:description" content="Save AI generations from Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase.">
+  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
 
-  <!-- ============== Structured Data: FAQ ============== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,7 +50,6 @@
   }
   </script>
 
-  <!-- ============== Structured Data: SoftwareApplication ============== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,7 +66,6 @@
   }
   </script>
 
-  <!-- ============== Structured Data: Organization ============== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -81,1373 +77,434 @@
   }
   </script>
 
-  <link rel="stylesheet" href="site-home-20260610.css">
-  <noscript><style>.reveal{opacity:1 !important;transform:none !important}</style></noscript>
-  <style>
-    /* ============================================================
-       Hero
-       ============================================================ */
-    .hero {
-      padding: 180px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: -200px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1200px; height: 800px;
-      background:
-        radial-gradient(ellipse at center top, rgba(88,101,232,0.18), transparent 50%),
-        radial-gradient(ellipse 600px 300px at 30% 20%, rgba(174,183,255,0.08), transparent 70%),
-        radial-gradient(ellipse 600px 300px at 70% 30%, rgba(232,105,105,0.05), transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-    .hero-eyebrow-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 28px;
-    }
-    .platform-pill-rotator {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      color: var(--t2);
-    }
-    .platform-pill-rotator .word {
-      display: inline-block;
-      transition: opacity 200ms ease, transform 200ms ease;
-      color: var(--accent-hi);
-      font-weight: 600;
-      min-width: 80px;
-      text-align: left;
-    }
-    .hero h1 { margin: 0 auto; max-width: 1000px; }
-    .hero .lede {
-      margin: 24px auto 0;
-      font-size: 19px;
-      color: var(--t2);
-      max-width: 660px;
-    }
-    .hero-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .hero-trust {
-      margin-top: 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: var(--t3);
-      font-family: var(--font-mono);
-      letter-spacing: 0.04em;
-    }
-    .hero-trust .dot { width: 5px; height: 5px; border-radius: 999px; background: var(--green); box-shadow: 0 0 6px var(--green); }
-    .hero-shot-wrap {
-      margin-top: 80px;
-      perspective: 1800px;
-      position: relative;
-    }
-    .hero-shot {
-      max-width: 1280px;
-      margin: 0 auto;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border-hi);
-      box-shadow:
-        0 0 0 1px rgba(255,255,255,0.05),
-        0 40px 100px rgba(0,0,0,0.7),
-        0 0 160px rgba(88,101,232,0.22);
-      transform: perspective(1800px) rotateX(6deg);
-      transform-origin: center top;
-      transition: transform 100ms linear;
-      will-change: transform;
-      position: relative;
-    }
-    .hero-shot img { display: block; width: 100%; height: auto; image-rendering: -webkit-optimize-contrast; }
-    .hero-shot::before {
-      content: "";
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-      z-index: 2;
-    }
-    main > section {
-      padding-top: 96px;
-      padding-bottom: 96px;
-    }
-    @media (max-width: 768px) {
-      main > section {
-        padding-top: 72px;
-        padding-bottom: 72px;
-      }
-    }
-
-    /* ── Analogy band (the iCloud/Time Machine pivot) ───── */
-    .analogy-band {
-      padding: 60px 0;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    .analogy-band .quote {
-      font-size: clamp(20px, 2.4vw, 28px);
-      font-weight: 500;
-      color: var(--t1);
-      letter-spacing: -0.02em;
-      max-width: 880px;
-      margin: 0 auto;
-      line-height: 1.35;
-    }
-    .analogy-band .quote em {
-      font-style: normal;
-      color: var(--accent-hi);
-    }
-    .analogy-band .attrib {
-      margin-top: 18px;
-      font-size: 14px;
-      line-height: 1.65;
-      letter-spacing: 0;
-      color: var(--t2);
-      max-width: 92ch;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ── Logos / platforms strip ─────────────────── */
-    .platforms-strip {
-      padding: 56px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .platforms-row {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-    .platforms-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--t3);
-    }
-    .platform-marks {
-      display: flex; gap: 16px 36px; align-items: center; justify-content: center; flex-wrap: wrap;
-    }
-    .platform-mark {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-size: 14px; color: var(--t2); font-weight: 500;
-      letter-spacing: -0.01em;
-      transition: color 140ms ease, transform 140ms ease;
-    }
-    a.platform-mark:hover { color: var(--t1); transform: translateY(-1px); }
-    .platform-mark .dot {
-      width: 8px; height: 8px; border-radius: 999px;
-    }
-    .platform-mark.grok .dot { background: var(--grok); box-shadow: 0 0 8px rgba(88,101,232,.6); }
-    .platform-mark.mj .dot { background: var(--mj); box-shadow: 0 0 8px rgba(174,183,255,.6); }
-    .platform-mark.hf .dot { background: var(--higgsfield); box-shadow: 0 0 8px rgba(232,105,105,.6); }
-    .platform-mark.dg .dot { background: var(--digen); box-shadow: 0 0 8px rgba(48,214,139,.6); }
-    .platform-mark.vn .dot { background: #d9b84f; box-shadow: 0 0 8px rgba(217,184,79,.55); }
-    .platform-mark.gpt .dot { background: #aeb7ff; box-shadow: 0 0 8px rgba(174,183,255,.55); }
-    .platform-mark.gemini .dot { background: #4285f4; box-shadow: 0 0 8px rgba(66,133,244,.55); }
-    .platform-mark.rogue .dot { background: #ff8a4c; box-shadow: 0 0 8px rgba(255,138,76,.55); }
-    .platform-mark.arcana .dot { background: #8b5cf6; box-shadow: 0 0 8px rgba(139,92,246,.55); }
-    .platform-mark.local .dot { background: #38bdf8; box-shadow: 0 0 8px rgba(56,189,248,.55); }
-
-    /* ── Problem section ─────────────────────────── */
-    .problem .h-section { max-width: 22ch; margin: 0 auto; text-align: center; }
-    .problem .lede { text-align: center; margin: 24px auto 60px; }
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    @media (max-width: 768px) { .problem-grid { grid-template-columns: 1fr; } }
-    .problem-card {
-      display: grid;
-      grid-template-rows: 1fr auto;
-      gap: 22px;
-      min-height: 240px;
-      padding: 0;
-      overflow: hidden;
-    }
-    .problem-side,
-    .solution-side {
-      padding: 28px 30px;
-    }
-    .problem-side {
-      border-bottom: 1px solid var(--border);
-    }
-    .solution-side {
-      background: linear-gradient(180deg, rgba(48,214,139,0.08), rgba(48,214,139,0.025));
-    }
-    .problem-label,
-    .solution-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 16px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-    .problem-label {
-      color: var(--t3);
-    }
-    .solution-label {
-      color: var(--green);
-    }
-    .problem-label::before,
-    .solution-label::before {
-      content: "";
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      flex: 0 0 auto;
-    }
-    .problem-label::before {
-      background: var(--t3);
-      opacity: 0.65;
-    }
-    .solution-label::before {
-      background: var(--green);
-      box-shadow: 0 0 8px rgba(48,214,139,0.55);
-    }
-    .problem-card .icon-wrap {
-      width: 44px; height: 44px; border-radius: 10px;
-      background: var(--s2); border: 1px solid var(--border);
-      display: grid; place-items: center;
-      margin-bottom: 18px;
-      color: var(--accent-hi);
-    }
-    .problem-card h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; color: var(--t1); letter-spacing: -0.01em; }
-    .problem-card p { font-size: 14px; color: var(--t2); margin: 0; line-height: 1.55; }
-    .solution-side p {
-      color: var(--t1);
-      font-weight: 500;
-    }
-    .solution-side strong {
-      color: var(--green);
-      font-weight: 600;
-    }
-
-    /* ── Feature: automatic capture ──────────────── */
-    .feature-split {
-      display: grid;
-      grid-template-columns: 1fr 1.1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    @media (max-width: 900px) {
-      .feature-split { grid-template-columns: 1fr; gap: 40px; }
-    }
-    .feature-text .eyebrow { margin-bottom: 20px; }
-    .feature-text h2 { margin-bottom: 20px; }
-    .feature-text .lede { margin-bottom: 24px; }
-    .feature-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
-    .feature-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      font-size: 14px; color: var(--t2); line-height: 1.55;
-    }
-    .feature-list li::before {
-      content: "";
-      display: inline-block;
-      width: 16px; height: 16px;
-      flex-shrink: 0;
-      margin-top: 3px;
-      border-radius: 999px;
-      background:
-        radial-gradient(circle, var(--accent) 30%, transparent 30%),
-        rgba(88,101,232,0.15);
-      border: 1px solid var(--accent-b);
-    }
-    .feature-list li strong { color: var(--t1); font-weight: 500; margin-right: 4px; }
-
-    /* In-context save-badge demo (real platform screenshot wrapped in browser chrome) */
-    .browser-mock {
-      background: var(--surface);
-      border: 1px solid var(--border-hi);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 60px rgba(88,101,232,0.1);
-    }
-    .browser-bar {
-      display: flex; align-items: center; gap: 8px;
-      padding: 12px 16px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
-    .browser-bar .tldot { width: 11px; height: 11px; border-radius: 999px; }
-    .browser-bar .url {
-      flex: 1; margin-left: 16px;
-      height: 26px; padding: 0 12px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 6px;
-      display: flex; align-items: center;
-      font-family: var(--font-mono); font-size: 11px; color: var(--t3);
-    }
-    .browser-canvas {
-      aspect-ratio: 16/10;
-      background: #0d0f13;
-      position: relative;
-      overflow: hidden;
-    }
-    .browser-canvas img {
-      position: absolute;
-      inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    /* Animated saved-state pulse on top of real screenshot */
-    .save-pulse {
-      position: absolute;
-      bottom: 24px;
-      right: 24px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      height: 40px;
-      padding: 0 16px;
-      background: rgba(21,23,28,0.78);
-      backdrop-filter: blur(12px) saturate(1.3);
-      -webkit-backdrop-filter: blur(12px) saturate(1.3);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 999px;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 500;
-      box-shadow: 0 8px 24px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.06);
-    }
-    .save-pulse .glyph {
-      width: 26px; height: 26px;
-      border-radius: 999px;
-      background: var(--green);
-      display: grid; place-items: center;
-      font-weight: 700; font-size: 13px; color: #fff;
-      animation: pulse-glow 2.4s ease-in-out infinite;
-    }
-    @keyframes pulse-glow {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(48,214,139,0.45); }
-      50% { box-shadow: 0 0 0 10px rgba(48,214,139,0); }
-    }
-
-    /* ── Showcase: side-by-side image/text rows ─────── */
-    .showcase-row {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 80px;
-      align-items: center;
-    }
-    .showcase-row.reverse { grid-template-columns: 1fr 1.1fr; }
-    .showcase-row.reverse .showcase-image { order: 2; }
-    .showcase-row.reverse .showcase-text { order: 1; }
-    @media (max-width: 900px) {
-      .showcase-row, .showcase-row.reverse { grid-template-columns: 1fr; gap: 40px; }
-      .showcase-row.reverse .showcase-image { order: 0; }
-    }
-    .showcase-image {
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--border-hi);
-      box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 80px rgba(88,101,232,0.10);
-      background: var(--surface);
-    }
-    .showcase-image img { width: 100%; height: auto; display: block; }
-    .recipe-card-section {
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-    }
-    .recipe-card-demo {
-      max-width: 520px;
-      margin: 0 auto;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 36px 90px rgba(0,0,0,0.55), 0 0 80px rgba(88,101,232,0.18);
-    }
-    .recipe-card-demo img { width: 100%; height: auto; display: block; }
-    @media (max-width: 900px) {
-      .recipe-card-demo { max-width: 100%; }
-    }
-
-    /* ── Find / search section accent bg ─────────── */
-    .find-section {
-      background:
-        radial-gradient(ellipse 1000px 400px at 50% 0%, rgba(88,101,232,0.08), transparent 70%);
-    }
-
-    /* ── Local-first ─────────────────────────────── */
-    .local-section {
-      text-align: center;
-      padding-bottom: 72px;
-      background:
-        radial-gradient(ellipse 1000px 600px at 50% 50%, rgba(48,214,139,0.05), transparent 60%);
-    }
-    .local-card {
-      margin: 80px auto 0;
-      max-width: 720px;
-      background: var(--surface);
-      border: 1px solid var(--border-hi);
-      border-radius: 16px;
-      padding: 40px;
-      position: relative;
-      overflow: hidden;
-    }
-    .local-card::before {
-      content: "";
-      position: absolute; top: -1px; left: 20%; right: 20%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--green), transparent);
-    }
-    .local-stat {
-      display: flex; align-items: center; justify-content: center; gap: 32px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-    .local-stat .item { text-align: center; }
-    .local-stat .item .num {
-      font-family: var(--font-mono);
-      font-size: 28px;
-      font-weight: 500;
-      color: var(--t1);
-      letter-spacing: -0.04em;
-    }
-    .local-stat .item .num.green { color: var(--green); }
-    .local-stat .item .lbl {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: var(--t3);
-      margin-top: 4px;
-    }
-    .local-card h3 { font-size: 20px; margin: 0 0 12px; font-weight: 600; color: var(--t1); }
-    .local-card p { color: var(--t2); margin: 0; font-size: 14px; line-height: 1.55; }
-    .local-card .badges {
-      display: flex; gap: 8px; justify-content: center; margin-top: 24px;
-      flex-wrap: wrap;
-    }
-    .local-card .badges .b {
-      display: inline-flex; align-items: center; gap: 6px;
-      height: 26px; padding: 0 10px;
-      background: var(--s2); border: 1px solid var(--border);
-      border-radius: 999px;
-      font-family: var(--font-mono); font-size: 10px;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      color: var(--t2);
-    }
-    .local-card .badges .b::before {
-      content: ""; width: 5px; height: 5px; border-radius: 999px;
-      background: var(--green); box-shadow: 0 0 6px var(--green);
-    }
-
-    /* ── Rediscover band ─────────────────────────── */
-    .rediscover-band {
-      padding: 96px 0;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      background:
-        radial-gradient(ellipse 900px 500px at 50% 50%, rgba(217,184,79,0.07), transparent 60%);
-    }
-    .rediscover-band::before {
-      content: "";
-      position: absolute; top: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(217,184,79,0.35), transparent);
-    }
-    .rediscover-band::after {
-      content: "";
-      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(217,184,79,0.35), transparent);
-    }
-    .rediscover-stars {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-    .rediscover-stars span {
-      position: absolute;
-      color: var(--yellow);
-      font-size: 12px;
-      opacity: 0.18;
-      animation: twinkle 4s ease-in-out infinite;
-    }
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.10; transform: scale(0.9); }
-      50% { opacity: 0.35; transform: scale(1.1); }
-    }
-    .rediscover-band h2 {
-      max-width: 22ch;
-      margin: 20px auto 0;
-    }
-    .rediscover-band h2 .star {
-      color: var(--yellow);
-      filter: drop-shadow(0 0 12px rgba(217,184,79,0.5));
-      display: inline-block;
-      margin: 0 4px;
-    }
-    .rediscover-band .lede {
-      max-width: 640px;
-      margin: 24px auto 48px;
-    }
-    .rediscover-strip {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 14px;
-      max-width: 880px;
-      margin: 0 auto;
-    }
-    @media (max-width: 700px) { .rediscover-strip { grid-template-columns: repeat(3, 1fr); } }
-    @media (max-width: 768px) { .rediscover-band { padding: 80px 0; } }
-    .rediscover-card {
-      aspect-ratio: 4/5;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: flex-end;
-      padding: 12px;
-      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
-    }
-    .rediscover-card.featured {
-      border-color: rgba(217,184,79,0.45);
-      box-shadow: 0 0 24px rgba(217,184,79,0.18);
-      transform: translateY(-4px);
-    }
-    .rediscover-card .ago {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.06em;
-      color: rgba(255,255,255,0.85);
-    }
-
-    /* ── Pricing ─────────────────────────────────── */
-    .pricing-section { text-align: center; padding-top: 72px; padding-bottom: 64px; }
-    .pricing-section .lede { margin: 24px auto 60px; }
-    .testimonials-section {
-      text-align: center;
-      padding-top: 72px;
-      padding-bottom: 72px;
-    }
-    .testimonials-section .h-section {
-      max-width: 24ch;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    .testimonials-section .lede {
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center;
-    }
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 48px;
-      text-align: left;
-    }
-    .testimonial-card {
-      min-height: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .testimonial-rating {
-      color: var(--yellow);
-      font-family: var(--font-mono);
-      font-size: 12px;
-      letter-spacing: 0.08em;
-    }
-    .testimonial-quote {
-      color: var(--t1);
-      font-size: 15px;
-      line-height: 1.65;
-      margin: 0;
-    }
-    .testimonial-source {
-      margin-top: auto;
-      color: var(--t3);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-    @media (max-width: 900px) {
-      .testimonial-grid { grid-template-columns: 1fr; }
-    }
-    .pricing-card {
-      max-width: 460px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 40px;
-      background: linear-gradient(180deg, rgba(88,101,232,0.06), transparent), var(--surface);
-      border: 1px solid var(--accent-b);
-      border-radius: 16px;
-      box-shadow: 0 0 60px rgba(88,101,232,0.18);
-    }
-    .pricing-card .price {
-      font-family: var(--font-mono);
-      font-size: 56px;
-      font-weight: 500;
-      color: var(--t1);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      margin-bottom: 8px;
-    }
-    .pricing-card .price-sub {
-      font-size: 14px;
-      color: var(--t2);
-      margin-bottom: 4px;
-    }
-    .pricing-card .price-note {
-      font-size: 13px;
-      color: var(--t3);
-      margin-bottom: 28px;
-    }
-    .pricing-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 28px;
-      text-align: left;
-      border-top: 1px solid var(--border);
-      padding-top: 24px;
-    }
-    .pricing-card ul li {
-      font-size: 14px;
-      color: var(--t2);
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .pricing-card ul li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 700;
-      width: 16px;
-      flex-shrink: 0;
-    }
-    .pricing-card .ctas {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .pricing-proof {
-      margin: -4px 0 18px;
-      padding: 14px 16px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: rgba(255,255,255,0.025);
-    }
-    .pricing-proof blockquote {
-      margin: 0 0 4px;
-      color: var(--t1);
-      font-size: 15px;
-      font-weight: 500;
-      line-height: 1.4;
-    }
-    .pricing-proof .testimonial-rating {
-      margin-bottom: 8px;
-    }
-    .pricing-proof cite {
-      color: var(--t3);
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-style: normal;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-    .pricing-card .ctas .btn { width: 100%; }
-    .pricing-card .pf {
-      margin-top: 16px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--t3);
-    }
-
-    /* ── Final CTA ───────────────────────────────── */
-    .final-cta {
-      text-align: center;
-      padding: 80px 0 112px;
-      position: relative;
-      overflow: hidden;
-    }
-    .final-cta::before {
-      content: "";
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse 800px 400px at 50% 50%, rgba(88,101,232,0.15), transparent 60%);
-      pointer-events: none;
-    }
-    .final-cta .h-section { max-width: 22ch; margin: 0 auto; }
-    .final-cta .lede { margin: 24px auto 40px; }
-
-    /* ── Footer overrides for live-site links ───── */
-    .foot-grid a { font-size: 14px; }
-
-    /* ── Accessibility: contrast, focus, skip link, mobile nav ── */
-    .hero-trust, .platforms-label, .pricing-card .price-note, .pricing-card .pf, .foot-meta { color: #767a86; }
-    :focus-visible { outline: 2px solid #aeb7ff; outline-offset: 2px; }
-    .skip-link {
-      position: absolute; left: -9999px; top: 0; z-index: 200;
-      background: #5865e8; color: #fff; padding: 10px 18px;
-      border-radius: 0 0 8px 0; font-size: 14px; font-weight: 600;
-    }
-    .skip-link:focus { left: 0; }
-    .foot-col h3 {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      color: #767a86;
-      margin: 0 0 16px;
-    }
-    .foot-col a { padding: 9px 0; }
-    .nav-toggle { display: none; }
-    @media (max-width: 768px) {
-      .nav-toggle {
-        display: inline-flex; align-items: center; justify-content: center;
-        width: 40px; height: 40px; margin-left: 10px;
-        background: var(--s2); border: 1px solid var(--border);
-        border-radius: 6px; color: var(--t1); cursor: pointer;
-      }
-      .nav-links {
-        display: none;
-        position: absolute; top: 100%; left: 0; right: 0;
-        flex-direction: column; align-items: stretch;
-        background: rgba(13,15,19,0.97);
-        -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
-        border-bottom: 1px solid var(--border);
-        padding: 8px 20px 14px;
-      }
-      .nav.open .nav-links { display: flex; }
-      .nav-links a { padding: 13px 4px; font-size: 16px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-        scroll-behavior: auto !important;
-      }
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-      .hero-shot {
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="site-home-20260709.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<a class="skip-link" href="#main">Skip to content</a>
-<nav class="nav">
-  <div class="container nav-inner">
-    <a class="nav-brand" href="/">
-      <img src="GenCatalogLogo-64.webp" alt="GenCatalog" width="28" height="28">
-      <span>GenCatalog</span>
-    </a>
-    <div class="nav-links" id="site-menu">
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="/guides">Guides</a>
-      <a href="/faq">FAQ</a>
-    </div>
-    <a class="nav-cta" href="/get">
-      Start free
-      <span style="color:var(--t3); font-family:var(--font-mono); font-size:11px;">↗</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </div>
-</nav>
-
-<!-- ────────────────── HERO ────────────────── -->
-<header class="hero">
-  <div class="container">
-    <div class="reveal">
-      <div class="hero-eyebrow-row">
-        <span class="eyebrow">v5.16.55</span>
-        <span class="platform-pill-rotator">
-          Capturing from
-          <span class="word" id="platform-rotator">Grok</span>
-        </span>
-      </div>
-    </div>
-
-    <h1 class="h-display reveal delay-1">
-      Stop losing your best AI generations.
-    </h1>
-
-    <p class="lede reveal delay-2">
-      Prompts disappear. Favorites become cluttered. Downloads pile up in random folders. GenCatalog turns AI images and videos into a searchable local library, with prompts and metadata preserved.
-    </p>
-
-    <div class="hero-cta reveal delay-4">
-      <a class="btn btn-primary" href="/get">
-        Start free
-        <span style="opacity:.7">— No card needed</span>
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="nav-brand" href="/" aria-label="GenCatalog home">
+        <img src="GenCatalogLogo-64.webp" alt="" width="28" height="28">
+        <span>GenCatalog</span>
       </a>
-      <a class="btn btn-secondary" href="#how">See how it works</a>
-    </div>
 
-    <div class="hero-trust reveal delay-5">
-      <span class="dot"></span>
-      <span>7-day trial · Up to 250 saves free · Local by default</span>
-    </div>
-  </div>
-
-  <div class="container hero-shot-wrap reveal delay-5">
-    <div class="hero-shot" id="hero-shot">
-      <img src="GenCatalogNewHero-2560.webp" srcset="GenCatalogNewHero-1280.webp 1280w, GenCatalogNewHero-2560.webp 2560w" sizes="(max-width: 1320px) 100vw, 1280px" alt="GenCatalog — local AI generation catalog with sidebar, grid, and detail panel" width="2560" height="1352" loading="eager" fetchpriority="high" decoding="async">
-    </div>
-  </div>
-</header>
-
-<main id="main">
-
-<!-- ────────────────── ANALOGY BAND ────────────────── -->
-<section class="analogy-band">
-  <div class="container">
-    <p class="quote reveal">
-      AI generation platforms are creation tools. <em>GenCatalog is your archive.</em>
-    </p>
-    <div class="attrib reveal delay-1">Keep the file, the prompt, and the context together before platform changes, lost favorites, or messy downloads turn retrieval into archaeology.</div>
-  </div>
-</section>
-
-<!-- ────────────────── PLATFORMS STRIP ────────────────── -->
-<section class="platforms-strip" style="padding:48px 0">
-  <div class="container">
-    <div class="platforms-row reveal">
-      <span class="platforms-label">Captures and imports from</span>
-      <div class="platform-marks">
-        <span class="platform-mark local"><span class="dot"></span>Must-have for multi-platform AI creators.</span>
-        <a class="platform-mark grok" href="/grok"><span class="dot"></span>Grok Imagine</a>
-        <a class="platform-mark arcana" href="/arcana"><span class="dot"></span>Arcana Labs</a>
-        <a class="platform-mark mj" href="/midjourney"><span class="dot"></span>Midjourney</a>
-        <a class="platform-mark hf" href="/higgsfield"><span class="dot"></span>Higgsfield</a>
-        <a class="platform-mark dg" href="/digen"><span class="dot"></span>Digen</a>
-        <a class="platform-mark gemini" href="/support#gemini"><span class="dot"></span>Gemini</a>
-        <a class="platform-mark gpt" href="/support#gpt-image"><span class="dot"></span>GPT Image</a>
-        <a class="platform-mark rogue" href="/support#rogue-studio"><span class="dot"></span>Rogue Studio</a>
-        <a class="platform-mark local" href="/comfyui-workflow-viewer"><span class="dot"></span>ComfyUI</a>
-        <a class="platform-mark vn" href="/support#venice"><span class="dot"></span>Venice.ai</a>
+      <div class="nav-links" id="site-menu">
+        <a href="#workflow">How it works</a>
+        <a href="#capabilities">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="/guides">Guides</a>
+        <a href="/faq">FAQ</a>
       </div>
+
+      <a class="nav-action" href="/get">
+        Start free
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+          <path d="M5 15 15 5M7 5h8v8"/>
+        </svg>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
     </div>
-  </div>
-</section>
+  </nav>
 
-<!-- ────────────────── PROBLEM ────────────────── -->
-<section class="problem">
-  <div class="container">
-    <h2 class="h-section reveal">Making images isn't the problem.<br>Finding them later is.</h2>
-    <p class="lede center reveal delay-1">
-      GenCatalog keeps the file, prompt, source, and settings together so your best work stays usable, searchable, and yours.
-    </p>
+  <header class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <div class="hero-kicker reveal">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>GenCatalog 5.16.55</span>
+          <span>Mac + Windows</span>
+        </div>
 
-    <div class="problem-grid">
-      <div class="card problem-card reveal delay-2">
-        <div class="problem-side">
-          <span class="problem-label">Problem</span>
-          <div class="icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
-              <rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 15l4-4 4 4 6-6 4 4"></path>
-            </svg>
-          </div>
-          <h3>Scattered across platforms</h3>
-          <p>Your best generations sit across different creation sites, browser tabs, and download folders.</p>
-        </div>
-        <div class="solution-side">
-          <span class="solution-label">GenCatalog solves it</span>
-          <p><strong>One local library</strong> brings supported platform saves into a searchable catalog you control.</p>
-        </div>
-      </div>
-      <div class="card problem-card reveal delay-3">
-        <div class="problem-side">
-          <span class="problem-label">Problem</span>
-          <div class="icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
-              <circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 3"></path>
-            </svg>
-          </div>
-          <h3>Prompts lost forever</h3>
-          <p>The image or video survives, but the prompt, model, settings, source, and context disappear.</p>
-        </div>
-        <div class="solution-side">
-          <span class="solution-label">GenCatalog solves it</span>
-          <p><strong>The full recipe</strong> stays attached to the file when the creation site provides it.</p>
-        </div>
-      </div>
-      <div class="card problem-card reveal delay-4">
-        <div class="problem-side">
-          <span class="problem-label">Problem</span>
-          <div class="icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
-              <circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.5-4.5"></path>
-            </svg>
-          </div>
-          <h3>No way to find anything</h3>
-          <p>Filenames do not remember what you made, where it came from, or why it mattered.</p>
-        </div>
-        <div class="solution-side">
-          <span class="solution-label">GenCatalog solves it</span>
-          <p><strong>Search by real context</strong>: prompt text, platform, tags, media type, dates, notes, and account.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <h1 class="display reveal">Your best AI work deserves a memory.</h1>
 
-<!-- ────────────────── FEATURE 01: AUTOMATIC CAPTURE ────────────────── -->
-<section id="how">
-  <div class="container">
-    <div class="feature-split">
-      <div class="feature-text">
-        <span class="eyebrow reveal">01 · Automatic capture</span>
-        <h2 class="h-section reveal delay-1">Save the recipe.<br>Not just the file.</h2>
-        <p class="lede reveal delay-2">
-          On supported creation sites, GenCatalog adds a save control where you work. One click captures the image or video with the prompt, settings, metadata, and source link when the site provides them. Local folders are backups; GenCatalog is the layer that makes those backups searchable, traceable, and reusable, with the prompt, source context, account, tags, notes, and media kept together.
+        <p class="lede reveal">
+          GenCatalog keeps the file, prompt, source, and settings together in one searchable library on your own computer—before favorites vanish and downloads lose their meaning.
         </p>
-        <ul class="feature-list reveal delay-3">
-          <li><div><strong>One-click save</strong> from the page you are already using.</div></li>
-          <li><div><strong>The full recipe</strong>: prompt, model, settings, metadata, and source link when available.</div></li>
-          <li><div><strong>Bulk scan</strong> — open the extension, hit Scan Library, walk away.</div></li>
-        </ul>
+
+        <div class="hero-actions reveal">
+          <a class="button button-primary" href="/get">
+            Start free
+            <span aria-hidden="true">—</span>
+            No card
+          </a>
+          <a class="button button-secondary" href="#workflow">
+            See the workflow
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <path d="M10 3v13M5 11l5 5 5-5"/>
+            </svg>
+          </a>
+        </div>
+
+        <p class="hero-trust reveal">
+          <span>7-day trial</span>
+          <span>Up to 250 saves</span>
+          <span>Local by default</span>
+        </p>
       </div>
-      <div class="reveal delay-2">
-        <div class="browser-mock">
-          <div class="browser-bar">
-            <span class="tldot" style="background:#ff5f57"></span>
-            <span class="tldot" style="background:#febc2e"></span>
-            <span class="tldot" style="background:#28c840"></span>
-            <span class="url">grok.com/imagine</span>
+
+      <div class="hero-art reveal">
+        <div class="hero-frame" data-tilt>
+          <div class="window-bar">
+            <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span>YOUR AI ARCHIVE / SEARCHABLE</span>
+            <span>LOCAL</span>
           </div>
-          <div class="browser-canvas">
-            <img src="uploads_v2/GrokSaveBadges-1600.webp" alt="GenCatalog save badges shown on a real Grok Imagine generation page" width="1600" height="727" loading="lazy" decoding="async">
-            <div class="save-pulse">
-              <div class="glyph">✓</div>
-              <span>Saved to GenCatalog</span>
+          <img src="GenCatalogNewHero-1280.webp" srcset="GenCatalogNewHero-1280.webp 1280w, GenCatalogNewHero-2560.webp 2560w" sizes="(max-width: 900px) 100vw, 58vw" alt="GenCatalog showing an AI generation library with search, filters, and generation details" width="1280" height="676" loading="eager" fetchpriority="high" decoding="async">
+        </div>
+
+        <aside class="context-ticket" aria-label="Generation context preserved">
+          <p class="ticket-label">Context preserved</p>
+          <p class="ticket-title">File + prompt + model + source</p>
+          <p class="ticket-meta">One generation. One reusable record.</p>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="signal-strip" aria-label="Customer proof and supported platforms">
+      <div class="container signal-grid">
+        <figure class="signal-quote">
+          <blockquote>“Pays for itself in the first day.”</blockquote>
+          <figcaption>Verified Chrome Web Store review</figcaption>
+        </figure>
+
+        <div class="platforms">
+          <span class="platforms-label">Capture and import from the tools you already use</span>
+          <a class="platform-link" style="--platform:#6673e8" href="/grok">Grok Imagine</a>
+          <a class="platform-link" style="--platform:#8b8f9b" href="/arcana">Arcana Labs</a>
+          <a class="platform-link" style="--platform:#aeb7ff" href="/midjourney">Midjourney</a>
+          <a class="platform-link" style="--platform:#e07b7b" href="/higgsfield">Higgsfield</a>
+          <a class="platform-link" style="--platform:#72d7aa" href="/digen">Digen</a>
+          <a class="platform-link" style="--platform:#7da6d9" href="/support#gemini">Gemini</a>
+          <a class="platform-link" style="--platform:#b1b5bd" href="/support#gpt-image">GPT Image</a>
+          <a class="platform-link" style="--platform:#d4a66b" href="/support#rogue-studio">Rogue Studio</a>
+          <a class="platform-link" style="--platform:#72d7aa" href="/comfyui-workflow-viewer">ComfyUI</a>
+          <a class="platform-link" style="--platform:#9d86c7" href="/support#venice">Venice.ai</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter">
+      <div class="container problem-layout">
+        <div class="problem-copy">
+          <p class="eyebrow reveal">The archive layer</p>
+          <h2 class="section-title wide reveal">Creation is fast. Finding the right thing six months later is not.</h2>
+          <p class="lede reveal">
+            Generation platforms help you make. GenCatalog helps you remember—without moving your work into another cloud or asking you to rebuild the context by hand.
+          </p>
+        </div>
+
+        <div class="problem-list reveal">
+          <article class="problem-row">
+            <span class="index">01</span>
+            <div>
+              <h3>Files drift away from their prompts.</h3>
+              <p>Downloads survive while the model, settings, source, and reason they mattered disappear.</p>
+            </div>
+          </article>
+          <article class="problem-row">
+            <span class="index">02</span>
+            <div>
+              <h3>Favorites become storage, not memory.</h3>
+              <p>A long feed can hold thousands of images and still make the exact one impossible to retrieve.</p>
+            </div>
+          </article>
+          <article class="problem-row">
+            <span class="index">03</span>
+            <div>
+              <h3>Folders cannot answer creative questions.</h3>
+              <p>Filenames do not know the prompt, source, account, tags, notes, rating, or workflow behind a result.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow">
+      <div class="container">
+        <div class="workflow-intro">
+          <div>
+            <p class="eyebrow reveal">Save &rarr; Find &rarr; Reuse</p>
+            <h2 class="section-title wide reveal">One continuous memory for the work.</h2>
+          </div>
+          <p class="lede reveal">
+            Capture where you create. Search by the context you remember. Reuse the full recipe when the work becomes useful again.
+          </p>
+        </div>
+
+        <div class="workflow-layout">
+          <div class="workflow-stage-wrap">
+            <figure class="workflow-stage reveal" id="workflow-stage" data-active="save">
+              <div class="stage-topbar">
+                <span>GENCATALOG WORKFLOW</span>
+                <span>CONTEXT STAYS ATTACHED</span>
+              </div>
+              <div class="stage-panes">
+                <div class="stage-pane" data-pane="save">
+                  <img src="uploads_v2/GrokSaveBadges-1600.webp" alt="GenCatalog save controls on a Grok Imagine generation page" width="1600" height="727" loading="lazy" decoding="async">
+                  <span class="stage-caption">SAVE / WHERE YOU CREATE</span>
+                </div>
+                <div class="stage-pane" data-pane="find">
+                  <img src="uploads_v2/DetailViewModalDetail-1100.webp" alt="GenCatalog detail view preserving the prompt, model, parameters, and source" width="1100" height="1320" loading="lazy" decoding="async">
+                  <span class="stage-caption">FIND / BY REAL CONTEXT</span>
+                </div>
+                <div class="stage-pane" data-pane="reuse">
+                  <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog compare view showing two generations and their metadata side by side" width="1600" height="773" loading="lazy" decoding="async">
+                  <span class="stage-caption">REUSE / WITH THE RECIPE</span>
+                </div>
+              </div>
+            </figure>
+
+            <div class="workflow-markers" aria-label="Workflow stages">
+              <button class="workflow-marker" type="button" data-stage-jump="save" aria-current="step">Save</button>
+              <button class="workflow-marker" type="button" data-stage-jump="find">Find</button>
+              <button class="workflow-marker" type="button" data-stage-jump="reuse">Reuse</button>
             </div>
           </div>
+
+          <div class="workflow-chapters">
+            <article class="workflow-chapter" data-stage="save">
+              <span class="step">Save where you create</span>
+              <h3>Keep the recipe, not just the render.</h3>
+              <p>On supported sites, one click saves the image or video with the prompt, settings, metadata, and source link the site provides.</p>
+              <ul class="chapter-list">
+                <li>Capture without leaving the page.</li>
+                <li>Bulk scan existing platform history.</li>
+                <li>See each successful save immediately.</li>
+              </ul>
+            </article>
+
+            <article class="workflow-chapter" data-stage="find">
+              <span class="step">Find by what you remember</span>
+              <h3>Search the context, not the filename.</h3>
+              <p>Prompt text, platform, model, account, tags, notes, dates, media type, ratings, and saved searches bring the right work back into view.</p>
+              <ul class="chapter-list">
+                <li>Filter thousands of generations quickly.</li>
+                <li>Save searches for active projects.</li>
+                <li>Curate collections without copying files.</li>
+              </ul>
+            </article>
+
+            <article class="workflow-chapter" data-stage="reuse">
+              <span class="step">Reuse with confidence</span>
+              <h3>Return to the decision that made it work.</h3>
+              <p>Read the full prompt and parameters, compare close variants, copy the recipe, or send a clean Recipe Card when someone asks how it was made.</p>
+              <ul class="chapter-list">
+                <li>Compare models, seeds, and settings side by side.</li>
+                <li>Copy complete prompts without truncation.</li>
+                <li>Share only the context you choose.</li>
+              </ul>
+            </article>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ────────────────── FEATURE 02: FIND ────────────────── -->
-<section id="features" class="find-section">
-  <div class="container">
-    <div style="text-align:center; max-width:720px; margin:0 auto 56px;">
-      <span class="eyebrow reveal">02 · Find anything</span>
-      <h2 class="h-section reveal delay-1" style="margin-top:20px">Find the generation you know<br>you made.</h2>
-      <p class="lede center reveal delay-2">
-        Search thousands of generations by prompt text, tags, models, platforms, filenames, notes, and creator or account fields. Saved searches let you jump back to exactly where you left off.
-      </p>
-    </div>
+    <section class="capabilities" id="capabilities">
+      <div class="container">
+        <div class="capabilities-head">
+          <div>
+            <p class="eyebrow reveal">More than browser capture</p>
+            <h2 class="section-title wide reveal">The rest of your archive belongs here too.</h2>
+          </div>
+          <p class="lede reveal">
+            Bring old folders forward, preserve ComfyUI workflow context, scan platform history, and turn finished work into something another person can actually understand.
+          </p>
+        </div>
 
-    <div class="reveal delay-3" style="display:grid; grid-template-columns: minmax(0,1fr) 340px minmax(0,1fr); gap:60px; align-items:center; max-width:1100px; margin:0 auto;">
-      <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
-        <li><div><strong>Source filters</strong> — Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, Venice.</div></li>
-        <li><div><strong>Ratings, favorites, notes, tags.</strong></div></li>
-        <li><div><strong>Advanced</strong> — Has Notes, Untagged, Has Prompt.</div></li>
-      </ul>
-      <div class="showcase-image" style="width:340px;">
-        <img src="uploads_v2/SideBar-642-20260617.webp" alt="GenCatalog sidebar — full filter rail with sources, ratings, refine drawer, advanced filters, saved searches, and collections" width="642" height="2322" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;">
-      </div>
-      <ul class="feature-list filter-pillars" style="font-size:22px; line-height:1.5;">
-        <li><div><strong>Date range, top prompts, source images.</strong></div></li>
-        <li><div><strong>Saved searches</strong> — jump back where you left off.</div></li>
-        <li><div><strong>Collections</strong> — curate without copying.</div></li>
-      </ul>
-    </div>
-    <style>
-      @media (max-width: 900px) {
-        section#features .reveal.delay-3 {
-          grid-template-columns: 1fr !important;
-          gap: 32px !important;
-        }
-        section#features .showcase-image { margin: 0 auto; }
-      }
-    </style>
-  </div>
-</section>
+        <div class="editorial-grid reveal">
+          <article class="editorial-piece import">
+            <div class="piece-copy">
+              <h3>Turn output folders into searchable work.</h3>
+              <p>Import images and videos from your Mac or Windows PC. GenCatalog reads embedded ComfyUI prompts, checkpoints, seeds, CFG, samplers, schedulers, dimensions, and LoRAs when present.</p>
+            </div>
+            <div class="piece-media">
+              <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel" width="996" height="858" loading="lazy" decoding="async">
+            </div>
+          </article>
 
-<!-- ────────────────── FEATURE 03: THE RECIPE ────────────────── -->
-<section>
-  <div class="container">
-    <div class="showcase-row">
-      <div class="showcase-image reveal">
-        <img src="uploads_v2/DetailViewModalDetail-1100.webp" alt="GenCatalog detail view — full prompt, model, parameters, source platform" width="1100" height="1320" loading="lazy" decoding="async">
-      </div>
-      <div class="feature-text">
-        <span class="eyebrow reveal delay-1">03 · The recipe</span>
-        <h2 class="h-section reveal delay-2">Every generation, with the recipe that made it.</h2>
-        <p class="lede reveal delay-3">
-          Prompt, model, version, parameters, dimensions, seed, and source context stay attached as a single reusable unit. Copy it. Re-run it. Tweak it.
-        </p>
-        <ul class="feature-list reveal delay-4">
-          <li><div><strong>Full prompt text</strong> — always readable, never truncated.</div></li>
-          <li><div><strong>Model + parameters</strong> — `--ar`, `--s`, seed, references.</div></li>
-          <li><div><strong>Source reference</strong> — source context stays attached when available.</div></li>
-          <li><div><strong>Tags &amp; notes</strong> — your own structure on top.</div></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+          <article class="editorial-piece compare">
+            <div class="piece-copy">
+              <h3>Scan months of platform history.</h3>
+              <p>The Chrome extension shows what is cached, new, saved, or deleted and can walk supported history in one pass.</p>
+            </div>
+            <div class="piece-media">
+              <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension showing scan status and recent saves" width="762" height="1174" loading="lazy" decoding="async">
+            </div>
+          </article>
 
-<!-- ────────────────── FEATURE 04: RECIPE CARDS ────────────────── -->
-<section class="recipe-card-section">
-  <div class="container">
-    <div class="showcase-row reverse">
-      <div class="feature-text">
-        <span class="eyebrow reveal">04 · Recipe Cards</span>
-        <h2 class="h-section reveal delay-1">When someone asks how you made it, send the recipe.</h2>
-        <p class="lede reveal delay-2">
-          One click turns a saved image or video frame into a clean card with the prompt and settings beside it. Share the look, hand off the direction, or keep a record of the thing that finally worked.
-        </p>
-        <ul class="feature-list reveal delay-3">
-          <li><div><strong>Looks good immediately</strong> — image, prompt, and settings in one clean card.</div></li>
-          <li><div><strong>No mystery prompts</strong> — the recipe travels with the result.</div></li>
-          <li><div><strong>You choose what to share</strong> — keep private details off the card.</div></li>
-        </ul>
-      </div>
-      <div class="reveal delay-2">
-        <div class="recipe-card-demo" aria-label="Example GenCatalog Recipe Card">
-          <img src="recipe-card-demo.webp" alt="A GenCatalog recipe card showing a generated image, its prompt, settings, and saved attribution." width="1040" height="1412" loading="lazy">
+          <article class="editorial-piece recipe">
+            <div class="piece-copy">
+              <h3>Send the recipe when the work travels.</h3>
+              <p>Recipe Cards keep the image, prompt, and selected settings together in a clean handoff you control.</p>
+            </div>
+            <div class="piece-media">
+              <img src="recipe-card-demo-2026-06-29.webp" alt="A GenCatalog Recipe Card pairing a generated image with its prompt and settings" width="1040" height="1440" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="editorial-piece extension">
+            <div class="piece-copy">
+              <h3>See what one decision changed.</h3>
+              <p>Pin two generations beside each other and compare prompts, models, seeds, settings, notes, and source context without switching windows.</p>
+            </div>
+            <div class="piece-media">
+              <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog comparing two AI generations and their recipes" width="1600" height="773" loading="lazy" decoding="async">
+            </div>
+          </article>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ────────────────── FEATURE 05: COMPARE ────────────────── -->
-<section>
-  <div class="container">
-    <div style="text-align:center; max-width:720px; margin:0 auto 56px;">
-      <span class="eyebrow reveal">05 · Compare side-by-side</span>
-      <h2 class="h-section reveal delay-1" style="margin-top:20px">See what one parameter changes.</h2>
-      <p class="lede center reveal delay-2">
-        Pin two generations next to each other. See the prompts, the models, the seeds — the small thing that made one of them sing.
-      </p>
-    </div>
+    <section class="privacy" id="local">
+      <div class="container privacy-grid">
+        <div class="privacy-copy">
+          <p class="eyebrow reveal">Local by design</p>
+          <h2 class="section-title wide reveal">Your library stays on your machine—and remains yours.</h2>
+          <p class="lede reveal">
+            No account is required for your local catalog. GenCatalog stores your images, videos, prompts, and metadata in a folder you choose, using an open file format you can keep.
+          </p>
+        </div>
 
-    <div class="reveal delay-3" style="max-width:1100px; margin:0 auto; perspective:1800px;">
-      <div class="showcase-image">
-        <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog compare view — two generations with prompts and metadata side by side" width="1600" height="773" loading="lazy" decoding="async">
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ────────────────── FEATURE 06: EXTENSION ────────────────── -->
-<section>
-  <div class="container">
-    <div class="feature-split" style="grid-template-columns: 1.1fr 1fr;">
-      <div class="feature-text">
-        <span class="eyebrow reveal">06 · The extension</span>
-        <h2 class="h-section reveal delay-1">A scanner for your generation history.</h2>
-        <p class="lede reveal delay-2">
-          The Chrome extension watches the platforms you're already using. Cached, saved, new, deleted — see exactly what's in flight, scan months of history in one pass, no scraping by hand.
-        </p>
-        <ul class="feature-list reveal delay-3">
-          <li><div><strong>Live counts</strong> — cached, saved, new, deleted at a glance.</div></li>
-          <li><div><strong>One-click bulk scan</strong> — pull months of history in one pass.</div></li>
-          <li><div><strong>Recents list</strong> — every save shows up, instantly.</div></li>
-        </ul>
-      </div>
-      <div class="reveal delay-3" style="display:flex; justify-content:center;">
-        <div style="max-width:380px; width:100%; border-radius:18px; overflow:hidden; border:1px solid var(--border-hi); box-shadow: 0 30px 80px rgba(0,0,0,0.6), 0 0 80px rgba(88,101,232,0.15);">
-          <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension popup" width="762" height="1174" loading="lazy" decoding="async" style="display:block; width:100%; height:auto;">
+        <div class="reveal">
+          <div class="privacy-stats">
+            <div class="privacy-stat">
+              <strong class="green">0</strong>
+              <span>Library bytes uploaded as cloud content</span>
+            </div>
+            <div class="privacy-stat">
+              <strong>100%</strong>
+              <span>Of your catalog stored on your disk</span>
+            </div>
+            <div class="privacy-stat">
+              <strong>0</strong>
+              <span>Accounts required for your local library</span>
+            </div>
+          </div>
+          <p class="privacy-note">
+            Optional anonymous telemetry, when enabled, sends aggregate event counters only—never your media, prompts, filenames, tags, notes, source URLs, file paths, thumbnails, hashes, or catalog items. Touch ID lock is available on supported Macs.
+          </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ────────────────── FEATURE 07: LOCAL IMPORT ────────────────── -->
-<section>
-  <div class="container">
-    <div class="feature-split">
-      <div class="feature-text">
-        <span class="eyebrow reveal">07 · Local import + ComfyUI</span>
-        <h2 class="h-section reveal delay-1">Turn output folders into searchable recipes.</h2>
-        <p class="lede reveal delay-2">
-          Drag in folders from ComfyUI, API runs, exports, and old downloads. GenCatalog reads embedded ComfyUI prompts, checkpoints, seeds, CFG, samplers, schedulers, denoise values, dimensions, and LoRAs when present, then keeps ordinary images and videos searchable beside everything you capture going forward.
-        </p>
-        <ul class="feature-list reveal delay-3">
-          <li><div><strong>Recover ComfyUI workflow context</strong> from PNG and embedded metadata, including prompts, checkpoints, settings, and LoRA names with weights.</div></li>
-          <li><div><strong>Import image and video folders</strong> from your Mac or Windows PC without changing the tools you already use.</div></li>
-          <li><div><strong>Keep old work searchable</strong> with duplicate checks, source cleanup, tags, notes, and undo for the wrong batch.</div></li>
-        </ul>
-      </div>
-      <div class="reveal delay-2">
-        <div class="showcase-image">
-          <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel for adding existing AI media into the catalog." width="996" height="858" loading="lazy" decoding="async">
+    <section class="decision" id="pricing" aria-labelledby="pricing-title">
+      <div class="container proof-grid">
+        <figure class="proof-editorial reveal">
+          <div>
+            <div class="rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
+            <blockquote>“Nothing compares.”</blockquote>
+            <figcaption>Verified Chrome Web Store review</figcaption>
+          </div>
+
+          <div class="proof-notes">
+            <div class="proof-note">
+              <strong>“Pays for itself in the first day.”</strong>
+              Brings AI content together in one searchable library with metadata intact.
+            </div>
+            <div class="proof-note">
+              <strong>“Indispensable for serious GenAI work.”</strong>
+              Built for people using generation tools as part of real creative work.
+            </div>
+          </div>
+        </figure>
+
+        <div class="purchase-panel reveal">
+          <p class="eyebrow">One price</p>
+          <div class="price-line">
+            <strong class="price">$79</strong>
+            <span>one time</span>
+          </div>
+          <h2 id="pricing-title">Own the archive layer. Keep the work.</h2>
+
+          <ul class="purchase-list">
+            <li>Free trial for 7 days or 250 generations</li>
+            <li>No credit card required for the trial</li>
+            <li>macOS and Windows desktop apps</li>
+            <li>Chrome extension included</li>
+            <li>Includes all GenCatalog 5.x updates</li>
+          </ul>
+
+          <div class="purchase-actions">
+            <a class="button button-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $79</a>
+            <a class="button button-secondary" href="/get">Start free trial</a>
+          </div>
+          <p class="purchase-meta">Mac: Apple Silicon + Intel<br>Windows: 10 + 11</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ────────────────── FEATURE 08: REDISCOVER ────────────────── -->
-<section class="rediscover-band">
-  <div class="rediscover-stars" aria-hidden="true">
-    <span style="top:18%; left:8%; animation-delay:0s;">★</span>
-    <span style="top:32%; left:88%; animation-delay:0.6s;">★</span>
-    <span style="top:62%; left:14%; animation-delay:1.2s;">★</span>
-    <span style="top:78%; left:82%; animation-delay:1.8s;">★</span>
-    <span style="top:8%; left:48%; animation-delay:2.4s;">★</span>
-    <span style="top:88%; left:42%; animation-delay:3.0s;">★</span>
-  </div>
-  <div class="container" style="position:relative; z-index:1;">
-    <span class="eyebrow reveal">08 · Rediscover</span>
-    <h2 class="h-section reveal delay-1">
-      The brilliant thing you made <span class="star">★</span> a year ago.
-    </h2>
-    <p class="lede center reveal delay-2">
-      Hit Rediscover and a handful of random older generations pop back up. No algorithm, no rankings — just a fun way to wander your own library. Especially great if you've been generating for a while.
-    </p>
-
-    <div class="rediscover-strip reveal delay-3">
-      <div class="rediscover-card" style="background: linear-gradient(135deg, var(--surface), rgba(88,101,232,0.35));">
-        <span class="ago">14 mo ago</span>
-      </div>
-      <div class="rediscover-card" style="background: linear-gradient(160deg, var(--surface), rgba(174,183,255,0.28));">
-        <span class="ago">8 mo ago</span>
-      </div>
-      <div class="rediscover-card featured" style="background: linear-gradient(135deg, var(--surface), rgba(217,184,79,0.35));">
-        <span class="ago">22 mo ago</span>
-      </div>
-      <div class="rediscover-card" style="background: linear-gradient(140deg, var(--surface), rgba(48,214,139,0.26));">
-        <span class="ago">5 mo ago</span>
-      </div>
-      <div class="rediscover-card" style="background: linear-gradient(135deg, var(--surface), rgba(88,101,232,0.28));">
-        <span class="ago">11 mo ago</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ────────────────── LOCAL ────────────────── -->
-<section id="local" class="local-section">
-  <div class="container">
-    <span class="eyebrow neutral reveal">09 · 100% local</span>
-    <h2 class="h-section reveal delay-1" style="margin-top:20px; max-width:18ch; margin-left:auto; margin-right:auto;">
-      Your AI library stays on your machine.
-    </h2>
-    <p class="lede center reveal delay-2">
-      No account. No cloud. No uploads. No subscription holding your work hostage. GenCatalog stores generations in a folder you choose. Your images, videos, prompts, and metadata remain on your own machine, under your control.
-    </p>
-
-    <div class="local-card reveal delay-3">
-      <div class="local-stat">
-        <div class="item">
-          <div class="num green">0</div>
-          <div class="lbl">Library bytes uploaded</div>
+    <section class="final-cta" id="download">
+      <div class="container final-grid">
+        <div>
+          <p class="eyebrow reveal">Keep what you make</p>
+          <h2 class="section-title reveal">Find the generation you know you made.</h2>
         </div>
-        <div class="item">
-          <div class="num">100%</div>
-          <div class="lbl">On your disk</div>
-        </div>
-        <div class="item">
-          <div class="num">0</div>
-          <div class="lbl">Accounts required</div>
+
+        <div class="final-action reveal">
+          <div class="hero-actions">
+            <a class="button button-primary" href="/get">Start free — No card</a>
+            <a class="button button-secondary" href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Chrome extension</a>
+          </div>
+          <p>Free for 7 days or 250 saves. Then $79 once. Your local library remains on your computer.</p>
         </div>
       </div>
-      <h3>Built around your filesystem. Protected on your terms.</h3>
-      <p>GenCatalog saves your library through localhost. Your prompts, images, and videos stay on your computer as local library content. Optional anonymous telemetry, when enabled, sends aggregate event counters only — never your media, prompts, filenames, tags, notes, source URLs, file paths, thumbnails, hashes, or catalog items.</p>
-      <div class="badges">
-        <span class="b">Sandboxed</span>
-        <span class="b">Opt-in telemetry</span>
-        <span class="b">No cloud</span>
-        <span class="b">Open file format</span>
-        <span class="b">Touch ID lock</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
-<!-- ────────────────── TESTIMONIALS ────────────────── -->
-<section class="testimonials-section">
-  <div class="container">
-    <span class="eyebrow reveal">User Proof</span>
-    <h2 class="h-section reveal delay-1" style="margin-top:20px">Loved by serious AI creators.</h2>
-    <p class="lede center reveal delay-2">
-      GenCatalog users are managing thousands of AI generations, preserving prompts, and turning messy output folders into searchable local libraries.
-    </p>
-
-    <div class="testimonial-grid">
-      <figure class="card testimonial-card reveal delay-2">
-        <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote class="testimonial-quote"><strong>“Pays for itself in the first day.”</strong><br>“Brings all my AI content together in one searchable library with metadata intact. The speed of access, search, and sort pays for itself in the first day.”<br>“A must-have if you’re working across multiple platforms.”</blockquote>
-        <figcaption class="testimonial-source">5-star verified Chrome Web Store review</figcaption>
-      </figure>
-      <figure class="card testimonial-card reveal delay-3">
-        <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote class="testimonial-quote"><strong>“Nothing compares.”</strong><br>“The best tool for backing up AI gens, and also amazing for browsing and organizing what you’ve made. I’ve been using this for over a month now and nothing compares.”</blockquote>
-        <figcaption class="testimonial-source">5-star verified Chrome Web Store review</figcaption>
-      </figure>
-      <figure class="card testimonial-card reveal delay-4">
-        <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote class="testimonial-quote"><strong>“Indispensable for serious GenAI work.”</strong><br>“This tool is indispensable if you’re serious about using any of these GenAI tools for work.”</blockquote>
-        <figcaption class="testimonial-source">5-star verified Chrome Web Store review</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
-<!-- ────────────────── PRICING ────────────────── -->
-<section id="pricing" class="pricing-section">
-  <div class="container">
-    <span class="eyebrow reveal">10 · Pricing</span>
-    <h2 class="h-section reveal delay-1" style="margin-top:20px">One price. No surprises.</h2>
-    <p class="lede center reveal delay-2">
-      Buy it once. Use it forever. No subscription, no seats, no renewal.
-    </p>
-
-    <div class="pricing-card reveal delay-4">
-      <div class="price">$79</div>
-      <div class="price-sub">One-time purchase. No subscription.</div>
-      <div class="price-note">Includes all 5.x updates</div>
-      <ul>
-        <li>Free trial — 7 days or 250 generations, whichever comes first</li>
-        <li>No credit card required</li>
-        <li>Mac and Windows</li>
-        <li>Everything stored locally with no cloud uploads</li>
-        <li>Chrome extension included</li>
-      </ul>
-      <figure class="pricing-proof">
-        <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-        <blockquote>“Pays for itself in the first day.”</blockquote>
-        <figcaption><cite>Chrome Web Store review</cite></figcaption>
-      </figure>
-      <div class="ctas">
-        <a class="btn btn-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $79</a>
-        <a class="btn btn-secondary" href="/get">Start free trial</a>
-      </div>
-      <div class="pf">macOS (Apple Silicon + Intel) · Windows 10/11</div>
-    </div>
-  </div>
-</section>
-
-<!-- ────────────────── FINAL CTA ────────────────── -->
-<section id="download" class="final-cta">
-  <div class="container">
-    <h2 class="h-section reveal">Find the generation you know you made.</h2>
-    <p class="lede center reveal delay-1">
-      Keep the file, prompt, source, and settings together so you can find the exact image or video later without guessing how you made it.
-    </p>
-    <div class="hero-cta reveal delay-2">
-      <a class="btn btn-primary" href="/get">
-        Start free trial
-        <span style="opacity:.7">— No card</span>
-      </a>
-      <a class="btn btn-secondary" href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Install Chrome extension</a>
-    </div>
-    <div class="hero-trust reveal delay-3">
-      <span class="dot"></span>
-      <span>$79 one-time · Free for 7 days · No card required</span>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<!-- ────────────────── FOOTER ────────────────── -->
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-col">
-        <div class="nav-brand" style="margin-bottom:14px">
-          <img src="GenCatalogLogo-64.webp" alt="" width="28" height="28" loading="lazy" style="width:28px; height:28px; border-radius:6px">
-          <span>GenCatalog</span>
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a class="nav-brand" href="/">
+            <img src="GenCatalogLogo-64.webp" alt="" width="28" height="28" loading="lazy">
+            <span>GenCatalog</span>
+          </a>
+          <p>Save anything. Use everything. Local-first cataloging for AI creators.</p>
+          <p class="maker">By <a href="https://secondactlabs.com">Second Act Labs</a></p>
         </div>
-        <p style="font-size:13px; color:var(--t2); max-width:32ch; margin:0; line-height:1.55;">
-          Save anything. Use everything. Local-first cataloging for AI creators.
-        </p>
-        <p style="font-size:12px; color:#767a86; margin-top:14px;">
-          By <a href="https://secondactlabs.com" style="color:var(--t2);">Second Act Labs</a> ↗
-        </p>
-      </div>
-      <div class="foot-col">
-        <h3>Platforms</h3>
-        <a href="/grok">Grok</a>
-        <a href="/arcana">Arcana Labs</a>
-        <a href="/higgsfield">Higgsfield</a>
-        <a href="/midjourney">Midjourney</a>
-        <a href="/digen">Digen</a>
-      </div>
-      <div class="foot-col">
-        <h3>Resources</h3>
-        <a href="/guides">Guides</a>
-        <a href="/support">Support</a>
-        <a href="/faq">FAQ</a>
-        <a href="/release-notes">Release notes</a>
-      </div>
-      <div class="foot-col">
-        <h3>Company</h3>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/refund">Refund</a>
-        <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
-      </div>
-    </div>
-    <div class="foot-meta">
-      <span>© 2026 GenCatalog · Local by default.</span>
-      <span style="font-family:var(--font-mono); letter-spacing:0.04em;">v5.16.55</span>
-    </div>
-  </div>
-</footer>
 
-<script src="site-home-20260610.js?v=20260705-arcana"></script>
-<script>
-  (() => {
-    const nav = document.querySelector('.nav');
-    const toggle = document.querySelector('.nav-toggle');
-    if (!nav || !toggle) return;
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    });
-    nav.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    }));
-  })();
-</script>
-<script defer src="analytics.js"></script>
+        <div class="foot-col">
+          <h2>Platforms</h2>
+          <a href="/grok">Grok</a>
+          <a href="/arcana">Arcana Labs</a>
+          <a href="/higgsfield">Higgsfield</a>
+          <a href="/midjourney">Midjourney</a>
+          <a href="/digen">Digen</a>
+        </div>
+
+        <div class="foot-col">
+          <h2>Resources</h2>
+          <a href="/guides">Guides</a>
+          <a href="/support">Support</a>
+          <a href="/faq">FAQ</a>
+          <a href="/release-notes">Release notes</a>
+        </div>
+
+        <div class="foot-col">
+          <h2>Company</h2>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/refund">Refund</a>
+          <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
+        </div>
+      </div>
+
+      <div class="foot-meta">
+        <span>© 2026 GenCatalog · Local by default.</span>
+        <span>v5.16.55</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site-home-20260709.js"></script>
+  <script defer src="analytics.js"></script>
 </body>
 </html>
