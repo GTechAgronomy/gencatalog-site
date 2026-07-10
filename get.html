@@ -11,47 +11,101 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Downloading GenCatalog…</title>
-  <style>
-    :root { color-scheme: dark; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 560px;
-      margin: 10vh auto;
-      padding: 0 24px;
-      line-height: 1.5;
-      background: #0d0f13;
-      color: #f2f3f7;
-    }
-    a { color: #aeb7ff; }
-    h1 { font-size: 22px; margin: 0 0 12px; }
-    p { margin: 0 0 16px; }
-    .muted { color: #a5a8b4; font-size: 14px; }
-    .btn {
-      display: inline-block;
-      padding: 10px 18px;
-      background: #5865e8;
-      color: #fff;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 8px;
-    }
-    .btn:hover { background: #6b76f0; }
-    .btn.secondary { background: transparent; color: inherit; border: 1px solid currentColor; }
-  </style>
+  <meta name="theme-color" content="#0b0d11">
+  <title>Download GenCatalog for Mac or Windows</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="get-20260710.css?v=20260710">
   <script defer src="/analytics.js"></script>
 </head>
 <body>
-  <h1 id="headline">Starting your download…</h1>
-  <p id="body" class="muted">If nothing happens, use the link below.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <p>
-    <a id="primary" class="btn" href="#">Download</a>
-    <a id="secondary" class="btn secondary" href="#" style="display:none">Other platform</a>
-  </p>
+  <nav class="handoff-nav" aria-label="Download navigation">
+    <a class="handoff-brand" href="/">
+      <img src="GenCatalogLogo-64.webp" width="28" height="28" alt="">
+      <span>GenCatalog</span>
+    </a>
+    <a class="handoff-back" href="/">
+      Back to the site
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11 11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </a>
+  </nav>
 
-  <p class="muted">Problems? Email <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>.</p>
+  <main id="main">
+    <section class="handoff-hero" aria-labelledby="headline">
+      <div class="handoff-copy">
+        <p class="handoff-kicker"><span aria-hidden="true"></span> GenCatalog 5.16.55 <b>Mac + Windows</b></p>
+        <h1 id="headline">Your download is starting.</h1>
+        <p id="body" class="handoff-lede">We’re preparing the right GenCatalog installer for this computer.</p>
+
+        <div class="download-status" aria-live="polite">
+          <span class="download-status-dot" aria-hidden="true"></span>
+          <div>
+            <strong id="download-status">Preparing your download</strong>
+            <span id="download-detail">You can also use the direct link below.</span>
+          </div>
+        </div>
+
+        <div class="handoff-actions">
+          <a id="primary" class="handoff-button handoff-button-primary" href="#">Download GenCatalog</a>
+          <a id="secondary" class="handoff-button handoff-button-secondary" href="#" hidden>Other platform</a>
+        </div>
+
+        <p class="handoff-trust">7-day free trial <span>Up to 250 saves</span> No credit card</p>
+      </div>
+
+      <figure class="handoff-product" aria-label="GenCatalog desktop library">
+        <div class="handoff-frame-bar">
+          <span><i></i><i></i><i></i></span>
+          <span>Your AI archive / searchable</span>
+          <span>Local</span>
+        </div>
+        <img src="GenCatalogNewHero-1280.webp" srcset="GenCatalogNewHero-1280.webp 1280w, GenCatalogNewHero-2560.webp 2560w" sizes="(max-width: 900px) 100vw, 58vw" alt="GenCatalog library showing saved AI images, search filters, and generation details" width="1280" height="676" decoding="async" fetchpriority="high">
+        <figcaption>
+          <span>Context preserved</span>
+          File + prompt + model + source
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="handoff-next" aria-labelledby="next-title">
+      <div>
+        <p class="handoff-section-label">From download to first save</p>
+        <h2 id="next-title">Three steps. Then your work has a memory.</h2>
+        <p>Keep this page open while the installer downloads. The complete setup usually takes only a few minutes.</p>
+      </div>
+
+      <ol class="handoff-steps">
+        <li>
+          <span>01</span>
+          <div><strong>Install the desktop app.</strong><p>Open the DMG or Windows installer, then launch GenCatalog.</p></div>
+        </li>
+        <li>
+          <span>02</span>
+          <div><strong>Add the Chrome extension.</strong><p><a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Install from the Chrome Web Store</a> so Save appears where you create.</p></div>
+        </li>
+        <li>
+          <span>03</span>
+          <div><strong>Choose your catalog folder.</strong><p>Your files, prompts, and metadata stay together on your computer.</p></div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="handoff-help" aria-label="Download help">
+      <p>Something not downloading?</p>
+      <div>
+        <a href="/support">Open the setup guide</a>
+        <a href="mailto:support@gencatalog.app">Email support</a>
+      </div>
+    </section>
+  </main>
+
+  <iframe id="download-frame" title="" hidden></iframe>
 
   <script>
     // Single source of truth — bump this on each release.
@@ -64,12 +118,15 @@
     var ua = navigator.userAgent;
     var isMobile = /iPhone|iPad|iPod|Android/i.test(ua);
     var isWin = !isMobile && (/Win/i.test(navigator.platform) || /Windows/i.test(ua));
-    var isMac = !isMobile && !isWin;
 
     var primary = document.getElementById('primary');
     var secondary = document.getElementById('secondary');
     var headline = document.getElementById('headline');
     var body = document.getElementById('body');
+    var downloadStatus = document.getElementById('download-status');
+    var detail = document.getElementById('download-detail');
+    var downloadFrame = document.getElementById('download-frame');
+    var pageParams = new URLSearchParams(location.search);
     var attribution = (function () {
       var key = 'gc_attribution_v1';
       var params = new URLSearchParams(location.search);
@@ -119,32 +176,38 @@
         if (attribution[key]) next.searchParams.set(key, attribution[key]);
       });
       ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (key) {
-        var value = new URLSearchParams(location.search).get(key);
+        var value = pageParams.get(key);
         if (value) next.searchParams.set(key, value);
       });
       return next.toString();
     }
 
     if (isMobile) {
-      headline.textContent = 'Open this page on your Mac or PC';
-      body.textContent = 'GenCatalog is a desktop app. Head to your computer and visit gencatalog.app/get to download.';
+      document.documentElement.dataset.platform = 'mobile';
+      headline.textContent = 'Continue on your Mac or PC.';
+      body.textContent = 'GenCatalog is a desktop app. Open gencatalog.app/get on your computer when you are ready to install.';
+      downloadStatus.textContent = 'Desktop download required';
+      detail.textContent = 'Available for macOS and Windows 10 or 11.';
       primary.href = 'https://gencatalog.app';
-      primary.textContent = 'Back to gencatalog.app';
+      primary.textContent = 'Back to GenCatalog';
     } else {
+      var platform = isWin ? 'Windows' : 'Mac';
       var target = withAttribution(isWin ? winUrl : macUrl);
       var other = withAttribution(isWin ? macUrl : winUrl);
       var otherLabel = isWin ? 'Download for Mac' : 'Download for Windows';
 
+      document.documentElement.dataset.platform = isWin ? 'windows' : 'mac';
+      body.textContent = 'We’re preparing GenCatalog for ' + platform + '. Keep this page open while the installer downloads.';
       primary.href = target;
-      primary.textContent = isWin ? 'Download for Windows' : 'Download for Mac';
+      primary.textContent = 'Download for ' + platform + ' — v' + VERSION;
       secondary.href = other;
       secondary.textContent = otherLabel;
-      secondary.style.display = 'inline-block';
+      secondary.hidden = false;
 
       if (typeof gtag === 'function') {
         gtag('event', 'download_redirect', {
           event_category: 'conversion',
-          event_label: isWin ? 'Windows installer' : 'Mac installer',
+          event_label: platform + ' installer',
           link_url: target,
           gc_source: attribution.source,
           gc_channel: attribution.channel,
@@ -153,10 +216,17 @@
         });
       }
 
-      // Give analytics a brief moment to queue before the file redirect.
-      setTimeout(function () {
-        location.replace(target);
-      }, 120);
+      if (pageParams.get('manual') === '1') {
+        downloadStatus.textContent = 'Your ' + platform + ' download is ready';
+        detail.textContent = 'Use the button whenever you are ready.';
+      } else {
+        window.setTimeout(function () {
+          downloadFrame.src = target;
+          downloadStatus.textContent = 'Your ' + platform + ' download has started';
+          detail.textContent = 'If it did not begin, use the direct download button.';
+          document.body.classList.add('download-started');
+        }, 700);
+      }
     }
   </script>
 </body>
