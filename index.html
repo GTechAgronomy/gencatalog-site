@@ -77,7 +77,7 @@
   }
   </script>
 
-  <link rel="stylesheet" href="site-home-20260709.css">
+  <link rel="stylesheet" href="site-home-20260709.css?v=20260710">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -243,7 +243,7 @@
         </div>
 
         <div class="workflow-sequence">
-          <article class="workflow-feature reveal" id="save">
+          <article class="workflow-feature workflow-feature-save reveal" id="save">
             <div class="workflow-feature-copy">
               <span class="step">01 / Save where you create</span>
               <h3>Save the recipe. Not just the file.</h3>
@@ -255,22 +255,36 @@
               </ul>
             </div>
             <div class="workflow-media workflow-media-save">
-              <!-- Draft-only slot: replace with the new live Midjourney capture before release. -->
-              <div class="capture-slot" role="img" aria-label="Reserved space for a new live Midjourney capture">
-                <div class="capture-slot-bar">
-                  <span>LIVE PLATFORM CAPTURE</span>
-                  <span>16:9</span>
+              <figure class="save-demo" data-save-demo data-state="rest" aria-label="Midjourney grid demonstrating one-click save to GenCatalog">
+                <img src="uploads_v2/MidjourneyGridSave-2560.webp" alt="Midjourney image grid with GenCatalog save controls on generated images" width="2560" height="1695" loading="lazy" decoding="async">
+
+                <div class="save-demo__fab-anchor">
+                  <button class="save-demo__fab" type="button" data-save-demo-button data-state="rest" aria-label="Replay the save to GenCatalog demonstration">
+                    <span class="save-demo__icon save-demo__icon-logo" aria-hidden="true">
+                      <img src="GenCatalogLogo-64.webp" alt="" width="20" height="20">
+                    </span>
+                    <span class="save-demo__icon save-demo__icon-bookmark" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path>
+                      </svg>
+                    </span>
+                    <span class="save-demo__icon save-demo__icon-spinner" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" opacity="0.3"></circle>
+                        <path d="M12 3a9 9 0 0 1 9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                      </svg>
+                    </span>
+                    <span class="save-demo__icon save-demo__icon-check" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M7.5 12.5 10.5 15.5 16.8 8.7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg>
+                    </span>
+                    <span class="save-demo__label" aria-hidden="true">Save</span>
+                  </button>
                 </div>
-                <div class="capture-slot-body">
-                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
-                    <rect x="3.5" y="5.5" width="27" height="23" rx="3"></rect>
-                    <path d="M9 22l5-5 4 4 3-3 4 4"></path>
-                    <circle cx="22.5" cy="12" r="2"></circle>
-                  </svg>
-                  <p>New Midjourney capture</p>
-                  <span>Awaiting the final live source image</span>
-                </div>
-              </div>
+
+                <div class="save-demo__toast" data-save-demo-toast role="status" aria-live="polite">Saved to GenCatalog</div>
+              </figure>
             </div>
           </article>
 
@@ -286,7 +300,7 @@
               </ul>
             </div>
             <div class="workflow-media workflow-media-sidebar">
-              <img src="uploads_v2/SideBar-642-20260617.webp" alt="GenCatalog filter sidebar showing sources, ratings, refine controls, advanced filters, saved searches, and collections" width="642" height="2322" loading="lazy" decoding="async">
+              <img src="uploads_v2/FindSidebar-642-20260709.webp" alt="GenCatalog sidebar showing catalog totals, generation sources, saved searches, ratings, and advanced refine controls" width="642" height="2780" loading="lazy" decoding="async">
             </div>
           </article>
 
@@ -325,49 +339,12 @@
       </div>
     </section>
 
-    <section class="capabilities" id="capabilities">
+    <section class="capabilities" id="capabilities" aria-label="More than browser capture">
       <div class="container">
-        <div class="capabilities-head">
-          <div>
-            <p class="eyebrow reveal">More than browser capture</p>
-            <h2 class="section-title wide reveal">The rest of your archive belongs here too.</h2>
-          </div>
-          <p class="lede reveal">
-            Compare the decisions behind a result, scan platform history, recover ComfyUI context, and bring old folders into the same searchable library.
-          </p>
-        </div>
-
         <div class="capability-sequence">
-          <article class="capability-wide reveal" id="compare">
-            <div class="capability-copy capability-copy-centered">
-              <span class="step">05 / Compare side by side</span>
-              <h3>See what one parameter changes.</h3>
-              <p>Pin two generations next to each other. Compare prompts, models, seeds, settings, notes, and source context without switching windows.</p>
-            </div>
-            <div class="capability-media capability-media-wide">
-              <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog comparing two AI generations and their recipes side by side" width="1600" height="773" loading="lazy" decoding="async">
-            </div>
-          </article>
-
-          <article class="capability-row reveal" id="extension">
-            <div class="capability-copy">
-              <span class="step">06 / The extension</span>
-              <h3>A scanner for your generation history.</h3>
-              <p>See what is cached, saved, new, or deleted, then scan months of supported platform history in one pass.</p>
-              <ul class="chapter-list">
-                <li><strong>Live counts</strong> show exactly what is in flight.</li>
-                <li><strong>One-click bulk scan</strong> pulls supported history forward.</li>
-                <li><strong>Recent saves</strong> appear immediately.</li>
-              </ul>
-            </div>
-            <div class="capability-media capability-media-extension">
-              <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension showing scan status and recent saves" width="762" height="1174" loading="lazy" decoding="async">
-            </div>
-          </article>
-
           <article class="capability-row capability-row-reverse reveal" id="local-import">
             <div class="capability-copy">
-              <span class="step">07 / Local import + ComfyUI</span>
+              <span class="step">05 / Local import + ComfyUI</span>
               <h3>Turn output folders into searchable recipes.</h3>
               <p>Import image and video folders from your Mac or Windows PC. GenCatalog reads embedded ComfyUI prompts, checkpoints, seeds, CFG, samplers, schedulers, denoise values, dimensions, and LoRAs when present.</p>
               <ul class="chapter-list">
@@ -378,6 +355,33 @@
             </div>
             <div class="capability-media capability-media-import">
               <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel for adding existing AI media to the catalog" width="996" height="858" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="capability-wide reveal" id="compare">
+            <div class="capability-copy capability-copy-centered">
+              <span class="step">06 / Compare side by side</span>
+              <h3>See what one parameter changes.</h3>
+              <p>Pin two generations next to each other. Compare prompts, models, seeds, settings, notes, and source context without switching windows.</p>
+            </div>
+            <div class="capability-media capability-media-wide">
+              <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog comparing two AI generations and their recipes side by side" width="1600" height="773" loading="lazy" decoding="async">
+            </div>
+          </article>
+
+          <article class="capability-row reveal" id="extension">
+            <div class="capability-copy">
+              <span class="step">07 / The extension</span>
+              <h3>A scanner for your generation history.</h3>
+              <p>See what is cached, saved, new, or deleted, then scan months of supported platform history in one pass.</p>
+              <ul class="chapter-list">
+                <li><strong>Live counts</strong> show exactly what is in flight.</li>
+                <li><strong>One-click bulk scan</strong> pulls supported history forward.</li>
+                <li><strong>Recent saves</strong> appear immediately.</li>
+              </ul>
+            </div>
+            <div class="capability-media capability-media-extension">
+              <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension showing scan status and recent saves" width="762" height="1174" loading="lazy" decoding="async">
             </div>
           </article>
 
@@ -440,19 +444,19 @@
 
           <div class="proof-wall">
             <figure class="proof-quote">
-              <blockquote>“Pays for itself in the first day.”</blockquote>
+              <blockquote>“GenCatalog has completely changed how I organize and browse my MidJourney library. I’ve already rediscovered so many great images I had forgotten about.”</blockquote>
               <figcaption>Verified Chrome Web Store review</figcaption>
             </figure>
             <figure class="proof-quote">
-              <blockquote>“All my generated images and videos are safe now. Moreover I can view and manage them locally with a very good gallery interface.”</blockquote>
+              <blockquote>“I put it in the must have category—especially if you’re working across multiple platforms and wanting to bring all that content together in one place.”</blockquote>
               <figcaption>Verified Chrome Web Store review</figcaption>
             </figure>
             <figure class="proof-quote">
-              <blockquote>“The best tool for backing up AI gens, and also amazing for browsing and organizing what you’ve made.”</blockquote>
+              <blockquote>“Amazing app, saves me days of importing a tonne of generations and their metadata.”</blockquote>
               <figcaption>Verified Chrome Web Store review</figcaption>
             </figure>
             <figure class="proof-quote">
-              <blockquote>“Managing created videos was such a pain before I found this app but now I just click one button, amazing!”</blockquote>
+              <blockquote>“This tool is indispensable if you’re serious about using any of these GenAI tools for work.”</blockquote>
               <figcaption>Verified Chrome Web Store review</figcaption>
             </figure>
           </div>
@@ -547,7 +551,7 @@
     </div>
   </footer>
 
-  <script src="site-home-20260709.js"></script>
+  <script src="site-home-20260709.js?v=20260710"></script>
   <script defer src="analytics.js"></script>
 </body>
 </html>
