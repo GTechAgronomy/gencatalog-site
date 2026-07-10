@@ -1040,3 +1040,25 @@ Verify each URL returns `200` via `curl -I https://downloads.gencatalog.app/<fil
 
 ### Status
 - Ready to deploy via Cloudflare Pages on push.
+
+---
+## 2026-07-09 — Published GenCatalog 5.16.55 and Extension 5.94 surfaces
+
+### What Changed
+- Added the customer-facing 5.16.55 / 5.94 release entry with two launch
+  stories: complete source-to-video Recipe View lineage and Recipe Cards that
+  pair the source/image prompt with the result/motion prompt.
+- Updated `/get`, homepage structured data, and visible homepage/footer version
+  badges from 5.16.54 to 5.16.55.
+- Updated homepage and release-notes sitemap dates through the version helper.
+
+### Verification
+- Confirmed the 5.16.55 Mac and Windows artifacts returned HTTP 200 before the
+  site version moved.
+- Confirmed both updater-feed locations report 5.16.55 and all versioned
+  artifacts, blockmaps, and Extension 5.94 ZIPs are live at the bucket root and
+  under `/updates/`.
+- Ran `scripts/update-version.sh --check` before publishing.
+
+### Status
+- Ready for Cloudflare Pages production deployment through the main branch.
