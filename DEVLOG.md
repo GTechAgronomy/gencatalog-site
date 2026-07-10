@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-10 — Prepare anonymous product analytics disclosure
+
+- Updated only the homepage privacy block, FAQ privacy answers and structured
+  data, privacy policy, and crawler-facing `llms.txt`.
+- Clarified that library content remains local while new installations may
+  share anonymous aggregate counts after a first-run notice, existing disabled
+  installations remain disabled, and opt-out deletes unsent local telemetry.
+- Added the complete never-collected boundary and the limitation that already
+  accepted anonymous facts cannot be linked back or selectively removed.
+- Historical release notes remain unchanged because they accurately describe
+  the older opt-in-only release.
+- This branch must not be published before matching desktop behavior and the
+  final production policy are approved.
+
+---
 ## 2026-07-08 — Published 5.16.51 large-batch smoothness release
 
 ### What Changed

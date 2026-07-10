@@ -1,6 +1,6 @@
 # GenCatalog
 
-> Local AI image and video organizer for Grok Imagine, Arcana Labs, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Everything stored locally — nothing uploaded anywhere.
+> Local AI image and video organizer for Grok Imagine, Arcana Labs, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Library content stays local; optional anonymous product analytics contain aggregate counts only.
 
 ## What it does
 
@@ -21,7 +21,7 @@ $79 one-time purchase. Includes all 5.x updates. Free trial: 7 days or 250 saved
 
 ## Privacy
 
-Everything is stored locally on your machine. The GenCatalog app never uploads anything anywhere. No cloud, no accounts, no subscription.
+Your media, prompts, filenames, paths, URLs, tags, collections, and catalog stay locally on your machine. There is no GenCatalog cloud library or account. New installations may share anonymous aggregate product-usage counts by default after a clear first-run notice; analytics can be turned off before the first upload or anytime in Settings, and existing disabled installations remain disabled.
 
 ## Requirements
 
