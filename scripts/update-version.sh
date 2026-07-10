@@ -23,8 +23,9 @@ BASE="https://downloads.gencatalog.app"
 current_versions() {
   {
     sed -n "s/.*var VERSION = '\([0-9.]*\)'.*/get.html \1/p" get.html
+    sed -n 's/.*GenCatalog \([0-9.]*\) <b>Mac + Windows<\/b>.*/get.html(kicker) \1/p' get.html
     sed -n 's/.*"softwareVersion": "\([0-9.]*\)".*/index.html(json-ld) \1/p' index.html
-    sed -n 's/.*<span class="eyebrow">v\([0-9.]*\)<\/span>.*/index.html(hero) \1/p' index.html
+    sed -n 's/.*<span>GenCatalog \([0-9.]*\)<\/span>.*/index.html(hero) \1/p' index.html
     grep -o 'v[0-9][0-9.]*</span>' index.html | tail -1 | sed 's/^v/index.html(footer) /; s/<\/span>//'
   }
 }
@@ -83,7 +84,9 @@ fi
 
 TODAY=$(date +%Y-%m-%d)
 sed -i '' "s/var VERSION = '${OLD}'/var VERSION = '${NEW}'/" get.html
+sed -i '' "s/GenCatalog ${OLD} <b>Mac + Windows/GenCatalog ${NEW} <b>Mac + Windows/" get.html
 sed -i '' "s/\"softwareVersion\": \"${OLD}\"/\"softwareVersion\": \"${NEW}\"/" index.html
+sed -i '' "s/>GenCatalog ${OLD}</>GenCatalog ${NEW}</" index.html
 sed -i '' "s/>v${OLD}</>v${NEW}</g" index.html
 
 # sitemap lastmod for / and /release-notes
