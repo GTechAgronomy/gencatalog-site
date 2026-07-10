@@ -121,10 +121,10 @@
           <span>Mac + Windows</span>
         </div>
 
-        <h1 class="display reveal">Your best AI work deserves a memory.</h1>
+        <h1 class="display reveal">Stop losing your best AI generations.</h1>
 
         <p class="lede reveal">
-          GenCatalog keeps the file, prompt, source, and settings together in one searchable library on your own computer—before favorites vanish and downloads lose their meaning.
+          Prompts disappear. Favorites become cluttered. Downloads pile up in random folders. GenCatalog turns AI images and videos into a searchable local library, with prompts and metadata preserved.
         </p>
 
         <div class="hero-actions reveal">
@@ -207,6 +207,7 @@
             <div>
               <h3>Files drift away from their prompts.</h3>
               <p>Downloads pile up while the model, settings, source, and reason they mattered disappear.</p>
+              <p class="problem-answer"><strong>GenCatalog:</strong> the full recipe stays attached when the creation site provides it.</p>
             </div>
           </article>
           <article class="problem-row">
@@ -214,6 +215,7 @@
             <div>
               <h3>Favorites become storage, not memory.</h3>
               <p>A long feed can hold thousands of images and still make the exact one impossible to retrieve.</p>
+              <p class="problem-answer"><strong>GenCatalog:</strong> one local library brings supported saves into a searchable catalog you control.</p>
             </div>
           </article>
           <article class="problem-row">
@@ -221,6 +223,7 @@
             <div>
               <h3>Folders cannot answer creative questions.</h3>
               <p>Filenames do not know the prompt, source, account, tags, notes, rating, or workflow behind a result.</p>
+              <p class="problem-answer"><strong>GenCatalog:</strong> search by prompt, platform, tags, media type, dates, notes, and account.</p>
             </div>
           </article>
         </div>
@@ -239,85 +242,85 @@
           </p>
         </div>
 
-        <div class="workflow-layout">
-          <div class="workflow-stage-wrap">
-            <figure class="workflow-stage reveal" id="workflow-stage" data-active="save">
-              <div class="stage-topbar">
-                <span>GENCATALOG WORKFLOW</span>
-                <span>CONTEXT STAYS ATTACHED</span>
-              </div>
-              <div class="stage-panes">
-                <div class="stage-pane stage-pane-save" data-pane="save">
-                  <!-- Draft-only slot: replace with the new live Midjourney capture before release. -->
-                  <div class="capture-slot" role="img" aria-label="Reserved space for a new live Midjourney capture">
-                    <div class="capture-slot-bar">
-                      <span>LIVE PLATFORM CAPTURE</span>
-                      <span>16:9</span>
-                    </div>
-                    <div class="capture-slot-body">
-                      <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
-                        <rect x="3.5" y="5.5" width="27" height="23" rx="3"></rect>
-                        <path d="M9 22l5-5 4 4 3-3 4 4"></path>
-                        <circle cx="22.5" cy="12" r="2"></circle>
-                      </svg>
-                      <p>New Midjourney capture</p>
-                      <span>Awaiting the final live source image</span>
-                    </div>
-                  </div>
-                  <span class="stage-caption">SAVE / WHERE YOU CREATE</span>
-                </div>
-                <div class="stage-pane stage-pane-find" data-pane="find">
-                  <img src="ShowDetailTechnical.webp" alt="GenCatalog detail panel showing ratings, prompt, model, source, dimensions, tags, notes, and reusable actions" width="6948" height="3797" loading="lazy" decoding="async">
-                  <span class="stage-caption">FIND / BY REAL CONTEXT</span>
-                </div>
-                <div class="stage-pane stage-pane-reuse" data-pane="reuse">
-                  <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog compare view showing two generations and their metadata side by side" width="1600" height="773" loading="lazy" decoding="async">
-                  <span class="stage-caption">REUSE / WITH THE RECIPE</span>
-                </div>
-              </div>
-            </figure>
-
-            <div class="workflow-markers" aria-label="Workflow stages">
-              <button class="workflow-marker" type="button" data-stage-jump="save" aria-current="step">Save</button>
-              <button class="workflow-marker" type="button" data-stage-jump="find">Find</button>
-              <button class="workflow-marker" type="button" data-stage-jump="reuse">Reuse</button>
+        <div class="workflow-sequence">
+          <article class="workflow-feature reveal" id="save">
+            <div class="workflow-feature-copy">
+              <span class="step">01 / Save where you create</span>
+              <h3>Save the recipe. Not just the file.</h3>
+              <p>On supported creation sites, one click captures the image or video with the prompt, settings, metadata, and source link when the site provides them.</p>
+              <ul class="chapter-list">
+                <li><strong>One-click save</strong> from the page you are already using.</li>
+                <li><strong>The full recipe</strong> stays with the file when available.</li>
+                <li><strong>Bulk scan</strong> supported platform history in one pass.</li>
+              </ul>
             </div>
-          </div>
+            <div class="workflow-media workflow-media-save">
+              <!-- Draft-only slot: replace with the new live Midjourney capture before release. -->
+              <div class="capture-slot" role="img" aria-label="Reserved space for a new live Midjourney capture">
+                <div class="capture-slot-bar">
+                  <span>LIVE PLATFORM CAPTURE</span>
+                  <span>16:9</span>
+                </div>
+                <div class="capture-slot-body">
+                  <svg width="34" height="34" viewBox="0 0 34 34" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+                    <rect x="3.5" y="5.5" width="27" height="23" rx="3"></rect>
+                    <path d="M9 22l5-5 4 4 3-3 4 4"></path>
+                    <circle cx="22.5" cy="12" r="2"></circle>
+                  </svg>
+                  <p>New Midjourney capture</p>
+                  <span>Awaiting the final live source image</span>
+                </div>
+              </div>
+            </div>
+          </article>
 
-          <div class="workflow-chapters">
-            <article class="workflow-chapter" data-stage="save">
-              <span class="step">Save where you create</span>
-              <h3>Keep the recipe, not just the render.</h3>
-              <p>On supported sites, one click saves the image or video with the prompt, settings, metadata, and source link the site provides.</p>
+          <article class="workflow-feature workflow-feature-reverse reveal" id="find">
+            <div class="workflow-feature-copy">
+              <span class="step">02 / Find anything</span>
+              <h3>Find the generation you know you made.</h3>
+              <p>Search thousands of generations by prompt text, tags, models, platforms, filenames, notes, and creator or account fields.</p>
               <ul class="chapter-list">
-                <li>Capture without leaving the page.</li>
-                <li>Bulk scan existing platform history.</li>
-                <li>See each successful save immediately.</li>
+                <li><strong>Source filters</strong> for Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.</li>
+                <li><strong>Ratings, favorites, notes, tags, dates,</strong> and advanced filters.</li>
+                <li><strong>Saved searches and collections</strong> bring active work back without copying files.</li>
               </ul>
-            </article>
+            </div>
+            <div class="workflow-media workflow-media-sidebar">
+              <img src="uploads_v2/SideBar-642-20260617.webp" alt="GenCatalog filter sidebar showing sources, ratings, refine controls, advanced filters, saved searches, and collections" width="642" height="2322" loading="lazy" decoding="async">
+            </div>
+          </article>
 
-            <article class="workflow-chapter" data-stage="find">
-              <span class="step">Find by what you remember</span>
-              <h3>Search the context, not the filename.</h3>
-              <p>Prompt text, platform, model, account, tags, notes, dates, media type, ratings, and saved searches bring the right work back into view.</p>
+          <article class="workflow-feature reveal" id="recipe">
+            <div class="workflow-feature-copy">
+              <span class="step">03 / The recipe</span>
+              <h3>Every generation, with the recipe that made it.</h3>
+              <p>Prompt, model, version, parameters, dimensions, seed, and source context stay attached as one reusable record.</p>
               <ul class="chapter-list">
-                <li>Filter thousands of generations quickly.</li>
-                <li>Save searches for active projects.</li>
-                <li>Curate collections without copying files.</li>
+                <li><strong>Full prompt text</strong> stays readable, never truncated.</li>
+                <li><strong>Model, parameters, seed,</strong> and references remain attached.</li>
+                <li><strong>Source, tags, and notes</strong> preserve the decisions around the result.</li>
               </ul>
-            </article>
+            </div>
+            <div class="workflow-media workflow-media-detail">
+              <img src="uploads_v2/DetailViewModalDetail-1100.webp" alt="GenCatalog detail view showing the full prompt, model, source, ratings, tags, notes, dimensions, and reusable actions" width="1100" height="1320" loading="lazy" decoding="async">
+            </div>
+          </article>
 
-            <article class="workflow-chapter" data-stage="reuse">
-              <span class="step">Reuse with confidence</span>
-              <h3>Return to the decision that made it work.</h3>
-              <p>Read the full prompt and parameters, compare close variants, copy the recipe, or send a clean Recipe Card when someone asks how it was made.</p>
+          <article class="workflow-feature workflow-feature-reverse reveal" id="recipe-cards">
+            <div class="workflow-feature-copy">
+              <span class="step">04 / Recipe Cards</span>
+              <h3>When someone asks how you made it, send the recipe.</h3>
+              <p>One click turns a saved image or video frame into a clean card with the prompt and settings beside it.</p>
               <ul class="chapter-list">
-                <li>Compare models, seeds, and settings side by side.</li>
-                <li>Copy complete prompts without truncation.</li>
-                <li>Share only the context you choose.</li>
+                <li><strong>Looks good immediately:</strong> image, prompt, and settings in one card.</li>
+                <li><strong>No mystery prompts:</strong> the recipe travels with the result.</li>
+                <li><strong>You choose what to share</strong> and what stays private.</li>
               </ul>
-            </article>
-          </div>
+            </div>
+            <div class="workflow-media workflow-media-recipe-card">
+              <img src="recipe-card-demo-2026-06-29.webp" alt="A complete GenCatalog Recipe Card pairing a generated image with its prompt and settings" width="1040" height="1440" loading="lazy" decoding="async">
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -330,49 +333,58 @@
             <h2 class="section-title wide reveal">The rest of your archive belongs here too.</h2>
           </div>
           <p class="lede reveal">
-            Bring old folders forward, preserve ComfyUI workflow context, scan platform history, and turn finished work into something another person can actually understand.
+            Compare the decisions behind a result, scan platform history, recover ComfyUI context, and bring old folders into the same searchable library.
           </p>
         </div>
 
-        <div class="editorial-grid reveal">
-          <article class="editorial-piece import">
-            <div class="piece-copy">
-              <h3>Turn output folders into searchable work.</h3>
-              <p>Import images and videos from your Mac or Windows PC. GenCatalog reads embedded ComfyUI prompts, checkpoints, seeds, CFG, samplers, schedulers, dimensions, and LoRAs when present.</p>
+        <div class="capability-sequence">
+          <article class="capability-wide reveal" id="compare">
+            <div class="capability-copy capability-copy-centered">
+              <span class="step">05 / Compare side by side</span>
+              <h3>See what one parameter changes.</h3>
+              <p>Pin two generations next to each other. Compare prompts, models, seeds, settings, notes, and source context without switching windows.</p>
             </div>
-            <div class="piece-media">
-              <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel" width="996" height="858" loading="lazy" decoding="async">
+            <div class="capability-media capability-media-wide">
+              <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog comparing two AI generations and their recipes side by side" width="1600" height="773" loading="lazy" decoding="async">
             </div>
           </article>
 
-          <article class="editorial-piece compare">
-            <div class="piece-copy">
-              <h3>Scan months of platform history.</h3>
-              <p>The Chrome extension shows what is cached, new, saved, or deleted and can walk supported history in one pass.</p>
+          <article class="capability-row reveal" id="extension">
+            <div class="capability-copy">
+              <span class="step">06 / The extension</span>
+              <h3>A scanner for your generation history.</h3>
+              <p>See what is cached, saved, new, or deleted, then scan months of supported platform history in one pass.</p>
+              <ul class="chapter-list">
+                <li><strong>Live counts</strong> show exactly what is in flight.</li>
+                <li><strong>One-click bulk scan</strong> pulls supported history forward.</li>
+                <li><strong>Recent saves</strong> appear immediately.</li>
+              </ul>
             </div>
-            <div class="piece-media">
+            <div class="capability-media capability-media-extension">
               <img src="uploads_v2/ExtensionDetail-762.webp" alt="GenCatalog Chrome extension showing scan status and recent saves" width="762" height="1174" loading="lazy" decoding="async">
             </div>
           </article>
 
-          <article class="editorial-piece recipe">
-            <div class="piece-copy">
-              <h3>Send the recipe when the work travels.</h3>
-              <p>Recipe Cards keep the image, prompt, and selected settings together in a clean handoff you control.</p>
+          <article class="capability-row capability-row-reverse reveal" id="local-import">
+            <div class="capability-copy">
+              <span class="step">07 / Local import + ComfyUI</span>
+              <h3>Turn output folders into searchable recipes.</h3>
+              <p>Import image and video folders from your Mac or Windows PC. GenCatalog reads embedded ComfyUI prompts, checkpoints, seeds, CFG, samplers, schedulers, denoise values, dimensions, and LoRAs when present.</p>
+              <ul class="chapter-list">
+                <li><strong>Recover ComfyUI context</strong> from PNG and embedded metadata.</li>
+                <li><strong>Keep old work searchable</strong> beside new captures.</li>
+                <li><strong>Review the batch</strong> with duplicate checks, tags, notes, and undo.</li>
+              </ul>
             </div>
-            <div class="piece-media">
-              <img src="recipe-card-demo-2026-06-29.webp" alt="A GenCatalog Recipe Card pairing a generated image with its prompt and settings" width="1040" height="1440" loading="lazy" decoding="async">
+            <div class="capability-media capability-media-import">
+              <img src="uploads_v2/LocalImportReview.png" alt="GenCatalog local import review panel for adding existing AI media to the catalog" width="996" height="858" loading="lazy" decoding="async">
             </div>
           </article>
 
-          <article class="editorial-piece extension">
-            <div class="piece-copy">
-              <h3>See what one decision changed.</h3>
-              <p>Pin two generations beside each other and compare prompts, models, seeds, settings, notes, and source context without switching windows.</p>
-            </div>
-            <div class="piece-media">
-              <img src="uploads_v2/CompareView-1600.webp" alt="GenCatalog comparing two AI generations and their recipes" width="1600" height="773" loading="lazy" decoding="async">
-            </div>
+          <article class="rediscover-feature reveal" id="rediscover">
+            <span class="step">08 / Rediscover</span>
+            <h3>The brilliant thing you made a year ago.</h3>
+            <p>Hit Rediscover and a handful of random older generations come back into view. No algorithm and no rankings—just a way to wander your own library again.</p>
           </article>
         </div>
       </div>
@@ -384,7 +396,7 @@
           <p class="eyebrow reveal">Local by design</p>
           <h2 class="section-title wide reveal">Your library stays on your machine—and remains yours.</h2>
           <p class="lede reveal">
-            No account is required for your local catalog. GenCatalog stores your images, videos, prompts, and metadata in a folder you choose, using an open file format you can keep.
+            No account. No cloud uploads. No subscription holding your work hostage. GenCatalog stores your images, videos, prompts, and metadata in a folder you choose, using an open file format you can keep.
           </p>
         </div>
 
@@ -406,30 +418,45 @@
           <p class="privacy-note">
             Optional anonymous telemetry, when enabled, sends aggregate event counters only—never your media, prompts, filenames, tags, notes, source URLs, file paths, thumbnails, hashes, or catalog items. Touch ID lock is available on supported Macs.
           </p>
+          <ul class="privacy-badges" aria-label="Local library safeguards">
+            <li>Sandboxed</li>
+            <li>Opt-in telemetry</li>
+            <li>No cloud uploads</li>
+            <li>Open file format</li>
+            <li>Touch ID lock</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="decision" id="pricing" aria-labelledby="pricing-title">
       <div class="container proof-grid">
-        <figure class="proof-editorial reveal">
-          <div>
+        <div class="proof-editorial reveal">
+          <figure class="proof-lead">
             <div class="rating" aria-label="5 out of 5 stars"><span aria-hidden="true">★★★★★</span></div>
-            <blockquote>“Nothing compares.”</blockquote>
+            <blockquote>“Perfect tool for locally saving and managing work from Grok. I had 12,000+ files to manage and this tool was a godsend.”</blockquote>
             <figcaption>Verified Chrome Web Store review</figcaption>
-          </div>
+          </figure>
 
-          <div class="proof-notes">
-            <div class="proof-note">
-              <strong>“Pays for itself in the first day.”</strong>
-              Brings AI content together in one searchable library with metadata intact.
-            </div>
-            <div class="proof-note">
-              <strong>“Indispensable for serious GenAI work.”</strong>
-              Built for people using generation tools as part of real creative work.
-            </div>
+          <div class="proof-wall">
+            <figure class="proof-quote">
+              <blockquote>“Pays for itself in the first day.”</blockquote>
+              <figcaption>Verified Chrome Web Store review</figcaption>
+            </figure>
+            <figure class="proof-quote">
+              <blockquote>“All my generated images and videos are safe now. Moreover I can view and manage them locally with a very good gallery interface.”</blockquote>
+              <figcaption>Verified Chrome Web Store review</figcaption>
+            </figure>
+            <figure class="proof-quote">
+              <blockquote>“The best tool for backing up AI gens, and also amazing for browsing and organizing what you’ve made.”</blockquote>
+              <figcaption>Verified Chrome Web Store review</figcaption>
+            </figure>
+            <figure class="proof-quote">
+              <blockquote>“Managing created videos was such a pain before I found this app but now I just click one button, amazing!”</blockquote>
+              <figcaption>Verified Chrome Web Store review</figcaption>
+            </figure>
           </div>
-        </figure>
+        </div>
 
         <div class="purchase-panel reveal">
           <p class="eyebrow">One price</p>
@@ -437,7 +464,8 @@
             <strong class="price">$79</strong>
             <span>one time</span>
           </div>
-          <h2 id="pricing-title">Own the archive layer. Keep the work.</h2>
+          <h2 id="pricing-title">One price. No surprises.</h2>
+          <p class="purchase-intro">Buy it once. Use it forever. No subscription, seats, or renewal.</p>
 
           <ul class="purchase-list">
             <li>Free trial for 7 days or 250 generations</li>

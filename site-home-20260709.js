@@ -51,41 +51,6 @@
     reveals.forEach((item) => revealObserver.observe(item));
   }
 
-  const workflowStage = document.querySelector('#workflow-stage');
-  const workflowChapters = document.querySelectorAll('.workflow-chapter[data-stage]');
-  const workflowMarkers = document.querySelectorAll('.workflow-marker[data-stage-jump]');
-
-  const activateWorkflowStage = (stageName) => {
-    if (!workflowStage || !stageName) return;
-    workflowStage.dataset.active = stageName;
-    workflowMarkers.forEach((marker) => {
-      const active = marker.dataset.stageJump === stageName;
-      if (active) marker.setAttribute('aria-current', 'step');
-      else marker.removeAttribute('aria-current');
-    });
-  };
-
-  if ('IntersectionObserver' in window && workflowChapters.length) {
-    const workflowObserver = new IntersectionObserver((entries) => {
-      const visible = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-
-      if (visible) activateWorkflowStage(visible.target.dataset.stage);
-    }, { threshold: [0.18, 0.42, 0.66], rootMargin: '-28% 0px -38% 0px' });
-
-    workflowChapters.forEach((chapter) => workflowObserver.observe(chapter));
-  }
-
-  workflowMarkers.forEach((marker) => {
-    marker.addEventListener('click', () => {
-      const stageName = marker.dataset.stageJump;
-      const target = document.querySelector(`.workflow-chapter[data-stage="${stageName}"]`);
-      target?.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
-      activateWorkflowStage(stageName);
-    });
-  });
-
   const heroFrame = document.querySelector('[data-tilt]');
   const finePointer = window.matchMedia('(pointer: fine)').matches;
 
