@@ -1,6 +1,16 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-12 — Emphasize what analytics never collect
+
+- Made the full never-collected list bold on the homepage, both applicable FAQ
+  answers, the privacy-policy summary, and the detailed telemetry section.
+- Standardized the visible label as `NEVER COLLECTED OR SENT AS ANALYTICS` and
+  kept the substantive list aligned with the desktop notice and Settings.
+- Did not change pricing, layout, SEO strategy, release notes, or publication
+  status; this remains draft copy paired with the desktop policy PR.
+
+---
 ## 2026-07-10 — Prepare anonymous product analytics disclosure
 
 - Updated only the homepage privacy block, FAQ privacy answers and structured
