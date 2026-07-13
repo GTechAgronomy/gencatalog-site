@@ -621,6 +621,16 @@ button { color: inherit; font: inherit; }
 .workflow-media-detail > img { width: min(100%, 780px); }
 .workflow-media-recipe-card > img { width: min(100%, 680px); }
 
+@media (min-width: 1121px) {
+  #recipe-cards {
+    grid-template-columns: minmax(420px, 0.84fr) minmax(0, 1.16fr);
+  }
+
+  #recipe-cards .workflow-media-recipe-card > img {
+    width: min(100%, 760px);
+  }
+}
+
 .workflow-feature-save {
   grid-template-columns: 1fr;
   gap: clamp(48px, 5vw, 76px);
