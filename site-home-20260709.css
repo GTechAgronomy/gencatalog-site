@@ -303,6 +303,7 @@ button { color: inherit; font: inherit; }
 .hero-kicker {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 12px;
   margin-bottom: 20px;
   color: var(--ink-muted);
@@ -450,13 +451,15 @@ button { color: inherit; font: inherit; }
 .platforms {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 9px 18px;
-  padding: 28px 0 28px 44px;
+  padding: 28px 44px;
 }
 
 .platforms-label {
   width: 100%;
+  text-align: center;
   color: var(--ink-muted);
   font-family: var(--font-mono);
   font-size: 10px;
@@ -1239,6 +1242,7 @@ footer {
   .hero { min-height: auto; padding: 132px 0 90px; }
   .hero-grid { grid-template-columns: 1fr; gap: 64px; }
   .hero-copy { max-width: 760px; margin-left: 0; text-align: left; }
+  .hero-kicker { justify-content: flex-start; }
   .hero .display { max-width: 12ch; margin-left: 0; font-size: clamp(52px, 12vw, 76px); }
   .hero .lede { margin-left: 0; }
   .hero-actions,
