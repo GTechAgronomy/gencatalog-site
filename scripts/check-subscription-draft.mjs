@@ -82,7 +82,8 @@ const staleClaims = [
   /one[- ]time purchase/i,
   /buy it once/i,
   /no recurring fees/i,
-  /updates to the current major version/i
+  /updates to the current major version/i,
+  /\b(?:paid|already-paid) library\b/i
 ];
 
 for (const pattern of staleClaims) {

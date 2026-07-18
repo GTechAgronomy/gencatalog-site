@@ -1,6 +1,42 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-18 — Clarify the permanent library promise
+
+### Scope
+
+- Founder review identified that “paid library” can sound as though some saved
+  items are paid and others are not.
+- Change only the ownership promise on the homepage pricing card and the three
+  matching FAQ/Support/Terms lifecycle explanations. Do not otherwise polish,
+  restructure, or alter the approved subscription copy.
+
+### Files
+
+- `index.html`
+- `faq.html`
+- `support.html`
+- `terms.html`
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Copy decision
+
+- The homepage now says: “Everything already in your library remains yours
+  after your first payment.”
+- Support uses the same ownership language while preserving the operational
+  explanation of what pauses after a subscription ends.
+- Terms refers to “your existing library,” not an “already-paid library.”
+- The draft guard rejects future “paid library” and “already-paid library” copy
+  across customer-facing sources.
+
+### Boundary and validation
+
+- Regenerate the affected desktop/mobile pricing and lifecycle screenshots,
+  rerun the complete subscription-draft and public-version checks, and keep the
+  branch local. No push, deployment, checkout submission, or sales activation.
+
+---
 ## 2026-07-18 — Prepare the annual-subscription website draft
 
 ### Source and exact boundary
