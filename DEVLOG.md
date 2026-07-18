@@ -1,6 +1,109 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-18 — Prepare the annual-subscription website draft
+
+### Source and exact boundary
+
+- Worktree:
+  `/Users/danieldavis/Dev/worktrees/gencatalog-site-subscription-draft`.
+- Branch: `codex/subscription-site-draft`, created from exact clean
+  `origin/main` commit `daa0d77`.
+- The canonical site checkout remains on `main` with its unrelated telemetry
+  changes and uncommitted Midjourney testimonial untouched. The clean draft
+  changes a separate commercial-copy hunk in `midjourney.html`; reconcile that
+  file only after the testimonial work is committed in its own task.
+- This is a local founder-review draft. No git push, PR, Cloudflare deployment,
+  public checkout change, Lemon product publication, or website publication is
+  authorized or performed.
+
+### Commercial message
+
+- New customers see one `$99/year`, billed-annually plan after the familiar
+  seven-day-or-250-save trial; no card is required for the trial.
+- Lead with the customer promise: “The subscription pays for tomorrow. Your
+  library is always yours.” After the first payment, ending or refunding the
+  subscription pauses new capture and imports without taking away management
+  of work already in the catalog.
+- Explain paid-through cancellation, renewal, three device activations,
+  verification outages, current release availability, and permanent
+  grandfathering without exposing runtime implementation language.
+- Trial users who never paid are described honestly: GenCatalog pauses at the
+  fork, while the files in their chosen catalog folder stay on their computer
+  and are never deleted.
+
+### Customer surfaces
+
+- `index.html`
+- `get.html`
+- `faq.html`
+- `support.html`
+- `terms.html`
+- `refund.html`
+- `privacy.html`
+- `llms.txt`
+- `ai-generation-backup.html`
+- `arcana.html`
+- `blog-grok-favorites-disappeared.html`
+- `blog-organize-grok-imagine.html`
+- `comfyui-workflow-viewer.html`
+- `digen.html`
+- `grok.html`
+- `higgsfield.html`
+- `local-ai-media-import.html`
+- `midjourney.html`
+- `rescue-your-ai-library.html`
+- `save-ai-prompts-locally.html`
+- `search-grok-favorites.html`
+- `brand/BRAND-VOICE.md`
+
+### Validation and safety files
+
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Structured data and attribution
+
+- Every priced `SoftwareApplication` offer now reports `$99 USD`, the approved
+  annual checkout, and `UnitPriceSpecification.billingDuration: P1Y`.
+- Homepage Open Graph, Twitter, FAQ schema, crawler copy, and visible pricing
+  agree with the annual model.
+- The existing generic Lemon checkout decorator continues to attach first/last
+  source, channel, and surface attribution to the new checkout without code
+  changes.
+
+### Deliberate release boundary
+
+- Keep public desktop download/version surfaces at `5.16.70` in this draft.
+  The site must not point at `5.16.71` until compatible Mac and Windows
+  artifacts actually exist at the public download URLs; the established
+  version script enforces that later release gate.
+- The draft contains the approved production annual checkout URL so copy and
+  attribution can be reviewed exactly, but it exists only in this unpushed
+  worktree.
+
+### Validation
+
+- `node scripts/check-subscription-draft.mjs`
+- `git diff --check`
+- Legacy `$79`, one-time-purchase, all-5.x, and legacy checkout sweep across
+  customer HTML/text sources.
+- JSON parsing for every JSON-LD block and annual-offer assertions for all
+  priced application pages.
+- Local Chromium review at desktop and mobile widths for homepage pricing,
+  download handoff, subscription FAQ, support, terms, refund, and privacy.
+- Review screenshots:
+  `/Users/danieldavis/.codex/visualizations/2026/07/17/019f70df-3e35-74a1-b353-7764ae672134/subscription-launch-candidate-5.16.71/website-draft`.
+
+### Parking record
+
+- Keep this branch and worktree local for founder review. Do not push or deploy.
+- Next action: incorporate review notes, reconcile the separately owned
+  `midjourney.html` testimonial, rerun the draft guard and screenshots, then
+  wait for compatible public desktop and extension releases before any site
+  cutover.
+
+---
 ## 2026-07-08 — Published 5.16.51 large-batch smoothness release
 
 ### What Changed

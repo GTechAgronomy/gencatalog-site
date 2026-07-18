@@ -17,11 +17,11 @@ GenCatalog helps creators recover, remember, and rediscover AI-generated images 
 
 ## Pricing
 
-$79 one-time purchase. Includes all 5.x updates. Free trial: 7 days or 250 saved generations, whichever comes first — no credit card required.
+$99 per year, billed annually. Free trial: 7 days or 250 saved generations, whichever comes first — no credit card required. A current subscription funds new capture, imports, integrations, platform compatibility, features, and support. After the first payment, everything already in the catalog remains fully accessible even if the subscription is not renewed. Existing perpetual customers keep permanent full access and lifetime updates.
 
 ## Privacy
 
-Everything is stored locally on your machine. The GenCatalog app never uploads anything anywhere. No cloud, no accounts, no subscription.
+Everything in the creative library is stored locally on your machine. GenCatalog never uploads the library as cloud content and requires no GenCatalog account. The subscription pays for tomorrow; the library is always the customer's.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Everything is stored locally on your machine. The GenCatalog app never uploads a
 
 - [Website](https://gencatalog.app)
 - [Download Free Trial](https://gencatalog.app/get)
-- [Buy — $79](https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1)
+- [Subscribe — $99/year](https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb)
 - [Arcana Labs Support](https://gencatalog.app/arcana)
 - [Search Grok Favorites](https://gencatalog.app/search-grok-favorites)
 - [ComfyUI Workflow Viewer](https://gencatalog.app/comfyui-workflow-viewer)

@@ -150,7 +150,7 @@
 
     <main>
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: July 12, 2026</p>
+        <p class="last-updated">Last updated: July 18, 2026</p>
 
         <div class="highlight-box">
             <h3>The Short Version</h3>
@@ -181,22 +181,23 @@
         </ul>
 
         <h2>5. Network Communication</h2>
-        <p>The GenCatalog extension communicates only with:</p>
+        <p>The GenCatalog app and extension communicate only with services needed for the functions below:</p>
         <ul>
             <li><strong>Your local machine (localhost)</strong>: To send saved media and metadata to the companion desktop app.</li>
             <li><strong>Supported AI platforms</strong>: To read page content and download media files you choose to save from Grok Imagine, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai.</li>
-            <li><strong>Lemon Squeezy API (api.lemonsqueezy.com)</strong>: Solely for license key validation, approximately once every 7 days. Only your license key is transmitted; no personal data or usage information is included.</li>
-            <li><strong>GenCatalog telemetry endpoint (gencatalog.app)</strong>: When anonymous product analytics are enabled after the notice. Payloads contain limited anonymous counts and never include private library information, account information, license information, or a persistent identifier.</li>
+            <li><strong>GenCatalog entitlement service (license.gencatalog.app)</strong>: For initial activation and periodic subscription or license verification. The desktop app sends the license key and a device-specific activation identifier. The service validates entitlement state with Lemon Squeezy and returns a signed, time-limited access decision. It receives no library files, prompts, tags, notes, filenames, source URLs, file paths, thumbnails, hashes, item IDs, or catalog content.</li>
+            <li><strong>GenCatalog download service (downloads.gencatalog.app)</strong>: To check for and download desktop application updates.</li>
+            <li><strong>GenCatalog telemetry endpoint (telemetry.gencatalog.app)</strong>: When anonymous product analytics are enabled after the notice. Payloads contain limited anonymous counts and never include private library information, account information, license information, or a persistent identifier.</li>
         </ul>
         <p>GenCatalog does not communicate with any other external servers, APIs, or services.</p>
 
         <h2>6. This Website (gencatalog.app)</h2>
         <p>The website you're reading now is a normal website, and we treat it like one. It uses Google Analytics to count visits and see which pages people find useful — things like which page brought you here and whether you downloaded the app. Google Analytics sets cookies to do this. We don't collect names, email addresses, or accounts through the site, and website analytics never show us anything from inside your app library.</p>
-        <p>The site also remembers, in your browser's local storage, how you first arrived (for example, "came from a search engine"). If you buy a license, that gets attached to the purchase so we know which pages are actually earning their keep. That's the extent of it.</p>
+        <p>The site also remembers, in your browser's local storage, how you first arrived (for example, "came from a search engine"). If you start a subscription, that attribution is attached to checkout so we know which pages are actually earning their keep. That's the extent of it.</p>
         <p>Website analytics are separate from the app's optional telemetry. The app telemetry toggle controls aggregate app usage statistics only.</p>
 
         <h2>7. Third-Party Services</h2>
-        <p>Lemon Squeezy processes payments and license validation. Their handling of your payment information is governed by their own privacy policy. We do not have access to your payment details.</p>
+        <p>Lemon Squeezy processes subscription payments and supplies license-validation results to GenCatalog's entitlement service. Their handling of payment and customer information is governed by their own privacy policy. We do not receive your full card details.</p>
         <p>The GenCatalog app and extension do not integrate with advertising networks, social media trackers, or data brokers. Optional app telemetry is sent only to GenCatalog-controlled infrastructure.</p>
 
         <h2>8. Children's Privacy</h2>
