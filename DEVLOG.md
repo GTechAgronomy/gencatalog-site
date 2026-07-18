@@ -1,6 +1,35 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-18 — Standardize the Second Act Labs copyright notice
+
+### Scope and decision
+
+- Replace the three existing website-footer copyright variants with the exact
+  approved notice: “© 2026 Second Act Labs. All rights reserved.”
+- Apply it to every one of the 23 existing root HTML footers, including the
+  homepage, resource pages, platform pages, guides, and blog pages. Existing
+  footer structure, links, spacing, typography, and responsive behavior remain
+  unchanged.
+- Add a sitewide footer assertion to the existing subscription-draft guard so
+  every current or future root HTML page with a footer must carry the canonical
+  notice exactly once.
+
+### Files
+
+- Footer copy only in the 23 existing HTML files reported by
+  `rg -l '<footer' --glob '*.html'`.
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Validation and boundary
+
+- Run the complete subscription-draft guard, public-version check, diff check,
+  and desktop/mobile footer visual review.
+- Keep the branch local. No push, deployment, checkout submission, or website
+  publication.
+
+---
 ## 2026-07-18 — Clarify the permanent library promise
 
 ### Scope

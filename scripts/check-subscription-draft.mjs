@@ -9,6 +9,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const annualCheckout = 'https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb';
 const legacyCheckoutId = '3b893527-ed40-40b5-8f6f-9451c01f30f1';
 const stagingCheckoutId = '3ea693d3-5e94-46a2-a457-120f0e1c1e44';
+const copyrightNotice = '© 2026 Second Act Labs. All rights reserved.';
 
 const customerFiles = [
   'ai-generation-backup.html',
@@ -91,6 +92,21 @@ for (const pattern of staleClaims) {
 }
 assert.equal(allCustomerCopy.includes(stagingCheckoutId), false, 'staging checkout leaked into customer copy');
 
+const footerFiles = fs.readdirSync(root)
+  .filter((file) => file.endsWith('.html') && /<footer\b/i.test(read(file)))
+  .sort();
+assert.ok(footerFiles.length > 0, 'no website footers were found');
+for (const file of footerFiles) {
+  const source = read(file);
+  const footer = source.match(/<footer\b[\s\S]*?<\/footer>/i)?.[0] || '';
+  assert.ok(footer.includes(copyrightNotice), `${file} footer is missing the canonical copyright notice`);
+  assert.equal(
+    source.split(copyrightNotice).length - 1,
+    1,
+    `${file} must contain the canonical copyright notice exactly once`
+  );
+}
+
 const home = read('index.html');
 const faq = read('faq.html');
 const support = read('support.html');
@@ -148,4 +164,4 @@ assert.ok(analytics.includes("CHECKOUT_HOST = 'secondactlabs.lemonsqueezy.com'")
 assert.ok(analytics.includes("'checkout[custom][' + key + ']'"));
 assert.ok(analytics.includes("return 'checkout_click'"));
 
-console.log(`Subscription website draft checks passed: ${customerFiles.length} customer files, ${jsonLdCount} JSON-LD blocks, annual checkout ${annualCheckout}.`);
+console.log(`Subscription website draft checks passed: ${customerFiles.length} customer files, ${jsonLdCount} JSON-LD blocks, ${footerFiles.length} canonical footers, annual checkout ${annualCheckout}.`);
