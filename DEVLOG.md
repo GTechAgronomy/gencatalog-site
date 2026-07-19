@@ -1,6 +1,52 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Publish GenCatalog 5.16.74
+
+- Added customer-facing release notes for the thoughtfully timed, one-time
+  Chrome Web Store review request and the privacy-preserving aggregate signals
+  used to improve the trial and onboarding experience.
+- Advanced the shared Mac and Windows version surfaces only after both final
+  artifacts, their blockmaps, and both updater feeds were public at the bucket
+  root and `updates/` paths.
+- Kept the release note focused on what customers can see and rely on; build,
+  repository, receiver, and deployment proof remains in internal logs.
+
+### Files
+
+- `release-notes.html`
+- `index.html` and `get.html` through `scripts/update-version.sh 5.16.74`
+- `DEVLOG.md`
+
+The sitemap already carried the current July 19 last-modified date, so the
+version updater correctly produced no sitemap diff.
+
+### Validation
+
+- `scripts/update-version.sh 5.16.74` — passed the live-artifact gate and
+  aligned all public desktop version surfaces.
+- `scripts/update-version.sh --check` — passed with both 5.16.74 artifacts
+  returning HTTP `200`.
+- Parsed all JSON-LD blocks in `index.html` and `faq.html` — passed.
+- `git diff --check` — passed.
+
+---
+## 2026-07-19 — Disclose anonymous journey analytics
+
+- Updated the privacy policy and FAQ to describe the refreshed notice for older
+  former-default-off installations while preserving explicit opt-outs.
+- Disclosed the coarse journey milestones, local-only opaque completion
+  markers, and the absence of a persistent identifier or person-level journey.
+- Added the integrated review-request counts and their broad bucket limits.
+- Kept the visible FAQ answer aligned with FAQPage JSON-LD.
+- Verified `git diff --check` and parsed every JSON-LD block in both pages.
+
+### Lesson
+
+“Existing choices are preserved” was too broad once ambiguous legacy defaults
+and explicit opt-outs required different handling.
+
+---
 ## 2026-07-19 — Clarify the homepage subscription value
 
 - Replaced only the paragraph beneath “The subscription pays for tomorrow.”
