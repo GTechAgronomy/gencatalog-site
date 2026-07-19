@@ -1,6 +1,14 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Clarify the homepage subscription value
+
+- Replaced only the paragraph beneath “The subscription pays for tomorrow.”
+  with the founder-approved explanation of what the subscription funds.
+- Preserved the existing markup, emphasized ownership promise, layout,
+  typography, spacing, hierarchy, styling, and every other copy surface.
+
+---
 ## 2026-07-19 — Publish the 5.16.73 completed-trial library repair
 
 ### Scope and decision
