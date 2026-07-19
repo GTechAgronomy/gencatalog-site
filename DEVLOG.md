@@ -1,6 +1,31 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Publish the 5.16.73 completed-trial library repair
+
+### Scope and decision
+
+- Advance the public Mac and Windows desktop surfaces to `5.16.73` only after
+  both final artifacts and updater feeds are live at the download host.
+- Explain the customer-visible outcome plainly: reaching the seven-day or
+  250-save boundary pauses new capture but leaves every saved trial item
+  available to browse, organize, compare, export, and manage.
+- Include the prompt-navigation and Slideshow shortcut improvements without
+  adding pricing or internal release-process details.
+- Preserve all subscription, policy, extension, analytics, and unrelated site
+  copy exactly as published.
+
+### Files
+
+- `release-notes.html`
+- `index.html` and `get.html` through the established
+  `scripts/update-version.sh 5.16.73` release gate
+- `DEVLOG.md`
+
+The sitemap already carried the current July 19 last-modified date, so the
+version updater correctly produced no sitemap diff.
+
+---
 ## 2026-07-19 — Publish the Windows 5.16.72 trial-startup hotfix
 
 ### Scope and decision
