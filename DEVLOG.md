@@ -7,6 +7,7 @@
   former-default-off installations while preserving explicit opt-outs.
 - Disclosed the coarse journey milestones, local-only opaque completion
   markers, and the absence of a persistent identifier or person-level journey.
+- Added the integrated review-request counts and their broad bucket limits.
 - Kept the visible FAQ answer aligned with FAQPage JSON-LD.
 - Verified `git diff --check` and parsed every JSON-LD block in both pages.
 
