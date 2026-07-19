@@ -1,6 +1,37 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Prepare the public 5.16.71 subscription launch
+
+### Scope and decision
+
+- Advance the public desktop download surfaces from `5.16.70` to `5.16.71`
+  only after the Mac and Windows artifacts return HTTP 200 from the production
+  download host.
+- Add a customer-facing `5.16.71` / Extension `5.121` release entry limited to
+  current platform compatibility and the user-visible reliability fixes in
+  this release. Keep pricing and commercial-policy details on the homepage,
+  FAQ, support, and policy surfaces rather than the release notes.
+- Preserve the founder-approved subscription and policy copy exactly. Do not
+  reopen the settled commercial model during release closeout.
+
+### Files
+
+- `release-notes.html`
+- `index.html`, `get.html`, and `sitemap.xml` through the established
+  `scripts/update-version.sh 5.16.71` release gate
+- `DEVLOG.md`
+
+### Launch boundary
+
+- Publish the site only after the desktop artifacts and Extension `5.121` are
+  independently confirmed public.
+- Keep the legacy perpetual Lemon Squeezy product unchanged. Enable only the
+  approved `$99/year` product after the website is live, then verify checkout,
+  downloads, update feeds, subscription authority health, and both license
+  classes.
+
+---
 ## 2026-07-19 — Simplify the homepage subscription promise
 
 ### Scope and decision
