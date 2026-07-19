@@ -11,29 +11,9 @@ const legacyCheckoutId = '3b893527-ed40-40b5-8f6f-9451c01f30f1';
 const stagingCheckoutId = '3ea693d3-5e94-46a2-a457-120f0e1c1e44';
 const copyrightNotice = '© 2026 Second Act Labs. All rights reserved.';
 
-const customerFiles = [
-  'ai-generation-backup.html',
-  'arcana.html',
-  'blog-grok-favorites-disappeared.html',
-  'blog-organize-grok-imagine.html',
-  'comfyui-workflow-viewer.html',
-  'digen.html',
-  'faq.html',
-  'get.html',
-  'grok.html',
-  'higgsfield.html',
-  'index.html',
-  'llms.txt',
-  'local-ai-media-import.html',
-  'midjourney.html',
-  'privacy.html',
-  'refund.html',
-  'rescue-your-ai-library.html',
-  'save-ai-prompts-locally.html',
-  'search-grok-favorites.html',
-  'support.html',
-  'terms.html'
-];
+const customerFiles = fs.readdirSync(root)
+  .filter((file) => file.endsWith('.html') || file === 'llms.txt')
+  .sort();
 
 const offerFiles = [
   'ai-generation-backup.html',
@@ -84,7 +64,14 @@ const staleClaims = [
   /buy it once/i,
   /no recurring fees/i,
   /updates to the current major version/i,
-  /\b(?:paid|already-paid) library\b/i
+  /\b(?:paid|already-paid) library\b/i,
+  /lifetime updates/i,
+  /payment processor/i,
+  /Your library is always yours/i,
+  /first successful payment and activation/i,
+  /(?:three device|3) activations/i,
+  /subscription-funded (?:functionality|integrations|capabilities)/i,
+  /GTech|Agronomy/i
 ];
 
 for (const pattern of staleClaims) {
@@ -119,15 +106,25 @@ const getPage = read('get.html');
 assert.ok(home.includes(annualCheckout), 'homepage annual checkout is missing');
 assert.ok(llms.includes(annualCheckout), 'llms.txt annual checkout is missing');
 assert.ok(home.includes('The subscription pays for tomorrow.'));
-assert.ok(home.includes('Your library is always yours.'));
-assert.ok(faq.includes('everything already in your catalog remains fully accessible'));
-assert.ok(faq.includes('permanent perpetual license'));
+assert.ok(home.includes('After your first successful payment'));
+assert.ok(home.includes('One individual · Up to 3 personally controlled devices'));
+assert.ok(faq.includes('After your first successful payment'));
+assert.ok(faq.includes('one individual and can be used on up to three devices they personally control'));
+assert.ok(faq.includes('Merchant of Record'));
+assert.ok(faq.includes('rights included with their original purchase'));
 assert.ok(support.includes('Subscription states'));
 assert.ok(support.includes('Renew to keep capturing'));
+assert.ok(support.includes('one individual and can be used on up to three devices they personally control'));
 assert.ok(terms.includes('paid-through date'));
-assert.ok(terms.includes('permanent full access, and lifetime updates'));
+assert.ok(terms.includes('one individual for personal or commercial work on up to three devices they personally control'));
+assert.ok(terms.includes('After the first successful payment'));
+assert.ok(terms.includes('Merchant of Record'));
+assert.ok(terms.includes('rights included with their original purchase'));
 assert.ok(refund.includes('What a Refund Changes'));
+assert.ok(refund.includes('After the first successful payment'));
+assert.ok(refund.includes('Merchant of Record'));
 assert.ok(privacy.includes('license.gencatalog.app'));
+assert.ok(privacy.includes('Merchant of Record'));
 
 const getVersion = getPage.match(/var VERSION = '([^']+)'/)?.[1];
 const schemaVersion = home.match(/"softwareVersion":\s*"([^"]+)"/)?.[1];

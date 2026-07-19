@@ -1230,3 +1230,59 @@ Verify each URL returns `200` via `curl -I https://downloads.gencatalog.app/<fil
 
 ### Status
 - Ready for Cloudflare Pages production deployment through the main branch.
+## 2026-07-18 — Commercial policy refresh for annual subscription review
+
+### Scope
+- Standardized Terms, Refund Policy, FAQ, Privacy Policy, Support, homepage,
+  JSON-LD, `llms.txt`, and trial-adjacent marketing copy on the approved annual
+  subscription contract.
+- Identified Lemon Squeezy as Merchant of Record, used the exact individual and
+  device rule, and made the first successful payment the permanent-library
+  threshold.
+- Removed new-customer perpetual-sale language, legacy lifetime-update
+  overpromises, broad post-lapse feature gating, and pre-payment "Your library
+  is always yours" claims.
+- Kept the draft local and unpublished.
+
+### Files
+- `ai-generation-backup.html`
+- `comfyui-workflow-viewer.html`
+- `digen.html`
+- `faq.html`
+- `grok.html`
+- `higgsfield.html`
+- `index.html`
+- `llms.txt`
+- `local-ai-media-import.html`
+- `midjourney.html`
+- `privacy.html`
+- `refund.html`
+- `rescue-your-ai-library.html`
+- `save-ai-prompts-locally.html`
+- `scripts/check-subscription-draft.mjs`
+- `search-grok-favorites.html`
+- `support.html`
+- `terms.html`
+- `DEVLOG.md`
+
+### Validation
+- `node scripts/check-subscription-draft.mjs` — passed across 30 customer
+  files, 53 JSON-LD blocks, 23 canonical footers, and the annual checkout.
+- The checker now rejects obsolete perpetual-sale, lifetime-update,
+  payment-processor, device-activation, pre-payment ownership, former-business
+  name, and broad subscription-funded-feature language.
+
+### Provenance and parking note
+- Re-authored only the three commits on this unpushed website draft as
+  `Second Act Labs <support@gencatalog.app>`; published history was untouched.
+- One additional wording-only consistency occurrence was found in
+  `blog-organize-grok-imagine.html:600`. It is outside the approved file list
+  and remains parked pending explicit approval to change "first payment" to
+  "first successful payment."
+
+### Lesson
+The trial promise and the paid ownership promise must not collapse into one
+slogan. Trial files stay on disk; permanent in-app access begins after the
+first successful payment.
+
+---
