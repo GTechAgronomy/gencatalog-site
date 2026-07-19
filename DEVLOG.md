@@ -1,6 +1,21 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Disclose anonymous journey analytics
+
+- Updated the privacy policy and FAQ to describe the refreshed notice for older
+  former-default-off installations while preserving explicit opt-outs.
+- Disclosed the coarse journey milestones, local-only opaque completion
+  markers, and the absence of a persistent identifier or person-level journey.
+- Kept the visible FAQ answer aligned with FAQPage JSON-LD.
+- Verified `git diff --check` and parsed every JSON-LD block in both pages.
+
+### Lesson
+
+“Existing choices are preserved” was too broad once ambiguous legacy defaults
+and explicit opt-outs required different handling.
+
+---
 ## 2026-07-19 — Clarify the homepage subscription value
 
 - Replaced only the paragraph beneath “The subscription pays for tomorrow.”

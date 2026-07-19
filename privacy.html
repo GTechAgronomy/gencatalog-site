@@ -150,7 +150,7 @@
 
     <main>
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: July 18, 2026</p>
+        <p class="last-updated">Last updated: July 19, 2026</p>
 
         <div class="highlight-box">
             <h3>The Short Version</h3>
@@ -162,9 +162,9 @@
 
         <h2>2. Data the App and Extension Collect</h2>
         <p>The GenCatalog desktop app and Chrome extension do not collect personal information or browsing history. There is no account, no cloud sync, and no server-side copy of your catalog.</p>
-        <p>On fresh installations beginning with GenCatalog 5.16.58, anonymous product analytics are on by default only after GenCatalog shows a clear notice. Nothing is recorded before that notice is acknowledged. The notice offers an immediate Turn off analytics choice, and the same control remains available anytime in Settings &gt; Privacy. Existing analytics choices are preserved during upgrades.</p>
-        <p>Anonymous analytics are limited to counts and broad categories about app activity, feature use, approximate library-size ranges, settings and maintenance actions, trial or license-screen interactions, capture reliability, app or extension version, operating-system family, and whether a save is an image or video. They do not contain raw library records or a persistent identifier.</p>
-        <p>Turning analytics off stops future collection and deletes anything waiting to be sent from that Mac. Aggregate information already received is anonymous and cannot be traced back to a person or installation.</p>
+        <p>Anonymous product analytics are on by default only after GenCatalog shows a clear notice. Nothing is recorded before that notice is acknowledged. The notice offers an immediate Turn off analytics choice, and the same control remains available anytime in Settings &gt; Privacy. An explicit earlier opt-out stays off. An older installation that merely inherited the former default-off setting, without any recorded choice, is shown the refreshed notice and remains unable to record until that notice is acknowledged.</p>
+        <p>Anonymous analytics are limited to counts and broad categories about app activity, feature use, approximate library-size ranges, settings and maintenance actions, capture reliability, app or extension version, operating-system family, and whether a save is an image or video. They also include one-time anonymous milestones such as trial start, extension connection, first successful save, first meaningful library-management use, reaching five saves plus library management, purchase intent, license activation attempt or result, trial completion, and broad week-one, week-four, and week-twelve retention checkpoints. Journey timing uses only a trial cohort month and broad age or activation-window ranges. These aggregate milestones cannot be joined into a person-level journey.</p>
+        <p>Turning analytics off stops future collection and deletes anything waiting to be sent from that Mac. GenCatalog keeps only bounded, opaque local completion markers so turning analytics back on cannot reconstruct or duplicate milestones completed while analytics were off; those markers are never transmitted. Aggregate information already received is anonymous and cannot be traced back to a person or installation.</p>
         <p>Second Act Labs never receives your AI images or videos, prompts, filenames, source URLs, tags, notes, collection names, file paths, thumbnails, hashes, item IDs, media IDs, source IDs, generated content, local catalog, generation libraries, account information, or license information through product analytics. <span class="privacy-promise">We never see your private library information. Not when analytics are on. Not under any circumstances.</span></p>
 
         <h2>3. How Your Data Is Stored</h2>
@@ -187,7 +187,7 @@
             <li><strong>Supported AI platforms</strong>: To read page content and download media files you choose to save from Grok Imagine, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai.</li>
             <li><strong>GenCatalog entitlement service (license.gencatalog.app)</strong>: For initial activation and periodic subscription or license verification. The desktop app sends the license key and a device-specific activation identifier. The service validates entitlement state with Lemon Squeezy and returns a signed, time-limited access decision. It receives no library files, prompts, tags, notes, filenames, source URLs, file paths, thumbnails, hashes, item IDs, or catalog content.</li>
             <li><strong>GenCatalog download service (downloads.gencatalog.app)</strong>: To check for and download desktop application updates.</li>
-            <li><strong>GenCatalog telemetry endpoint (telemetry.gencatalog.app)</strong>: When anonymous product analytics are enabled after the notice. Payloads contain limited anonymous counts and never include private library information, account information, license information, or a persistent identifier.</li>
+            <li><strong>GenCatalog telemetry endpoint (telemetry.gencatalog.app)</strong>: When anonymous product analytics are enabled after the notice. Payloads contain limited anonymous counts and coarse product-journey milestones, and never include private library information, account information, license information, or a persistent identifier.</li>
         </ul>
         <p>GenCatalog does not communicate with any other external servers, APIs, or services.</p>
 
