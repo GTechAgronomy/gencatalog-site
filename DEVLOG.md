@@ -1,6 +1,38 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Simplify the homepage subscription promise
+
+### Scope and decision
+
+- Replace the homepage pricing card copy with the founder-approved commercial
+  message: “The subscription pays for tomorrow. Your library is always yours.”
+- Keep the card focused on trial terms, ongoing product value, the individual
+  device allowance, and the permanent ownership promise.
+- Remove first-payment, paid-period, cancellation-lifecycle, and lapse mechanics
+  from the visible homepage. Those operational details remain available where
+  customers expect them: FAQ, Terms, refund policy, and trial-complete surfaces.
+- Align the Index price FAQ metadata with the same plain-language promise so
+  search results do not reintroduce the operational copy removed from the page.
+- Preserve the annual checkout URL, free-trial destination, pricing, behavior,
+  navigation, and existing visual structure.
+
+### Files
+
+- `index.html`
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Validation and boundary
+
+- Update the draft guard to require the new homepage ownership language and
+  reject the displaced lifecycle phrases on the Index while continuing to
+  require those details on the appropriate policy and support pages.
+- Run the complete subscription-draft guard and diff checks locally.
+- Keep the branch local. No push, deployment, checkout submission, sales
+  activation, or website publication.
+
+---
 ## 2026-07-18 — Standardize the Second Act Labs copyright notice
 
 ### Scope and decision

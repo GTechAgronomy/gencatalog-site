@@ -55,6 +55,10 @@ function walk(value, visit) {
 }
 
 const allCustomerCopy = customerFiles.map((file) => `${file}\n${read(file)}`).join('\n');
+const nonHomeCustomerCopy = customerFiles
+  .filter((file) => file !== 'index.html')
+  .map((file) => `${file}\n${read(file)}`)
+  .join('\n');
 const staleClaims = [
   /\$79\b/i,
   /79\.00/,
@@ -67,7 +71,6 @@ const staleClaims = [
   /\b(?:paid|already-paid) library\b/i,
   /lifetime updates/i,
   /payment processor/i,
-  /Your library is always yours/i,
   /first successful payment and activation/i,
   /(?:three device|3) activations/i,
   /subscription-funded (?:functionality|integrations|capabilities)/i,
@@ -77,6 +80,11 @@ const staleClaims = [
 for (const pattern of staleClaims) {
   assert.equal(pattern.test(allCustomerCopy), false, `stale commercial claim remains: ${pattern}`);
 }
+assert.equal(
+  /Your library is always yours/i.test(nonHomeCustomerCopy),
+  false,
+  'the concise homepage ownership promise must not replace precise lifecycle copy elsewhere'
+);
 assert.equal(allCustomerCopy.includes(stagingCheckoutId), false, 'staging checkout leaked into customer copy');
 
 const footerFiles = fs.readdirSync(root)
@@ -106,8 +114,12 @@ const getPage = read('get.html');
 assert.ok(home.includes(annualCheckout), 'homepage annual checkout is missing');
 assert.ok(llms.includes(annualCheckout), 'llms.txt annual checkout is missing');
 assert.ok(home.includes('The subscription pays for tomorrow.'));
-assert.ok(home.includes('After your first successful payment'));
-assert.ok(home.includes('One individual · Up to 3 personally controlled devices'));
+assert.ok(home.includes('Your library is always yours.'));
+assert.ok(home.includes('Cancel anytime. Everything you’ve already saved remains yours.'));
+assert.ok(home.includes('One individual • Up to 3 personally controlled devices'));
+assert.ok(!home.includes('first successful payment'));
+assert.ok(!home.includes('current paid period'));
+assert.ok(!home.includes('subscription lapse'));
 assert.ok(faq.includes('After your first successful payment'));
 assert.ok(faq.includes('one individual and can be used on up to three devices they personally control'));
 assert.ok(faq.includes('Merchant of Record'));
