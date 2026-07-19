@@ -1,6 +1,237 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Prepare the public 5.16.71 subscription launch
+
+### Scope and decision
+
+- Advance the public desktop download surfaces from `5.16.70` to `5.16.71`
+  only after the Mac and Windows artifacts return HTTP 200 from the production
+  download host.
+- Add a customer-facing `5.16.71` / Extension `5.121` release entry limited to
+  current platform compatibility and the user-visible reliability fixes in
+  this release. Keep pricing and commercial-policy details on the homepage,
+  FAQ, support, and policy surfaces rather than the release notes.
+- Preserve the founder-approved subscription and policy copy exactly. Do not
+  reopen the settled commercial model during release closeout.
+
+### Files
+
+- `release-notes.html`
+- `index.html`, `get.html`, and `sitemap.xml` through the established
+  `scripts/update-version.sh 5.16.71` release gate
+- `DEVLOG.md`
+
+### Launch boundary
+
+- Publish the site only after the desktop artifacts and Extension `5.121` are
+  independently confirmed public.
+- Keep the legacy perpetual Lemon Squeezy product unchanged. Enable only the
+  approved `$99/year` product after the website is live, then verify checkout,
+  downloads, update feeds, subscription authority health, and both license
+  classes.
+
+---
+## 2026-07-19 — Simplify the homepage subscription promise
+
+### Scope and decision
+
+- Replace the homepage pricing card copy with the founder-approved commercial
+  message: “The subscription pays for tomorrow. Your library is always yours.”
+- Keep the card focused on trial terms, ongoing product value, the individual
+  device allowance, and the permanent ownership promise.
+- Remove first-payment, paid-period, cancellation-lifecycle, and lapse mechanics
+  from the visible homepage. Those operational details remain available where
+  customers expect them: FAQ, Terms, refund policy, and trial-complete surfaces.
+- Align the Index price FAQ metadata with the same plain-language promise so
+  search results do not reintroduce the operational copy removed from the page.
+- Preserve the annual checkout URL, free-trial destination, pricing, behavior,
+  navigation, and existing visual structure.
+
+### Files
+
+- `index.html`
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Validation and boundary
+
+- Update the draft guard to require the new homepage ownership language and
+  reject the displaced lifecycle phrases on the Index while continuing to
+  require those details on the appropriate policy and support pages.
+- Run the complete subscription-draft guard and diff checks locally.
+- Keep the branch local. No push, deployment, checkout submission, sales
+  activation, or website publication.
+
+---
+## 2026-07-18 — Standardize the Second Act Labs copyright notice
+
+### Scope and decision
+
+- Replace the three existing website-footer copyright variants with the exact
+  approved notice: “© 2026 Second Act Labs. All rights reserved.”
+- Apply it to every one of the 23 existing root HTML footers, including the
+  homepage, resource pages, platform pages, guides, and blog pages. Existing
+  footer structure, links, spacing, typography, and responsive behavior remain
+  unchanged.
+- Add a sitewide footer assertion to the existing subscription-draft guard so
+  every current or future root HTML page with a footer must carry the canonical
+  notice exactly once.
+
+### Files
+
+- Footer copy only in the 23 existing HTML files reported by
+  `rg -l '<footer' --glob '*.html'`.
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Validation and boundary
+
+- Run the complete subscription-draft guard, public-version check, diff check,
+  and desktop/mobile footer visual review.
+- Keep the branch local. No push, deployment, checkout submission, or website
+  publication.
+
+---
+## 2026-07-18 — Clarify the permanent library promise
+
+### Scope
+
+- Founder review identified that “paid library” can sound as though some saved
+  items are paid and others are not.
+- Change only the ownership promise on the homepage pricing card and the three
+  matching FAQ/Support/Terms lifecycle explanations. Do not otherwise polish,
+  restructure, or alter the approved subscription copy.
+
+### Files
+
+- `index.html`
+- `faq.html`
+- `support.html`
+- `terms.html`
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Copy decision
+
+- The homepage now says: “Everything already in your library remains yours
+  after your first payment.”
+- Support uses the same ownership language while preserving the operational
+  explanation of what pauses after a subscription ends.
+- Terms refers to “your existing library,” not an “already-paid library.”
+- The draft guard rejects future “paid library” and “already-paid library” copy
+  across customer-facing sources.
+
+### Boundary and validation
+
+- Regenerate the affected desktop/mobile pricing and lifecycle screenshots,
+  rerun the complete subscription-draft and public-version checks, and keep the
+  branch local. No push, deployment, checkout submission, or sales activation.
+
+---
+## 2026-07-18 — Prepare the annual-subscription website draft
+
+### Source and exact boundary
+
+- Worktree:
+  `/Users/danieldavis/Dev/worktrees/gencatalog-site-subscription-draft`.
+- Branch: `codex/subscription-site-draft`, created from exact clean
+  `origin/main` commit `daa0d77`.
+- The canonical site checkout remains on `main` with its unrelated telemetry
+  changes and uncommitted Midjourney testimonial untouched. The clean draft
+  changes a separate commercial-copy hunk in `midjourney.html`; reconcile that
+  file only after the testimonial work is committed in its own task.
+- This is a local founder-review draft. No git push, PR, Cloudflare deployment,
+  public checkout change, Lemon product publication, or website publication is
+  authorized or performed.
+
+### Commercial message
+
+- New customers see one `$99/year`, billed-annually plan after the familiar
+  seven-day-or-250-save trial; no card is required for the trial.
+- Lead with the customer promise: “The subscription pays for tomorrow. Your
+  library is always yours.” After the first payment, ending or refunding the
+  subscription pauses new capture and imports without taking away management
+  of work already in the catalog.
+- Explain paid-through cancellation, renewal, three device activations,
+  verification outages, current release availability, and permanent
+  grandfathering without exposing runtime implementation language.
+- Trial users who never paid are described honestly: GenCatalog pauses at the
+  fork, while the files in their chosen catalog folder stay on their computer
+  and are never deleted.
+
+### Customer surfaces
+
+- `index.html`
+- `get.html`
+- `faq.html`
+- `support.html`
+- `terms.html`
+- `refund.html`
+- `privacy.html`
+- `llms.txt`
+- `ai-generation-backup.html`
+- `arcana.html`
+- `blog-grok-favorites-disappeared.html`
+- `blog-organize-grok-imagine.html`
+- `comfyui-workflow-viewer.html`
+- `digen.html`
+- `grok.html`
+- `higgsfield.html`
+- `local-ai-media-import.html`
+- `midjourney.html`
+- `rescue-your-ai-library.html`
+- `save-ai-prompts-locally.html`
+- `search-grok-favorites.html`
+- `brand/BRAND-VOICE.md`
+
+### Validation and safety files
+
+- `scripts/check-subscription-draft.mjs`
+- `DEVLOG.md`
+
+### Structured data and attribution
+
+- Every priced `SoftwareApplication` offer now reports `$99 USD`, the approved
+  annual checkout, and `UnitPriceSpecification.billingDuration: P1Y`.
+- Homepage Open Graph, Twitter, FAQ schema, crawler copy, and visible pricing
+  agree with the annual model.
+- The existing generic Lemon checkout decorator continues to attach first/last
+  source, channel, and surface attribution to the new checkout without code
+  changes.
+
+### Deliberate release boundary
+
+- Keep public desktop download/version surfaces at `5.16.70` in this draft.
+  The site must not point at `5.16.71` until compatible Mac and Windows
+  artifacts actually exist at the public download URLs; the established
+  version script enforces that later release gate.
+- The draft contains the approved production annual checkout URL so copy and
+  attribution can be reviewed exactly, but it exists only in this unpushed
+  worktree.
+
+### Validation
+
+- `node scripts/check-subscription-draft.mjs`
+- `git diff --check`
+- Legacy `$79`, one-time-purchase, all-5.x, and legacy checkout sweep across
+  customer HTML/text sources.
+- JSON parsing for every JSON-LD block and annual-offer assertions for all
+  priced application pages.
+- Local Chromium review at desktop and mobile widths for homepage pricing,
+  download handoff, subscription FAQ, support, terms, refund, and privacy.
+- Review screenshots:
+  `/Users/danieldavis/.codex/visualizations/2026/07/17/019f70df-3e35-74a1-b353-7764ae672134/subscription-launch-candidate-5.16.71/website-draft`.
+
+### Parking record
+
+- Keep this branch and worktree local for founder review. Do not push or deploy.
+- Next action: incorporate review notes, reconcile the separately owned
+  `midjourney.html` testimonial, rerun the draft guard and screenshots, then
+  wait for compatible public desktop and extension releases before any site
+  cutover.
+
+---
 ## 2026-07-08 — Published 5.16.51 large-batch smoothness release
 
 ### What Changed
@@ -1062,3 +1293,59 @@ Verify each URL returns `200` via `curl -I https://downloads.gencatalog.app/<fil
 
 ### Status
 - Ready for Cloudflare Pages production deployment through the main branch.
+## 2026-07-18 — Commercial policy refresh for annual subscription review
+
+### Scope
+- Standardized Terms, Refund Policy, FAQ, Privacy Policy, Support, homepage,
+  JSON-LD, `llms.txt`, and trial-adjacent marketing copy on the approved annual
+  subscription contract.
+- Identified Lemon Squeezy as Merchant of Record, used the exact individual and
+  device rule, and made the first successful payment the permanent-library
+  threshold.
+- Removed new-customer perpetual-sale language, legacy lifetime-update
+  overpromises, broad post-lapse feature gating, and pre-payment "Your library
+  is always yours" claims.
+- Kept the draft local and unpublished.
+
+### Files
+- `ai-generation-backup.html`
+- `comfyui-workflow-viewer.html`
+- `digen.html`
+- `faq.html`
+- `grok.html`
+- `higgsfield.html`
+- `index.html`
+- `llms.txt`
+- `local-ai-media-import.html`
+- `midjourney.html`
+- `privacy.html`
+- `refund.html`
+- `rescue-your-ai-library.html`
+- `save-ai-prompts-locally.html`
+- `scripts/check-subscription-draft.mjs`
+- `search-grok-favorites.html`
+- `support.html`
+- `terms.html`
+- `DEVLOG.md`
+
+### Validation
+- `node scripts/check-subscription-draft.mjs` — passed across 30 customer
+  files, 53 JSON-LD blocks, 23 canonical footers, and the annual checkout.
+- The checker now rejects obsolete perpetual-sale, lifetime-update,
+  payment-processor, device-activation, pre-payment ownership, former-business
+  name, and broad subscription-funded-feature language.
+
+### Provenance and parking note
+- Re-authored only the three commits on this unpushed website draft as
+  `Second Act Labs <support@gencatalog.app>`; published history was untouched.
+- One additional wording-only consistency occurrence was found in
+  `blog-organize-grok-imagine.html:600`. It is outside the approved file list
+  and remains parked pending explicit approval to change "first payment" to
+  "first successful payment."
+
+### Lesson
+The trial promise and the paid ownership promise must not collapse into one
+slogan. Trial files stay on disk; permanent in-app access begins after the
+first successful payment.
+
+---

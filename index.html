@@ -22,13 +22,13 @@
   <meta property="og:url" content="https://gencatalog.app/">
   <meta property="og:site_name" content="GenCatalog">
   <meta property="og:title" content="GenCatalog — Local AI Image &amp; Video Organizer">
-  <meta property="og:description" content="Save AI generations from Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase.">
+  <meta property="og:description" content="Save AI generations with prompts and metadata intact. Local, private, and $99/year—with a library that remains yours.">
   <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GenCatalog — Local AI Image &amp; Video Organizer">
-  <meta name="twitter:description" content="Save AI generations from Grok, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai with prompts and metadata intact. Local, private, one-time purchase.">
+  <meta name="twitter:description" content="Save AI generations with prompts and metadata intact. Local, private, and $99/year—with a library that remains yours.">
   <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
       {"@type":"Question","name":"Which AI platforms does GenCatalog support?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog currently supports Grok Imagine (X.ai), Arcana Labs, ComfyUI output imports, Gemini, ChatGPT/GPT Image, Rogue Studio, Higgsfield (video generation), Midjourney (image generation), Digen, and Venice.ai. The Chrome extension adds capture controls on supported platform pages, while local import reads ComfyUI metadata from files when available."}},
       {"@type":"Question","name":"How does GenCatalog save my AI generations?","acceptedAnswer":{"@type":"Answer","text":"Install the Chrome extension and the GenCatalog desktop app. When you generate images or videos on a supported platform, a Save button appears on each result. Click it to capture the media file, full prompt, model version, and parameters. You can also import existing folders, including ComfyUI outputs with embedded prompts, workflow metadata, settings, and LoRAs when present."}},
       {"@type":"Question","name":"Is my data stored in the cloud?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog stores your library locally on your computer. Your prompts, images, videos, and metadata never leave your device as library content. No account required for your local catalog."}},
-      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $79 as a one-time purchase. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The price includes all 5.x updates — no subscription, no renewals."}},
+      {"@type":"Question","name":"How much does GenCatalog cost?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog is $99 per year, billed annually through Lemon Squeezy, our Merchant of Record. The free trial runs 7 days or 250 saved generations, whichever comes first, with no credit card required. The subscription is for one individual on up to three personally controlled devices. The subscription pays for tomorrow, and your library is always yours."}},
       {"@type":"Question","name":"Does GenCatalog work on both Mac and Windows?","acceptedAnswer":{"@type":"Answer","text":"Yes. GenCatalog supports macOS (Apple Silicon and Intel) and Windows 10/11. The Chrome extension works on any platform that runs Chrome."}},
       {"@type":"Question","name":"What metadata does GenCatalog save from Midjourney?","acceptedAnswer":{"@type":"Answer","text":"GenCatalog saves the full prompt text, model version (--v), aspect ratio (--ar), chaos, seed, style mode, style references (--sref), character references (--cref), stylize weight, and all other parameters. All four image variants per generation are saved individually."}}
     ]
@@ -57,11 +57,22 @@
     "name": "GenCatalog",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "macOS, Windows",
-    "offers": {"@type":"Offer","price":"79.00","priceCurrency":"USD"},
+    "offers": {
+      "@type": "Offer",
+      "price": "99.00",
+      "priceCurrency": "USD",
+      "url": "https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": "99.00",
+        "priceCurrency": "USD",
+        "billingDuration": "P1Y"
+      }
+    },
     "description": "GenCatalog is a desktop app that saves and imports AI-generated images and videos from Grok Imagine, Arcana Labs, ComfyUI, Gemini, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai — with prompts, model settings, workflow details, and metadata — into a local, searchable library. No cloud uploads. No account required.",
     "url": "https://gencatalog.app",
     "screenshot": "https://gencatalog.app/og-image-v5.jpg",
-    "softwareVersion": "5.16.70",
+    "softwareVersion": "5.16.71",
     "creator": {"@type":"Organization","name":"Second Act Labs","url":"https://secondactlabs.com"}
   }
   </script>
@@ -117,7 +128,7 @@
       <div class="hero-copy">
         <div class="hero-kicker reveal">
           <span class="status-dot" aria-hidden="true"></span>
-          <span>GenCatalog 5.16.70</span>
+          <span>GenCatalog 5.16.71</span>
           <span>Mac + Windows</span>
         </div>
 
@@ -400,7 +411,7 @@
           <p class="eyebrow reveal">Local by design</p>
           <h2 class="section-title wide reveal">Your library stays on your machine—and remains yours.</h2>
           <p class="lede reveal">
-            No account. No cloud uploads. No subscription holding your work hostage. GenCatalog stores your images, videos, prompts, and metadata in a folder you choose, using an open file format you can keep.
+            No account. No cloud uploads. No hosted archive holding your work hostage. GenCatalog stores your images, videos, prompts, and metadata in a folder you choose, using an open file format you can keep.
           </p>
         </div>
 
@@ -463,27 +474,27 @@
         </div>
 
         <div class="purchase-panel reveal">
-          <p class="eyebrow">One price</p>
           <div class="price-line">
-            <strong class="price">$79</strong>
-            <span>one time</span>
+            <strong class="price">$99</strong>
+            <span>per year • billed annually</span>
           </div>
-          <h2 id="pricing-title">One price. No surprises.</h2>
-          <p class="purchase-intro">Buy it once. Use it forever. No subscription, seats, or renewal.</p>
+          <h2 id="pricing-title">The subscription pays for tomorrow.</h2>
+          <p class="purchase-intro"><strong>Your library is always yours.</strong> Stay current as AI platforms evolve, keep capturing new work, and know that everything you’ve already saved remains yours.</p>
 
           <ul class="purchase-list">
             <li>Free trial for 7 days or 250 generations</li>
             <li>No credit card required for the trial</li>
-            <li>macOS and Windows desktop apps</li>
-            <li>Chrome extension included</li>
-            <li>Includes all GenCatalog 5.x updates</li>
+            <li>New capture and imports across supported platforms</li>
+            <li>Ongoing integrations and platform compatibility</li>
+            <li>New features, support, and current releases</li>
+            <li>One individual • Up to 3 personally controlled devices</li>
           </ul>
 
           <div class="purchase-actions">
-            <a class="button button-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1">Buy now — $79</a>
+            <a class="button button-primary" href="https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb">Subscribe • $99/year</a>
             <a class="button button-secondary" href="/get">Start free trial</a>
           </div>
-          <p class="purchase-meta">Mac: Apple Silicon + Intel<br>Windows: 10 + 11</p>
+          <p class="purchase-meta">Cancel anytime. Everything you’ve already saved remains yours.</p>
         </div>
       </div>
     </section>
@@ -500,7 +511,7 @@
             <a class="button button-primary" href="/get">Start free — No card</a>
             <a class="button button-secondary" href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb">Chrome extension</a>
           </div>
-          <p>Free for 7 days or 250 saves. Then $79 once. Your local library remains on your computer.</p>
+          <p>Free for 7 days or 250 saves. Then $99/year to keep your library growing. Your library is always yours.</p>
         </div>
       </div>
     </section>
@@ -545,8 +556,8 @@
       </div>
 
       <div class="foot-meta">
-        <span>© 2026 GenCatalog · Local by default.</span>
-        <span>v5.16.70</span>
+        <span>© 2026 Second Act Labs. All rights reserved.</span>
+        <span>v5.16.71</span>
       </div>
     </div>
   </footer>

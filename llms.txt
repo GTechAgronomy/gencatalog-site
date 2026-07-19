@@ -17,11 +17,11 @@ GenCatalog helps creators recover, remember, and rediscover AI-generated images 
 
 ## Pricing
 
-$79 one-time purchase. Includes all 5.x updates. Free trial: 7 days or 250 saved generations, whichever comes first — no credit card required.
+$99 per year, billed annually through Lemon Squeezy, the Merchant of Record. Free trial: 7 days or 250 saved generations, whichever comes first — no credit card required. The subscription is for one individual on up to three personally controlled devices. While the paid period is active, new capture, imports, scans, and other ways of adding work remain available. After the first successful payment, everything already in the catalog remains fully accessible even if the customer later cancels or lets the subscription lapse. Existing perpetual customers keep the perpetual access and update rights included with their original purchase and do not need to subscribe.
 
 ## Privacy
 
-Everything is stored locally on your machine. The GenCatalog app never uploads anything anywhere. No cloud, no accounts, no subscription.
+Everything in the creative library is stored locally on your machine. GenCatalog never uploads the library as cloud content and requires no GenCatalog account. The subscription pays for tomorrow; the library is always the customer's.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ Everything is stored locally on your machine. The GenCatalog app never uploads a
 
 - [Website](https://gencatalog.app)
 - [Download Free Trial](https://gencatalog.app/get)
-- [Buy — $79](https://secondactlabs.lemonsqueezy.com/checkout/buy/3b893527-ed40-40b5-8f6f-9451c01f30f1)
+- [Subscribe — $99/year](https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb)
 - [Arcana Labs Support](https://gencatalog.app/arcana)
 - [Search Grok Favorites](https://gencatalog.app/search-grok-favorites)
 - [ComfyUI Workflow Viewer](https://gencatalog.app/comfyui-workflow-viewer)

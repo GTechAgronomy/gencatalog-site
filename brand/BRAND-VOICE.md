@@ -69,7 +69,7 @@ Lead with the pain point or a sharp observation. Short sentences. No hashtag spa
 ### LinkedIn — Practical & Credible
 Slightly longer, outcome-focused. Speak to the workflow problem. Okay to use a short story or before/after framing. Still no jargon.
 
-> Most AI creators have thousands of generations and no way to find the good ones. GenCatalog fixes that — locally, privately, no subscription.
+> Most AI creators have thousands of generations and no way to find the good ones. GenCatalog fixes that — locally, privately, with a library that remains theirs.
 
 ### Reddit — Honest & Community-First
 Be a participant, not a marketer. Lead with value or a genuine observation. Acknowledge the niche. Never hard-sell.
