@@ -1,6 +1,40 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-19 — Publish the Windows 5.16.72 trial-startup hotfix
+
+### Scope and decision
+
+- Advance the public latest-desktop surfaces to `5.16.72` only after the
+  Windows installer and updater manifest return HTTP `200` from production and
+  the public installer matches the approved local SHA-256.
+- Point Windows downloads directly to `5.16.72` so a new customer receives the
+  repaired trial behavior on first launch.
+- Keep the Mac download and updater feed on the already accepted, notarized
+  `5.16.71` artifact. The trial-anchor defect is Windows-specific; an attempted
+  `5.16.72` Mac build correctly stopped when Apple rejected the saved
+  notarization credential, and no unnotarized artifact was published.
+- Teach the existing release checker to verify the current Windows and Mac
+  artifacts independently. Its normal version-bump command still converges
+  both platforms to one version and refuses the bump until both artifacts are
+  public.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `scripts/update-version.sh`
+- `DEVLOG.md`
+
+### Customer-facing boundary
+
+- Release copy says only that new Windows installations now begin the complete
+  free trial reliably, including on established Windows accounts.
+- No pricing, subscription policy, extension, analytics, Mac download,
+  navigation, or unrelated site copy changed.
+
+---
 ## 2026-07-19 — Prepare the public 5.16.71 subscription launch
 
 ### Scope and decision

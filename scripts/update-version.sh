@@ -8,9 +8,10 @@
 #                                            return HTTP 200
 #
 # Surfaces covered: index.html (JSON-LD softwareVersion, hero badge, footer),
-# get.html (VERSION const that builds download URLs), sitemap.xml lastmod for
-# / and /release-notes. The release-notes.html entry itself is written by hand;
-# this script only verifies one exists for the target version.
+# get.html (VERSION for Windows and MAC_VERSION for the notarized Mac build),
+# sitemap.xml lastmod for / and /release-notes. The release-notes.html entry
+# itself is written by hand; this script only verifies one exists for the
+# target version.
 #
 # llms.txt intentionally links /get instead of a versioned file — nothing to
 # bump there. Keep it that way.
@@ -23,16 +24,26 @@ BASE="https://downloads.gencatalog.app"
 current_versions() {
   {
     sed -n "s/.*var VERSION = '\([0-9.]*\)'.*/get.html \1/p" get.html
-    sed -n 's/.*GenCatalog \([0-9.]*\) <b>Mac + Windows<\/b>.*/get.html(kicker) \1/p' get.html
+    sed -n 's/.*GenCatalog \([0-9.]*\) <b>.*<\/b>.*/get.html(kicker) \1/p' get.html
     sed -n 's/.*"softwareVersion": "\([0-9.]*\)".*/index.html(json-ld) \1/p' index.html
     sed -n 's/.*<span>GenCatalog \([0-9.]*\)<\/span>.*/index.html(hero) \1/p' index.html
     grep -o 'v[0-9][0-9.]*</span>' index.html | tail -1 | sed 's/^v/index.html(footer) /; s/<\/span>//'
   }
 }
 
+current_mac_version() {
+  local mac
+  mac=$(sed -n "s/.*var MAC_VERSION = '\([0-9.]*\)'.*/\1/p" get.html)
+  if [ -n "$mac" ]; then
+    echo "$mac"
+  else
+    sed -n "s/.*var VERSION = '\([0-9.]*\)'.*/\1/p" get.html
+  fi
+}
+
 check_artifacts() {
-  local v="$1" ok=1
-  for f in "GenCatalog-${v}-universal.dmg" "GenCatalog-${v}-Setup.exe"; do
+  local win_v="$1" mac_v="${2:-$1}" ok=1
+  for f in "GenCatalog-${mac_v}-universal.dmg" "GenCatalog-${win_v}-Setup.exe"; do
     code=$(curl -s -o /dev/null -w '%{http_code}' -I "${BASE}/${f}")
     if [ "$code" = "200" ]; then
       echo "  200 ${BASE}/${f}"
@@ -54,12 +65,13 @@ if [ "${1:-}" = "--check" ]; then
     exit 1
   fi
   v=$(echo "$distinct" | head -1)
+  mac_v=$(current_mac_version)
   if ! grep -q "GenCatalog ${v}" release-notes.html; then
     echo "FAIL: release-notes.html has no entry for ${v}"
     exit 1
   fi
-  echo "Artifacts for ${v}:"
-  if ! check_artifacts "$v"; then
+  echo "Artifacts for Windows ${v} / Mac ${mac_v}:"
+  if ! check_artifacts "$v" "$mac_v"; then
     echo "FAIL: site says ${v} but artifacts are not live. Do not deploy."
     exit 1
   fi
@@ -74,19 +86,22 @@ case "$NEW" in
 esac
 
 OLD=$(sed -n "s/.*var VERSION = '\([0-9.]*\)'.*/\1/p" get.html)
+OLD_MAC=$(current_mac_version)
 echo "Bumping ${OLD} -> ${NEW}"
 
 echo "Verifying ${NEW} artifacts are downloadable first (AGENTS.md rule):"
-if ! check_artifacts "$NEW"; then
+if ! check_artifacts "$NEW" "$NEW"; then
   echo "Refusing to bump: upload the artifacts first."
   exit 1
 fi
 
 TODAY=$(date +%Y-%m-%d)
 sed -i '' "s/var VERSION = '${OLD}'/var VERSION = '${NEW}'/" get.html
-sed -i '' "s/GenCatalog ${OLD} <b>Mac + Windows/GenCatalog ${NEW} <b>Mac + Windows/" get.html
+sed -i '' "s/var MAC_VERSION = '${OLD_MAC}'/var MAC_VERSION = '${NEW}'/" get.html
+sed -i '' "s/GenCatalog ${OLD} <b>[^<]*<\/b>/GenCatalog ${NEW} <b>Mac + Windows<\/b>/" get.html
 sed -i '' "s/\"softwareVersion\": \"${OLD}\"/\"softwareVersion\": \"${NEW}\"/" index.html
 sed -i '' "s/>GenCatalog ${OLD}</>GenCatalog ${NEW}</" index.html
+perl -0pi -e "s{(<span>GenCatalog ${NEW}</span>\s*<span>)[^<]*(</span>)}{\${1}Mac + Windows\${2}}" index.html
 sed -i '' "s/>v${OLD}</>v${NEW}</g" index.html
 
 # sitemap lastmod for / and /release-notes
