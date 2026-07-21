@@ -1,6 +1,78 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-21 — Refresh the homepage for Sources and Generation Recipes
+
+### Scope and decisions
+
+- Preserved the homepage headline, problem framing, structure, pacing, pricing
+  model, and closing promise. The central customer outcome remains an organized,
+  searchable local library; the refresh updates the parts of that story that
+  had begun to undersell the product.
+- Reframed prompt and metadata preservation as preserving how a result was
+  made, then introduced Generation Recipes once as the product name for that
+  richer record. Kept familiar prompt, model, setting, and resource language
+  everywhere else rather than repeating the term throughout the page.
+- Expanded the workflow from browser capture and one-time imports to Sources
+  and watched folders. Public copy leads with the customer benefit—new work
+  appearing automatically while originals remain in place—and avoids internal
+  acquisition terminology.
+- Aligned the page title, social descriptions, SoftwareApplication schema, and
+  visible FAQ schema with the refreshed Sources and recipe story.
+- Kept the closing positioning unchanged. “Searchable library” remains the
+  clearest immediate promise; creative history is the value GenCatalog
+  preserves inside that library, not a replacement category.
+
+### Visuals
+
+- Replaced the older detail screenshot with a current Generation Recipe view.
+- Replaced the simplified Recipe Card with a full export based on a ComfyUI
+  workflow: one checkpoint, three LoRAs, two generation stages, settings,
+  resources, and original embedded evidence. The fixture artwork is original,
+  public-safe, and contains no customer content.
+- Replaced the one-time import panel with the current Sources screen showing
+  connected watched folders and live status.
+- Retained the existing homepage CSS after desktop and mobile review; the new
+  assets fit the established layout without responsive changes.
+
+### Files
+
+- `index.html`
+- `uploads_v2/GenerationRecipeView-20260721.webp`
+- `uploads_v2/GenerationRecipeExport-20260721.webp`
+- `uploads_v2/SourcesWatchedFolders-20260721.webp`
+- `DEVLOG.md`
+
+### Validation
+
+- Parsed all three JSON-LD blocks in `index.html` — passed.
+- `node scripts/check-subscription-draft.mjs` — passed across 30 customer files
+  and 53 JSON-LD blocks.
+- `bash scripts/update-version.sh --check` — passed with every public version
+  surface at 5.16.78 and both release artifacts returning HTTP `200`.
+- Desktop review at 1440px and mobile review at 390px — no horizontal overflow;
+  all new images load at their declared aspect ratios.
+- `git diff --check` — passed.
+
+### Lesson
+
+The product has not outgrown its central story. It has outgrown several
+descriptions inside that story: “prompts and metadata” no longer conveys the
+workflow knowledge GenCatalog can preserve, and “local import” no longer
+conveys the continuing value of Sources and watched folders.
+
+### Browser review refinements
+
+- Added an intentional break before “Not just the file.” in the save heading.
+- Added an intentional break before “New work appears automatically.” and
+  removed the restrictive heading-width constraint so the sentence can occupy
+  its own line when space permits.
+- Kept “See what one parameter changes.” on one line at desktop widths while
+  preserving normal wrapping on mobile.
+- Verified the three headings at the annotated 1784px desktop viewport and a
+  390px mobile viewport with no horizontal overflow.
+
+---
 ## 2026-07-19 — Publish GenCatalog 5.16.74
 
 - Added customer-facing release notes for the thoughtfully timed, one-time
