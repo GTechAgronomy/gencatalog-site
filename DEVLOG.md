@@ -71,6 +71,10 @@ conveys the continuing value of Sources and watched folders.
   preserving normal wrapping on mobile.
 - Verified the three headings at the annotated 1784px desktop viewport and a
   390px mobile viewport with no horizontal overflow.
+- Replaced the CSS-dependent sentence breaks with explicit HTML line breaks
+  after a cached older stylesheet rendered the sentences together. Advanced
+  the homepage stylesheet cache key so the associated heading refinements load
+  reliably for returning visitors.
 
 ---
 ## 2026-07-19 — Publish GenCatalog 5.16.74
