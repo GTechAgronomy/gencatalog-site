@@ -75,6 +75,9 @@ conveys the continuing value of Sources and watched folders.
   after a cached older stylesheet rendered the sentences together. Advanced
   the homepage stylesheet cache key so the associated heading refinements load
   reliably for returning visitors.
+- Vertically centered the Find section copy beside its tall sidebar screenshot
+  so the text and visual read as one balanced composition instead of leaving
+  the explanation pinned to the top of the section.
 
 ---
 ## 2026-07-19 — Publish GenCatalog 5.16.74

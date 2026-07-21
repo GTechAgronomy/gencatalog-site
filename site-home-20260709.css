@@ -568,7 +568,7 @@ button { color: inherit; font: inherit; }
 .workflow-media { grid-column: 2; grid-row: 1; }
 .workflow-feature-reverse .workflow-feature-copy { grid-column: 2; }
 .workflow-feature-reverse .workflow-media { grid-column: 1; }
-#find { align-items: start; }
+#find { align-items: center; }
 
 .workflow-feature-copy .step,
 .capability-copy .step,
