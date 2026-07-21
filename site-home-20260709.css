@@ -592,6 +592,10 @@ button { color: inherit; font: inherit; }
   line-height: 0.98;
 }
 
+.heading-line { display: block; }
+#save .workflow-feature-copy h3,
+#local-import .capability-copy h3 { max-width: none; }
+
 .workflow-feature-copy > p,
 .capability-copy > p {
   max-width: 45ch;
@@ -862,6 +866,11 @@ button { color: inherit; font: inherit; }
 
 .capability-copy-centered h3 { max-width: none; }
 .capability-copy-centered > p { max-width: 62ch; margin-inline: auto; }
+
+@media (min-width: 901px) {
+  #compare .capability-copy-centered { max-width: 1080px; }
+  #compare .heading-single-line { white-space: nowrap; }
+}
 
 .capability-media-wide { margin-top: 58px; }
 .capability-media-wide img { width: min(100%, 1500px); }

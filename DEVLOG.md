@@ -61,6 +61,17 @@ descriptions inside that story: “prompts and metadata” no longer conveys the
 workflow knowledge GenCatalog can preserve, and “local import” no longer
 conveys the continuing value of Sources and watched folders.
 
+### Browser review refinements
+
+- Added an intentional break before “Not just the file.” in the save heading.
+- Added an intentional break before “New work appears automatically.” and
+  removed the restrictive heading-width constraint so the sentence can occupy
+  its own line when space permits.
+- Kept “See what one parameter changes.” on one line at desktop widths while
+  preserving normal wrapping on mobile.
+- Verified the three headings at the annotated 1784px desktop viewport and a
+  390px mobile viewport with no horizontal overflow.
+
 ---
 ## 2026-07-19 — Publish GenCatalog 5.16.74
 
