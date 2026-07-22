@@ -631,7 +631,7 @@ button { color: inherit; font: inherit; }
 @media (min-width: 1121px) {
   .workflow-feature:not(.workflow-feature-save) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(72px, 6vw, 112px);
+    gap: clamp(48px, 4vw, 72px);
   }
 
   .workflow-feature:not(.workflow-feature-save) .workflow-feature-copy {
@@ -643,11 +643,11 @@ button { color: inherit; font: inherit; }
     justify-content: flex-start;
   }
 
-  .workflow-feature-reverse .workflow-feature-copy {
+  .workflow-feature.workflow-feature-reverse .workflow-feature-copy {
     justify-self: start;
   }
 
-  .workflow-feature-reverse .workflow-media {
+  .workflow-feature.workflow-feature-reverse .workflow-media {
     justify-content: flex-end;
   }
 
@@ -912,7 +912,7 @@ button { color: inherit; font: inherit; }
 @media (min-width: 1121px) {
   .capability-row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(72px, 6vw, 112px);
+    gap: clamp(48px, 4vw, 72px);
   }
 
   .capability-row .capability-copy {
