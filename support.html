@@ -684,22 +684,38 @@
 
         <div class="section" id="gemini">
             <h2>Gemini</h2>
-            <p class="section-desc">Save visible Gemini image generations into your local library with prompt context and the highest-resolution file Gemini makes available.</p>
-            <div class="platform-badge badge-gemini">✓ gemini.google.com</div>
+            <p class="section-desc">Scan Gemini Library or save visible chat generations with their original prompts and Gemini's full-size image.</p>
+            <div class="platform-badge badge-gemini">✓ Gemini Library scan + individual saves</div>
 
-            <h3>Saving Gemini Images</h3>
-            <p>Open the Gemini chat that contains the image you want to keep. When the GenCatalog save badge appears on the generated image, click it to save the prompt and image into your local catalog.</p>
+            <h3>Scanning Gemini Library</h3>
+            <p>Open <strong>gemini.google.com/library</strong>, wait for your images to load, then open the GenCatalog extension and click <strong>Scan</strong>. GenCatalog compares the Library with your local catalog and reports what is already Saved, New, previously Deleted, Ready to download, or Held for a prompt.</p>
+            <p>Scan recovers a small recent set of prompts automatically. Prompt-matched images become Ready without waiting for the rest of the Library.</p>
 
-            <h3>Best Time to Save</h3>
-            <p>Gemini support is limited in the same practical way as GPT Image support: GenCatalog works best when you save the image while the generation is visible in the chat. We recommend clicking the save badge at generation time so the file, prompt, and context are yours forever.</p>
+            <h3>Recovering Older Prompts</h3>
+            <p>When older images remain Held, click <strong>Backfill prompts</strong>. Each run retrieves another careful batch of original prompts from the conversations that created those images and updates matching saved items that are missing prompt context.</p>
+            <p>You can download the Ready set at any time. Images still missing a trustworthy prompt remain Held so incomplete records do not enter your catalog.</p>
 
-            <h3>Full-Size Downloads</h3>
-            <p>When Gemini exposes a full-size download, GenCatalog uses that download and moves it into your catalog instead of leaving a duplicate in your Downloads folder.</p>
+            <h3>Downloading New Images</h3>
+            <p>Click <strong>Download N new</strong> to save the prompt-matched set. GenCatalog uses Gemini's own full-size download for each image, moves the completed file into your catalog, and removes the temporary copy from Downloads.</p>
+            <p>If Gemini's full-size download cannot complete, GenCatalog leaves the image unsaved rather than substituting a lower-resolution preview.</p>
+
+            <h3>Saving from a Conversation</h3>
+            <p>Open a Gemini conversation and click the GenCatalog save badge on a generated image to save it individually. In multi-turn chats, each generated image stays connected to the nearest prompt that created it. Uploaded images, previews, and Gemini templates are not treated as generated outputs.</p>
+
+            <h3>What Gets Saved</h3>
+            <ul>
+                <li>Gemini's full-size image file</li>
+                <li>The original prompt recovered for that specific response</li>
+                <li>The source conversation link and stable Gemini identity</li>
+                <li>Creation time and available generation context</li>
+            </ul>
 
             <h3>Current Limits</h3>
             <ul style="margin: 8px 0 0 20px; color: var(--t2); font-size: 14px; line-height: 2;">
-                <li>Gemini support is chat-page focused. Bulk history import is not included.</li>
-                <li>Prompt capture depends on the prompt context visible in the current chat.</li>
+                <li>Gemini support currently covers image generations, not Gemini video.</li>
+                <li>Library Scan works with the records Gemini currently makes available. Load more Library items and scan again when older work is not yet listed.</li>
+                <li>Gemini may temporarily limit prompt lookups. Wait a few minutes before running Backfill prompts again.</li>
+                <li>Images whose source conversation or prompt is no longer available may remain Held.</li>
                 <li>Saved Gemini items stay local in GenCatalog, just like your other catalog media.</li>
             </ul>
         </div>
