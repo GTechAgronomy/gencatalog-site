@@ -915,6 +915,10 @@ button { color: inherit; font: inherit; }
     gap: clamp(48px, 4vw, 72px);
   }
 
+  #local-import {
+    align-items: start;
+  }
+
   .capability-row .capability-copy {
     width: min(100%, 640px);
     justify-self: end;
