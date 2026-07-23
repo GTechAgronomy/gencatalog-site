@@ -1,6 +1,42 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-23 — Publish GenCatalog 5.16.81
+
+### Customer-facing change
+
+- Advanced the homepage and download experience from desktop `5.16.80` to
+  `5.16.81` after both public installers returned HTTP `200`.
+- Added one customer-facing App Polish note: large imports stay responsive when
+  external catalog storage is slow or temporarily unavailable.
+- Preserved the existing homepage, product claims, extension version, pricing,
+  support content, and all unrelated release notes.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `DEVLOG.md`
+
+The homepage and release-notes sitemap dates were already July 23, so the
+version helper correctly produced no `sitemap.xml` diff.
+
+### Validation
+
+- `bash scripts/update-version.sh --check` — passed with every public version
+  surface at `5.16.81` and both installers returning HTTP `200`.
+- `node scripts/check-crawl-freshness.mjs` — passed across 26 sitemap URLs and
+  26 indexable canonical HTML files.
+- `node scripts/test-html-validator.mjs`, `xmllint --noout sitemap.xml`, and
+  `git diff --check` — passed.
+- The older optional subscription-draft audit still expects an annual checkout
+  URL in `llms.txt` that current `origin/main` no longer contains. This release
+  does not change `llms.txt`, pricing, or checkout behavior, and the active
+  deploy workflow does not run that stale assertion.
+- PR deployment and cache-busted production verification remain.
+
+---
 ## 2026-07-23 — Harden crawler freshness and cache invalidation
 
 ### Diagnosis
