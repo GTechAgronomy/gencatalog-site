@@ -42,9 +42,20 @@ function requestAcceptsEtag(requestHeader, etag) {
 }
 
 export async function onRequest(context) {
+  const url = new URL(context.request.url);
+
+  if (url.pathname === "/GenCatalogLogo.png") {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        "Cache-Control": "no-store",
+        Location: new URL("/GenCatalogLogo-64.webp", url).toString(),
+      },
+    });
+  }
+
   const response = await context.next();
   const contentType = response.headers.get("content-type") || "";
-  const url = new URL(context.request.url);
   const route =
     url.pathname.length > 1 ? url.pathname.replace(/\/+$/, "") : url.pathname;
   const lastModifiedDate = LAST_MODIFIED_BY_PATH[route];

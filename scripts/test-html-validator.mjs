@@ -68,4 +68,17 @@ const olderDate = await onRequest(
 );
 assert.equal(olderDate.status, 200);
 
+const legacyLogo = await onRequest({
+  request: new Request("https://gencatalog.app/GenCatalogLogo.png?v=20260329"),
+  next: async () => {
+    throw new Error("Legacy logo redirect must run before static asset lookup");
+  },
+});
+assert.equal(legacyLogo.status, 301);
+assert.equal(
+  legacyLogo.headers.get("location"),
+  "https://gencatalog.app/GenCatalogLogo-64.webp"
+);
+assert.equal(legacyLogo.headers.get("cache-control"), "no-store");
+
 console.log("HTML validator middleware: PASS");
