@@ -28,7 +28,7 @@ function gitDate(relativePath) {
 
   return execFileSync(
     "git",
-    ["log", "-1", "--format=%cs", "--", relativePath],
+    ["log", "--no-merges", "-1", "--format=%cs", "--", relativePath],
     { cwd: root, encoding: "utf8" }
   ).trim();
 }
