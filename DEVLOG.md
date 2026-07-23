@@ -34,7 +34,14 @@ version helper correctly produced no `sitemap.xml` diff.
   URL in `llms.txt` that current `origin/main` no longer contains. This release
   does not change `llms.txt`, pricing, or checkout behavior, and the active
   deploy workflow does not run that stale assertion.
-- PR deployment and cache-busted production verification remain.
+- Release PR `#47` passed its Cloudflare Pages check and merged as `9ed7611`.
+  The main-branch crawl-verification and cache-purge workflow passed against
+  that exact merge commit.
+- Cache-busted production requests confirmed the homepage, `/get`,
+  `/release-notes`, and `sitemap.xml` at HTTP `200`. The homepage structured
+  data, hero, footer, and download handoff all report `5.16.81`; release notes
+  contain exactly one Latest marker and one `5.16.81` heading, while preserving
+  the complete `5.16.80` entry.
 
 ---
 ## 2026-07-23 — Harden crawler freshness and cache invalidation
