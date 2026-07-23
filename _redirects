@@ -1,3 +1,6 @@
+# Retire the legacy logo URL even while older Pages assets remain retained.
+/GenCatalogLogo.png /GenCatalogLogo-64.webp 301
+
 # Keep internal working files out of public reach.
 # Cloudflare Pages evaluates these before serving static assets.
 /DEVLOG.md / 302
