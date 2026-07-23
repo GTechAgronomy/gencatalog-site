@@ -17,10 +17,11 @@
 
 ### Changes
 
-- Added content-derived weak ETags for successful HTML responses and correct
-  `If-None-Match` handling through Pages middleware. Browser copies must
-  revalidate, while `Cloudflare-CDN-Cache-Control: no-store` keeps HTML out of
-  Cloudflare's shared edge cache.
+- Added content-derived weak ETags plus sitemap-backed `Last-Modified` dates
+  for successful HTML responses, with correct conditional-request handling
+  through Pages middleware. Browser copies must revalidate, while
+  `Cloudflare-CDN-Cache-Control: no-store` keeps HTML out of Cloudflare's
+  shared edge cache.
 - Changed the zone-wide Browser Cache TTL from four hours to Respect Existing
   Headers so the Pages response policy is not lengthened at Cloudflare.
 - Updated `sitemap.xml` dates to match the corresponding page changes and added

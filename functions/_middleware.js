@@ -1,3 +1,32 @@
+const LAST_MODIFIED_BY_PATH = Object.freeze({
+  "/": "2026-07-23",
+  "/grok": "2026-07-23",
+  "/arcana": "2026-07-23",
+  "/higgsfield": "2026-07-23",
+  "/midjourney": "2026-07-23",
+  "/digen": "2026-07-23",
+  "/local-ai-media-import": "2026-07-23",
+  "/comfyui-workflow-viewer": "2026-07-23",
+  "/search-grok-favorites": "2026-07-23",
+  "/rescue-your-ai-library": "2026-07-23",
+  "/faq": "2026-07-19",
+  "/support": "2026-07-22",
+  "/release-notes": "2026-07-23",
+  "/blog-organize-grok-imagine": "2026-07-23",
+  "/blog-grok-favorites-disappeared": "2026-07-23",
+  "/blog-download-grok-imagine-favorites": "2026-07-23",
+  "/blog-manage-grok-favorites": "2026-07-23",
+  "/blog-save-grok-prompts": "2026-07-23",
+  "/blog-grok-imagine-library-backup": "2026-07-23",
+  "/save-grok-prompts": "2026-07-23",
+  "/save-ai-prompts-locally": "2026-07-23",
+  "/ai-generation-backup": "2026-07-23",
+  "/guides": "2026-07-23",
+  "/privacy": "2026-07-19",
+  "/terms": "2026-07-18",
+  "/refund": "2026-07-18",
+});
+
 function toHex(buffer) {
   return Array.from(new Uint8Array(buffer), (byte) =>
     byte.toString(16).padStart(2, "0")
@@ -15,6 +44,10 @@ function requestAcceptsEtag(requestHeader, etag) {
 export async function onRequest(context) {
   const response = await context.next();
   const contentType = response.headers.get("content-type") || "";
+  const url = new URL(context.request.url);
+  const route =
+    url.pathname.length > 1 ? url.pathname.replace(/\/+$/, "") : url.pathname;
+  const lastModifiedDate = LAST_MODIFIED_BY_PATH[route];
 
   if (
     context.request.method !== "GET" ||
@@ -30,11 +63,25 @@ export async function onRequest(context) {
   const headers = new Headers(response.headers);
 
   headers.set("ETag", etag);
+  if (lastModifiedDate) {
+    headers.set(
+      "Last-Modified",
+      new Date(`${lastModifiedDate}T00:00:00.000Z`).toUTCString()
+    );
+  }
   headers.set("Cache-Control", "public, max-age=0, must-revalidate");
   headers.set("Cloudflare-CDN-Cache-Control", "no-store");
   headers.delete("Content-Length");
 
-  if (requestAcceptsEtag(context.request.headers.get("if-none-match"), etag)) {
+  const ifNoneMatch = context.request.headers.get("if-none-match");
+  const ifModifiedSince = context.request.headers.get("if-modified-since");
+  const notModifiedByDate =
+    !ifNoneMatch &&
+    lastModifiedDate &&
+    ifModifiedSince &&
+    Date.parse(ifModifiedSince) >= Date.parse(headers.get("last-modified"));
+
+  if (requestAcceptsEtag(ifNoneMatch, etag) || notModifiedByDate) {
     return new Response(null, {
       status: 304,
       headers,

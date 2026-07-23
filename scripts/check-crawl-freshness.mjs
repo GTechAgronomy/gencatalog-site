@@ -37,6 +37,7 @@ const sitemap = read("sitemap.xml");
 const robots = read("robots.txt");
 const llms = read("llms.txt");
 const llmsFull = read("llms-full.txt");
+const middleware = read("functions/_middleware.js");
 
 const sitemapEntries = new Map();
 for (const match of sitemap.matchAll(
@@ -81,6 +82,11 @@ for (const [url, lastmod] of sitemapEntries) {
   const expected = gitDate(file);
   if (lastmod !== expected) {
     fail(`${url} lastmod is ${lastmod}; expected ${expected} from ${file}`);
+  }
+
+  const route = new URL(url).pathname;
+  if (!middleware.includes(`"${route}": "${lastmod}"`)) {
+    fail(`HTML Last-Modified map is stale for ${route}: expected ${lastmod}`);
   }
 }
 

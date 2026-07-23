@@ -13,12 +13,13 @@ const middlewareModule = `data:text/javascript;base64,${Buffer.from(
 ).toString("base64")}`;
 const { onRequest } = await import(middlewareModule);
 
-function contextFor(body, ifNoneMatch) {
+function contextFor(body, { ifNoneMatch, ifModifiedSince } = {}) {
   const headers = new Headers();
   if (ifNoneMatch) headers.set("If-None-Match", ifNoneMatch);
+  if (ifModifiedSince) headers.set("If-Modified-Since", ifModifiedSince);
 
   return {
-    request: new Request("https://gencatalog.app/example", { headers }),
+    request: new Request("https://gencatalog.app/grok", { headers }),
     next: async () =>
       new Response(body, {
         status: 200,
@@ -35,18 +36,36 @@ const firstEtag = first.headers.get("etag");
 assert.equal(first.status, 200);
 assert.match(firstEtag, /^W\/"sha256-[a-f0-9]{64}"$/);
 assert.equal(first.headers.get("cloudflare-cdn-cache-control"), "no-store");
+assert.equal(
+  first.headers.get("last-modified"),
+  "Thu, 23 Jul 2026 00:00:00 GMT"
+);
 
 const unchanged = await onRequest(
-  contextFor("<h1>Current</h1>", firstEtag)
+  contextFor("<h1>Current</h1>", { ifNoneMatch: firstEtag })
 );
 assert.equal(unchanged.status, 304);
 assert.equal(await unchanged.text(), "");
 
 const changed = await onRequest(
-  contextFor("<h1>Updated</h1>", firstEtag)
+  contextFor("<h1>Updated</h1>", { ifNoneMatch: firstEtag })
 );
 assert.equal(changed.status, 200);
 assert.notEqual(changed.headers.get("etag"), firstEtag);
 assert.equal(await changed.text(), "<h1>Updated</h1>");
+
+const unchangedByDate = await onRequest(
+  contextFor("<h1>Current</h1>", {
+    ifModifiedSince: "Thu, 23 Jul 2026 00:00:00 GMT",
+  })
+);
+assert.equal(unchangedByDate.status, 304);
+
+const olderDate = await onRequest(
+  contextFor("<h1>Current</h1>", {
+    ifModifiedSince: "Wed, 22 Jul 2026 00:00:00 GMT",
+  })
+);
+assert.equal(olderDate.status, 200);
 
 console.log("HTML validator middleware: PASS");
