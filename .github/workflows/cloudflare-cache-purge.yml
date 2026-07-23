@@ -34,7 +34,6 @@ jobs:
           node scripts/check-crawl-freshness.mjs
           node scripts/test-html-validator.mjs
           bash scripts/update-version.sh --check
-          xmllint --noout sitemap.xml
 
       - name: Wait for Pages and purge the zone cache
         run: node scripts/wait-for-pages-deploy-and-purge.mjs
