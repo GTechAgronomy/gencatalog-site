@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Check out the deployed commit
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Verify crawl freshness
         run: |
