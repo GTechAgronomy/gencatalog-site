@@ -1,6 +1,49 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-23 — Harden crawler freshness and cache invalidation
+
+### Diagnosis
+
+- Direct custom-domain, Pages-origin, cache-busted, and no-cache requests all
+  returned current HTML with `Cache-Control: public, max-age=0,
+  must-revalidate`; the custom domain reported `CF-Cache-Status: DYNAMIC` with
+  no `Age`.
+- The production Pages deployment matched current `main`, so the July crawler
+  evidence was not reproducible at the active EWR edge or the Pages hostname.
+- HTML responses had neither `ETag` nor `Last-Modified`, 22 sitemap entries
+  understated their pages' actual July change dates, and legacy crawlable
+  references remained in several otherwise-current pages.
+
+### Changes
+
+- Added content-derived weak ETags plus sitemap-backed `Last-Modified` dates
+  for successful HTML responses, with correct conditional-request handling
+  through Pages middleware. Browser copies must revalidate, while
+  `Cloudflare-CDN-Cache-Control: no-store` keeps HTML out of Cloudflare's
+  shared edge cache.
+- Changed the zone-wide Browser Cache TTL from four hours to Respect Existing
+  Headers so the Pages response policy is not lengthened at Cloudflare.
+- Updated `sitemap.xml` dates to match the corresponding page changes and added
+  a crawl-freshness guard that checks sitemap coverage, dates, robots,
+  canonical/noindex boundaries, current facts, and stale markers.
+- Updated `llms.txt`, added `llms-full.txt`, repaired old homepage anchors and
+  Grok navigation labels, updated structured-data logo URLs, and removed the
+  orphaned legacy PNG.
+- Added a main-branch workflow that waits for the matching Pages production
+  deployment before purging the zone cache, plus a manual purge script.
+
+### Validation
+
+- `node scripts/check-crawl-freshness.mjs` — passed for 26 sitemap URLs and 26
+  indexable canonical HTML files.
+- `node scripts/test-html-validator.mjs` — passed.
+- Local Pages runtime — all seven audited HTML routes returned unique
+  content-derived ETags and `304` for matching `If-None-Match`.
+- `xmllint --noout sitemap.xml`, `bash scripts/update-version.sh --check`, and
+  `git diff --check` — passed.
+
+---
 ## 2026-07-21 — Refresh the homepage for Sources and Generation Recipes
 
 ### Scope and decisions

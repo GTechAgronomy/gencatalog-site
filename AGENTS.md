@@ -14,3 +14,10 @@
 - Verify download URLs return `200` before announcing a release
 - `llms.txt` links `/get` instead of a versioned download URL on purpose — keep it that way
 - Leave unrelated site copy, formatting, and generated files untouched unless the task explicitly calls for them
+
+## Crawl Freshness
+- Run `node scripts/check-crawl-freshness.mjs` and `node scripts/test-html-validator.mjs` before deploying
+- Update each changed indexable page's `sitemap.xml` `<lastmod>` value to the deployment date
+- Keep `llms.txt` and `llms-full.txt` aligned with pricing, access terms, supported platforms, privacy, and canonical page links
+- Keep indexable canonical pages in `sitemap.xml`; keep `/get` intentionally `noindex`
+- The main-branch workflow waits for the matching Cloudflare Pages deployment and then purges the zone cache; keep the `CLOUDFLARE_CACHE_API_TOKEN` repository secret current

@@ -1,46 +1,40 @@
 # GenCatalog
 
-> Local AI image and video organizer for Grok Imagine, Arcana Labs, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai. Captures prompts, metadata, and media automatically. Everything stored locally — nothing uploaded anywhere.
+> GenCatalog is a local-first desktop library for AI-generated images and videos. It brings media, prompts, source context, notes, tags, ratings, and available generation metadata into one searchable catalog on the customer's Mac or Windows PC. GenCatalog does not upload the creative library to cloud storage.
 
-## What it does
+## Canonical facts
 
-GenCatalog helps creators recover, remember, and rediscover AI-generated images and videos by keeping files, prompts, source context, notes, and generation details together in a local library.
+- Price: $99 per year, billed annually.
+- Free trial: 7 days or 250 saved generations, whichever comes first; no credit card is required.
+- Existing-library access: after the first successful payment, everything already in the catalog remains fully accessible if the customer later cancels or lets the subscription lapse.
+- Grandfathered customers: customers who purchased a perpetual license before the subscription transition keep the perpetual access and update rights included with that purchase and do not need to subscribe.
+- Platforms: macOS and Windows 10/11.
+- Architecture: local-first, with media and library data stored on the customer's computer or chosen external storage. There is no GenCatalog cloud library or account requirement.
 
-- Browse, search, and filter your entire AI media library
-- Recover old AI work from folders, favorites, downloads, and platform histories
-- Full prompt and creative recipe preserved with every generation when available
-- Supports Grok Imagine, Arcana Labs, GPT Image, Rogue Studio, Higgsfield, Midjourney, Digen, and Venice.ai
-- Color-coded source badges, star ratings, tags, notes, saved searches
-- Sub-second grid load times, tested with catalogs of 30,000+ items
-- Compare mode: view two generations side by side
-- Bulk operations: tag, move, or export dozens of items at once
+## Supported sources and workflows
 
-## Pricing
+- [Grok Imagine](https://gencatalog.app/grok)
+- [Arcana Labs](https://gencatalog.app/arcana)
+- [Midjourney](https://gencatalog.app/midjourney)
+- [Higgsfield](https://gencatalog.app/higgsfield)
+- [Digen](https://gencatalog.app/digen)
+- [Gemini](https://gencatalog.app/faq#gemini)
+- [GPT Image](https://gencatalog.app/faq#gpt-image)
+- [Rogue Studio](https://gencatalog.app/faq#rogue-studio)
+- [ComfyUI output and workflow import](https://gencatalog.app/comfyui-workflow-viewer)
+- [Venice.ai](https://gencatalog.app/faq#venice)
+- [Local media imports](https://gencatalog.app/local-ai-media-import)
 
-$99 per year, billed annually through Lemon Squeezy, the Merchant of Record. Free trial: 7 days or 250 saved generations, whichever comes first — no credit card required. The subscription is for one individual on up to three personally controlled devices. While the paid period is active, new capture, imports, scans, and other ways of adding work remain available. After the first successful payment, everything already in the catalog remains fully accessible even if the customer later cancels or lets the subscription lapse. Existing perpetual customers keep the perpetual access and update rights included with their original purchase and do not need to subscribe.
+Support depth varies by source. The FAQ and support pages are the canonical source for current platform-specific behavior.
 
-## Privacy
+## Canonical links
 
-Everything in the creative library is stored locally on your machine. GenCatalog never uploads the library as cloud content and requires no GenCatalog account. The subscription pays for tomorrow; the library is always the customer's.
-
-## Requirements
-
-- macOS or Windows 10/11
-- Chrome browser (for the extension)
-
-## Links
-
-- [Website](https://gencatalog.app)
-- [Download Free Trial](https://gencatalog.app/get)
-- [Subscribe — $99/year](https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb)
-- [Arcana Labs Support](https://gencatalog.app/arcana)
-- [Search Grok Favorites](https://gencatalog.app/search-grok-favorites)
-- [ComfyUI Workflow Viewer](https://gencatalog.app/comfyui-workflow-viewer)
-- [Rescue Your AI Library](https://gencatalog.app/rescue-your-ai-library)
-- [Import Local AI Media](https://gencatalog.app/local-ai-media-import)
-- [Save AI Prompts Locally](https://gencatalog.app/save-ai-prompts-locally)
-- [AI Generation Backup](https://gencatalog.app/ai-generation-backup)
+- [Website](https://gencatalog.app/)
+- [Pricing and access model](https://gencatalog.app/faq#trial)
+- [Download the free trial](https://gencatalog.app/get)
 - [FAQ](https://gencatalog.app/faq)
 - [Support](https://gencatalog.app/support)
-- [Privacy Policy](https://gencatalog.app/privacy)
-- [Second Act Labs](https://secondactlabs.com)
+- [Guides](https://gencatalog.app/guides)
+- [Release notes](https://gencatalog.app/release-notes)
+- [Privacy policy](https://gencatalog.app/privacy)
+- [Full product reference](https://gencatalog.app/llms-full.txt)

@@ -1,0 +1,38 @@
+name: Verify crawl freshness and purge Cloudflare cache
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: cloudflare-cache-purge-main
+  cancel-in-progress: false
+
+jobs:
+  verify-and-purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CLOUDFLARE_ZONE_ID: 350a449e1c3a41ba26430432004acef4
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_CACHE_API_TOKEN }}
+      GITHUB_TOKEN: ${{ github.token }}
+
+    steps:
+      - name: Check out the deployed commit
+        uses: actions/checkout@v4
+
+      - name: Verify crawl freshness
+        run: |
+          node scripts/check-crawl-freshness.mjs
+          node scripts/test-html-validator.mjs
+          bash scripts/update-version.sh --check
+          xmllint --noout sitemap.xml
+
+      - name: Wait for Pages and purge the zone cache
+        run: node scripts/wait-for-pages-deploy-and-purge.mjs
