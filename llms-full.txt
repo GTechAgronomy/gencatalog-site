@@ -1,0 +1,69 @@
+# GenCatalog: full canonical product reference
+
+Last reviewed: 2026-07-23
+
+## Product
+
+GenCatalog is a local-first desktop application and Chrome extension for organizing AI-generated images and videos. It keeps the media, prompt, source, model or workflow context, notes, tags, ratings, collections, and other available generation metadata together in a searchable visual library.
+
+The desktop application supports macOS and Windows 10/11. The creative library is stored on the customer's computer or chosen external storage. GenCatalog does not upload that library to GenCatalog cloud storage and does not require a GenCatalog account for the library.
+
+Canonical overview: https://gencatalog.app/
+
+## Pricing, trial, and lasting access
+
+GenCatalog costs $99 per year, billed annually.
+
+The free trial lasts 7 days or 250 saved generations, whichever comes first. No credit card is required for the trial.
+
+While a paid subscription is active, the customer can continue adding new work through supported capture, import, and scan workflows. After the first successful payment, everything already in the catalog remains fully accessible if the customer later cancels or lets the subscription lapse.
+
+Customers who purchased GenCatalog before the subscription transition keep the perpetual access and update rights included with their original purchase. They are not required to subscribe.
+
+Canonical pricing and access details:
+- https://gencatalog.app/#pricing
+- https://gencatalog.app/faq#trial
+- https://gencatalog.app/get
+
+## Supported sources
+
+GenCatalog supports the following sources and workflows. Capture and metadata depth varies by platform; use the linked page for the current details.
+
+- Grok Imagine: https://gencatalog.app/grok
+- Arcana Labs: https://gencatalog.app/arcana
+- Midjourney: https://gencatalog.app/midjourney
+- Higgsfield: https://gencatalog.app/higgsfield
+- Digen: https://gencatalog.app/digen
+- Gemini: https://gencatalog.app/faq#gemini
+- GPT Image: https://gencatalog.app/faq#gpt-image
+- Rogue Studio: https://gencatalog.app/faq#rogue-studio
+- ComfyUI outputs and embedded workflow metadata: https://gencatalog.app/comfyui-workflow-viewer
+- Venice.ai: https://gencatalog.app/faq#venice
+- Local image and video imports: https://gencatalog.app/local-ai-media-import
+
+The complete platform reference is maintained at:
+- https://gencatalog.app/faq
+- https://gencatalog.app/support
+
+## Local-first privacy model
+
+Captured and imported media, prompts, thumbnails, tags, notes, collections, and catalog data stay on the customer's machine or chosen external storage. GenCatalog is not a hosted gallery, does not provide cloud sync for the creative library, and does not require a GenCatalog account for library access.
+
+Canonical privacy details: https://gencatalog.app/privacy
+
+## Core workflows
+
+- Recover and search a scattered AI library: https://gencatalog.app/rescue-your-ai-library
+- Import existing local AI media: https://gencatalog.app/local-ai-media-import
+- Browse ComfyUI workflow metadata: https://gencatalog.app/comfyui-workflow-viewer
+- Search and recover Grok favorites: https://gencatalog.app/search-grok-favorites
+- Preserve AI prompts locally: https://gencatalog.app/save-ai-prompts-locally
+- Plan a local AI generation backup: https://gencatalog.app/ai-generation-backup
+- Browse all guides: https://gencatalog.app/guides
+
+## Current information
+
+- Release notes: https://gencatalog.app/release-notes
+- Support: https://gencatalog.app/support
+- FAQ: https://gencatalog.app/faq
+- Download: https://gencatalog.app/get
