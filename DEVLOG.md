@@ -30,7 +30,14 @@
 - `node scripts/test-html-validator.mjs`, `node --check
   functions/_middleware.js`, `xmllint --noout sitemap.xml`, and
   `git diff --check` — passed.
-- Deployment and cache-busted production verification remain pending.
+- Release PR `#50` passed its Cloudflare Pages check and merged as `0fd984fe`.
+  The matching main-branch crawl-verification and cache-purge workflow passed.
+- Cache-busted production requests returned HTTP `200` for the homepage,
+  `/get`, `/release-notes`, and `sitemap.xml`. Structured data, hero, footer,
+  and both download variables report `5.16.83`; release notes contain exactly
+  one Latest marker, the new App Polish note, and the complete `5.16.82` entry.
+  The changed HTML routes return July 26 `Last-Modified` values and remain
+  dynamically served at the Cloudflare edge.
 
 ---
 ## 2026-07-23 — Publish GenCatalog 5.16.82
