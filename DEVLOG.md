@@ -1,6 +1,38 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-26 — Publish GenCatalog 5.16.83
+
+### Customer-facing change
+
+- Advanced the homepage and download experience from desktop `5.16.82` to
+  `5.16.83` after both public installers returned HTTP `200`.
+- Added one customer-facing App Polish note: returning customers can reactivate
+  smoothly after reinstalling or resetting a device.
+- Preserved the existing homepage, product claims, extension version, pricing,
+  support content, and all earlier release notes.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `DEVLOG.md`
+
+### Validation
+
+- `bash scripts/update-version.sh --check` — passed with every public version
+  surface at `5.16.83` and both installers returning HTTP `200`.
+- `node scripts/check-crawl-freshness.mjs` — passed across 26 sitemap URLs and
+  26 indexable canonical HTML files.
+- `node scripts/test-html-validator.mjs`, `node --check
+  functions/_middleware.js`, `xmllint --noout sitemap.xml`, and
+  `git diff --check` — passed.
+- Deployment and cache-busted production verification remain pending.
+
+---
 ## 2026-07-23 — Publish GenCatalog 5.16.82
 
 ### Customer-facing change
