@@ -1,16 +1,42 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-26 — Keep the Resin FAL addition out of public notes
+
+### Scope
+
+- Removed the FAL section from the public `5.16.84 + Extension 5.126` release
+  note.
+- Kept the customer-facing App Polish note and every earlier release entry
+  unchanged.
+- FAL source classification remains a silent Resin addition.
+
+### Files
+
+- `release-notes.html`
+- `DEVLOG.md`
+
+### Validation
+
+- `bash scripts/update-version.sh --check`, crawl-freshness, HTML middleware,
+  JavaScript syntax, sitemap XML, and `git diff --check` all passed.
+- Release-note assertions prove exactly one Latest marker and one
+  `5.16.84 + Extension 5.126` heading, preserve the App Polish and `5.16.83`
+  content, and find no public FAL heading or copy.
+- PR, deployment, and cache-busted production proof remain pending.
+
+---
 ## 2026-07-26 — Publish GenCatalog 5.16.84 and extension 5.126
 
 ### Customer-facing change
 
 - Advanced the homepage and download experience from desktop `5.16.83` to
   `5.16.84` after both public installers returned HTTP `200`.
-- Added FAL support as the feature-forward release note.
 - Added one App Polish note covering reliable Favorite behavior during live
   imports, clear active Compare state, and stronger Higgsfield output/project
   context.
+- Kept the new FAL source classification intentionally out of public notes as a
+  silent addition for Resin.
 - Preserved the existing homepage, product claims, pricing, support content,
   and every earlier release-note entry.
 
@@ -36,7 +62,7 @@ already July 26, so the version update correctly produced no `sitemap.xml` or
   `git diff --check` — passed.
 - Release-note assertions prove exactly one Latest marker and one
   `5.16.84 + Extension 5.126` heading, preserve the full `5.16.83` entry, and
-  include the approved FAL and App Polish customer copy.
+  include the approved App Polish customer copy.
 - Release PR `#52` passed its Cloudflare Pages check and merged as `4a718296`.
   Main-branch crawl-freshness and cache-purge run `30206176483` passed against
   that exact merge commit.
