@@ -23,7 +23,12 @@
 - Release-note assertions prove exactly one Latest marker and one
   `5.16.84 + Extension 5.126` heading, preserve the App Polish and `5.16.83`
   content, and find no public FAL heading or copy.
-- PR, deployment, and cache-busted production proof remain pending.
+- Removal PR `#54` passed its Cloudflare Pages check and merged as `094142d4`.
+  Main-branch crawl-freshness and cache-purge run `30206335031` passed against
+  that exact merge commit.
+- A cache-busted production request confirmed the live release note retains the
+  `5.16.84 + Extension 5.126` heading, App Polish copy, one Latest marker, and
+  the full `5.16.83` entry while exposing no FAL heading or copy.
 
 ---
 ## 2026-07-26 — Publish GenCatalog 5.16.84 and extension 5.126
