@@ -1,6 +1,45 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-26 — Publish GenCatalog 5.16.84 and extension 5.126
+
+### Customer-facing change
+
+- Advanced the homepage and download experience from desktop `5.16.83` to
+  `5.16.84` after both public installers returned HTTP `200`.
+- Added FAL support as the feature-forward release note.
+- Added one App Polish note covering reliable Favorite behavior during live
+  imports, clear active Compare state, and stronger Higgsfield output/project
+  context.
+- Preserved the existing homepage, product claims, pricing, support content,
+  and every earlier release-note entry.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `DEVLOG.md`
+
+The homepage and release-notes sitemap dates and response-freshness dates were
+already July 26, so the version update correctly produced no `sitemap.xml` or
+`functions/_middleware.js` diff.
+
+### Validation
+
+- `bash scripts/update-version.sh --check` — passed with every public version
+  surface at `5.16.84` and both installers returning HTTP `200`.
+- `node scripts/check-crawl-freshness.mjs` — passed across 26 sitemap URLs and
+  26 indexable canonical HTML files.
+- `node scripts/test-html-validator.mjs`, `node --check
+  functions/_middleware.js`, `xmllint --noout sitemap.xml`, and
+  `git diff --check` — passed.
+- Release-note assertions prove exactly one Latest marker and one
+  `5.16.84 + Extension 5.126` heading, preserve the full `5.16.83` entry, and
+  include the approved FAL and App Polish customer copy.
+- PR, deployment, and cache-busted production proof remain pending.
+
+---
 ## 2026-07-26 — Publish GenCatalog 5.16.83
 
 ### Customer-facing change
