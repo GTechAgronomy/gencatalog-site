@@ -37,7 +37,17 @@ already July 26, so the version update correctly produced no `sitemap.xml` or
 - Release-note assertions prove exactly one Latest marker and one
   `5.16.84 + Extension 5.126` heading, preserve the full `5.16.83` entry, and
   include the approved FAL and App Polish customer copy.
-- PR, deployment, and cache-busted production proof remain pending.
+- Release PR `#52` passed its Cloudflare Pages check and merged as `4a718296`.
+  Main-branch crawl-freshness and cache-purge run `30206176483` passed against
+  that exact merge commit.
+- Cache-busted production requests returned HTTP `200` for the homepage,
+  `/get`, `/release-notes`, and `sitemap.xml`. Structured data, hero, footer,
+  and both download variables report `5.16.84`; release notes have one Latest
+  marker, the new `5.16.84 + Extension 5.126` entry, and the complete
+  `5.16.83` entry.
+- Changed homepage and release-note HTML return July 26 `Last-Modified`,
+  `Cache-Control: public, max-age=0, must-revalidate`, and
+  `CF-Cache-Status: DYNAMIC`.
 
 ---
 ## 2026-07-26 — Publish GenCatalog 5.16.83
