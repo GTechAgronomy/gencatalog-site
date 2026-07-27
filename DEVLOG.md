@@ -1,6 +1,35 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-26 — Publish GenCatalog desktop 5.16.85
+
+### Customer-facing change
+
+- Advanced the homepage and download experience from desktop `5.16.84` to
+  `5.16.85` after both public installers returned HTTP `200`.
+- Added one concise App Polish note explaining that returning Windows customers
+  can regain access reliably after reinstalling or moving to a new device.
+- Preserved Extension `5.126`, the existing homepage and product copy, and
+  every earlier release-note entry.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `DEVLOG.md`
+
+### Validation
+
+- Run `bash scripts/update-version.sh --check`, crawl-freshness, HTML
+  middleware, JavaScript syntax, sitemap XML, and `git diff --check` before
+  publication.
+- Verify the merged production deployment with cache-busted requests for the
+  homepage, `/get`, `/release-notes`, and `sitemap.xml`.
+
+---
 ## 2026-07-26 — Keep the Resin FAL addition out of public notes
 
 ### Scope
