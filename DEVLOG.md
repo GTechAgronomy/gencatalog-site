@@ -1,6 +1,35 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-27 — Publish GenCatalog desktop 5.16.86
+
+### Customer-facing change
+
+- Advanced the homepage and download experience from desktop `5.16.85` to
+  `5.16.86` after both public installers and updater feeds were verified live.
+- Added one concise App Polish note explaining that some Windows customers can
+  again activate a valid existing license.
+- Preserved Extension `5.126`, the existing homepage and product copy, and
+  every earlier release-note entry.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `DEVLOG.md`
+
+### Validation
+
+- Run `bash scripts/update-version.sh --check`, crawl-freshness, HTML
+  middleware, JavaScript syntax, sitemap XML, and `git diff --check` before
+  publication.
+- Verify the merged production deployment with cache-busted requests for the
+  homepage, `/get`, `/release-notes`, and `sitemap.xml`.
+
+---
 ## 2026-07-26 — Align 5.16.85 crawler dates with the committed release
 
 ### Scope
