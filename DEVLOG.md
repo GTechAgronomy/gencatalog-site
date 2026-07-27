@@ -1,7 +1,7 @@
 # GenCatalog Site Development Log
 
 ---
-## 2026-07-27 — Publish GenCatalog desktop 5.16.86
+## 2026-07-26 — Publish GenCatalog desktop 5.16.86
 
 ### Customer-facing change
 
@@ -11,6 +11,8 @@
   again activate a valid existing license.
 - Preserved Extension `5.126`, the existing homepage and product copy, and
   every earlier release-note entry.
+- Corrected the sitemap and HTML `Last-Modified` dates to the source commit date
+  so the post-merge crawl-freshness check matches a clean GitHub checkout.
 
 ### Files
 
