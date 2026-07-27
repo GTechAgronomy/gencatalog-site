@@ -1,6 +1,26 @@
 # GenCatalog Site Development Log
 
 ---
+## 2026-07-26 — Align 5.16.85 crawler dates with the committed release
+
+### Scope
+
+- Keep the `5.16.85` public content unchanged.
+- Align homepage and release-note sitemap and response dates with the actual
+  July 26 Git commit date used by the clean main-branch crawler check.
+
+### Files
+
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `DEVLOG.md`
+
+### Validation
+
+- Run the same crawl-freshness, HTML middleware, version, JavaScript, sitemap,
+  and diff checks used by the main-branch deployment workflow.
+
+---
 ## 2026-07-26 — Publish GenCatalog desktop 5.16.85
 
 ### Customer-facing change
