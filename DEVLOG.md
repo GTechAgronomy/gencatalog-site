@@ -1,6 +1,30 @@
 # GenCatalog Site Development Log
 
 ---
+
+## 2026-07-28 — Clarified tax-exclusive annual pricing
+
+### What Changed
+- Added concise “plus applicable taxes” language anywhere the public site
+  presents the $99 annual price, including the homepage, download handoff,
+  FAQ, focused landing pages, supporting article, structured answers, and
+  crawler-facing summaries.
+- Reused each surface’s existing small-print or supporting-copy treatment so
+  the disclosure is clear without changing the pricing hierarchy or design.
+- Left the Terms unchanged because they already state that applicable taxes
+  may be added at checkout.
+
+### Verification
+- Audited every customer-facing `$99`, `99/year`, and `99 per year`
+  occurrence in the current site source.
+- Ran the subscription-copy checker and repository whitespace validation.
+
+### Lesson
+When checkout prices are tax-exclusive, the base annual price should remain
+prominent while applicable-tax language appears consistently at every public
+pricing decision point, including structured and crawler-facing copy.
+
+---
 ## 2026-07-26 — Publish GenCatalog desktop 5.16.86
 
 ### Customer-facing change

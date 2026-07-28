@@ -4,7 +4,8 @@
 
 ## Canonical facts
 
-- Price: $99 per year, billed annually.
+- Price: $99 per year, billed annually, plus applicable taxes.
+- Subscribe: [Start the annual subscription](https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb).
 - Free trial: 7 days or 250 saved generations, whichever comes first; no credit card is required.
 - Existing-library access: after the first successful payment, everything already in the catalog remains fully accessible if the customer later cancels or lets the subscription lapse.
 - Grandfathered customers: customers who purchased a perpetual license before the subscription transition keep the perpetual access and update rights included with that purchase and do not need to subscribe.
