@@ -1137,6 +1137,15 @@ button { color: inherit; font: inherit; }
 }
 
 .price-line span { color: var(--ink-muted); font-size: 13px; }
+.price-tax-note {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
 
 .purchase-panel h2 {
   max-width: 13ch;

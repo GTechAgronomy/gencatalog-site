@@ -2,6 +2,27 @@
 
 ---
 
+## 2026-07-28 — Moved the homepage tax note beside the price
+
+### What Changed
+- Moved “Plus applicable taxes” out of the cancellation and ownership line
+  and directly beneath “per year • billed annually” in the homepage price
+  block.
+- Restored the original cancellation copy exactly.
+- Added a dedicated muted 10px treatment so the disclosure reads as price
+  context without competing with the $99 annual price.
+
+### Verification
+- Rendered the homepage price block locally and compared the computed price,
+  billing-detail, tax-note, and cancellation-copy styles.
+- Ran the subscription-copy checker and repository whitespace validation.
+
+### Lesson
+Tax context belongs with the price and billing cadence. Cancellation and
+lasting-library copy should remain a separate customer promise.
+
+---
+
 ## 2026-07-28 — Clarified tax-exclusive annual pricing
 
 ### What Changed
