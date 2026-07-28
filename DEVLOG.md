@@ -2,6 +2,24 @@
 
 ---
 
+## 2026-07-28 — Aligned pricing-page freshness metadata
+
+### What Changed
+- Updated sitemap and response freshness dates for the homepage and the
+  pricing surfaces changed by the applicable-tax disclosure.
+- Reconciled older stale route dates surfaced by the same automated freshness
+  check, using each page's existing `dateModified` value.
+
+### Verification
+- Ran the crawl-freshness, HTML validation, version-consistency,
+  subscription-copy, and repository whitespace checks.
+
+### Lesson
+Customer-facing pricing changes must update both sitemap and response freshness
+metadata so production cache refreshes and crawler signals stay synchronized.
+
+---
+
 ## 2026-07-28 — Moved the homepage tax note beside the price
 
 ### What Changed
