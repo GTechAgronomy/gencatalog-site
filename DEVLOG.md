@@ -7,8 +7,7 @@
 ### What Changed
 - Updated sitemap and response freshness dates for the homepage and the
   pricing surfaces changed by the applicable-tax disclosure.
-- Reconciled older stale route dates surfaced by the same automated freshness
-  check, using each page's existing `dateModified` value.
+- Preserved every unrelated route's existing freshness date.
 
 ### Verification
 - Ran the crawl-freshness, HTML validation, version-consistency,
