@@ -147,6 +147,7 @@
         .content {
             padding: 48px 48px 100px;
             max-width: 780px;
+            min-width: 0;
         }
         .page-label {
             font-size: 13px;
@@ -166,9 +167,131 @@
         .intro {
             font-size: 17px;
             color: var(--t2);
-            margin-bottom: 48px;
-            padding-bottom: 32px;
+            margin-bottom: 28px;
+        }
+        .support-search {
+            position: relative;
+            min-width: 0;
+            margin-bottom: 36px;
+            padding-bottom: 36px;
             border-bottom: 1px solid var(--border);
+        }
+        .support-search label {
+            display: block;
+            color: var(--t1);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .support-search-input-wrap {
+            position: relative;
+        }
+        .support-search-icon {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            width: 18px;
+            height: 18px;
+            color: var(--t3);
+            pointer-events: none;
+            transform: translateY(-50%);
+        }
+        .support-search input {
+            width: 100%;
+            min-height: 50px;
+            padding: 12px 44px 12px 46px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 10px;
+            outline: none;
+            background: var(--surface);
+            color: var(--t1);
+            font: inherit;
+            font-size: 15px;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+        .support-search input::placeholder { color: var(--t3); }
+        .support-search input:hover { background: var(--s2); }
+        .support-search input:focus {
+            border-color: var(--accent);
+            background: var(--s2);
+            box-shadow: 0 0 0 3px rgba(88,101,232,0.16);
+        }
+        .support-search input::-webkit-search-cancel-button { display: none; }
+        .support-search-clear {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            display: none;
+            width: 32px;
+            height: 32px;
+            border: 0;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--t3);
+            cursor: pointer;
+            font-size: 20px;
+            line-height: 1;
+            transform: translateY(-50%);
+            transition: color 0.2s, background 0.2s, transform 0.1s;
+        }
+        .support-search-clear:hover { color: var(--t1); background: rgba(255,255,255,0.07); }
+        .support-search-clear:active { transform: translateY(-50%) scale(0.96); }
+        .support-search-clear.visible { display: block; }
+        .support-search-results {
+            display: none;
+            min-width: 0;
+            max-width: 100%;
+            margin-top: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--surface);
+            box-shadow: 0 16px 36px rgba(5,6,9,0.28);
+        }
+        .support-search-results.visible { display: block; }
+        .support-search-result {
+            display: block;
+            min-width: 0;
+            max-width: 100%;
+            padding: 13px 16px;
+            color: var(--t2);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+        .support-search-result:last-child { border-bottom: 0; }
+        .support-search-result:hover,
+        .support-search-result:focus-visible {
+            background: var(--s2);
+            text-decoration: none;
+            outline: none;
+        }
+        .support-search-result strong {
+            display: block;
+            margin-bottom: 2px;
+            color: var(--t1);
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .support-search-result span {
+            display: block;
+            overflow: hidden;
+            color: var(--t3);
+            font-size: 13px;
+            line-height: 1.45;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .support-search-empty {
+            padding: 18px 16px;
+            color: var(--t2);
+            font-size: 14px;
+        }
+        .support-search-empty a { font-weight: 600; }
+        .support-search-status {
+            margin-top: 8px;
+            color: var(--t3);
+            font-size: 12px;
         }
         .section { margin-bottom: 64px; scroll-margin-top: 80px; }
         h2 {
@@ -380,9 +503,19 @@
         <div class="page-label">Support Guide</div>
         <h1>GenCatalog Support and Setup Guide</h1>
         <p class="intro">A complete guide to importing, capturing, organizing, and browsing your AI-generated content across local files, ComfyUI, <a href="/grok">Grok Imagine</a>, Arcana Labs, Gemini, GPT Image, Rogue Studio, <a href="/higgsfield">Higgsfield</a>, <a href="/midjourney">Midjourney</a>, <a href="/digen">Digen</a>, and Venice.ai.<br>If Grok favorites are not loading, not showing, or saved images/videos disappeared, start with the recovery and backup links below.<br><a href="/release-notes">See latest release notes and update details.</a></p>
+        <form class="support-search" role="search">
+            <label for="support-search-input">Search support</label>
+            <div class="support-search-input-wrap">
+                <svg class="support-search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"></circle><path d="m16 16 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+                <input id="support-search-input" type="search" placeholder="Try “Grok favorites,” “backup,” or “license”" autocomplete="off" aria-controls="support-search-results" aria-describedby="support-search-status">
+                <button class="support-search-clear" type="button" aria-label="Clear support search">×</button>
+            </div>
+            <div class="support-search-results" id="support-search-results"></div>
+            <div class="support-search-status" id="support-search-status" role="status" aria-live="polite"></div>
+        </form>
         <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated July 2026 with Arcana Labs support, ComfyUI output imports, fuller embedded workflow metadata and LoRA display, Rogue Studio support, local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
-        <div class="section" style="margin-bottom:48px;">
+        <div class="section" id="popular-grok-workflows" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
             <p class="section-desc">Fast paths for the Grok favorites, missing-media, and bulk-download questions people usually search before they install.</p>
             <ul>
@@ -1159,6 +1292,126 @@
             const target = document.querySelector(link.getAttribute('href'));
             if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
+    });
+
+    const searchForm = document.querySelector('.support-search');
+    const searchInput = document.querySelector('#support-search-input');
+    const searchResults = document.querySelector('#support-search-results');
+    const searchStatus = document.querySelector('#support-search-status');
+    const searchClear = document.querySelector('.support-search-clear');
+    const searchableSections = Array.from(sections).map(section => {
+        const heading = section.querySelector('h2');
+        return {
+            id: section.id,
+            title: heading ? heading.textContent.trim() : '',
+            text: section.textContent.replace(/\s+/g, ' ').trim()
+        };
+    }).filter(section => section.id && section.title);
+
+    const getSearchMatches = query => {
+        const terms = query.toLocaleLowerCase().split(/\s+/).filter(Boolean);
+        return searchableSections
+            .filter(section => {
+                const text = section.text.toLocaleLowerCase();
+                const compactText = text.replace(/[^a-z0-9]/g, '');
+                return terms.every(term => {
+                    const compactTerm = term.replace(/[^a-z0-9]/g, '');
+                    return text.includes(term) || (compactTerm && compactText.includes(compactTerm));
+                });
+            })
+            .sort((a, b) => {
+                const aTitle = terms.filter(term => a.title.toLocaleLowerCase().includes(term)).length;
+                const bTitle = terms.filter(term => b.title.toLocaleLowerCase().includes(term)).length;
+                return bTitle - aTitle;
+            })
+            .slice(0, 8);
+    };
+
+    const getSearchSnippet = (text, query) => {
+        const normalized = text.replace(/\s+/g, ' ').trim();
+        const firstTerm = query.toLocaleLowerCase().split(/\s+/).find(Boolean) || '';
+        const matchIndex = normalized.toLocaleLowerCase().indexOf(firstTerm);
+        const start = matchIndex > 64 ? matchIndex - 48 : 0;
+        const end = Math.min(normalized.length, start + 140);
+        return `${start > 0 ? '…' : ''}${normalized.slice(start, end).trim()}${end < normalized.length ? '…' : ''}`;
+    };
+
+    const closeSearchResults = () => {
+        searchResults.classList.remove('visible');
+        searchResults.replaceChildren();
+        searchStatus.textContent = '';
+        searchInput.setAttribute('aria-expanded', 'false');
+    };
+
+    const renderSearchResults = () => {
+        const query = searchInput.value.trim();
+        searchClear.classList.toggle('visible', Boolean(query));
+
+        if (!query) {
+            closeSearchResults();
+            return;
+        }
+
+        const matches = getSearchMatches(query);
+        searchResults.replaceChildren();
+
+        if (matches.length) {
+            matches.forEach(match => {
+                const link = document.createElement('a');
+                const title = document.createElement('strong');
+                const snippet = document.createElement('span');
+                link.className = 'support-search-result';
+                link.href = `#${match.id}`;
+                title.textContent = match.title;
+                snippet.textContent = getSearchSnippet(match.text, query);
+                link.append(title, snippet);
+                searchResults.append(link);
+            });
+            searchStatus.textContent = `${matches.length} matching ${matches.length === 1 ? 'topic' : 'topics'}`;
+        } else {
+            const empty = document.createElement('p');
+            const email = document.createElement('a');
+            empty.className = 'support-search-empty';
+            empty.append('No matching topics. Try a broader search or ');
+            email.href = 'mailto:support@gencatalog.app';
+            email.textContent = 'email support';
+            empty.append(email, '.');
+            searchResults.append(empty);
+            searchStatus.textContent = 'No matching topics';
+        }
+
+        searchResults.classList.add('visible');
+        searchInput.setAttribute('aria-expanded', 'true');
+    };
+
+    searchInput.setAttribute('aria-expanded', 'false');
+    searchInput.addEventListener('input', renderSearchResults);
+    searchInput.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            searchInput.value = '';
+            renderSearchResults();
+        }
+    });
+    searchClear.addEventListener('click', () => {
+        searchInput.value = '';
+        renderSearchResults();
+        searchInput.focus();
+    });
+    searchForm.addEventListener('submit', event => {
+        event.preventDefault();
+        const firstResult = searchResults.querySelector('.support-search-result');
+        if (firstResult) firstResult.click();
+    });
+    searchResults.addEventListener('click', event => {
+        const result = event.target.closest('.support-search-result');
+        if (!result) return;
+        event.preventDefault();
+        const target = document.querySelector(result.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            history.replaceState(null, '', result.getAttribute('href'));
+        }
+        closeSearchResults();
     });
 </script>
 </body>
