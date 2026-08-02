@@ -2,6 +2,44 @@
 
 ---
 
+## 2026-08-01 — Publish GenCatalog desktop 5.16.87
+
+### Customer-facing change
+
+- Advanced the homepage and download experience from desktop `5.16.86` to
+  `5.16.87` after the owner accepted the packaged Mac build and both public
+  installers and updater feeds were verified live.
+- Added feature-forward release notes for improved large-library organization,
+  visible slideshow preparation and current-item actions, and reliable
+  Rediscover actions and tag synchronization.
+- Kept Extension `5.129` out of the public release heading because its verified
+  ZIP remains a manual Chrome Web Store handoff rather than a published store
+  version.
+- Corrected the pre-existing `/support` freshness date mismatch left by its
+  July 30 content update so the required site-wide freshness gate can pass;
+  support-page content is unchanged.
+- Preserved all unrelated homepage, pricing, product, support, and historical
+  release-note copy.
+
+### Files
+
+- `index.html`
+- `get.html`
+- `release-notes.html`
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `DEVLOG.md`
+
+### Validation
+
+- Run the version/artifact, crawl-freshness, HTML, JavaScript, XML, release-note
+  structure, and repository-whitespace checks before publication.
+- Verify the merged deployment on the canonical homepage, `/get`,
+  `/release-notes`, and `sitemap.xml`, including version text, download targets,
+  customer copy, and response freshness headers.
+
+---
+
 ## 2026-07-28 — Aligned pricing-page freshness metadata
 
 ### What Changed

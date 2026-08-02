@@ -1,5 +1,5 @@
 const LAST_MODIFIED_BY_PATH = Object.freeze({
-  "/": "2026-07-28",
+  "/": "2026-08-01",
   "/grok": "2026-07-28",
   "/arcana": "2026-07-23",
   "/higgsfield": "2026-07-28",
@@ -10,8 +10,8 @@ const LAST_MODIFIED_BY_PATH = Object.freeze({
   "/search-grok-favorites": "2026-07-28",
   "/rescue-your-ai-library": "2026-07-28",
   "/faq": "2026-07-28",
-  "/support": "2026-07-22",
-  "/release-notes": "2026-07-26",
+  "/support": "2026-07-30",
+  "/release-notes": "2026-08-01",
   "/blog-organize-grok-imagine": "2026-07-28",
   "/blog-grok-favorites-disappeared": "2026-07-23",
   "/blog-download-grok-imagine-favorites": "2026-07-23",
