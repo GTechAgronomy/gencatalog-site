@@ -38,7 +38,7 @@ assert.match(firstEtag, /^W\/"sha256-[a-f0-9]{64}"$/);
 assert.equal(first.headers.get("cloudflare-cdn-cache-control"), "no-store");
 assert.equal(
   first.headers.get("last-modified"),
-  "Tue, 28 Jul 2026 00:00:00 GMT"
+  "Mon, 03 Aug 2026 00:00:00 GMT"
 );
 
 const unchanged = await onRequest(
@@ -56,7 +56,7 @@ assert.equal(await changed.text(), "<h1>Updated</h1>");
 
 const unchangedByDate = await onRequest(
   contextFor("<h1>Current</h1>", {
-    ifModifiedSince: "Tue, 28 Jul 2026 00:00:00 GMT",
+    ifModifiedSince: "Mon, 03 Aug 2026 00:00:00 GMT",
   })
 );
 assert.equal(unchangedByDate.status, 304);

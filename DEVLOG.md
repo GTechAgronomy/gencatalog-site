@@ -2,6 +2,83 @@
 
 ---
 
+## 2026-08-03 — Rebuild the Grok page around creative ownership
+
+### Customer-facing change
+
+- Rebuilt the canonical `/grok` page as an editorial guide for serious Grok
+  Imagine creators, centered on creative ownership, the emotional peaks and
+  valleys of the platform, and the future value of preserved prompts and
+  references.
+- Added a source-aware preservation table that distinguishes information
+  captured from Grok from tags, notes, ratings, collections, and recipes
+  created locally in GenCatalog. Availability limits are stated beside every
+  platform-derived field.
+- Organized the complete Grok feature inventory around preservation,
+  organization, search, reuse, multiple accounts, upgrades, and privacy rather
+  than presenting a chronological feature dump.
+- Kept recent moderation changes to one evergreen reminder that platform
+  boundaries change. The page does not claim that canceling a subscription
+  deletes work or that GenCatalog can recover media Grok no longer exposes.
+- Clarified throughout the page that 1080p Grok video upgrades require a Grok
+  Heavy subscription; 720p remains the standard Grok upgrade path.
+
+### Current product evidence
+
+- Captured the current shipping app against a public-safe Grok grid on August
+  3, 2026. The new visuals show a 34,799-item catalog, six-account refinement,
+  current detail and creative-lineage controls, local reference state, the
+  in-app 1080p upgrade selector for Grok Heavy subscribers, current Recipe
+  View, and the account-scoped reference browser.
+- Replaced private reference previews with clearly illustrative, public-safe
+  placeholder imagery while preserving the current reference-browser UI,
+  filters, counts, copy states, and repair guidance.
+- Added an illustrative moonlit-tree source preview to the current Recipe View
+  capture so both source and result stages are visible. The page labels the
+  substituted source and reference imagery as illustrative.
+- Retained the existing Grok-side Save / Save + Favorite image because it
+  documents the browser capture interaction; all desktop-app proof was
+  replaced with current captures.
+
+### Files
+
+- `grok.html`
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `scripts/test-html-validator.mjs`
+- `uploads_v2/GrokAccounts-20260803.webp`
+- `uploads_v2/GrokDetailLineage-20260803.webp`
+- `uploads_v2/GrokLibrary-20260803.webp`
+- `uploads_v2/GrokRecipeView-20260803.webp`
+- `uploads_v2/GrokReferenceBrowser-20260803.webp`
+- `uploads_v2/GrokSearchSidebar-20260803.webp`
+- `uploads_v2/GrokVideoUpgrade-20260803.webp`
+- `DEVLOG.md`
+
+### Validation
+
+- `scripts/update-version.sh --check` — passed at desktop `5.16.88`; both
+  public installers returned HTTP 200.
+- `xmllint --noout sitemap.xml` — passed.
+- `node scripts/check-crawl-freshness.mjs` and
+  `node scripts/test-html-validator.mjs` — passed with the `/grok` sitemap,
+  Last-Modified header, and conditional-request fixture aligned to August 3.
+- Parsed all three JSON-LD blocks and verified all local image references.
+- Verified 33 internal, asset, in-page, and external link targets and confirmed
+  there are no duplicate IDs.
+- Rendered the page at 1440px and 390px. Both layouts have zero horizontal
+  overflow; all nine images load at their declared intrinsic dimensions.
+- `git diff --check` — passed.
+
+### Lesson
+
+Marketing captures for a fast-moving desktop product must come from the
+current shipping interface, not merely from the newest image already present
+in the website repository. Existing screenshots can remain only when they
+still prove a separate, unchanged interaction.
+
+---
+
 ## 2026-08-03 — Document account-matched Grok reference repair
 
 ### Customer-facing change
