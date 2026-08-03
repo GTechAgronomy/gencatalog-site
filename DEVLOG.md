@@ -2,6 +2,36 @@
 
 ---
 
+## 2026-08-03 — Document account-matched Grok reference repair
+
+### Customer-facing change
+
+- Added a guided support workflow for storing exact local copies of older Grok
+  reference images, including the requirement to use the matching Grok account
+  in Chrome and repeat the repair for each historical account.
+- Explained the stored, unavailable, and retryable result states without
+  implying that a derived generation or video frame replaces the original.
+- Documented the References browser's service, account, copy-state, date, and
+  sorting controls, plus the complete desktop Go menu destination list.
+- Preserved unrelated support, homepage, pricing, download, and release copy.
+
+### Files
+
+- `support.html`
+- `sitemap.xml`
+- `functions/_middleware.js`
+- `DEVLOG.md`
+
+### Validation
+
+- Run HTML, crawl-freshness, version-surface, JavaScript, XML, and whitespace
+  checks before publication.
+- Verify the canonical `/support` page at desktop and mobile widths, including
+  the exact-account guidance, result meanings, reference filters, and Go menu
+  destinations.
+
+---
+
 ## 2026-08-01 — Publish GenCatalog desktop 5.16.87
 
 ### Customer-facing change
