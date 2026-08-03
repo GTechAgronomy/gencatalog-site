@@ -513,7 +513,7 @@
             <div class="support-search-results" id="support-search-results"></div>
             <div class="support-search-status" id="support-search-status" role="status" aria-live="polite"></div>
         </form>
-        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated July 2026 with Arcana Labs support, ComfyUI output imports, fuller embedded workflow metadata and LoRA display, Rogue Studio support, local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
+        <div class="note" style="margin-top:-24px;margin-bottom:34px;">Updated August 2026 with Grok reference-image browsing and repair, Arcana Labs support, ComfyUI output imports, fuller embedded workflow metadata and LoRA display, Rogue Studio support, local media import, Gemini support, Private Vault encryption, privacy tools, GPT Image support, Grok favorites recovery, missing saved images or videos guidance, bulk download, backup, and metadata-preservation workflows.</div>
 
         <div class="section" id="popular-grok-workflows" style="margin-bottom:48px;">
             <h2>Popular Grok workflows</h2>
@@ -574,6 +574,8 @@
                 </div>
             </div>
             <div class="tip"><strong>Tip:</strong> Set GenCatalog to launch at login so it's always ready — Mac: System Settings → General → Login Items. Windows: Settings → Apps → Startup.</div>
+            <h3>Open a Supported Generator</h3>
+            <p>Use the desktop app's <strong>Go</strong> menu to open Grok Imagine, Midjourney, Higgsfield AI, Digen AI, Venice AI, GPT Image, Gemini, Rogue Studio, or Arcana Labs. <strong>Open in Browser</strong> opens your local catalog instead.</p>
             <h3>System Requirements</h3>
             <ul>
                 <li>macOS 10.15 (Catalina) or later</li>
@@ -694,6 +696,45 @@
 
             <h3>Multiple Grok Accounts</h3>
             <p>GenCatalog supports saving from multiple Grok accounts into a single catalog. Each item is automatically tagged with the account it came from, so you can filter your catalog by account. To save from another account: log out of Grok, log in to your second account, and use the extension as normal.</p>
+
+            <h3 id="grok-reference-repair" style="scroll-margin-top:96px;">Keeping Original Grok Reference Images Local</h3>
+            <p>Grok may expose an uploaded or source image through an account-protected online link. GenCatalog uses that exact image when it can and can store an exact local copy beside your catalog. It does not substitute a generated result or extract a frame from a derived video.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                        <strong>Open References in the desktop catalog</strong>
+                        <p>Set Service to Grok, Copy to Online only, and Account to one historical Grok username. The repair count updates to that account's remaining online references.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                        <strong>Open the matching Grok account in Chrome</strong>
+                        <p>Open <code>grok.com</code>, sign in to the same account you selected in GenCatalog, and leave that tab open. The repair waits instead of using a different signed-in account.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                        <strong>Start the account's repair</strong>
+                        <p>Click Repair references in the Grok maintenance panel. You may close the References window while it works; keep GenCatalog and the matching Grok tab open. You can pause, resume, or cancel without losing completed work.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                        <strong>Repeat for other accounts</strong>
+                        <p>If your catalog includes more than one Grok account, select each account and run the repair again while Chrome is signed into that same account.</p>
+                    </div>
+                </div>
+            </div>
+            <ul>
+                <li><strong>Stored locally</strong> — GenCatalog saved the exact reference image into your local catalog.</li>
+                <li><strong>Unavailable on Grok</strong> — Grok reports that the original link no longer exists.</li>
+                <li><strong>Could not be fetched</strong> — the account, sign-in, network, or Grok response prevented a download. Confirm the matching account in Chrome and run that account again.</li>
+            </ul>
+            <div class="tip"><strong>Another way in:</strong> Open <strong>Settings → Maintenance → Repair Grok references</strong>, then click <strong>Review references</strong>. This opens the same account-filtered References workflow.</div>
 
             <h3>Upscaling Grok Imagine Videos</h3>
             <p>Grok video upscaling is available from the GenCatalog desktop app so you can choose exactly which saved videos to change. The Chrome extension does not bulk-upscale videos during scan or download.</p>
@@ -1041,6 +1082,8 @@
                 <li><strong>Source image</strong> — find all generations made from the same img2vid source</li>
                 <li><strong>Account</strong> — filter by Grok account</li>
             </ul>
+            <h3>Reference Browser</h3>
+            <p>Open <strong>References</strong> to browse the uploaded and source images behind your image-to-image and image-to-video work. Search by prompt, service, or account; filter by service, account, local-copy state, and when a reference was first used; or sort by use count, first use, or most recent use. Each reference shows whether its preview is local, still online, or missing.</p>
             <h3>Other Tools</h3>
             <ul>
                 <li><strong>Rediscover</strong> — brings an older generation back into view from across your catalog</li>
