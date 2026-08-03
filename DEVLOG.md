@@ -20,17 +20,22 @@
 - Kept recent moderation changes to one evergreen reminder that platform
   boundaries change. The page does not claim that canceling a subscription
   deletes work or that GenCatalog can recover media Grok no longer exposes.
+- Clarified throughout the page that 1080p Grok video upgrades require a Grok
+  Heavy subscription; 720p remains the standard Grok upgrade path.
 
 ### Current product evidence
 
 - Captured the current shipping app against a public-safe Grok grid on August
   3, 2026. The new visuals show a 34,799-item catalog, six-account refinement,
   current detail and creative-lineage controls, local reference state, the
-  in-app 1080p upgrade selector, current Recipe View, and the account-scoped
-  reference browser.
-- Blurred only the media thumbnails in the reference-browser capture to keep
-  private source imagery out of a public marketing asset. Filters, counts,
-  copy states, and repair guidance remain readable and unaltered.
+  in-app 1080p upgrade selector for Grok Heavy subscribers, current Recipe
+  View, and the account-scoped reference browser.
+- Replaced private reference previews with clearly illustrative, public-safe
+  placeholder imagery while preserving the current reference-browser UI,
+  filters, counts, copy states, and repair guidance.
+- Added an illustrative moonlit-tree source preview to the current Recipe View
+  capture so both source and result stages are visible. The page labels the
+  substituted source and reference imagery as illustrative.
 - Retained the existing Grok-side Save / Save + Favorite image because it
   documents the browser capture interaction; all desktop-app proof was
   replaced with current captures.
