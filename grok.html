@@ -5,8 +5,8 @@
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-8EV2H78B6F');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grok Imagine Downloader: Save Favorites with Prompts | GenCatalog</title>
-  <meta name="description" content="Bulk download Grok Imagine favorites, keep source context with prompts, and find the original generation later in a local searchable library. Free 7-day trial.">
+  <title>Grok Imagine Archive: Save Prompts, Images &amp; Videos | GenCatalog</title>
+  <meta name="description" content="Save Grok Imagine images, videos, prompts, references, and account context in a searchable local archive built for rediscovery and reuse.">
   <link rel="canonical" href="https://gencatalog.app/grok" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -15,383 +15,513 @@
   <meta name="theme-color" content="#0d0f13" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://gencatalog.app/grok" />
-  <meta property="og:title" content="Grok Imagine Downloader: Save Favorites with Prompts" />
-  <meta property="og:description" content="Bulk download Grok Imagine favorites and save every image, video, prompt, and metadata record locally on Mac or Windows." />
+  <meta property="og:title" content="Your Grok history is not your archive." />
+  <meta property="og:description" content="Preserve your Grok Imagine work locally, rediscover the ideas buried inside it, and return to old prompts as the models change." />
   <meta property="og:image" content="https://gencatalog.app/og-image-v5.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Your Grok history is not your archive." />
+  <meta name="twitter:description" content="A local, searchable Grok Imagine archive for the work you made—and the ideas you may want again." />
+  <meta name="twitter:image" content="https://gencatalog.app/og-image-v5.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GenCatalog","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, Windows","offers":{"@type":"Offer","price":"99.00","priceCurrency":"USD","url":"https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb","priceSpecification":{"@type":"UnitPriceSpecification","price":"99.00","priceCurrency":"USD","billingDuration":"P1Y"}},"url":"https://gencatalog.app"}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gencatalog.app/"},{"@type":"ListItem","position":2,"name":"Grok","item":"https://gencatalog.app/grok"}]}</script>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"GenCatalog","applicationCategory":"UtilitiesApplication","operatingSystem":"macOS, Windows","description":"A local, searchable archive for Grok Imagine images, videos, prompts, references, and creative metadata.","offers":{"@type":"Offer","price":"99.00","priceCurrency":"USD","url":"https://secondactlabs.lemonsqueezy.com/checkout/buy/33e4fb54-df7e-4135-b850-b7fe008a7ddb","priceSpecification":{"@type":"UnitPriceSpecification","price":"99.00","priceCurrency":"USD","billingDuration":"P1Y"}},"url":"https://gencatalog.app/grok"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://gencatalog.app/"},{"@type":"ListItem","position":2,"name":"Grok Imagine Archive","item":"https://gencatalog.app/grok"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Why not leave my work in Grok history?","acceptedAnswer":{"@type":"Answer","text":"Grok history is useful, but it is still a hosted interface controlled by a platform. A GenCatalog archive keeps local copies of the media and available creative context so you can search and use your library independently."}},{"@type":"Question","name":"Can GenCatalog save an existing Grok Imagine library?","acceptedAnswer":{"@type":"Answer","text":"Yes. GenCatalog can scan and save existing Grok media in bulk, recognize items already in your catalog, and resume long-running work. Source availability still depends on what Grok exposes to the signed-in account."}},{"@type":"Question","name":"Does GenCatalog support more than one Grok account?","acceptedAnswer":{"@type":"Answer","text":"Yes. When Grok exposes account identity, GenCatalog records it so generations from multiple accounts can live in one catalog and still be searched, filtered, repaired, and upgraded in the correct account context."}},{"@type":"Question","name":"What stays local?","acceptedAnswer":{"@type":"Answer","text":"Your saved media, prompts, metadata, tags, notes, ratings, collections, and other library records live in the catalog folder you choose on your Mac, Windows PC, or external drive."}},{"@type":"Question","name":"Can GenCatalog recover Grok media that is already unavailable?","acceptedAnswer":{"@type":"Answer","text":"No. GenCatalog can preserve and organize media that Grok still makes available, and it can repair some missing prompts and references while they remain retrievable. It cannot recreate source media that was never saved and is no longer available."}}]}</script>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     :root{
-      --bg:#0d0f13;--surface:#15171c;--s2:#1c1f27;--s3:#1c1f27;
-      --border:rgba(255,255,255,0.072);--border-hi:rgba(255,255,255,0.13);
+      --bg:#0d0f13;--surface:#15171c;--s2:#1c1f27;--s3:#232630;
+      --border:rgba(255,255,255,.075);--border-hi:rgba(255,255,255,.15);
       --t1:#f2f3f7;--t2:#a5a8b4;--t3:#767a86;
-      --accent:#5865e8;--accent-fill:#5865e8;--accent-lo:rgba(88,101,232,0.12);--accent-b:rgba(88,101,232,0.32);
-      --green:#30d68b;--red:#e86969;--yellow:#d9b84f;
-      --grok:#5865e8;--grok-bg:rgba(88,101,232,0.12);
-      --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-pill:999px;
-      --transition:180ms ease;--max-width:1360px;
+      --accent:#6874ee;--accent-hi:#7c86f4;--accent-lo:rgba(104,116,238,.13);--accent-b:rgba(104,116,238,.35);
+      --green:#30d68b;--yellow:#d9b84f;--red:#e86969;
+      --radius-sm:8px;--radius-md:14px;--radius-lg:20px;--radius-pill:999px;
+      --transition:180ms ease;--max:1320px;--measure:720px;
     }
-    body{background:var(--bg);color:var(--t2);font-family:'Geist',-apple-system,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+    body{background:var(--bg);color:var(--t2);font-family:'Geist',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
     img{display:block;max-width:100%}
-    .container{max-width:var(--max-width);margin:0 auto;padding:0 48px}
+    button{font:inherit}
+    .container{width:min(var(--max),calc(100% - 96px));margin:0 auto}
+    .narrow{max-width:var(--measure)}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--t3);font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:24px;height:1px;background:var(--accent)}
+    .section-title{font-size:clamp(32px,4.6vw,64px);font-weight:600;line-height:1.02;letter-spacing:-.045em;color:var(--t1)}
+    .section-lede{font-size:clamp(17px,2vw,21px);line-height:1.6;color:var(--t2)}
+    .mono{font-family:'Geist Mono',monospace}
 
-    /* NAV */
-    nav{position:sticky;top:0;z-index:100;background:rgba(13,15,19,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 48px;height:56px;display:flex;align-items:center;gap:32px}
-    .nav-logo{display:flex;align-items:center;gap:8px;color:var(--t1);font-weight:600;font-size:15px;flex-shrink:0}
+    nav{position:sticky;top:0;z-index:100;background:rgba(13,15,19,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-inner{max-width:var(--max);width:calc(100% - 96px);height:58px;margin:0 auto;display:flex;align-items:center;gap:30px}
+    .nav-logo{display:flex;align-items:center;gap:9px;color:var(--t1);font-weight:600;font-size:15px;flex-shrink:0}
+    .nav-logo img{border-radius:6px}
     .nav-links{display:flex;align-items:center;gap:24px;flex:1}
-    .nav-links a{font-size:14px;font-weight:500;color:var(--t2);transition:color var(--transition)}
-    .nav-links a:hover{color:var(--t1)}
+    .nav-links a,.footer-links a{font-size:14px;font-weight:500;color:var(--t2);transition:color var(--transition)}
+    .nav-links a:hover,.footer-links a:hover{color:var(--t1)}
     .nav-cta{margin-left:auto}
-    .btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--radius-sm);padding:10px 20px;font-size:14px;font-weight:600;font-family:inherit;cursor:pointer;border:1px solid transparent;transition:background var(--transition),color var(--transition),border-color var(--transition);text-decoration:none;white-space:nowrap}
-    .btn-primary{background:var(--accent-fill);color:#fff}.btn-primary:hover{background:#6b76f0}
-    .btn-ghost{background:transparent;border-color:var(--border-hi);color:var(--t2)}.btn-ghost:hover{background:var(--s2);color:var(--t1)}
-    .btn-lg{padding:12px 24px;font-size:15px}
-    .section-label{font-size:12px;font-weight:500;letter-spacing:0.5px;text-transform:uppercase;color:var(--t3)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--radius-sm);padding:10px 20px;font-size:14px;font-weight:600;border:1px solid transparent;transition:background var(--transition),color var(--transition),border-color var(--transition),transform var(--transition);white-space:nowrap}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{background:var(--accent-hi)}
+    .btn-ghost{border-color:var(--border-hi);color:var(--t2)}.btn-ghost:hover{background:var(--surface);color:var(--t1)}
+    .btn-lg{padding:13px 24px;font-size:15px}
 
-    /* BREADCRUMB */
-    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border)}
-    .breadcrumb-inner{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t3)}
-    .breadcrumb-inner a{color:var(--t3);transition:color var(--transition)}.breadcrumb-inner a:hover{color:var(--t2)}
-    .breadcrumb-sep{color:var(--t3)}
+    .breadcrumb{border-bottom:1px solid var(--border)}
+    .breadcrumb-inner{height:46px;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--t3)}
+    .breadcrumb a:hover{color:var(--t1)}
 
-    /* HERO */
-    .hero{padding:80px 0 72px;text-align:center}
-    .hero-badge{margin-bottom:20px}
-    .platform-badge{display:inline-flex;align-items:center;gap:8px;background:var(--grok-bg);color:var(--grok);border:1px solid var(--accent-b);border-radius:var(--radius-pill);padding:6px 14px;font-size:13px;font-weight:600}
-    .platform-dot{width:8px;height:8px;border-radius:50%;background:var(--grok);flex-shrink:0}
-    .hero h1{font-size:clamp(36px,5vw,56px);font-weight:700;color:var(--t1);line-height:1.1;letter-spacing:-0.02em;max-width:800px;margin:0 auto 20px}
-    .hero-subhead{font-size:18px;color:var(--t2);max-width:560px;margin:0 auto 36px;line-height:1.6}
-    .hero-ctas{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
-    .hero-meta{font-size:13px;color:var(--t3)}
-    .hero-screenshot{margin:56px 0 0;border-radius:var(--radius-lg);border:1px solid var(--border);overflow:hidden;background:var(--surface)}
-    .hero-screenshot img{width:100%;height:auto;display:block}
+    .hero{padding:clamp(64px,9vw,128px) 0 88px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,.92fr) minmax(430px,1.08fr);gap:clamp(48px,7vw,110px);align-items:center}
+    .hero-copy{max-width:650px}
+    .hero h1{font-size:clamp(52px,6.7vw,96px);font-weight:600;line-height:.94;letter-spacing:-.06em;color:var(--t1);margin:24px 0 30px}
+    .hero h1 span{display:block;color:var(--accent-hi)}
+    .hero-lede{font-size:clamp(18px,2.1vw,23px);line-height:1.55;max-width:600px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+    .hero-meta{font-size:13px;color:var(--t3);margin-top:16px}
+    .hero-proof{position:relative}
+    .hero-proof::before{content:"";position:absolute;inset:-32px -60px auto 20%;height:70%;border:1px solid var(--accent-b);border-radius:50%;opacity:.28;transform:rotate(-7deg);pointer-events:none}
+    .app-shot{position:relative;border:1px solid var(--border-hi);background:#090a0d;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.35)}
+    .app-shot img{width:100%;height:auto}
+    .shot-caption{display:flex;justify-content:space-between;gap:20px;padding:14px 16px;border-top:1px solid var(--border);font-size:12px;color:var(--t3)}
+    .proof-note{position:absolute;left:-44px;bottom:-38px;width:min(250px,58%);padding:18px 20px;background:var(--surface);border:1px solid var(--border-hi);border-radius:var(--radius-md);box-shadow:0 18px 50px rgba(0,0,0,.32)}
+    .proof-note strong{display:block;color:var(--t1);font-size:16px;margin-bottom:4px}.proof-note span{font-size:13px;color:var(--t3)}
 
-    /* PROBLEM */
-    .problem{padding:80px 0;border-top:1px solid var(--border)}
-    .problem h2{font-size:clamp(24px,3vw,36px);font-weight:700;color:var(--t1);margin:12px 0 16px;letter-spacing:-0.01em}
-    .problem p{font-size:16px;color:var(--t2);line-height:1.7;margin-bottom:12px;max-width:640px}
-    .problem-pains{display:flex;flex-direction:column;gap:20px;margin-top:32px;max-width:640px}
-    .problem-pain{border-left:2px solid var(--border-hi);padding-left:20px}
-    .problem-pain h4{font-size:14px;font-weight:600;color:var(--t1);margin-bottom:4px}
-    .problem-pain p{font-size:14px;color:var(--t2);margin-bottom:0}
+    .manifesto{padding:120px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .manifesto-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(50px,9vw,150px);align-items:start}
+    .manifesto-copy p{font-size:clamp(24px,3.4vw,43px);line-height:1.25;letter-spacing:-.035em;color:var(--t1);margin-bottom:28px}
+    .manifesto-copy p:last-child{color:var(--t2);margin-bottom:0}
+    .pullquote{border-left:2px solid var(--accent);padding:6px 0 6px 24px;color:var(--t2);font-size:16px;max-width:330px}
 
-    /* FEATURES */
-    .features{padding:80px 0;border-top:1px solid var(--border)}
-    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;margin-top:40px}
-    .feature-card{background:var(--bg);padding:28px;transition:background var(--transition)}.feature-card:hover{background:var(--surface)}
-    .feature-icon{width:32px;height:32px;margin-bottom:14px;color:var(--t3)}
-    .feature-card h3{font-size:15px;font-weight:600;color:var(--t1);margin-bottom:8px}
-    .feature-card p{font-size:14px;color:var(--t2);line-height:1.6}
+    .leverage{padding:120px 0;background:var(--surface)}
+    .leverage-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(48px,9vw,150px);align-items:end}
+    .leverage .section-title{max-width:800px}
+    .leverage .section-lede{max-width:520px}
+    .leverage-line{margin-top:64px;padding-top:22px;border-top:1px solid var(--border-hi);display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+    .leverage-step{font-size:14px;color:var(--t3)}
+    .leverage-step strong{display:block;color:var(--t1);font-size:16px;margin-bottom:6px}
 
-    /* RECIPE */
-    .recipe{padding:72px 0;border-top:1px solid var(--border);text-align:center}
-    .recipe h2{font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--t1);margin:12px 0 14px;letter-spacing:-0.01em}
-    .recipe p{font-size:16px;color:var(--t2);max-width:600px;margin:0 auto 32px;line-height:1.7}
-    .recipe-items{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-    .recipe-item{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 16px;font-size:14px;color:var(--t2)}
-    .recipe-item svg{color:var(--accent);flex-shrink:0}
+    .story{padding:clamp(90px,10vw,150px) 0;border-bottom:1px solid var(--border)}
+    .story-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.72fr);gap:clamp(50px,8vw,120px);align-items:center}
+    .story-grid.reverse{grid-template-columns:minmax(360px,.72fr) minmax(0,1.08fr)}
+    .story-grid.reverse .story-copy{order:-1}
+    .story-copy h2{font-size:clamp(34px,4.5vw,60px);font-weight:600;line-height:1.04;letter-spacing:-.045em;color:var(--t1);margin:18px 0 22px}
+    .story-copy>p{font-size:18px;line-height:1.7;margin-bottom:24px}
+    .feature-list{list-style:none;border-top:1px solid var(--border);margin-top:30px}
+    .feature-list li{display:grid;grid-template-columns:24px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--t2)}
+    .feature-list li::before{content:"✓";color:var(--green);font-family:'Geist Mono',monospace}
+    .feature-list strong{color:var(--t1);font-weight:600}
+    .vertical-proof{max-width:500px;margin:auto}
+    .editorial-caption{font-size:12px;color:var(--t3);margin-top:12px;line-height:1.5}
 
-    /* TRUST */
-    .trust{padding:72px 0;border-top:1px solid var(--border);text-align:center}
-    .trust h2{font-size:clamp(22px,3vw,30px);font-weight:700;color:var(--t1);margin:12px 0 14px;letter-spacing:-0.01em}
-    .trust p{font-size:16px;color:var(--t2);max-width:560px;margin:0 auto;line-height:1.7}
+    .inventory{padding:120px 0;border-bottom:1px solid var(--border)}
+    .inventory-head{display:grid;grid-template-columns:1fr .85fr;gap:70px;align-items:end;margin-bottom:54px}
+    .inventory-note{font-size:15px;color:var(--t3);max-width:500px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--border-hi);border-radius:var(--radius-lg)}
+    table{width:100%;border-collapse:collapse;min-width:760px;background:var(--surface)}
+    th,td{text-align:left;padding:17px 20px;border-bottom:1px solid var(--border);vertical-align:top}
+    tr:last-child td{border-bottom:0}
+    th{background:var(--s2);color:var(--t3);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600}
+    td:first-child{color:var(--t1);font-weight:600;width:23%}
+    td{font-size:14px;color:var(--t2)}
+    td:last-child{color:var(--t3);width:27%}
+    .source-tag{display:inline-flex;padding:4px 7px;border-radius:999px;background:var(--accent-lo);color:var(--accent-hi);font:500 10px/1 'Geist Mono',monospace;margin-left:6px;vertical-align:2px}
+    .local-tag{background:rgba(48,214,139,.1);color:var(--green)}
 
-    /* TESTIMONIAL */
-    .testimonial-section{padding:72px 0;border-top:1px solid var(--border)}
-    .testimonial-section h2{font-size:clamp(22px,3vw,32px);font-weight:700;color:var(--t1);margin:12px 0 20px;letter-spacing:-0.01em}
-    .testimonial-card{max-width:760px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:28px}
-    .testimonial-rating{color:var(--yellow);font-size:13px;letter-spacing:0.08em;margin-bottom:16px}
-    .testimonial-quote{color:var(--t1);font-size:17px;line-height:1.65;margin-bottom:18px}
-    .testimonial-source{color:var(--t3);font-size:13px;font-style:normal}
+    .feature-index{padding:120px 0;background:var(--surface);border-bottom:1px solid var(--border)}
+    .index-head{max-width:800px;margin-bottom:54px}
+    .index-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border-hi);border-left:1px solid var(--border-hi)}
+    .index-group{padding:32px;border-right:1px solid var(--border-hi);border-bottom:1px solid var(--border-hi)}
+    .index-group h3{font-size:20px;color:var(--t1);margin-bottom:18px}
+    .index-group ul{list-style:none;columns:2;column-gap:30px}
+    .index-group li{break-inside:avoid;font-size:13px;color:var(--t2);padding:5px 0}
 
-    /* CTA */
-    .cta-section{padding:80px 0;border-top:1px solid var(--border);text-align:center}
-    .cta-section h2{font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--t1);margin-bottom:14px;letter-spacing:-0.02em}
-    .cta-section p{font-size:16px;color:var(--t2);margin-bottom:32px}
-    .cta-section .meta{font-size:13px;color:var(--t3);margin-top:14px}
-    .cta-buttons{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+    .trust{padding:120px 0;border-bottom:1px solid var(--border)}
+    .trust-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(50px,9vw,140px)}
+    .trust-points{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+    .trust-point{background:var(--surface);padding:24px}.trust-point strong{display:block;color:var(--t1);font-size:15px;margin-bottom:5px}.trust-point span{font-size:13px;color:var(--t3)}
 
-    /* CROSS-LINKS */
-    .cross-links{padding:56px 0;border-top:1px solid var(--border)}
-    .cross-links-inner{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
-    .cross-link{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;color:var(--t2);transition:border-color var(--transition),color var(--transition)}
-    .cross-link:hover{border-color:var(--border-hi);color:var(--t1)}
-    .cross-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .testimonial{padding:110px 0;border-bottom:1px solid var(--border)}
+    .testimonial figure{max-width:900px}
+    .stars{color:var(--yellow);font-size:13px;letter-spacing:.1em;margin-bottom:22px}
+    blockquote{font-size:clamp(26px,3.7vw,48px);line-height:1.25;letter-spacing:-.035em;color:var(--t1)}
+    figcaption{font-size:13px;color:var(--t3);margin-top:24px}
 
-    /* FOOTER */
+    .faq{padding:120px 0;border-bottom:1px solid var(--border)}
+    .faq-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:clamp(50px,9vw,140px)}
+    .faq-list{border-top:1px solid var(--border-hi)}
+    details{border-bottom:1px solid var(--border-hi);padding:0}
+    summary{list-style:none;cursor:pointer;color:var(--t1);font-size:17px;font-weight:600;padding:22px 36px 22px 0;position:relative}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";position:absolute;right:4px;top:20px;color:var(--accent-hi);font:400 22px/1 'Geist Mono',monospace}
+    details[open] summary::after{content:"−"}
+    details p{font-size:15px;color:var(--t2);padding:0 44px 24px 0}
+
+    .cta{padding:120px 0;text-align:center}
+    .cta h2{font-size:clamp(42px,6vw,78px);font-weight:600;line-height:1;letter-spacing:-.055em;color:var(--t1);max-width:900px;margin:0 auto 24px}
+    .cta>div>p{font-size:19px;max-width:620px;margin:0 auto 34px}
+    .cta-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .cta-meta{font-size:12px!important;color:var(--t3);max-width:900px!important;margin-top:18px!important}
+    .cross-links{padding:54px 0;border-top:1px solid var(--border)}
+    .cross-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+    .cross-link{padding:9px 14px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);font-size:13px;color:var(--t2)}.cross-link:hover{color:var(--t1);border-color:var(--border-hi)}
+
     footer{border-top:1px solid var(--border);padding:40px 0}
-    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
     .footer-copy{font-size:13px;color:var(--t3)}
     .footer-links{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
-    .footer-links a{font-size:13px;color:var(--t3);transition:color var(--transition)}.footer-links a:hover{color:var(--t2)}
+    .footer-links a{font-size:13px;color:var(--t3)}
+    :focus-visible{outline:2px solid var(--accent-hi);outline-offset:3px;border-radius:4px}
 
-    @media(max-width:900px){.features-grid{grid-template-columns:1fr}.nav-links{display:none}.container,.nav-inner{padding-left:24px;padding-right:24px}}
-    :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+    @media(max-width:980px){
+      .container{width:min(var(--max),calc(100% - 48px))}.nav-inner{width:calc(100% - 48px)}.nav-links{display:none}
+      .hero-grid,.manifesto-grid,.leverage-grid,.story-grid,.story-grid.reverse,.inventory-head,.trust-grid,.faq-grid{grid-template-columns:1fr}
+      .hero-copy{max-width:780px}.hero-proof{margin:20px 0 30px}.proof-note{left:20px}.manifesto-grid{gap:42px}
+      .story-grid.reverse .story-copy{order:0}.story-grid{gap:50px}.story-copy{max-width:720px}.vertical-proof{margin:0}
+      .inventory-head{gap:24px}.faq-grid{gap:42px}
+    }
+    @media(max-width:680px){
+      .container{width:min(var(--max),calc(100% - 32px))}.nav-inner{width:calc(100% - 32px)}
+      .hero{padding-top:58px}.hero h1{font-size:clamp(46px,14vw,68px)}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .btn{width:100%}
+      .proof-note{position:relative;left:auto;bottom:auto;width:calc(100% - 24px);margin:-16px auto 0}
+      .shot-caption{display:block}.shot-caption span:last-child{display:block;margin-top:4px}
+      .manifesto,.leverage,.story,.inventory,.feature-index,.trust,.testimonial,.faq,.cta{padding:82px 0}
+      .leverage-line{grid-template-columns:1fr;margin-top:42px}
+      .index-grid{grid-template-columns:1fr}.index-group{padding:26px 22px}.index-group ul{columns:1}
+      .queue-row{grid-template-columns:36px 1fr auto}.queue-thumb{width:36px;height:36px}.quality-pill{font-size:9px}
+      blockquote{font-size:30px}.cta h2{font-size:46px}.footer-inner{align-items:flex-start;flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
   </style>
   <script defer src="/analytics.js"></script>
 </head>
 <body>
 
-<nav>
+<nav aria-label="Primary navigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">
-      <img src="GenCatalogLogo-64.webp" width="28" height="28" alt="" style="border-radius:6px;display:block;">
-        GenCatalog
-    </a>
+    <a href="/" class="nav-logo"><img src="GenCatalogLogo-64.webp" width="28" height="28" alt="">GenCatalog</a>
     <div class="nav-links">
-      <a href="/#capabilities">Features</a>
-      <a href="/#workflow">How It Works</a>
-      <a href="/#pricing">Pricing</a>
+      <a href="#preserve">Preserve</a>
+      <a href="#rediscover">Rediscover</a>
+      <a href="#everything">Everything saved</a>
       <a href="/support">Support</a>
-      <a href="/faq">FAQ</a>
     </div>
-    <div class="nav-cta">
-      <a href="/get" class="btn btn-primary smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a>
-    </div>
+    <div class="nav-cta"><a href="/get" class="btn btn-primary smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a></div>
   </div>
 </nav>
 
 <main>
-
-<div class="breadcrumb">
-  <div class="container">
-    <div class="breadcrumb-inner">
-      <a href="/">Home</a>
-      <span class="breadcrumb-sep">›</span>
-      <span>Grok Imagine</span>
-    </div>
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner"><a href="/">Home</a><span aria-hidden="true">›</span><span>Grok Imagine archive</span></div>
   </div>
-</div>
 
-<section class="hero">
-  <div class="container">
-    <div class="hero-badge">
-      <span class="platform-badge">
-        <span class="platform-dot"></span>
-        Grok Imagine
-      </span>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">For Grok Imagine creators</span>
+        <h1>Your Grok history <span>is not your archive.</span></h1>
+        <p class="hero-lede">Grok Imagine can be a creative roller coaster. The highs are extraordinary. The lows can make the work—and the platform beneath it—feel suddenly fragile. GenCatalog gives every image, video, prompt, reference, and half-forgotten idea a permanent home on your computer.</p>
+        <div class="hero-actions">
+          <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Build your local archive</span></a>
+          <a href="#everything" class="btn btn-ghost btn-lg">See everything preserved</a>
+        </div>
+        <p class="hero-meta">Mac + Windows &nbsp;·&nbsp; 7-day free trial &nbsp;·&nbsp; Works with the GenCatalog Chrome extension</p>
+      </div>
+      <div class="hero-proof">
+        <figure class="app-shot">
+          <img src="uploads_v2/GrokLibrary-20260803.webp" alt="The current GenCatalog app showing a public-safe Grok Imagine library with search, source filters, quality badges, account labels, and nearly 35,000 catalog items" width="1600" height="1000" loading="eager" fetchpriority="high" decoding="async">
+          <figcaption class="shot-caption"><span>The current GenCatalog app with newly saved public Grok work</span><span class="mono">34,799 generations</span></figcaption>
+        </figure>
+        <div class="proof-note"><strong>The files are only the beginning.</strong><span>Prompts, accounts, relationships, dates, notes, and the path back to the idea stay with them.</span></div>
+      </div>
     </div>
-    <h1>Bulk download and save your Grok Imagine favorites.</h1>
-    <p class="hero-subhead">GenCatalog captures Grok images and videos with the full prompt, model version, and settings — then stores everything in a searchable desktop library.</p>
-    <div class="hero-ctas">
-      <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a>
-      <a href="/support" class="btn btn-ghost btn-lg">View Setup Guide</a>
-    </div>
-    <p class="hero-meta">macOS and Windows &nbsp;·&nbsp; Requires Chrome extension &nbsp;·&nbsp; 7-day free trial</p>
-    <div class="hero-screenshot">
-      <img src="GenCatalogInterface-1600.webp" alt="GenCatalog showing Grok Imagine generations organized in a searchable library" width="1600" height="900" loading="eager" fetchpriority="high" decoding="async">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="problem">
-  <div class="container">
-    <span class="section-label">The Problem</span>
-    <h2>Grok makes it easy to generate. Managing what you create is harder.</h2>
-    <p>Downloads pile up in folders. Prompts disappear into browser history. Great generations become impossible to reproduce.</p>
-    <p>GenCatalog captures every Grok generation automatically so your prompts and images stay organized.</p>
-    <div class="problem-pains">
-      <div class="problem-pain">
-        <h4>Prompts get separated from results</h4>
-        <p>The image survives. The prompt that made it work disappears.</p>
+  <section class="manifesto">
+    <div class="container manifesto-grid">
+      <div>
+        <span class="eyebrow">Creative ownership</span>
+        <p class="pullquote">History is what a platform lets you see. An archive is what you actually own.</p>
       </div>
-      <div class="problem-pain">
-        <h4>Your Grok history becomes impossible to search</h4>
-        <p>Your best ideas are buried in endless scrolling and random filenames.</p>
-      </div>
-      <div class="problem-pain">
-        <h4>Great generations become impossible to reproduce</h4>
-        <p>Without the full prompt and settings, you can't reliably recreate your best work.</p>
+      <div class="manifesto-copy">
+        <p>I built GenCatalog after realizing that almost everything I had made in Grok existed only because Grok still chose to host it.</p>
+        <p>Interfaces change. Features move. Policies tighten and relax. The recent moderation changes are one more reminder that a platform and its boundaries can change long before your ideas do. That does not make Grok uniquely bad. It makes Grok a platform—and hosted history isn’t an archive.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="features">
-  <div class="container">
-    <span class="section-label">What GenCatalog does with Grok</span>
-    <h2 style="font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--t1);margin:12px 0 8px;letter-spacing:-0.01em;">Everything captured. Nothing lost.</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg>
-        <h3>Automatic generation capture</h3>
-        <p>The Chrome extension detects every new Grok generation and saves it with a single click — no manual downloading required.</p>
+  <section class="leverage">
+    <div class="container">
+      <div class="leverage-grid">
+        <div>
+          <span class="eyebrow">Not a museum</span>
+          <h2 class="section-title" style="margin-top:20px">Your old prompts can become more useful as the models change.</h2>
+        </div>
+        <p class="section-lede">An image that missed nine months ago may point somewhere remarkable in a newer model. A reference you forgot can begin a new branch. Your archive is not just a record of what you made. It is future creative leverage.</p>
       </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5h6"/></svg>
-        <h3>Full prompt preservation</h3>
-        <p>Every saved Grok image keeps its complete prompt, model version, and generation parameters. The recipe, not just the result.</p>
-      </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
-        <h3>Bulk import Grok favorites</h3>
-        <p>Import your entire Grok favorites history in one scan. Thousands of existing generations captured automatically.</p>
-      </div>
-      <div class="feature-card">
-        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <h3>Search your generation history</h3>
-        <p>Search across prompts, tags, models, and dates. Find any Grok generation instantly — even one you created months ago.</p>
+      <div class="leverage-line" aria-label="How an archive creates future creative leverage">
+        <div class="leverage-step"><strong>Preserve the attempt</strong>Keep the prompt, result, reference, motion prompt, and source context together.</div>
+        <div class="leverage-step"><strong>Rediscover the idea</strong>Search thousands of generations without relying on memory, scrolling, or filenames.</div>
+        <div class="leverage-step"><strong>Return when the moment is right</strong>Reuse what you learned when Grok’s models and creative boundaries change again.</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="features">
-  <div class="container">
-    <span class="section-label">Beyond Backup</span>
-    <h2 style="font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--t1);margin:12px 0 8px;letter-spacing:-0.01em;">A folder saves the file. GenCatalog saves the trail back to it.</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <span class="section-label">Local Archive</span>
-        <h3>A folder is only storage.</h3>
-        <p>Heavy Grok users often already keep local copies. The problem is what happens later: Grok Saved/Favorites gets jumbled, the filename is meaningless, and the generation you want to continue editing is buried somewhere in Grok history.</p>
-        <p>GenCatalog turns those loose files into a working archive by keeping prompts, source context, account tags, dates, notes, and search together in one local library.</p>
-      </div>
-      <div class="feature-card">
-        <span class="section-label">Use Case</span>
-        <h3>When you need to continue from the original.</h3>
-        <ul class="problem-pains">
-          <li class="problem-pain">
-            <p>Search locally before scrolling through Grok Saved/Favorites.</p>
-          </li>
-          <li class="problem-pain">
-            <p>Find work by prompt text, account, media type, tag, or date.</p>
-          </li>
-          <li class="problem-pain">
-            <p>Keep the source reference attached when available.</p>
-          </li>
-          <li class="problem-pain">
-            <p>Use Grok for creating and editing, and GenCatalog for finding the thing again.</p>
-          </li>
+  <section class="story" id="preserve">
+    <div class="container story-grid">
+      <figure class="app-shot">
+        <img src="uploads_v2/GrokSaveBadges-1600.webp" alt="Grok Imagine generations with GenCatalog Save and Save plus Favorite controls" width="1600" height="900" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>Save from Grok Imagine as you create</span><span class="mono">Save · Save + Favorite</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Preserve</span>
+        <h2>Save the generation. Keep the reason it mattered.</h2>
+        <p>Use the save controls inside Grok as you work, or bring an existing library across in bulk. GenCatalog keeps the media and the available creative context together instead of leaving you with an anonymous download.</p>
+        <ul class="feature-list">
+          <li><span><strong>One-click capture:</strong> save an image or video, with the option to favorite it locally at the same time.</span></li>
+          <li><span><strong>Bulk library capture:</strong> scan existing Grok media, skip duplicates, and continue long jobs in the background.</span></li>
+          <li><span><strong>Smart Sync:</strong> recognize what is already saved and focus on what is new.</span></li>
+          <li><span><strong>Prompt safeguards:</strong> hold generated work when a prompt should be recoverable instead of silently filing an incomplete record.</span></li>
+          <li><span><strong>Source scopes:</strong> choose all Grok media, Image + Agent Mode, or chat media only.</span></li>
         </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="recipe">
-  <div class="container">
-    <span class="section-label">Core Philosophy</span>
-    <h2>GenCatalog saves recipes, not just files.</h2>
-    <p>Each Grok generation is saved with everything that made it — so you can reproduce, learn from, and iterate on your best work months later.</p>
-    <div class="recipe-items">
-      <div class="recipe-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Full prompt text
-      </div>
-      <div class="recipe-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Model version
-      </div>
-      <div class="recipe-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Generation parameters
-      </div>
-      <div class="recipe-item">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7l3 3L11.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Platform source
+  <section class="story">
+    <div class="container story-grid reverse">
+      <figure class="app-shot">
+        <img src="uploads_v2/GrokDetailLineage-20260803.webp" alt="Current GenCatalog Grok detail view showing an uploaded frame, resulting video, local source copy, related-item discovery, Open in Grok, and a 1080p upgrade control" width="1600" height="1000" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>Current Grok detail view: lineage, local reference, discovery, and upgrade</span><span class="mono">Captured Aug 3, 2026</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Understand</span>
+        <h2>Every reference can become the root of a family tree.</h2>
+        <p>A result is more useful when you can see where it came from. GenCatalog preserves source relationships so you can move through the images, edits, variations, and videos that grew from the same reference.</p>
+        <ul class="feature-list">
+          <li><span><strong>Reference lineage:</strong> browse the creative descendants of a source image instead of hunting for them one by one.</span></li>
+          <li><span><strong>Exact reference copies:</strong> store the original local reference when Grok still makes it retrievable.</span></li>
+          <li><span><strong>Historical repair:</strong> repair missing references account by account, with pause, resume, cancel, and clear status.</span></li>
+          <li><span><strong>Generation Recipes:</strong> keep image prompts and motion prompts distinct across multi-stage work.</span></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="trust">
-  <div class="container">
-    <span class="section-label">Privacy First</span>
-    <h2>Your library lives on your computer.</h2>
-    <p>GenCatalog stores your Grok generations locally. Your prompts, metadata, and image files stay on your machine — fully searchable and under your control. No cloud uploads. No accounts.</p>
-  </div>
-</section>
-
-<section class="testimonial-section">
-  <div class="container">
-    <span class="section-label">Grok User Proof</span>
-    <h2>Built for heavy Grok libraries.</h2>
-    <figure class="testimonial-card">
-      <div class="testimonial-rating" aria-label="5 out of 5 stars">★★★★★</div>
-      <blockquote class="testimonial-quote">Perfect tool for locally saving and managing work from Grok. I had 12,000+ files to manage and this tool was a godsend.</blockquote>
-      <figcaption><cite class="testimonial-source">Verified Chrome Web Store review</cite></figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="features">
-  <div class="container">
-    <span class="section-label">Grok FAQ</span>
-    <h2 style="font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--t1);margin:12px 0 8px;letter-spacing:-0.01em;">Common Grok library questions.</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <h3>Why not just download my Grok files into a folder?</h3>
-        <p>A folder gives you the media, but it does not give you reliable retrieval. GenCatalog keeps the file connected to prompt text, source context, account, dates, tags, notes, and catalog metadata so you can search your archive instead of guessing from filenames.</p>
-      </div>
-      <div class="feature-card">
-        <h3>Can GenCatalog help me find a Grok generation I want to continue editing?</h3>
-        <p>Yes. GenCatalog is built for retrieval: search by prompt text, account, media type, tags, favorites, and dates to locate the saved item locally. When source references are available, they stay attached for traceability. Grok still controls whether an old generation is available or editable on their side.</p>
+  <section class="story" id="rediscover">
+    <div class="container story-grid">
+      <figure class="app-shot vertical-proof">
+        <img src="uploads_v2/GrokSearchSidebar-20260803.webp" alt="Current GenCatalog sidebar showing a nearly 35,000-item catalog, universal search, Rediscover, Slideshow, Compare, Stats, and source filters" width="360" height="1000" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>Current search and discovery tools</span><span class="mono">34,799 items</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Find</span>
+        <h2>The generation you forgot is often the one worth finding.</h2>
+        <p>Search prompt text, accounts, sources, models, filenames, notes, and tags from one field. Then narrow the result without losing your place—or let Rediscover surface work you had stopped thinking about.</p>
+        <ul class="feature-list">
+          <li><span><strong>Universal search:</strong> prompt, tag, model, source, account, filename, and notes.</span></li>
+          <li><span><strong>Deep filters:</strong> media type, date, rating, favorite, notes, prompt, reference, tags, and upgradeability.</span></li>
+          <li><span><strong>Saved searches:</strong> return to a useful slice of the library in one click.</span></li>
+          <li><span><strong>Top prompts:</strong> browse the language you use most, most recently, or alphabetically.</span></li>
+          <li><span><strong>Rediscover, slideshow, and stats:</strong> see the archive as a creative body of work, not a directory.</span></li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="cta-section">
-  <div class="container">
-    <h2>Start building your Grok generation library.</h2>
-    <p>Download GenCatalog and keep every Grok generation, prompt, and recipe organized — forever.</p>
-    <div class="cta-buttons">
-      <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download free</span></a>
-      <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Install Chrome Extension</a>
+  <section class="story">
+    <div class="container story-grid reverse">
+      <figure class="app-shot">
+        <img src="uploads_v2/GrokAccounts-20260803.webp" alt="Current GenCatalog library with the Grok accounts refinement open, showing six source accounts inside one catalog" width="1600" height="1000" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>One current catalog, six Grok accounts</span><span class="mono">Account-aware filters</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Multiple accounts</span>
+        <h2>One library. Every Grok identity still intact.</h2>
+        <p>Creators rarely stay inside one account forever. GenCatalog can place work from multiple Grok accounts in the same catalog without flattening away where it came from.</p>
+        <ul class="feature-list">
+          <li><span><strong>Automatic account labels:</strong> record the source account when Grok exposes it.</span></li>
+          <li><span><strong>Composable filters:</strong> combine an account with source, media, tag, rating, date, prompt, or any other filter.</span></li>
+          <li><span><strong>Account counts:</strong> understand how the library is distributed at a glance.</span></li>
+          <li><span><strong>Correct-account workflows:</strong> repair references and request upgrades from the Grok identity that owns the work.</span></li>
+        </ul>
+      </div>
     </div>
-    <p class="meta">$99/year &nbsp;·&nbsp; Plus applicable taxes &nbsp;·&nbsp; 7-day free trial &nbsp;·&nbsp; Saved files stay on your computer &nbsp;·&nbsp; Permanent existing-library access after your first successful payment</p>
-  </div>
-</section>
+  </section>
 
-<section class="cross-links">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:20px;"><span class="section-label">Also works with</span></div>
-    <div class="cross-links-inner">
-      <a href="/higgsfield" class="cross-link">
-        <span class="cross-dot" style="background:var(--red)"></span>
-        Higgsfield
-      </a>
-      <a href="/midjourney" class="cross-link">
-        <span class="cross-dot" style="background:#aeb7ff"></span>
-        Midjourney
-      </a>
-      <a href="/digen" class="cross-link">
-        <span class="cross-dot" style="background:var(--green)"></span>
-        Digen
-      </a>
-      <a href="/support" class="cross-link">Setup Guide</a>
+  <section class="story">
+    <div class="container story-grid">
+      <figure class="app-shot">
+        <img src="uploads_v2/GrokReferenceBrowser-20260803.webp" alt="Current GenCatalog reference browser showing local, online, and missing reference states plus service, account, date, and copy-state filters; media previews are blurred for privacy" width="1600" height="1000" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>Current reference browser; thumbnails blurred for privacy</span><span class="mono">Local · Online · Missing</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Repair</span>
+        <h2>Keep the original references, not just the generations they produced.</h2>
+        <p>GenCatalog shows which source images are already local, still online, or missing—and lets you work through historical Grok reference recovery in the account that owns them.</p>
+        <ul class="feature-list">
+          <li><span><strong>Reference inventory:</strong> search and sort sources by service, account, copy state, first use, and number of descendants.</span></li>
+          <li><span><strong>Account-scoped repair:</strong> select one Grok account, open a matching signed-in tab, and recover what remains available.</span></li>
+          <li><span><strong>Durable background jobs:</strong> pause, resume, or cancel without making the popup own the work.</span></li>
+          <li><span><strong>Clear outcomes:</strong> distinguish a local source copy from an online-only or missing reference.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="container story-grid">
+      <figure class="app-shot">
+        <img src="uploads_v2/GrokRecipeView-20260803.webp" alt="Current GenCatalog Recipe View for a Grok image-to-video generation, showing its source stage, motion prompt, result, canonical recipe document, and PNG export" width="1600" height="1000" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>Current Grok Recipe View</span><span class="mono">Source · Motion · PNG</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Reuse</span>
+        <h2>Turn a finished image back into a working idea.</h2>
+        <p>Recipe View reconstructs the creative trail behind a generation. Copy the prompt, study the stages, export the recipe, compare two approaches, or return to the original Grok record when its source link is available.</p>
+        <ul class="feature-list">
+          <li><span><strong>Recipe Cards:</strong> export a visual record that keeps the result and the prompt together.</span></li>
+          <li><span><strong>PNG + JSON export:</strong> share the human-readable idea or preserve the structured recipe.</span></li>
+          <li><span><strong>Recipe Compare:</strong> place two generations and prompts side by side to see what changed.</span></li>
+          <li><span><strong>Original source links:</strong> open a saved item back in Grok when the link is available.</span></li>
+        </ul>
+        <p class="editorial-caption">Shown with a real Grok image-to-video record. More complex Grok lineages add the additional stages GenCatalog can recover from the source.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="container story-grid reverse">
+      <figure class="app-shot vertical-proof">
+        <img src="uploads_v2/GrokVideoUpgrade-20260803.webp" alt="Current GenCatalog Grok detail controls showing the original prompt and lineage, Open in Grok, a 1080p upgrade selector, 720p saved status, original creation date, file details, and local reference state" width="610" height="1000" loading="lazy" decoding="async">
+        <figcaption class="shot-caption"><span>Upgrade directly from the current detail view</span><span class="mono">720p saved → 1080p</span></figcaption>
+      </figure>
+      <div class="story-copy">
+        <span class="eyebrow">Upgrade</span>
+        <h2>Upgrade Grok videos without leaving your library.</h2>
+        <p>Find videos that Grok can upgrade, choose 720p or 1080p, and manage the work as a queue from inside GenCatalog. Quality badges make the final state visible without opening every file.</p>
+        <ul class="feature-list">
+          <li><span><strong>Upgradeable video filter:</strong> isolate the work that is eligible.</span></li>
+          <li><span><strong>Individual or bulk queue:</strong> upgrade one video or work through many.</span></li>
+          <li><span><strong>Quality badges:</strong> see the stored resolution at a glance.</span></li>
+          <li><span><strong>Account-aware guidance:</strong> get pointed to the correct Grok account when an upgrade needs it.</span></li>
+          <li><span><strong>Original timeline preserved:</strong> the upgraded file stays anchored to when the work was first created.</span></li>
+        </ul>
+        <p class="editorial-caption">Upgrade availability and output quality depend on what Grok supports for the source video and signed-in account.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="inventory" id="everything">
+    <div class="container">
+      <div class="inventory-head">
+        <div><span class="eyebrow">The preservation record</span><h2 class="section-title" style="margin-top:20px">Everything GenCatalog can preserve from Grok.</h2></div>
+        <p class="inventory-note">This table separates information captured from Grok from organization you create inside GenCatalog. Platform-derived fields depend on what Grok exposes for a given generation and account.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Information</th><th>What GenCatalog does</th><th>Availability</th></tr></thead>
+          <tbody>
+            <tr><td>Generated image <span class="source-tag">GROK</span></td><td>Saves a local media copy and catalogs it beside its creative context.</td><td>When Grok still exposes the media.</td></tr>
+            <tr><td>Generated video <span class="source-tag">GROK</span></td><td>Saves the video, duration, dimensions, lineage, and quality state when available.</td><td>When Grok still exposes the video.</td></tr>
+            <tr><td>Image prompt <span class="source-tag">GROK</span></td><td>Preserves searchable prompt text; missing prompts can be held for recovery.</td><td>When provided or recoverable from Grok.</td></tr>
+            <tr><td>Motion prompt <span class="source-tag">GROK</span></td><td>Keeps the video instruction separate from the image prompt.</td><td>For supported image-to-video records.</td></tr>
+            <tr><td>Parent prompt <span class="source-tag">GROK</span></td><td>Retains the earlier prompt in a multi-stage creative chain.</td><td>When Grok exposes the relationship.</td></tr>
+            <tr><td>Uploaded reference <span class="source-tag">GROK</span></td><td>Stores an exact local copy and links its creative descendants.</td><td>When the reference remains retrievable.</td></tr>
+            <tr><td>Reference lineage <span class="source-tag">GROK</span></td><td>Connects sources, generations, edits, variations, and video branches.</td><td>When the source relationship is available.</td></tr>
+            <tr><td>Model + settings <span class="source-tag">GROK</span></td><td>Records available model, quality, aspect, dimensions, and generation parameters.</td><td>Fields vary by Grok surface and generation.</td></tr>
+            <tr><td>Creation date <span class="source-tag">GROK</span></td><td>Preserves the original creative timeline rather than only the download date.</td><td>When source date information is available.</td></tr>
+            <tr><td>Grok account <span class="source-tag">GROK</span></td><td>Labels and filters work by the account that created or owns it.</td><td>When Grok exposes account identity.</td></tr>
+            <tr><td>Folder, tag, or project <span class="source-tag">GROK</span></td><td>Retains available Grok-side organizational context.</td><td>When present on the captured Grok surface.</td></tr>
+            <tr><td>Agent Mode context <span class="source-tag">GROK</span></td><td>Preserves available session, step, and source details with Agent Mode media.</td><td>When exposed by Grok Agent Mode.</td></tr>
+            <tr><td>Original Grok link <span class="source-tag">GROK</span></td><td>Keeps a route back to the source record.</td><td>When a stable source link is available.</td></tr>
+            <tr><td>Upgrade status <span class="source-tag">GROK</span></td><td>Tracks eligibility, queued work, target quality, and completed quality badges.</td><td>Where Grok supports video upgrades.</td></tr>
+            <tr><td>Tags + collections <span class="source-tag local-tag">LOCAL</span></td><td>Lets you build your own taxonomy across accounts and sources.</td><td>Created and managed in GenCatalog.</td></tr>
+            <tr><td>Notes + ratings <span class="source-tag local-tag">LOCAL</span></td><td>Adds the judgment and memory that a raw generation cannot carry alone.</td><td>Created and managed in GenCatalog.</td></tr>
+            <tr><td>Favorites + hidden state <span class="source-tag local-tag">LOCAL</span></td><td>Keeps important work close and sensitive or distracting work out of the main view.</td><td>Created and managed in GenCatalog.</td></tr>
+            <tr><td>Generation Recipe <span class="source-tag local-tag">LOCAL</span></td><td>Assembles available prompts, references, stages, and results into one reusable record.</td><td>Built from the context available in the catalog.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="feature-index">
+    <div class="container">
+      <div class="index-head"><span class="eyebrow">The complete Grok toolkit</span><h2 class="section-title" style="margin-top:20px">A serious library needs more than a download button.</h2></div>
+      <div class="index-grid">
+        <div class="index-group"><h3>Preserve</h3><ul><li>Save</li><li>Save + Favorite</li><li>Bulk Grok scan</li><li>Saved/Favorites capture</li><li>Imagine capture</li><li>Chat media capture</li><li>Agent Mode capture</li><li>Folder and project context</li><li>Smart Sync</li><li>Duplicate prevention</li><li>Deleted-item recognition</li><li>Prompt recovery</li><li>Held-item review</li><li>Removed-media recovery option</li><li>Pause and resume</li><li>Background large-library work</li><li>Uploaded-input exclusion</li><li>Bulk unfavorite or delete from Grok</li></ul></div>
+        <div class="index-group"><h3>Organize</h3><ul><li>Local tags</li><li>Collections</li><li>Collection pinning</li><li>Recent-media or A–Z collection sort</li><li>Collapsible collections</li><li>Targeted collection clearing</li><li>Notes</li><li>Star ratings</li><li>Favorites</li><li>Hidden Items</li><li>Private Vault</li><li>Trash and undo</li><li>Account labels</li><li>Grok folder context</li><li>Grok tag context</li><li>Grok project context</li><li>Local file import</li><li>Watched folders</li></ul></div>
+        <div class="index-group"><h3>Search and rediscover</h3><ul><li>Universal search</li><li>Prompt search</li><li>Account filters</li><li>Source filters</li><li>Media filters</li><li>Date filters</li><li>Rating filters</li><li>Reference filters</li><li>Upgradeable filter</li><li>Saved searches</li><li>Top prompts</li><li>First-added sort</li><li>GC-modified sort</li><li>Created-date sort</li><li>Rediscover</li><li>Actionable Rediscover details</li><li>Slideshow</li><li>Slideshow preparation progress</li><li>Favorite, rate, hide, Vault, or Trash in slideshow</li><li>Library statistics</li></ul></div>
+        <div class="index-group"><h3>Understand and reuse</h3><ul><li>Reference family trees</li><li>Source relationship repair</li><li>Local/online/missing source states</li><li>Reference-use counts</li><li>Generation Recipes</li><li>Recipe Cards</li><li>Removable Recipe Cards</li><li>Recipe Compare</li><li>Phrase-level prompt differences</li><li>Matching and one-sided fields</li><li>Cross-source and image/video compare</li><li>PNG recipe export</li><li>JSON recipe export</li><li>Separate motion prompts</li><li>Copy prompt</li><li>More from this prompt</li><li>Find Similar</li><li>More from this reference</li><li>Open original on Grok</li><li>Detail and fullscreen views</li><li>Batch export</li><li>Reveal in Finder or Explorer</li><li>CSV export</li></ul></div>
+        <div class="index-group"><h3>Multiple Grok accounts</h3><ul><li>One combined catalog</li><li>Automatic source account</li><li>Per-account counts</li><li>Account + filter combinations</li><li>Targeted filter clearing</li><li>Account-scoped references</li><li>Account-scoped repair</li><li>Correct-profile upgrade guidance</li><li>Signed-in tab detection</li><li>Sequential account recovery</li></ul></div>
+        <div class="index-group"><h3>Upgrade and protect</h3><ul><li>720p video upgrades</li><li>1080p video upgrades</li><li>Individual upgrades</li><li>Bulk upgrade queue</li><li>Quality badges</li><li>Original timeline preservation</li><li>Mac and Windows</li><li>External drive catalogs</li><li>App Lock</li><li>Privacy Mode</li><li>Encrypted Private Vault</li><li>No GenCatalog account required</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust">
+    <div class="container trust-grid">
+      <div><span class="eyebrow">Protect</span><h2 class="section-title" style="margin:20px 0 24px">The archive lives where you decide.</h2><p class="section-lede">Choose a folder on your Mac, Windows PC, or external drive. GenCatalog does not require a GenCatalog account for your local library, and analytics never include your media, prompts, account identity, or library contents.</p></div>
+      <div class="trust-points">
+        <div class="trust-point"><strong>Local by design</strong><span>Your media and catalog records remain in the library folder you choose.</span></div>
+        <div class="trust-point"><strong>App Lock + Privacy Mode</strong><span>Keep casual access and on-screen exposure under control.</span></div>
+        <div class="trust-point"><strong>Encrypted Private Vault</strong><span>Protect selected media and metadata at rest.</span></div>
+        <div class="trust-point"><strong>Portable storage</strong><span>Use an external drive when the library is too large—or too important—for one machine.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonial">
+    <div class="container">
+      <figure>
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>“Perfect tool for locally saving and managing work from Grok. I had 12,000+ files to manage and this tool was a godsend.”</blockquote>
+        <figcaption><cite>Verified Chrome Web Store review</cite></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="container faq-grid">
+      <div><span class="eyebrow">Before you start</span><h2 class="section-title" style="font-size:clamp(34px,4vw,54px);margin-top:20px">A few honest answers.</h2></div>
+      <div class="faq-list">
+        <details><summary>Why not leave my work in Grok history?</summary><p>Grok history is useful. It is also a hosted interface controlled by a platform. Your own archive keeps local copies of the media and available creative context so you can search and use the library independently—even while you continue creating in Grok.</p></details>
+        <details><summary>Can GenCatalog save an existing Grok Imagine library?</summary><p>Yes. GenCatalog can scan and save existing Grok media in bulk, recognize items already in your catalog, and resume long-running work. You can choose broad or narrower Grok capture scopes. Source availability still depends on what Grok exposes to the signed-in account.</p></details>
+        <details><summary>Does it support more than one Grok account?</summary><p>Yes. When Grok exposes account identity, GenCatalog records it so work from multiple accounts can live in one catalog and still be searched, filtered, repaired, and upgraded in the correct account context.</p></details>
+        <details><summary>What stays local?</summary><p>Your saved media, prompts, metadata, tags, notes, ratings, collections, and other library records live in the catalog folder you choose. GenCatalog runs on Mac and Windows and supports catalogs on external drives.</p></details>
+        <details><summary>Can GenCatalog recover media that is already gone?</summary><p>No. GenCatalog can preserve and organize media that Grok still makes available, and it can repair some missing prompts and references while they remain retrievable. It cannot recreate source media that was never saved and is no longer available. The best time to build an archive is while the source still exists.</p></details>
+        <details><summary>Is GenCatalog affiliated with xAI?</summary><p>No. GenCatalog is an independent product and is not affiliated with or endorsed by xAI.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Ride the peaks and valleys. Keep the work.</h2>
+      <p>Build the local Grok Imagine archive that lets you sleep at night—and gives your past ideas somewhere to become useful again.</p>
+      <div class="cta-buttons">
+        <a href="/get" class="btn btn-primary btn-lg smart-dl-btn" data-mac="/get" data-win="/get"><span class="dl-label">Download GenCatalog free</span></a>
+        <a href="https://chromewebstore.google.com/detail/dcmghhapbfbldjoilamnnalkagejndfb" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">Install Chrome extension</a>
+      </div>
+      <p class="cta-meta">$99/year &nbsp;·&nbsp; Plus applicable taxes &nbsp;·&nbsp; 7-day free trial &nbsp;·&nbsp; Saved files stay on your computer &nbsp;·&nbsp; Permanent existing-library access after your first successful payment</p>
+    </div>
+  </section>
+
+  <section class="cross-links" aria-label="Related platform pages">
+    <div class="container cross-inner">
+      <a href="/higgsfield" class="cross-link">Higgsfield</a>
+      <a href="/midjourney" class="cross-link">Midjourney</a>
+      <a href="/digen" class="cross-link">Digen</a>
+      <a href="/support" class="cross-link">Setup guide</a>
       <a href="/faq" class="cross-link">FAQ</a>
     </div>
-  </div>
-</section>
-
+  </section>
 </main>
 
 <footer>
-  <div class="container">
-    <div class="footer-inner">
-      <span class="footer-copy">© 2026 Second Act Labs. All rights reserved.</span>
-      <div class="footer-links">
-        <a href="/grok">Grok</a>
-        <a href="/higgsfield">Higgsfield</a>
-        <a href="/midjourney">Midjourney</a>
-        <a href="/digen">Digen</a>
-        <a href="/support">Support</a>
-        <a href="/faq">FAQ</a>
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/release-notes">Release Notes</a>
-        <a href="mailto:support@gencatalog.app">support@gencatalog.app</a>
-      </div>
-    </div>
+  <div class="container footer-inner">
+    <span class="footer-copy">© 2026 Second Act Labs. All rights reserved.</span>
+    <div class="footer-links"><a href="/grok">Grok</a><a href="/higgsfield">Higgsfield</a><a href="/midjourney">Midjourney</a><a href="/support">Support</a><a href="/faq">FAQ</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/release-notes">Release Notes</a><a href="mailto:support@gencatalog.app">support@gencatalog.app</a></div>
   </div>
 </footer>
 
