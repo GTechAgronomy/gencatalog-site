@@ -1,5 +1,5 @@
 const LAST_MODIFIED_BY_PATH = Object.freeze({
-  "/": "2026-08-05",
+  "/": "2026-08-06",
   "/grok": "2026-08-03",
   "/arcana": "2026-07-23",
   "/higgsfield": "2026-07-28",
