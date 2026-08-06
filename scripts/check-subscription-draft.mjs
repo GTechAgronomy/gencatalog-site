@@ -113,9 +113,11 @@ const getPage = read('get.html');
 
 assert.ok(home.includes(annualCheckout), 'homepage annual checkout is missing');
 assert.ok(llms.includes(annualCheckout), 'llms.txt annual checkout is missing');
-assert.ok(home.includes('The subscription pays for tomorrow.'));
 assert.ok(home.includes('Your library is always yours.'));
-assert.ok(home.includes('Cancel anytime. Everything you’ve already saved remains yours.'));
+assert.ok(home.includes('Everything you’ve already captured stays on your computer and remains fully usable forever.'));
+assert.ok(home.includes('GenCatalog continues to receive updates whether or not you renew.'));
+assert.ok(home.includes('Ongoing app updates, platform compatibility, and new features'));
+assert.ok(home.includes('Cancel anytime. Your library stays yours. GenCatalog keeps updating. Only new asset acquisition stops.'));
 assert.ok(home.includes('One individual • Up to 3 personally controlled devices'));
 assert.ok(!home.includes('first successful payment'));
 assert.ok(!home.includes('current paid period'));
