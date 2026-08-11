@@ -1,6 +1,6 @@
 # GenCatalog: full canonical product reference
 
-Last reviewed: 2026-07-23
+Last reviewed: 2026-08-10
 
 ## Product
 
@@ -37,6 +37,7 @@ GenCatalog supports the following sources and workflows. Capture and metadata de
 - Gemini: https://gencatalog.app/faq#gemini
 - GPT Image: https://gencatalog.app/faq#gpt-image
 - Rogue Studio: https://gencatalog.app/faq#rogue-studio
+- Dzine: https://gencatalog.app/faq#dzine
 - ComfyUI outputs and embedded workflow metadata: https://gencatalog.app/comfyui-workflow-viewer
 - Venice.ai: https://gencatalog.app/faq#venice
 - Local image and video imports: https://gencatalog.app/local-ai-media-import
