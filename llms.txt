@@ -22,6 +22,7 @@
 - [Gemini](https://gencatalog.app/faq#gemini)
 - [GPT Image](https://gencatalog.app/faq#gpt-image)
 - [Rogue Studio](https://gencatalog.app/faq#rogue-studio)
+- [Dzine](https://gencatalog.app/faq#dzine)
 - [ComfyUI output and workflow import](https://gencatalog.app/comfyui-workflow-viewer)
 - [Venice.ai](https://gencatalog.app/faq#venice)
 - [Local media imports](https://gencatalog.app/local-ai-media-import)

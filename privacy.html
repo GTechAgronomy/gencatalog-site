@@ -150,7 +150,7 @@
 
     <main>
         <h1>Privacy Policy</h1>
-        <p class="last-updated">Last updated: July 19, 2026</p>
+        <p class="last-updated">Last updated: August 10, 2026</p>
 
         <div class="highlight-box">
             <h3>The Short Version</h3>
@@ -158,7 +158,7 @@
         </div>
 
         <h2>1. What GenCatalog Is</h2>
-        <p>GenCatalog is a desktop application and Chrome browser extension that helps you save and organize AI-generated images and videos from platforms like Grok Imagine, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai. It is developed and operated by Second Act Labs ("we", "us", "our").</p>
+        <p>GenCatalog is a desktop application and Chrome browser extension that helps you save and organize AI-generated images and videos from platforms like Grok Imagine, Gemini, GPT Image, Rogue Studio, Dzine, Midjourney, Higgsfield, Digen, and Venice.ai. It is developed and operated by Second Act Labs ("we", "us", "our").</p>
 
         <h2>2. Data the App and Extension Collect</h2>
         <p>The GenCatalog desktop app and Chrome extension do not collect personal information or browsing history. There is no account, no cloud sync, and no server-side copy of your catalog.</p>
@@ -175,8 +175,9 @@
         <ul>
             <li><strong>activeTab</strong>: To detect AI-generated content on the current page and add save buttons to grid items and detail pages on supported platforms.</li>
             <li><strong>storage</strong>: To store extension settings and local extension state needed for save workflows and server communication. This data stays in your browser and is never transmitted externally.</li>
+            <li><strong>unlimitedStorage</strong>: To keep resumable local checkpoints for user-initiated bulk scans, including large Dzine project histories that may exceed Chrome's standard extension-storage quota. These checkpoints can contain sanitized generation metadata needed to resume the import. Completed rows and project caches are removed after import; held or failed rows remain locally for a user-requested retry. Media files are not stored in extension storage.</li>
             <li><strong>downloads</strong>: To track a Gemini full-size image download after you click a GenCatalog save badge, import that file into your local catalog, and remove the temporary duplicate from Downloads.</li>
-            <li><strong>Host permissions for supported AI platforms</strong>: To access supported AI generation platforms including Grok Imagine, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai. The extension reads page content to extract media URLs, prompts, and metadata for saving to your local catalog.</li>
+            <li><strong>Host permissions for supported AI platforms</strong>: To access supported AI generation platforms including Grok Imagine, Gemini, GPT Image, Rogue Studio, Dzine, Midjourney, Higgsfield, Digen, and Venice.ai. The extension reads available page content and metadata responses to identify media, prompts, and generation details for saving to your local catalog.</li>
             <li><strong>Host permission (localhost)</strong>: To communicate with the companion GenCatalog desktop application running on your local machine. All saved media and metadata is sent only to this local server, never to any external endpoint.</li>
         </ul>
 
@@ -184,7 +185,7 @@
         <p>The GenCatalog app and extension communicate only with services needed for the functions below:</p>
         <ul>
             <li><strong>Your local machine (localhost)</strong>: To send saved media and metadata to the companion desktop app.</li>
-            <li><strong>Supported AI platforms</strong>: To read page content and download media files you choose to save from Grok Imagine, Gemini, GPT Image, Rogue Studio, Midjourney, Higgsfield, Digen, and Venice.ai.</li>
+            <li><strong>Supported AI platforms</strong>: To read available content and download media files you choose to save from Grok Imagine, Gemini, GPT Image, Rogue Studio, Dzine, Midjourney, Higgsfield, Digen, and Venice.ai.</li>
             <li><strong>GenCatalog entitlement service (license.gencatalog.app)</strong>: For initial activation and periodic subscription or license verification. The desktop app sends the license key and a device-specific activation identifier. The service validates entitlement state with Lemon Squeezy and returns a signed, time-limited access decision. It receives no library files, prompts, tags, notes, filenames, source URLs, file paths, thumbnails, hashes, item IDs, or catalog content.</li>
             <li><strong>GenCatalog download service (downloads.gencatalog.app)</strong>: To check for and download desktop application updates.</li>
             <li><strong>GenCatalog telemetry endpoint (telemetry.gencatalog.app)</strong>: When anonymous product analytics are enabled after the notice. Payloads contain limited anonymous counts and coarse product-journey milestones, and never include private library information, account information, license information, or a persistent identifier.</li>
