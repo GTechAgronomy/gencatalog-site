@@ -1234,6 +1234,34 @@ footer {
 .foot-brand .maker { margin-top: 12px; font-size: 12px; }
 .foot-brand .maker a { color: var(--ink-soft); }
 
+.sal-colophon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "EB Garamond", Georgia, serif;
+  white-space: nowrap;
+}
+
+.sal-colophon-mark {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sal-colophon-mark span:first-child {
+  width: 14px;
+  height: 3px;
+  background: currentColor;
+}
+
+.sal-colophon-mark span:last-child {
+  width: 14px;
+  height: 1px;
+  background: currentColor;
+}
+
+.sal-colophon em { font-style: italic; }
+
 .foot-col h2 {
   margin: 0 0 16px;
   color: var(--ink-muted);
@@ -1378,6 +1406,7 @@ footer {
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 42px 28px; }
   .foot-brand { grid-column: 1 / -1; }
   .foot-meta { flex-direction: column; }
+  .sal-colophon-mark { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
